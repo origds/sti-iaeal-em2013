@@ -85,7 +85,7 @@ WITH (
 OIDS=FALSE
 );
 
--- Alter Table Usuario
+-- Alter Table Usuario 1
 
 ALTER TABLE "STI".usuario ADD CONSTRAINT "PK_nombre_usuario" PRIMARY KEY (usuario);
 
