@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+ <!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+       "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+
+<!--
+     This is a blank Tiles definition file with a commented example.
+-->
+
+<tiles-definitions>
+
+    <definition name="base" path="/WEB-INF/template/base.jsp">
+      <put name="head"    value="STI-IAEAL"/>
+      <put name="header"  value="/WEB-INF/template/header.jsp"/>
+      <put name="menu"    value="/WEB-INF/template/menu.jsp"/>
+      <put name="topMenu" value="/WEB-INF/template/topMenu.jsp"/>
+      <put name="body"    value="/WEB-INF/template/body.jsp"/>
+      <put name="footer"  value="/WEB-INF/template/footer.jsp"/>     
+    </definition>
+    
+    <definition name="principal" extends="base">
+    </definition>
+
+    <!--GESTION DE USUARIOS. -->              
+    <definition name="usuario.gestionar" extends="base">
+      <put name="body"  value="/WEB-INF/usuario/bodygestionar.jsp"/>
+    </definition>
+    
+    <definition name="usuario.crear" extends="base">
+      <put name="body" value="/WEB-INF/usuario/bodycrear.jsp"/>
+    </definition>
+    
+     <definition name="usuario.consultar" extends="base">
+      <put name="body" value="/WEB-INF/usuario/bodyconsultar.jsp"/>
+    </definition>
+
+    <definition name="usuario.actualizar" extends="base">
+      <put name="body" value="/WEB-INF/usuario/bodyactualizar.jsp"/>
+    </definition>    
+
+    <definition name="usuario.actualizarPerfil" extends="base">
+      <put name="body" value="/WEB-INF/usuario/bodyactualizarperfil.jsp"/>
+    </definition>
+    
+    <!--GESTION DE TRATADOS. -->
+    <definition name = "tratado.crear" extends="base">
+      <put name="body" value = "/WEB-INF/tratado/bodycrear.jsp"/>
+    </definition>
+    
+    <definition name="tratado.consultar" extends="base">
+      <put name="body" value="/WEB-INF/tratado/bodyconsultar.jsp"/>
+    </definition>
+    
+    <definition name="tratado.gestionar" extends="base">
+      <put name="body"  value="/WEB-INF/tratado/bodygestionar.jsp"/>
+    </definition>
+    
+    <definition name="tratado.gestionarPendientes" extends="base">
+      <put name="body"  value="/WEB-INF/tratado/bodygestionarpendientes.jsp"/>
+    </definition>
+    
+    <definition name="tratado.gestionarMisTratados" extends="base">
+      <put name="body"  value="/WEB-INF/tratado/bodygestionarmistratados.jsp"/>
+    </definition>
+    
+    <definition name="tratado.actualizar" extends="base">
+      <put name="body" value="/WEB-INF/tratado/bodyactualizar.jsp"/>
+    </definition> 
+   
+    <!-- GESTION BUSQUEDA -->
+    <definition name="tratado.buscar" extends="base">
+        <put name="body" value="/WEB-INF/busqueda/busqueda.jsp"/>
+    </definition>
+    
+    <!-- GESTION ESTADISTICA -->
+    <definition name="estadistica.form" extends="base">
+        <put name="body" value="/WEB-INF/estadistica/estadistica.jsp"/>
+    </definition>
+    
+    <!-- Mensajes de exito -->
+    <definition name="usuario.exito" extends="base">
+        <put name="body" value="/WEB-INF/usuario/exito.jsp"/>
+    </definition>
+
+    <definition name="usuario.exitoAct" extends="base">
+        <put name="body" value="/WEB-INF/usuario/exitoAct.jsp"/>
+    </definition>
+
+    <definition name="tratado.exito" extends="base">
+        <put name="body" value="/WEB-INF/tratado/exito.jsp"/>
+    </definition>
+
+    <definition name="tratado.exitoAct" extends="base">
+        <put name="body" value="/WEB-INF/tratado/exitoAct.jsp"/>
+    </definition>
+        
+    <definition name="busqueda.exito" extends="base">
+        <put name="body" value="/WEB-INF/busqueda/exito.jsp"/>
+    </definition>
+
+    <definition name="estadistica.exito" extends="base">
+        <put name="body" value="/WEB-INF/estadistica/exitoEstadistica.jsp"/>
+    </definition>
+    <!-- sample tiles definitions
+    <definition name=".mainLayout" path="/common/layouts/classicLayout.jsp">
+        <put name="title"  value="Sample Page Title" />
+        <put name="header" value="/common/header.jsp" />
+        <put name="menu"   value=".mainMenu" />
+        <put name="footer" value="/common/footer.jsp" />
+        <put name="body"   value=".portal.body" />
+    </definition>
+
+    <definition name=".mainMenu" path="/common/layouts/vboxLayout.jsp" >
+        <putList name="list" >
+            <add value=".menu.links" />
+            <add value=".menu.taglib.references" />
+            <add value=".menu.printer.friendly" />
+            <add value=".menu.old.documents" />
+      </putList>
+    </definition>
+
+    <definition name="aPage" extends=".mainLayout">
+        <put name="title"  value="Another Title" />
+        <put name="body"   value=".aPage.body" />
+    </definition>
+
+    end samples -->
+
+    <definition name="${YOUR_DEFINITION_HERE}">
+    </definition>
+
+</tiles-definitions>

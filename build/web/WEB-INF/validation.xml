@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE form-validation PUBLIC
+          "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.1.3//EN"
+          "http://jakarta.apache.org/commons/dtds/validator_1_1_3.dtd">
+
+<form-validation>
+
+    <!--
+         This is a minimal Validator form file with a couple of examples.
+    -->
+
+    <global>
+
+        <!-- An example global constant
+        <constant>
+            <constant-name>postalCode</constant-name>
+            <constant-value>^\d{5}\d*$</constant-value>
+        </constant>
+        end example-->
+
+    </global>
+    
+    <formset>
+        <!-- Validation de Usuario-->
+        <form name="Usuario">
+            <!-- Validate usuario-->
+            <field
+                property="usuario" depends="required, maxlength, mask"> 
+                
+                <arg0 key="usuario.usuario"/>
+                <arg1 name="maxlength" key="${var:maxlength}" resource="false"/> 
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>15</var-value>
+                </var>
+                <msg name="mask" key="mask.alfanumericoUnder"/>
+                <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9a-zA-Z_]*$</var-value>
+                </var>
+            </field>
+     
+            <!-- Validate contrasena-->
+            <field
+                property="contrasena" depends="required, minlength, maxlength, mask">
+                
+                <arg0 key="usuario.contrasena"/>
+                <arg1 name="minlength" key="${var:minlength}" resource="false"/>                                                
+                <var>
+                    <var-name>minlength</var-name>
+                    <var-value>6</var-value>
+                </var>
+                
+                <arg1 name="maxlength" key="${var:maxlength}" resource="false"/>
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>20</var-value>
+                </var>
+
+                <msg name="mask" key="mask.alfanumerico" />                
+                <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9a-zA-Z]*$</var-value>
+                </var>
+            </field>
+            
+            <!-- Validate nombre-->
+            <field
+                property="nombre" depends="required, maxlength, mask">
+                
+                <arg0 key="usuario.nombre"/>
+                <arg1 name="maxlength" key="${var:maxlength}" resource="false"/>
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>20</var-value>
+                </var>
+
+                <msg name="mask" key="mask.soloLetras"/>   
+                <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[A-Za-záóéíúñÁÉÍÓÚÑ ]*$</var-value>
+                </var>
+            </field>
+            
+            <!-- Validate apellido-->
+            <field
+                property="apellido" depends="required, maxlength, mask">
+                
+                <arg0 key="usuario.apellido"/>
+                <arg1 name="maxlength" key="${var:maxlength}" resource="false"/>
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>20</var-value>
+                </var>
+                
+                <msg name="mask" key="mask.soloLetras"/>   
+                <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[A-Za-záóéíúñÁÉÍÓÚÑ ]*$</var-value>
+                </var>
+            </field>
+           
+            <!-- Validate correo-->
+            <field
+                property="correo" depends="required,email">
+                <arg0 key="usuario.correo"/>
+            </field>
+            
+        </form> 
+    
+    
+        <!--Validate Login -->
+        <form name="LoginForm">
+            <!-- Validate Usuario-->
+            <field
+                property="usuarioLogin" depends="required, maxlength, mask"> 
+                
+                <arg0 key="Login.usuarioLogin"/>
+                <arg1 name="maxlength" key="${var:maxlength}" resource="false"/> 
+                <msg name="maxlength" key="errors.invalid"/>
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>15</var-value>
+                </var>
+                <msg name="mask" key="errors.invalid"/>
+                <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9a-zA-Z_]*$</var-value>
+                </var>
+            </field>
+     
+            <!-- Validate contrasena-->
+            <field
+                property="contrasenaLogin" depends="required, minlength, maxlength, mask">
+                
+                <arg0 key="Login.contrasenaLogin"/>
+                <arg1 name="minlength" key="${var:minlength}" resource="false"/>                                                
+                <msg name="minlength" key="errors.invalida"/>
+                <var>
+                    <var-name>minlength</var-name>
+                    <var-value>6</var-value>
+                </var>
+
+                <arg1 name="maxlength" key="${var:maxlength}" resource="false"/>
+                <msg name="maxlength" key="errors.invalida"/>
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>20</var-value>
+                </var>
+
+                <msg name="mask" key="errors.invalida" />                
+                <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9a-zA-Z]*$</var-value>
+                </var>
+            </field>    
+        </form>    
+    
+        <!-- Validation de Tratado-->
+        <form name="Tratado">
+            <!-- Validate titulo -->
+            <field
+                property="titulo" depends="required, maxlength, mask">
+                
+                <arg0 key="tratado.titulo"/>
+                <arg1 name="maxlength" key= "${var:maxlength}" resource="false"/> 
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>800</var-value>
+                </var>
+                <msg name="mask" key="mask.invalido"/>
+                <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[A-Za-záóéíúñÁÉÍÓÚÑ 0-9,:.)("'-´\%]*$</var-value>
+                </var>
+            </field>
+     
+            <!-- Validate aprobado -->
+            <field
+                property="aprobado" depends="required">
+                <arg0 key="tratado.aprobado"/>
+            </field>
+            
+            <!-- Validate firmaLugar -->
+            
+            <field
+                property="firmaLugar" depends="maxlength, mask"> 
+                
+                <arg0 key="tratado.firmaLugar"/>
+                <arg1 name="maxlength" key="${var:maxlength}" resource="false"/> 
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>140</var-value>
+                </var>
+                <msg name="mask" key="mask.invalido"/>
+                <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[A-Za-záóéíúñÁÉÍÓÚÑ 0-9,:.;)("'-´\%]*$</var-value>
+                </var>
+            </field>
+            
+            <!-- Validate firmaFecha -->
+            <field
+                property="firmaFecha" depends="date">
+                <arg0 key="tratado.firmaFecha"/>
+                <var>
+                    <var-name>datePattern</var-name>
+                    <var-value>MM/dd/yyyy</var-value>
+                </var>
+            </field>
+                       
+            <!-- Validate  numGaceta -->
+            <field
+                property="numGaceta" depends="maxlength">
+                <arg0 key="tratado.numGaceta"/>
+                <arg1 name="maxlength" key="${var:maxlength}" resource="false"/>
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>20</var-value>
+                </var>
+            </field>
+            
+            <!-- Validate fechaGaceta -->
+            <field
+                property="fechaGaceta" depends="date">
+                <arg0 key="tratado.fechaGaceta"/>
+                <var>
+                    <var-name>datePattern</var-name>
+                    <var-value>MM/dd/yyyy</var-value>
+                </var>              
+            </field>
+
+            <!-- Validate canjeNotificacion -->
+            <field
+                property="canjeNotificacion" depends="date">
+                <arg0 key="tratado.canjeNotificacion"/>
+                <var>
+                    <var-name>datePattern</var-name>
+                    <var-value>MM/dd/yyyy</var-value>
+                </var>              
+            </field>
+            
+            <!-- Validate fechaDeposito -->
+            <field
+                property="fechaDeposito" depends="date">
+                <arg0 key="tratado.canjeNotificacion"/>
+                <var>
+                    <var-name>datePattern</var-name>
+                    <var-value>MM/dd/yyyy</var-value>
+                </var>
+            </field>
+            
+            <!-- Validate entradaVigor -->
+            <field
+                property="entradaVigor" depend="date">
+                <arg0 key="tratado.entradaVigor"/>
+                <var>
+                    <var-name>datePattern</var-name>
+                    <var-value>MM/dd/yyyy</var-value>
+                </var>
+            </field>
+            
+            <!-- Validate duracion -->
+            <field
+                property="duracion" depends="maxlength">
+                <arg0 key="tratado.duracion"/>
+                <arg1 name="maxlength" key="${var:maxlength}" resource="false"/>
+            
+                <var>    
+                    <var-name>maxlength</var-name>
+                    <var-value>20</var-value>                
+                </var>
+            </field>
+
+            <!-- Validate periodo -->
+            <field
+                property="periodo" depends="integer, intRange">
+                <arg0 key="tratado.periodo"/>
+                <arg1 name="intRange" vara="${var:min}" resource="false"/>
+                <arg2 name="intRange" vara="${var:max}" resource="false"/>
+                <var>
+                    <var-name>min</var-name>
+                    <var-value>0</var-value>
+                </var>
+                
+                <var>
+                    <var-name>max</var-name>
+                    <var-value>9999</var-value>
+                </var>
+            </field>
+            
+            <!-- Validate volumen -->
+            <field
+                property="volumen" depends="integer, intRange">
+                <arg0 key="tratado.volumen"/>
+                <arg1 name="intRange" vara="${var:min}" resource="false"/>
+                <arg2 name="intRange" vara="${var:max}" resource="false"/>
+                <var>
+                    <var-name>min</var-name>
+                    <var-value>0</var-value>
+                </var>
+                
+                <var>
+                    <var-name>max</var-name>
+                    <var-value>9999</var-value>
+                </var>
+            </field>
+            
+            <!-- Validate pagina -->
+            <field
+                property="pagina" depends="maxlength, mask">
+                <arg0 key="tratado.pagina"/>
+                <msg name="maxlength" key="mask.tamano"/>
+                <arg1 name="maxlength" var="${var:maxlength}" resource="false"/>                
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>4</var-value>
+                </var>
+                
+                <msg name="mask" key="mask.numeros"/>
+                <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]{1,4}$</var-value>
+                </var>
+            </field>
+            
+            <!-- Validate observacion -->
+            <field
+                property="observacion" depends="maxlength">
+                <arg0 key="tratado.observacion"/>
+                <arg1 name="maxlength" key="${var:maxlength}" resource="false"/>
+                
+                <var>
+                    <var-name>maxlength</var-name>
+                    <var-value>320</var-value>
+                </var>
+            </field>                            
+        </form>
+        
+        <!-- Validacion de Busqueda -->
+        <form name="BusquedaForm">
+            <!-- Validate clave-->
+            <field
+                property="claves" depends="mask">
+                <arg0 key="busqueda.clave"/>
+                <msg name="mask" key="mask.invalido"/>
+                <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[A-Za-záóéíúñÁÉÍÓÚÑ 0-9,:.)("'-´\%]*$</var-value>
+                </var>
+            </field>
+            <!-- Validate pais-->
+            <field
+                property="pais" depends="mask">
+                <msg name="mask" key="mask.comas"/>
+                <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[A-Za-záóéíúñÁÉÍÓÚÑ,.\-\' ]*$</var-value>
+                </var>
+            </field>
+            <!-- Validate anio --> 
+            <field
+                property="anio" depends="maxlength, mask">
+                <arg0 key="busqueda.anio"/>
+                <msg name="maxlength" key="mask.anio"/>
+                <arg1 name="maxlength" var="${var:maxlength}" resource="false"/>                
+                <var>
+                    <var-name>maxlength</var-name>  
+                    <var-value>4</var-value>
+                </var>
+                
+                <msg name="mask" key="mask.int"/>
+                <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]{1,4}$</var-value>
+                </var>
+            </field>   
+            <!-- Validate fechaini -->
+            <field
+                property="fechaini" depends="maxlength, mask">
+                <arg0 key="estadistica.fechaini"/>
+                <msg name="maxlength" key="mask.anio"/>
+                <arg1 name="maxlength" var="${var:maxlength}" resource="false"/>                
+                <var>
+                    <var-name>maxlength</var-name>  
+                    <var-value>4</var-value>
+                </var>
+                
+                <msg name="mask" key="mask.int"/>
+                <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]{1,4}$</var-value>
+                </var>
+            </field> 
+            <!-- Validate fechafin -->
+            <field
+                property="fechafin" depends="maxlength, mask">
+                <arg0 key="estadistica.fechafin"/>
+                <msg name="maxlength" key="mask.anio"/>
+                <arg1 name="maxlength" var="${var:maxlength}" resource="false"/>                
+                <var>
+                    <var-name>maxlength</var-name>  
+                    <var-value>4</var-value>
+                </var>
+                
+                <msg name="mask" key="mask.int"/>
+                <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]{1,4}$</var-value>
+                </var>
+            </field> 
+        </form>
+        
+        <!-- Validacion de Estadistica -->
+        <form name="EstadisticaForm">
+            <!-- Validate clave-->
+            <field
+                property="ejeX" depends="required,mask">
+                <arg0 key="estadistica.ejeX"/>
+                <msg name="mask" key="mask.invalido"/>
+                <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-1]*$</var-value>
+                </var>
+            </field>
+            <!-- Validate pais-->
+            <field
+                property="pais" depends="mask">
+                <msg name="mask" key="mask.comas"/>
+                <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[A-Za-záóéíúñÁÉÍÓÚÑ,.\-\' ]*$</var-value>
+                </var>
+            </field>
+            <!-- Validate fechaini -->
+            <field
+                property="fechaini" depends="maxlength, mask">
+                <arg0 key="estadistica.fechaini"/>
+                <msg name="maxlength" key="mask.anio"/>
+                <arg1 name="maxlength" var="${var:maxlength}" resource="false"/>                
+                <var>
+                    <var-name>maxlength</var-name>  
+                    <var-value>4</var-value>
+                </var>
+                
+                <msg name="mask" key="mask.int"/>
+                <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]{1,4}$</var-value>
+                </var>
+            </field> 
+            <!-- Validate fechafin -->
+            <field
+                property="fechafin" depends="maxlength, mask">
+                <arg0 key="estadistica.fechafin"/>
+                <msg name="maxlength" key="mask.anio"/>
+                <arg1 name="maxlength" var="${var:maxlength}" resource="false"/>                
+                <var>
+                    <var-name>maxlength</var-name>  
+                    <var-value>4</var-value>
+                </var>
+                
+                <msg name="mask" key="mask.int"/>
+                <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]{1,4}$</var-value>
+                </var>
+            </field>
+            <field
+                property="tipoGrafica" depends="required,mask">
+                <arg0 key="estadistica.tipoGrafica"/>
+                <msg name="mask" key="mask.invalido"/>
+                <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-1]*$</var-value>
+                </var>
+            </field>             
+        </form>
+        
+    </formset>
+   
+</form-validation>

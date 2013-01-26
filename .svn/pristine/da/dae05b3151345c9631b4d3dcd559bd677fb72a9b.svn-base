@@ -1,0 +1,169 @@
+/*Estilo de la pagina base*/
+
+a, a:hover{
+    color: black;
+    text-decoration: none;
+}
+
+/*Borde de la pagina como tal*/
+#borde{
+    position: relative;
+    margin: 0 auto;
+	
+    width: 1000px;
+    height: auto !important;
+    height: 100%;
+    min-height: 100%;
+}
+
+#main{
+    padding: 150px 0px 0px 0px;
+    margin-bottom: 800px;
+    background: white;
+}
+
+/*End borde*/
+/*Begin menu izquierdo*/
+
+select.selects{
+    background: transparent;
+    width: 100px;
+    font-size: 12px;
+    border-radius: 3px;
+    border-color: gray;
+    color: gray;
+    box-shadow: 10px;
+}
+#botones{
+    text-align: left;
+    margin-top: 15px;
+    margin-left: 10px;
+    width: 100%;
+    font-size: 12px;
+    font-family: helvetica;
+    color: gray;
+    
+}
+div.opciones{
+    font-size: 15px;
+    font-family: helvetica;
+    margin-top:15px;
+    margin-bottom: 15px;
+    height: 20px;
+}
+
+div.opciones img{
+    position: absolute;
+    margin-left: 88px;
+    display: none;
+}
+
+#campo img{
+    margin-left: 70px;
+}
+
+#fecha img{
+    margin-left: 75px;
+}
+
+/*End menu izquierdo*/
+
+/*Begin topMenu*/
+#topMenu{
+    height:35px; 
+    width:840px;
+}
+div.topbottons{
+    float: right;
+    margin-left: 5px;
+    width: 110px;
+    height: 25px;
+    background-color: #E3E3E3;
+    border-radius: 3px;
+    -moz-box-shadow:    1px 1px 1px 1px #ccc;
+    -webkit-box-shadow: 1px 1px 1px 1px #ccc;
+    box-shadow:         1px 1px 1px 1px #ccc;
+    text-align: center;
+    font-family: helvetica;
+    font-size: 15px;
+    padding-top: 5px;
+    cursor: pointer;
+}
+
+#ocultar{
+    cursor: pointer;
+}
+
+div.topbottons:hover{
+    background-color: #E0EFFF;
+
+}
+/*End topMenu*/
+/*Begin header*/
+#header{
+    position: absolute; 
+    top: 0;
+    left: 0;
+    right: 0;
+    height:150px;
+    width: 100%;
+    border-bottom: 1px solid gray;
+    background-image: url('../imagenes/3.png');
+}
+
+#logos{
+    float: right;
+    margin-right: 50px;
+    margin-top: 60px;
+}
+
+#logos img{
+    margin-left: 45px;
+    width: 120px;
+}
+/*End header*/
+
+/*Begin body*/
+#body{
+    width: 840px;
+    height: 100%;
+    min-height: 365px;
+}
+
+#area{
+    width: 1000px;
+    height: 100%;
+    min-height: 400px;
+}
+
+#busqueda{
+    margin-top: 100px;
+    margin-left: 100px;
+    width: 600px;
+    height: 100px;
+}
+
+#barraBusqueda{
+    font-size: 22px;
+    height: 30px;
+    width: 500px;
+}
+
+#barraEstadistica{
+    font-size: 22px;
+    height: 30px;
+    width: 500px;
+}
+
+/*End body*/
+
+/*Begin footer*/
+/*
+#footer{
+    display: block;
+    position: absolute; 
+    height:60px;
+    width: 1000px;
+    border-top: 1px solid #bbb;
+}*/
+/*End footer*/

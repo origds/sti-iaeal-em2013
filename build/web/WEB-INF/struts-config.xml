@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+
+<struts-config>
+  
+    <form-beans>
+        <form-bean name="home" type="servlets.home"/>
+        <form-bean name="Usuario" type="javabeans.Usuario"/>
+        <form-bean name="LoginForm" type="javabeans.LoginForm"/>   
+        <form-bean name="Tratado" type="javabeans.Tratado"/>
+        <form-bean name="BusquedaForm" type="javabeans.BusquedaForm"/>
+        <form-bean name="EstadisticaForm" type="javabeans.EstadisticaForm"/>
+        <form-bean name="Buscable" type="javabeans.Buscable"/>
+    </form-beans>
+    
+    <global-exceptions>
+    
+    </global-exceptions>
+
+    <global-forwards>
+        <forward name="welcome" path="/Welcome.do"/>
+    </global-forwards>
+
+    <action-mappings>
+      
+      <action path="/Welcome" forward="/index.jsp"/>
+
+      <action path="/Index"   forward="/index.jsp"/>
+      
+      <!-- Ir al home -->
+      <action path="/home" type="servlets.home">
+          <forward name="success" path="base"/>
+      </action>
+
+      <!-- BUSQUEDA -->
+
+      <action path="/buscar" name="BusquedaForm" validate="true" scope="request"
+              input= "tratado.buscar" type="servlets.GestionBusqueda" parameter="buscar">
+        <forward name="success" path="busqueda.exito"/>
+        <forward name="failure" path="tratado.buscar"/>
+      </action>
+
+      <action path="/buscarForm" name="BusquedaForm" scope="request"
+              type="servlets.GestionBusqueda" parameter="buscarForm" validate="false">
+        <forward name="success" path="tratado.buscar"/>
+      </action>
+
+      <!-- ESTADISTICA -->
+
+      <action path="/generarEstadistica" name="EstadisticaForm" scope="request"
+              input= "estadistica.form" type="servlets.GestionEstadistica" parameter="generarEstadistica" validate="true">
+        <forward name="success" path="estadistica.exito"/>
+        <forward name="failure" path="estadistica.form"/>
+      </action>
+
+      <action path="/estadisticaForm" name="EstadisticaForm" scope="request"
+              type="servlets.GestionEstadistica" parameter="estadisticaForm" validate="false">
+        <forward name="success" path="estadistica.form"/>
+      </action>
+      
+      <!-- USUARIO -->
+
+      <!-- Iniciar Sesion-->
+      <action path="/iniciarSesion" name="LoginForm" scope="session" input="base"
+              type="servlets.GestionUsuario" parameter="iniciarSesion" validate= "true">
+        <forward name="success" path="principal"/>
+        <forward name="failure" path="principal"/>
+      </action>
+
+      <!-- Cerrar Sesion -->
+      <action path="/cerrarSesion" name="Usuario" scope="request"
+              type="servlets.GestionUsuario" parameter="cerrarSesion" validate="false">
+        <forward name="success" path="base"/>
+      </action>
+
+      <!-- Gestionar -->
+      <action path="/usuario/gestionar" name="Usuario" scope="request"
+              type="servlets.GestionUsuario" parameter="listar" validate="false">
+        <forward name="success" path="usuario.gestionar"/>
+      </action>
+
+      <!-- Crear -->
+      <action path="/usuario/crear" name="Usuario" scope="request"
+              input= "usuario.crear" type="servlets.GestionUsuario" parameter="crear" validate= "true">
+        <forward name="success" path="principal"/>
+        <forward name="failure" path="usuario.crear"/>
+      </action>
+
+      <!-- CrearForm -->
+      <action path="/usuario/crearForm" name="Usuario" scope="request"
+              type="servlets.GestionUsuario" parameter="crearForm" validate="false">
+        <forward name="success" path="usuario.crear"/>
+      </action>
+
+      <!-- Consultar -->
+      <action path="/usuario/consultar" name="Usuario" scope="request"
+              type="servlets.GestionUsuario" parameter="consultar" validate="false">
+        <forward name="success" path="usuario.consultar"/>
+      </action>
+
+      <!-- Actualizar -->
+      <action path="/usuario/actualizar" name="Usuario" scope="request"
+              input= "usuario.actualizar" type="servlets.GestionUsuario" parameter="actualizar" validate="true">
+        <forward name="success" path="principal"/>
+        <forward name="failure" path="usuario.actualizar"/>
+      </action>
+
+      <!-- ActualizarForm -->
+      <action path="/usuario/actualizarForm" name="Usuario" scope="request"
+              type="servlets.GestionUsuario" parameter="actualizarForm" validate="false">
+        <forward name="success" path="usuario.actualizar"/>
+      </action>
+
+      <!-- ActualizarPerfil -->
+      <action path="/usuario/actualizarPerfil" name="Usuario" scope="request"
+              input= "usuario.actualizarPerfil" type="servlets.GestionUsuario" parameter="actualizarPerfil" validate="true">
+        <forward name="success" path="principal"/>   
+        <forward name="failure" path="usuario.actualizarPerfil"/>    
+      </action>
+
+      <!-- ActualizarPerfilForm -->
+      <action path="/usuario/actualizarPerfilForm" name="Usuario" scope="request"
+              type="servlets.GestionUsuario" parameter="actualizarPerfilForm" validate="false">
+        <forward name="success" path="usuario.actualizarPerfil"/>
+      </action>
+
+      <!-- Eliminar -->
+      <action path="/usuario/eliminar" name="Usuario" scope="request"
+              type="servlets.GestionUsuario" parameter="eliminar" validate="false">
+        <forward name="success" path="/usuario/gestionar.do"/>
+        <forward name="failure" path="principal"/> <!-- Cambiar por vista de error -->
+      </action>    
+
+      <!-- TRATADOS -->
+
+      <!-- Gestionar -->
+      <action path="/tratado/gestionar" name="Tratado" scope="request"
+              type="servlets.GestionTratado" parameter="listar" validate="false">
+        <forward name="success" path="tratado.gestionar"/>
+      </action>
+
+      <action path="/tratado/gestionarPendientes" name="Tratado" 
+              type="servlets.GestionTratado" parameter="listarPendientes" validate="false">
+        <forward name="success" path="tratado.gestionarPendientes"/>
+      </action>
+
+      <action path="/tratado/gestionarMisTratados" name="Tratado" 
+              type="servlets.GestionTratado" parameter="listarMisTratados" validate="false">
+        <forward name="success" path="tratado.gestionarMisTratados"/>
+      </action>
+
+      <!-- Crear -->       
+      <action path = "/tratado/crear" name = "Tratado" scope="request"
+             input="tratado.crear" type = "servlets.GestionTratado" parameter = "crear" validate="true">
+       <forward name = "success" path = "principal"/>
+      </action>
+
+      <!-- CrearForm -->
+      <action path="/tratado/crearForm" name="Tratado" scope="request"
+              type="servlets.GestionTratado" parameter="crearForm" validate="false">
+        <forward name="success" path="tratado.crear"/>
+     </action>
+     
+      <!-- Actualizar -->
+     <action path = "/tratado/actualizar" name = "Tratado" scope="request"
+             input="tratado.actualizar" type = "servlets.GestionTratado" parameter = "actualizar" validate="true">
+         <forward name = "success" path = "principal"/>
+         <forward name="failure" path="tratado.actualizar"/> 
+     </action>
+                 
+     <!-- ActualizarForm -->
+      <action path="/tratado/actualizarForm" name="Tratado" scope="request"
+              type="servlets.GestionTratado" parameter="actualizarForm" validate="false">
+        <forward name="success" path="tratado.actualizar"/>
+      </action>
+
+      <!-- Consultar -->
+      <action path="/tratado/consultar" name="Tratado" scope="request"
+              type="servlets.GestionTratado" parameter="consultar" validate="false">
+        <forward name="success" path="tratado.consultar"/>
+      </action>
+
+      <!-- Eliminar -->
+      <action path="/tratado/eliminar" name="Tratado" scope="request"
+              type="servlets.GestionTratado" parameter="eliminar" validate="false">
+        <forward name="success" path="/tratado/gestionar.do"/>
+      </action>
+       
+      <!-- Aprobar -->
+      <action path="/tratado/aprobar" name="Tratado" scope="request"
+              type="servlets.GestionTratado" parameter="aprobar" validate="false">
+        <forward name="success" path="/tratado/gestionarPendientes.do"/>
+      </action>
+
+      <!-- Rechazar -->
+      <action path="/tratado/rechazar" name="Tratado" scope="request"
+              type="servlets.GestionTratado" parameter="rechazar" validate="false">
+        <forward name="success" path="/tratado/gestionarPendientes.do"/>
+      </action>
+
+      <!-- Marcar Pendiente -->
+      <action path="/tratado/marcarPendiente" name="Tratado" scope="request"
+              type="servlets.GestionTratado" parameter="marcarPendiente" validate="false">
+        <forward name="success" path="/tratado/gestionarMisTratados.do"/>
+      </action>
+
+    </action-mappings>
+    
+   
+   
+    <!-- <controller processorClass="org.apache.struts.tiles.TilesRequestProcessor"/> -->
+
+    <controller processorClass="servlets.PreProcesamiento"/>
+    
+    <message-resources parameter="com/myapp/struts/ApplicationResource"/>    
+    
+    <!-- ========================= Tiles plugin ===============================-->
+    <!--
+    This plugin initialize Tiles definition factory. This later can takes some
+    parameters explained here after. The plugin first read parameters from
+    web.xml, thenoverload them with parameters defined here. All parameters
+    are optional.
+    The plugin should be declared in each struts-config file.
+    - definitions-config: (optional)
+    Specify configuration file names. There can be several comma
+    separated file names (default: ?? )
+    - moduleAware: (optional - struts1.1)
+    Specify if the Tiles definition factory is module aware. If true
+    (default), there will be one factory for each Struts module.
+    If false, there will be one common factory for all module. In this
+    later case, it is still needed to declare one plugin per module.
+    The factory will be initialized with parameters found in the first
+    initialized plugin (generally the one associated with the default
+    module).
+    true : One factory per module. (default)
+    false : one single shared factory for all modules
+    - definitions-parser-validate: (optional)
+    Specify if xml parser should validate the Tiles configuration file.
+    true : validate. DTD should be specified in file header (default)
+    false : no validation
+
+    Paths found in Tiles definitions are relative to the main context.
+    -->
+    <plug-in className="org.apache.struts.tiles.TilesPlugin" >
+        <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />      
+        <set-property property="moduleAware" value="true" />
+    </plug-in>
+    
+    <!-- ========================= Validator plugin ================================= -->
+    <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+        <set-property
+            property="pathnames"
+            value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+    </plug-in>
+  
+</struts-config>

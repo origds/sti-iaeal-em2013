@@ -1,0 +1,59 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package servlets;
+
+import java.text.Normalizer;
+import java.text.Normalizer.Form;
+import java.util.ArrayList;
+import javabeans.Buscable;
+import javabeans.EstadisticaForm;
+import javabeans.Tratado;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import models.DatabaseEstadistica;
+import org.apache.struts.action.ActionForm;
+import org.apache.struts.action.ActionForward;
+import org.apache.struts.action.ActionMapping;
+import org.apache.struts.actions.MappingDispatchAction;
+
+/**
+ *
+ * @author betocols
+ */
+public class GestionEstadistica extends MappingDispatchAction {
+
+  /* forward name="success" path="" */
+  private static final String SUCCESS = "success";
+  private static final String FAILURE = "failure";
+  private DatabaseEstadistica db;
+
+  private void createDatabaseEstadistica() {
+    String driver = this.getServlet().getServletContext().getInitParameter("driver");
+    String databaseUrl = this.getServlet().getServletContext().getInitParameter("databaseUrl");
+    db = new DatabaseEstadistica(driver, databaseUrl);
+  }
+
+  public ActionForward generarEstadistica(ActionMapping mapping, ActionForm form,
+          HttpServletRequest request, HttpServletResponse response)
+          throws Exception {
+    EstadisticaForm e = (EstadisticaForm) form;
+    ArrayList<Tratado> t = (ArrayList<Tratado>) request.getSession().getAttribute("tratados");
+    ArrayList<Buscable> b = new ArrayList<Buscable>();
+ 
+    createDatabaseEstadistica();
+    if (!db.get(e, b, t)) {
+      //excepcion
+    }
+    System.out.println(b);
+    request.getSession().setAttribute("resultEstadisticaTratados", b);
+    return mapping.findForward(SUCCESS);
+  }
+
+  public ActionForward estadisticaForm(ActionMapping mapping, ActionForm form,
+          HttpServletRequest request, HttpServletResponse response)
+          throws Exception {
+    return mapping.findForward(SUCCESS);
+  }
+}

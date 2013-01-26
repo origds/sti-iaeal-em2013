@@ -1,0 +1,400 @@
+a, a:hover{
+    text-decoration: none;
+}
+
+/*Tamaño y styling del login*/
+#login{
+    margin-top: -31px;
+    margin-left: 610px;
+    width: 230px;
+
+}
+
+/*Tamaño y styling del registrar*/
+#register{
+
+    margin-left: 370px;
+    margin-top: 100px;
+    width: 300px;
+}
+
+/*Tamaño y styling de crear tratado*/
+#regTratado{
+    width: 500px;
+    margin-top: 100px;
+    margin-left: 300px;
+
+}
+
+/*Titulo crear tratado*/
+#nuevoTratado{
+    font-size: 20px;
+    text-align: left;
+    margin-left: 25px;
+    margin-top: 10px;
+}
+/*Styling de cualquier caja*/
+div.box{
+    position: absolute;
+    font-family: helvetica;
+    font-size: 12px;
+    color: #747481;
+    background-color: #E3E3E3;
+    border-radius: 3px;
+    -moz-box-shadow:    1px 1px 1px 1px #ccc;
+    -webkit-box-shadow: 1px 1px 1px 1px #ccc;
+    box-shadow:         1px 1px 1px 1px #ccc;
+}
+
+/*Division para tener un margen en el box*/
+div.inbox{
+    padding-bottom: 50px;
+}
+
+/*Campos identifiacdores*/
+span.ident{
+    margin-bottom: -5px;
+    margin-left: 27px;
+    float: left;
+    text-align: left;
+    width: 200px;
+}
+
+/*inputs de password y text de login*/
+#login input[type="text"], #login input[type="password"]{
+    width: 200px;
+    height: 20px;
+    margin-top: 10px !important;
+    margin: 3px;
+    border: 1px solid #CFCFE6;
+    border-radius: 3px;
+    color: #A6A6B8;
+}
+
+#campoAvanzada{
+    float: left;
+    margin-left: 30px;
+}
+
+td.desde-hasta input[type="text"]{
+    width: 100px !important;
+}
+
+#search{
+    margin-top: 80px;
+    margin-left: 150px;
+    width: 530px;
+}
+
+#buscar{
+    font-family: helvetica;
+    font-size: 20px;
+    text-align: left;
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+#search input[type="submit"]{
+    cursor: pointer;
+    background-color: #E3E3E3;
+    margin-top: 10px;
+    margin-left: -20px;
+    width: 25px;
+    height: 25px;
+    border: none;
+    background-image: url('../imagenes/search.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#search input[type="text"]{
+    width: 150px;
+    margin-top: 10px !important;
+    margin: 3px;
+    border: 1px solid #CFCFE6;
+    border-radius: 3px;
+    color: #A6A6B8;
+}
+#BarraBusqueda{
+    float: left;
+    margin-left: 30px !important;
+    width: 450px !important;
+    height: 20px;
+}
+#busquedaAvanzada{
+    font-size: 20px;
+    text-align: left;
+    font-family: helvetica;
+    margin-left: 15px !important;
+    margin: 5px;
+    
+}
+/*inputs de password y text de registrar*/
+#register input[type="text"], #register input[type="password"]{
+    color: black !important;
+    width: 250px;
+    height: 20px;
+    margin-top: 10px !important;
+    margin: 3px;
+    border: 1px solid #CFCFE6;
+    border-radius: 3px;
+    color: #A6A6B8;
+}
+
+/*input text de registrar tratado*/
+#regTratado input[type="text"]{
+    color: black !important;
+    width: 200px;
+    height: 20px;
+    margin-top: 10px !important;
+    margin: 3px;
+    border: 1px solid #CFCFE6;
+    border-radius: 3px;
+    color: #A6A6B8;
+}
+
+/*input submti de registrar tratado*/
+#regTratado input[type="submit"]{
+    cursor: pointer;
+    border: none;
+    background-color: #E6E6E3;
+    float: left;
+    margin-left: 12px;
+    color: #747481;
+    font-size: 20px;
+}
+#regTratado textArea{
+    color: black !important;
+    width: 400px;
+    height: 100px;
+    margin-top: 10px !important;
+    margin: 3px;
+    border: 1px solid #CFCFE6;
+    border-radius: 3px;
+    color: #A6A6B8;
+}
+
+#Contenido{
+    text-align: left;
+    margin-left: 50px;
+}
+div.cajaTratado{
+    font-family: helvetica;
+    margin-left: 5px;
+}
+
+/*Division del checkbox de administrador*/
+#admin{
+    float:right;
+    margin-right: 25px;
+
+}
+
+/*Botones de submit*/
+#login input[type="submit"]{
+    cursor: pointer;
+    border: none;
+    background-color: #E6E6E3;
+    float: left;
+    margin-left: 12px;
+    color: #747481;
+    font-size: 15px;
+}
+
+#register input[type="submit"]{
+    cursor: pointer;
+    border: none;
+    background-color: #E6E6E3;
+    float: left;
+    margin-left: 22px;
+    color: #747481;
+    font-size: 15px;
+}
+
+#Registrar{
+    font-size: 20px;
+    text-align: left;
+    margin-left: 25px;
+    margin-top: 10px;
+}
+
+#boton{
+    margin-left: 10px;
+    width: 100px;
+    height: 25px;
+    background-color: #E3E3E3;
+    border-radius: 3px;
+    -moz-box-shadow:    1px 1px 1px 1px #ccc;
+    -webkit-box-shadow: 1px 1px 1px 1px #ccc;
+    box-shadow:         1px 1px 1px 1px #ccc;
+    text-align: center;
+    font-family: helvetica;
+    font-size: 15px;
+    padding-top: 5px;
+}
+
+#ocultar{
+    float: right;
+    font-size: 15px;
+    font-family: helvetica;
+    font-weight: bold;
+    margin-right: 10px;
+    color: #747481;
+}
+
+/*CAJA MENU IZQ*/
+#menu{
+    font-size: 15px !important;
+    position: relative !important;
+    width:150px; 
+    min-height: 400px;
+    float:left; 
+    margin-top: 30px;
+}
+
+#menu input[type="text"]{
+    color: black !important;
+    width: 110px;
+    height: 20px;
+    margin: 3px;
+    border: 1px solid #CFCFE6;
+    border-radius: 3px;
+    color: #A6A6B8;
+}
+
+#menu input[type="checkbox"]{
+   /* margin-left: -70px;*/
+}
+
+#menu input[type="submit"]{
+    cursor: pointer;
+    border: none;
+    background-color: #E6E6E3;
+    float: left;
+    color: #747481;
+    font-size: 17px;
+}
+/*LISTAR USUARIOS*/
+
+#listaUsuario{
+    margin-top: 100px;
+    margin-left: 250px;
+    text-align: center;
+    font-size: 12px;
+}
+
+
+
+#listaUsuario table th{
+    font-size: 15px;
+    border-bottom: 1px solid;
+}
+
+#listaUsuario table td{
+    padding: 5px;
+    border-bottom: 1px solid;
+}
+
+#listaUsuario table{
+    margin-left: 25px;
+    margin-top: 10px;
+}
+
+#listaUsuario input[type="submit"]{
+    cursor: pointer;
+    border: none;
+    background-color: #E6E6E3;
+    float: left;
+    margin-left: 12px;
+    color: #747481;
+    font-size: 15px;
+}
+
+#listaU{
+    font-size: 20px;
+    text-align: left;
+    margin-left: 25px;
+    margin-top: 10px;    
+}
+
+div.list{
+    margin: 10px;
+}
+
+#VacioU{
+    margin-top: 100px;
+    margin-left: 400px;
+    text-align: center;
+    font-size: 18px;
+}
+
+#VacioUsuario{
+    margin-top: 100px;
+    margin-left: 200px;
+    text-align: center;
+    font-size: 18px;
+}
+
+/*TRTADOOOOOOOSOSSOSOSS*/
+
+#listaTratado{
+    margin-top: 100px;
+    margin-left: 270px;
+    text-align: center;
+    font-size: 12px;
+}
+
+#listaTratado table th{
+    font-size: 15px;
+    border-bottom: 1px solid;
+}
+
+#listaTratado table td{
+    padding: 5px;
+    border-bottom: 1px solid;
+}
+
+#listaTratado table{
+    margin-left: 25px;
+    margin-top: 10px;
+}
+
+#listaTratado input[type="submit"]{
+    cursor: pointer;
+    border: none;
+    background-color: #E6E6E3;
+    float: left;
+    margin-left: 12px;
+    color: #747481;
+    font-size: 15px;
+}
+
+#listaT{
+    font-size: 20px;
+    text-align: left;
+    margin-left: 25px;
+    margin-top: 10px;    
+}
+
+#VacioT{
+    margin-top: 100px;
+    margin-left: 400px;
+    text-align: center;
+    font-size: 18px;
+}
+
+#VacioTratado{
+    margin-top: 100px;
+    margin-left: 200px;
+    text-align: center;
+    font-size: 18px;
+}
+
+/*Mensajes de exito*/
+
+#ExitoUsuario, #ExitoTratado, #ExitoActualizarUser, #ExitoActualizarTrat{
+    margin-top: 100px;
+    margin-left: 400px;
+    text-align: center;
+    font-size: 18px;
+}

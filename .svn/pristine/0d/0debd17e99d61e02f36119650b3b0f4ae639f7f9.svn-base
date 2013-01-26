@@ -1,0 +1,201 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package models;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.Scanner;
+import javabeans.Buscable;
+import javabeans.EstadisticaForm;
+import javabeans.Tratado;
+
+/**
+ *
+ * @author betocols
+ */
+public class DatabaseEstadistica {
+
+    private Database database;
+
+    public DatabaseEstadistica(String driver, String databaseUrl) {
+        this.database = Database.getInstance(driver, databaseUrl);
+    }
+
+    public boolean get(EstadisticaForm e, ArrayList<Buscable> result, ArrayList<Tratado> tratados) throws SQLException {
+
+        boolean got = false;
+/*        boolean and = false, or = false;
+
+        String clave, pais, sqlqueryEstadistica;
+        String varPais[];
+        Scanner s, s1;
+
+        sqlqueryEstadistica = "SELECT ";
+
+        //Seleccion dependiendo del atributo tomado como Eje X
+        if (e.getX_pais()) {
+            sqlqueryEstadistica += "pais, count(*) as cont FROM \"STI\".pais WHERE ";
+
+            if (e.getPais().compareTo("") != 0) {
+                pais = e.getPais();
+                varPais = pais.split(",");
+                for (int i = 0; i < varPais.length; i++) {
+                    varPais[i] = varPais[i].trim();
+
+                    if (or) {
+                        sqlqueryEstadistica += "OR ";
+                    }
+
+                    sqlqueryEstadistica += "((\"STI\".pais.pais ILIKE '" + varPais[i] + "') AND (\"STI\".pais.idTP = \"STI\".tratado.id)) ";
+                    or = true;
+                }
+            }
+        } else {
+
+
+            //Select que se hara a la base de datos
+            if (e.getPais().compareTo("") != 0) {
+                sqlqueryEstadistica = "SELECT DISTINCT id, titulo FROM \"STI\".tratado, \"STI\".pais";
+            } else {
+                sqlqueryEstadistica = "SELECT id, titulo FROM \"STI\".tratado";
+            }
+
+            sqlqueryEstadistica += " WHERE ";
+
+            if (e.getAnio().compareTo("") != 0) {
+                if (and) {
+                    sqlqueryEstadistica += "AND ";
+                }
+
+                sqlqueryEstadistica += "(extract(year from firmaFecha) = " + e.getAnio() + ") ";
+                and = true;
+            }
+
+            if (e.getPais().compareTo("") != 0) {
+                if (and) {
+                    sqlqueryEstadistica += "AND ";
+                }
+
+                pais = e.getPais();
+                varPais = pais.split(",");
+                for (int i = 0; i < varPais.length; i++) {
+                    varPais[i] = varPais[i].trim();
+
+                    if (or) {
+                        sqlqueryEstadistica += "OR ";
+                    }
+
+                    sqlqueryEstadistica += "((\"STI\".pais.pais ILIKE '" + varPais[i] + "') AND (\"STI\".pais.idTP = \"STI\".tratado.id)) ";
+                    or = true;
+                }
+                and = true;
+                or = false;
+            }
+
+            if (e.getFechafin().compareTo("") != 0 && e.getFechaini().compareTo("") != 0) {
+                if (and) {
+                    sqlqueryEstadistica += "AND ";
+                }
+
+                sqlqueryEstadistica += "((extract(year from firmaFecha) >= " + e.getFechaini()
+                        + " ) AND (extract(year from firmaFecha) <= " + e.getFechafin()
+                        + ")) ";
+                and = true;
+            }
+
+            if (e.getClaves().compareTo("") != 0) {
+
+                if (and) {
+                    sqlqueryEstadistica += "AND ";
+                }
+
+                sqlqueryEstadistica += "(";
+                clave = e.getClaves();
+                s = new Scanner(clave);
+
+                while (s.hasNext()) {
+
+                    if (or) {
+                        sqlqueryEstadistica += "OR ";
+                    }
+
+                    sqlqueryEstadistica += "(titulo ILIKE '%" + s.next() + "%') ";
+                    or = true;
+
+                }
+
+                sqlqueryEstadistica += ")";
+            }
+
+            if (sqlqueryEstadistica.trim().equals("SELECT id, titulo FROM \"STI\".tratado WHERE")) {
+                return true;
+            }
+
+            System.out.println("");
+            System.out.println("");
+            System.out.println("\n");
+            System.out.println(sqlqueryEstadistica);
+            System.out.println("");
+            System.out.println("");
+            System.out.println("");
+            System.out.println("");
+
+            ArrayList<String> paises = new ArrayList<String>();
+            ArrayList<String> grupos = new ArrayList<String>();
+            Buscable b;
+
+            try {
+                Statement st = database.getConnection().createStatement();
+                ResultSet rs = st.executeQuery(sqlqueryEstadistica);
+                got = rs.next();
+                //System.out.println("---titulo= " + rs.getString("titulo"));
+                int id;
+                if (got) {
+
+                    b = new Buscable();
+                    //Obtiene el primer resultado
+                    if (e.getX_pais()) {
+                        b.setDato(rs.getString("pais"));
+                    } else {
+                        b.setDato(rs.getString("fechaFirma"));
+                    }
+
+                    b.setCont(rs.getInt("cont"));
+                    result.add(b);
+
+                    //Itera sobre el result set para obtener los resultados
+                    while (rs.next()) {
+                        //Imprime por consola
+                        if (e.getX_pais()) {
+                            System.out.println("dato= " + rs.getString("pais"));
+                        } else {
+                            System.out.println("dato= " + rs.getString("fechaFirma"));
+                        }
+                        System.out.println("cont= " + rs.getString("cont"));
+
+                        b = new Buscable();
+
+                        //Obtiene el siguiente resultado
+                        if (e.getX_pais()) {
+                            b.setDato(rs.getString("pais"));
+                        } else {
+                            b.setDato(rs.getString("fechaFirma"));
+                        }
+                        b.setCont(rs.getInt("cont"));
+
+                        result.add(b);
+                    }
+                }
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+
+            got = got && (result.size() != 0);
+*/
+            return got;
+        }
+    }

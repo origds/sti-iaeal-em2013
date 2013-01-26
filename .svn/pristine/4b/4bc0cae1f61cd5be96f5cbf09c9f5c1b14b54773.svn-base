@@ -1,0 +1,740 @@
+a{
+  text-decoration: none;
+
+}
+
+/*Borde de la pagina*/
+#borde{
+  width: 900px;
+  height: 100%;
+  margin-bottom: 100px;
+  padding-bottom: 100px;
+  box-shadow: 6px 0px 50px 7px #888, -6px 0px 50px -7px #888;
+}
+
+/*body de la pagina*/
+#body{
+}
+#header{
+  height: 120px;
+  background-image: url('../imagenes/header1.png');
+  background-repeat: no-repeat;
+}
+
+#topMenu{
+  height: 30px;	
+}
+
+#footer{
+  width: 900px;
+  height: 100px;
+  position: fixed;
+  bottom: 0;
+  background-color: red;
+}
+/*Styling de la barra gris*/
+.barraGris{
+  background-color: #00627A;
+}
+
+
+/*End styling de la barra gris*/
+
+.cajaTitulo{
+  cursor: pointer;
+  text-align: justify;
+  max-width: 400px;
+}
+
+.actualizar, .eliminar{
+  width: 21px;
+  height: 21px;
+  background: transparent !important;
+  background-size: 21px 21px !important;
+  background-repeat: no-repeat !important;
+  float: right !important;
+  margin: 10px;
+  margin-left: 0px;
+  
+}
+
+.actualizar {
+    background-image: url('../imagenes/EditarLapiz.png') !important;  
+}
+
+.eliminar {
+    background-image: url('../imagenes/DeleteX.png') !important;  
+}
+
+/*Styling cajas menu*/
+div.opcionesIzq{
+  cursor: pointer;
+  float: left;
+
+  border-right: 1px solid;
+  border-color: #E6E6B8;
+  width: 130px;
+  height: 30px;
+  color: #FFFFFF;
+  font-family: symbol;
+  font-size: 12px;
+}
+
+div.opcionesDer{
+  cursor: pointer;
+  float: right;
+
+  border-left: 1px solid;
+  border-color: #E6E6B8;
+  width: 130px;
+  height: 30px;
+  color: #FFFFFF;
+  font-family: symbol;
+  font-size: 12px;
+}
+
+div.opcionesVer{
+  cursor: pointer;
+  background-color: #00627A;
+  border-color: #E6E6B8;
+  border-radius: 4px;
+  width: 130px;
+  height: 30px;
+  color: #FFFFFF;
+  font-family: symbol;
+  font-size: 12px;
+}
+
+div.opcionesDer:hover, div.opcionesIzq:hover {
+  background-color:#4D91A2;
+
+}
+
+#opcionesUsuario{
+  position: absolute;
+  background: #FFF;
+  margin-left: 30px;
+  width: 128px;
+  border: solid;
+  border-width: 0px 1px 1px 1px;
+  border-color: #8F8FB2 !important;
+  -webkit-border-bottom-right-radius: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+  -moz-border-radius-bottomright: 4px;
+  -moz-border-radius-bottomleft: 4px;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  
+}
+
+div.opcionUsuario{
+  font-family: helvetica;
+  font-size: 12px;
+  width: 100%;
+  color: #8F8FB2 !important;
+  padding: 10px 0px 10px 0px;
+  overflow: hidden;
+}
+
+
+div.opcionUsuario:hover{
+  background: #E6E6E6;
+}
+
+div.opcionUsuario input[type="submit"]{
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #8F8FB2;
+  font-family: helvetica;
+  font-size: 12px;
+}
+
+/*Herramientas y usuario*/
+
+#herramientas{
+  margin-top: 20px;
+  max-width: 190px;
+  margin-left: 670px;
+}
+#dropDownMenu{
+  cursor: pointer;
+  font-size: 13px;
+  color: #00627A;
+  width: 130px;
+}
+
+#dropDownMenu:hover{
+  text-decoration: underline;
+}
+
+#dropDownMenu table{
+  padding: 10px;
+  padding: 10px;
+  width: 200px;
+}
+
+#dropDownMenu table td {
+  width: 100%;
+  padding: 7px 0px 7px 0px;
+}
+
+#dropDownMenu table td a:hover{
+  background: #CCCCFF;
+}
+
+/*End herramientas*/
+#cajaMenu{
+  width: 130px !important;    
+}
+
+div.texto{
+  text-align: center;
+  padding: 5px;
+  
+  /**-moz-box-shadow: 0 0 5px 5px #888;
+  -webkit-box-shadow: 0 0 5px 5px#888;
+  box-shadow: -1px 0 1px 1px #888;*/
+}
+
+div.texto img{
+  float: right;
+  padding-right: 10px;
+}
+/*End Styling caja menu*/
+
+/*Styling de la caja generica*/
+
+
+
+div.box{ 
+  font-family: helvetica;
+  font-size: 12px;
+  color: #747481;
+  background-color: #00627A;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+  border: 2px solid #00627A;
+}
+
+div.inbox{
+  background-color: #FFFFFF;
+  margin: 0 0 0 20px;
+  paddin-bottom: 10px;
+  border-radius: 4px;
+  border-bottom-left-radius: 0px;
+  -moz-border-radius: 4px;
+  -moz-border-radius-bottomleft: 0px;
+}
+div.box a{
+  float: left;
+  color: #747481;
+  margin-right: 5px;
+}
+.titulo{
+  font-family: helvetica;
+  font-size: 20px;
+  font-weight: bold;
+  color: #009999;
+  float: left;
+  margin-left: 10px;
+}
+
+.subtitulo{
+  font-family: helvetica;
+  font-size: 15px;
+  font-weight: bold;
+  color: #009999;
+  float: left;
+  margin-left: 10px;
+}
+
+
+div.inbox input[type="text"], div.inbox input[type="password"]{
+  width: 90%;
+  margin: 10px 5px 10px 5px;
+  border: 1px solid #CFCFE6;
+  border-radius: 3px;
+  color: #000000;
+}
+div.inbox textarea{
+  margin: 10px 5px 10px 5px;
+  border: 1px solid #CFCFE6;
+  border-radius: 3px;
+  color: black !important;
+}
+div.box input[type="submit"]{
+  cursor: pointer;
+  font-family: helvetica;
+  border: none;
+  color: #FFFFFF;
+  background-color: #00627A;
+  float: left;
+}
+/*End styling caja generica*/
+
+/*Home*/
+#descripcionPagina{
+  float: left;
+  margin-left: 50px;
+  font-family: helvetica; 
+  text-align: justify;
+  width: 550px;
+  height: auto;
+}
+/*End Home*/
+/*Styling login*/
+#login{
+  position: absolute !important;
+  margin-top: 20px;
+  margin-left: 670px;
+  border-radius: 4px 4px 4px 4px !important;
+  z-index: 1000;
+}
+#borderLogin{
+  border-radius: 4px 4px 4px 4px !important;
+}
+#cajaLogin{
+  background-color: #FFFFFF;
+  margin: 3px 3px 3px 3px!important;
+  width: 200px;
+  paddin-bottom: 10px;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
+}
+
+#ocultar{
+  cursor: pointer;
+  margin-top:5px;
+}
+/*End styling login*/
+
+/*Styling barra de Busqueda*/
+#barraBusqueda{
+  margin-top: 30px;
+  margin-left: 50px;
+  width: 600px;
+}
+#barraBusqueda input[type="text"]{
+  height: 20px;
+  width: 500px;
+  margin: 10px 30px 15px 30px;
+  border: 1px solid #CFCFE6;
+  border-radius: 3px;
+  font-size: 15px;
+  color: black !important;
+}
+
+.anioBusqueda {
+  width: 150px !important;
+}
+
+#barraBusqueda input[type="submit"]{
+  font-size: 18px;
+  height: 30px;
+  width: 100px;
+}
+#cajaBusqueda{
+  margin: 1px 1px 30px 2px !important;
+}
+
+#cajaEstadistica{
+  margin: 1px 1px 30px 2px !important;
+}
+
+/*End styling barra de busqueda*/
+
+
+/*Styling caja registro tratado*/
+
+#RegistroTratado{
+  width: 800px;  
+  padding-top: 50px; 
+}
+
+#RegistroTratado td{
+  vertical-align: top;
+}
+
+#RegistroTratado input[type="checkbox"]{
+  margin-top: 20px;
+  margin-left: 15px;
+}
+
+#RegistroTratado input[type="radio"]{
+  margin-top: 17px;
+  margin-left: 10px;
+}
+
+#RegistroTratado fieldset{
+  border: none;
+  width: 195px;
+}
+
+.camposRegistro{
+  padding: 30px;
+}
+
+img.agregarQuitar{
+  margin-top: 17px;
+  margin-left: -10px;
+}
+
+span.textoCheck{
+
+}
+
+.contenido{
+
+  width: 680px !important;
+  max-width: 680px;
+}   
+.contenido textarea{
+
+  width: 100%;
+  height: 150px;
+}
+
+#campoTitulo{
+  width: 680px !important;
+  max-width: 700px;
+}
+#campoTitulo input{
+  width: 100%;
+}
+/*End registroTratado*/
+/* Listar Tratado*/
+
+#tablaTratados{
+  padding: 0px 30px 30px 0px;
+}
+
+#tablaTratados tr{
+  width: 100%;
+}
+
+#tablaTratados th{
+  cursor: pointer;
+}
+
+#tablaTratados td{
+  padding: 20px 50px 0px 50px;
+}
+
+#tablaTratados tr:hover {
+  color: #00627A;
+}
+
+#tablaResultados{
+  font-size: 15px !important;
+  padding: 0px 30px 30px 30px !important;
+}
+
+#tablaResultados td{
+  padding: 20px 50px 0px 50px;
+}
+
+#tablaResultados tr:hover {
+  color: #00627A;
+}
+/* End listar Tratado*/
+/*Lista usuario*/
+#tablaUsuario{
+  padding-top: 30px;
+}
+
+#tablaUsuario th{
+  cursor: pointer;
+}
+/*barraBusqueda*/
+#avanzada{
+  margin-left: 48px;
+  width: 600px;
+  height: 20px;
+}
+
+#avanzada .box {
+  width: 600px;
+}
+
+.hideAvan {
+  display:none;
+}
+
+.showAvan {
+  display: block;
+}
+
+#barraPais{
+  margin: 10px;
+  margin-left: 50px; 
+  float: left; 
+  width: 50px; 
+  height: 100px;
+}
+
+#mostrarAvan{
+  float: right;
+  width: 70px;
+  height: 100px;
+  margin-right: 100px;
+}
+
+.botonBusqueda{
+  margin: 0px 25px 0px 25px;
+  margin-bottom: 10px !important;
+  background: #00627A;
+  text-align: center;
+  height: 30px !important;
+  width: 100px;
+  color: white !important;
+  cursor: pointer;
+  border: #888 1px solid;
+  border-bottom: 0px;
+  border-radius: 3px;
+}
+
+.botonEstadistica{
+  margin: 0px 25px 0px 25px; 
+  background: #00627A;
+  text-align: center;
+  height: 30px !important;
+  width: 100px;
+}
+
+.botonBusqueda a{
+  color: white !important;
+}
+/*Begin registro Usuario*/
+
+#registroUsuario{
+  width: 285px;
+  margin-top: 0px;
+  padding: 0px 0px 0px 0px;
+}
+#styleUsuario fieldset{
+  border: none;
+  text-align: left;
+}
+
+#styleUsuario input[type="text"], input[type="password"]{
+  width: 220px;
+}
+
+#styleUsuario input[type="submit"]{
+  color: #00627A;
+  background-color: #FFFFFF;
+  float: none;
+  padding-left: 30px;
+}
+/*End registro Usuario */
+
+/*Stickers*/
+#stickers{
+  padding-top: 280px;
+  margin-right: 20px;onone;
+}
+.ui-datepicker{
+  background: #FFFFFF;
+  width: 200px;  
+  height: auto;  
+  margin: 5px auto 0;  
+  font: 9pt Arial, sans-serif;  
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);  
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);  
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);  
+}
+
+.ui-datepicker a{
+  text-decoration: none;
+}
+
+.ui-datepicker table {  
+  width: 100%;  
+} 
+
+.ui-datepicker-header {  
+  background-color: #00627A;
+  height: 30px;
+  color: #e0e0e0;  
+  font-weight: bold;  
+  -webkit-box-shadow: inset 0px 1px 1px 0px rgba(250, 250, 250, 2);  
+  -moz-box-shadow: inset 0px 1px 1px 0px rgba(250, 250, 250, .2);  
+  box-shadow: inset 0px 1px 1px 0px rgba(250, 250, 250, .2);  
+  text-shadow: 1px -1px 0px #000;  
+  filter: dropshadow(color=#000, offx=1, offy=-1);  
+  line-height: 30px;  
+  border-width: 1px 0 0 0;  
+  border-style: solid;  
+  border-color: #111;  
+}  
+
+.ui-datepicker-title {  
+  text-align: center;  
+} 
+
+.ui-datepicker-prev, .ui-datepicker-next {  
+  display: inline-block;  
+  width: 30px;  
+  height: 30px;  
+  text-align: center;  
+  cursor: pointer;  
+  background-repeat: no-repeat;  
+  line-height: 600%;  
+  overflow: hidden;  
+}
+
+.ui-datepicker-prev {  
+  float: left;
+  background-image: url('./imagenes/arrowprev.png');  
+  background-position: center 0px;  
+}  
+.ui-datepicker-next {  
+  float: right;
+  background-image: url('./imagenes/arrownext.png');
+  background-position: center 0px;  
+}  
+
+.ui-datepicker thead {  
+  background-color: #f7f7f7;  
+  background-image: -moz-linear-gradient(top,  #f7f7f7 0%, #f1f1f1 100%);  
+  background-image: -webkit-gradient(linear, left top, left bottombottom, color-stop(0%,#f7f7f7), color-stop(100%,#f1f1f1));  
+  background-image: -webkit-linear-gradient(top,  #f7f7f7 0%,#f1f1f1 100%);  
+  background-image: -o-linear-gradient(top,  #f7f7f7 0%,#f1f1f1 100%);  
+  background-image: -ms-linear-gradient(top,  #f7f7f7 0%,#f1f1f1 100%);  
+  background-image: linear-gradient(top,  #f7f7f7 0%,#f1f1f1 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#f1f1f1',GradientType=0 );
+  border-bottom: 1px solid #bbb;  
+} 
+
+.ui-datepicker th {  
+  text-transform: uppercase;  
+  font-size: 5pt;  
+  padding: 2px 0;  
+  color: #666666;  
+  text-shadow: 1px 0px 0px #fff;  
+  filter: dropshadow(color=#fff, offx=1, offy=0);  
+} 
+
+.ui-datepicker tbody td {  
+  padding: 0;  
+  border-right: 1px solid #bbb;  
+} 
+
+.ui-datepicker tbody td:last-child {  
+  border-right: 0px;  
+} 
+
+.ui-datepicker tbody tr {  
+  border-bottom: 1px solid #bbb;  
+}  
+.ui-datepicker tbody tr:last-child {  
+  border-bottom: 0px;  
+}  
+
+.ui-datepicker td span, .ui-datepicker td a {  
+  display: inline-block;  
+  font-weight: bold;  
+  text-align: center;  
+  width: 25px;  
+  height: 25px;  
+  line-height: 30px;  
+  color: #666666;  
+  text-shadow: 1px 1px 0px #fff;  
+  filter: dropshadow(color=#fff, offx=1, offy=1);  
+}  
+.ui-datepicker-calendar .ui-state-default {  
+  background: #ededed;  
+  background: -moz-linear-gradient(top,  #ededed 0%, #dedede 100%);  
+  background: -webkit-gradient(linear, left top, left bottombottom, color-stop(0%,#ededed), color-stop(100%,#dedede));  
+  background: -webkit-linear-gradient(top,  #ededed 0%,#dedede 100%);  
+  background: -o-linear-gradient(top,  #ededed 0%,#dedede 100%);  
+  background: -ms-linear-gradient(top,  #ededed 0%,#dedede 100%);  
+  background: linear-gradient(top,  #ededed 0%,#dedede 100%);  
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#dedede',GradientType=0 );  
+  -webkit-box-shadow: inset 1px 1px 0px 0px rgba(250, 250, 250, .5);  
+  -moz-box-shadow: inset 1px 1px 0px 0px rgba(250, 250, 250, .5);  
+  box-shadow: inset 1px 1px 0px 0px rgba(250, 250, 250, .5);  
+}  
+.ui-datepicker-unselectable .ui-state-default {  
+  background: #f4f4f4;  
+  color: #b4b3b3;  
+}  
+
+.ui-datepicker-calendar .ui-state-hover {  
+  background: #f7f7f7;  
+}  
+
+.ui-datepicker-calendar .ui-state-active {  
+  background: #6eafbf;  
+  -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);  
+  -moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);  
+  box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);  
+  color: #e0e0e0;  
+  text-shadow: 0px 1px 0px #4d7a85;  
+  filter: dropshadow(color=#4d7a85, offx=0, offy=1);  
+  border: 1px solid #55838f;  
+  position: relative;  
+  margin: -1px;  
+}  
+
+.ui-datepicker-calendar td:first-child .ui-state-active {  
+  width: 29px;  
+  margin-left: 0;  
+}  
+.ui-datepicker-calendar td:last-child .ui-state-active {  
+  width: 29px;  
+  margin-right: 0;  
+}  
+/*end Calendario*/
+
+/*Twitters*/
+#twitters{
+  min-width: 500px;
+  float: left;
+  margin-left: 50px;
+  margin-top: 30px;
+  
+}
+
+/*Slider*/
+rslides_tabs {
+  list-style: none;
+  padding: 0;
+  background: rgba(0,0,0,.25);
+  box-shadow: 0 0 1px rgba(255,255,255,.3), inset 0 0 5px rgba(0,0,0,1.0);
+  -moz-box-shadow: 0 0 1px rgba(255,255,255,.3), inset 0 0 5px rgba(0,0,0,1.0);
+  -webkit-box-shadow: 0 0 1px rgba(255,255,255,.3), inset 0 0 5px rgba(0,0,0,1.0);
+  font-size: 18px;
+  list-style: none;
+  margin: 0 auto 50px;
+  max-width: 540px;
+  padding: 10px 0;
+  text-align: center;
+  width: 100%;
+}
+
+.rslides_tabs li {
+  display: inline;
+  float: none;
+  margin-right: 1px;
+}
+
+.rslides_tabs a {
+  width: auto;
+  line-height: 20px;
+  padding: 9px 20px;
+  height: auto;
+  background: transparent;
+  display: inline;
+}
+
+.rslides_tabs li:first-child {
+  margin-left: 0;
+}
+
+.rslides_tabs .rslides_here a {
+  background: rgba(255,255,255,.1);
+  color: #fff;
+  font-weight: bold;
+}

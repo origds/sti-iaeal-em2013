@@ -1,0 +1,1 @@
+INSERT INTO "STI".usuario VALUES ('admin','123456', 'admin', 'admin', 'admin@ejemplo.com', TRUE, '01/01/1970 12:00 PM');

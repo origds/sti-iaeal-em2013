@@ -1,0 +1,311 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package javabeans;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
+/**
+ *
+ * @author carla
+ */
+public class Tratado extends org.apache.struts.validator.ValidatorForm {
+
+  private int id;
+  private String titulo; // NOT NULL
+  private boolean clasificacion; // NOT NULL
+  private boolean aprobado; // NOT NULL
+  private String firmaLugar;
+  private String firmaFecha;
+  private String numGaceta;
+  private String fechaGaceta;
+  private String canjeNotificacion;
+  private boolean deposito;
+  private String fechaDeposito;
+  private String entradaVigor;
+  private String duracion;
+  private int periodo;
+  private int volumen;
+  private int pagina;
+  private String observacion;
+  private String contenido;
+  private String[] paises;
+  private String[] grupos;
+  private int status; // NOT NULL
+  private Usuario usuario; // NOT NULL
+
+  public Tratado() {
+  }
+
+  public Tratado(int id, String titulo, boolean clasificacion, boolean aprobado, String firmaLugar, String firmaFecha, String numGaceta, String fechaGaceta, String canjeNotificacion, boolean deposito, String fechaDeposito, String entradaVigor, String duracion, int periodo, int volumen, int pagina, String observacion, String contenido, String[] paises, String[] grupos, int status, Usuario usuario) {
+    this.id = id;
+    this.titulo = titulo;
+    this.clasificacion = clasificacion;
+    this.aprobado = aprobado;
+    this.firmaLugar = firmaLugar;
+    this.firmaFecha = firmaFecha;
+    this.numGaceta = numGaceta;
+    this.fechaGaceta = fechaGaceta;
+    this.canjeNotificacion = canjeNotificacion;
+    this.deposito = deposito;
+    this.fechaDeposito = fechaDeposito;
+    this.entradaVigor = entradaVigor;
+    this.duracion = duracion;
+    this.periodo = periodo;
+    this.volumen = volumen;
+    this.pagina = pagina;
+    this.observacion = observacion;
+    this.contenido = contenido;
+    this.paises = paises;
+    this.grupos = grupos;
+    this.status = status;
+    this.usuario = usuario;
+  }
+
+  public void setFechas(ResultSet rsT, String datePattern) throws SQLException {
+
+    Calendar firmaFechaCalendar = new GregorianCalendar();
+    Calendar fechaGacetaCalendar = new GregorianCalendar();
+    Calendar canjeNotificacionCalendar = new GregorianCalendar();
+    Calendar fechaDepositoCalendar = new GregorianCalendar();
+    Calendar entradaVigorCalendar = new GregorianCalendar();
+
+    if (rsT.getDate("firmaFecha") != null) {
+      firmaFechaCalendar.setTime(rsT.getDate("firmaFecha"));
+      firmaFecha = Fecha.getFechaAsString(firmaFechaCalendar, datePattern);
+    } else {
+      firmaFecha = "";
+    }
+
+    if (rsT.getDate("fechaGaceta") != null) {
+      fechaGacetaCalendar.setTime(rsT.getDate("fechaGaceta"));
+      fechaGaceta = Fecha.getFechaAsString(fechaGacetaCalendar, datePattern);
+    } else {
+      fechaGaceta = "";
+    }
+
+    if (rsT.getDate("canjeNotificacion") != null) {
+      canjeNotificacionCalendar.setTime(rsT.getDate("canjeNotificacion"));
+      canjeNotificacion = Fecha.getFechaAsString(canjeNotificacionCalendar, datePattern);
+    } else {
+      canjeNotificacion = "";
+    }
+
+    if (rsT.getDate("fechaDeposito") != null) {
+      fechaDepositoCalendar.setTime(rsT.getDate("fechaDeposito"));
+      fechaDeposito = Fecha.getFechaAsString(fechaDepositoCalendar, datePattern);
+    } else {
+      fechaDeposito = "";
+    }
+
+    if (rsT.getDate("entradaVigor") != null) {
+      entradaVigorCalendar.setTime(rsT.getDate("entradaVigor"));
+      entradaVigor = Fecha.getFechaAsString(entradaVigorCalendar, datePattern);
+    } else {
+      entradaVigor = "";
+    }
+
+  }
+
+  // Getters and Setters
+  public int getId() {
+    return id;
+  }
+
+  public void setId(int id) {
+    this.id = id;
+  }
+
+  public String getTitulo() {
+    return titulo;
+  }
+
+  public void setTitulo(String titulo) {
+    this.titulo = titulo;
+  }
+
+  public boolean isClasificacion() {
+    return clasificacion;
+  }
+
+  public void setClasificacion(boolean clasificacion) {
+    this.clasificacion = clasificacion;
+  }
+
+  public boolean isAprobado() {
+    return aprobado;
+  }
+
+  public void setAprobado(boolean aprobado) {
+    this.aprobado = aprobado;
+  }
+
+  public String getFirmaLugar() {
+    return firmaLugar;
+  }
+
+  public void setFirmaLugar(String firmaLugar) {
+    this.firmaLugar = firmaLugar;
+  }
+
+  public String getFirmaFecha() {
+    return firmaFecha;
+  }
+
+  public void setFirmaFecha(String firmaFecha) {
+    this.firmaFecha = firmaFecha;
+  }
+
+  public String getNumGaceta() {
+    return numGaceta;
+  }
+
+  public void setNumGaceta(String numGaceta) {
+    this.numGaceta = numGaceta;
+  }
+
+  public String getFechaGaceta() {
+    return fechaGaceta;
+  }
+
+  public void setFechaGaceta(String fechaGaceta) {
+    this.fechaGaceta = fechaGaceta;
+  }
+
+  public String getCanjeNotificacion() {
+    return canjeNotificacion;
+  }
+
+  public void setCanjeNotificacion(String canjeNotificacion) {
+    this.canjeNotificacion = canjeNotificacion;
+  }
+
+  public boolean isDeposito() {
+    return deposito;
+  }
+
+  public void setDeposito(boolean deposito) {
+    this.deposito = deposito;
+  }
+
+  public String getFechaDeposito() {
+    return fechaDeposito;
+  }
+
+  public void setFechaDeposito(String fechaDeposito) {
+    this.fechaDeposito = fechaDeposito;
+  }
+
+  public String getEntradaVigor() {
+    return entradaVigor;
+  }
+
+  public void setEntradaVigor(String entradaVigor) {
+    this.entradaVigor = entradaVigor;
+  }
+
+  public String getDuracion() {
+    return duracion;
+  }
+
+  public void setDuracion(String duracion) {
+    this.duracion = duracion;
+  }
+
+  public int getPeriodo() {
+    return periodo;
+  }
+
+  public void setPeriodo(int periodo) {
+    this.periodo = periodo;
+  }
+
+  public int getVolumen() {
+    return volumen;
+  }
+
+  public void setVolumen(int volumen) {
+    this.volumen = volumen;
+  }
+
+  public int getPagina() {
+    return pagina;
+  }
+
+  public void setPagina(int pagina) {
+    this.pagina = pagina;
+  }
+
+  public String getObservacion() {
+    return observacion;
+  }
+
+  public void setObservacion(String observacion) {
+    this.observacion = observacion;
+  }
+
+  public String getContenido() {
+    return contenido;
+  }
+
+  public void setContenido(String contenido) {
+    this.contenido = contenido;
+  }
+
+  public String[] getPaises() {
+    return paises;
+  }
+
+  public void setPaises(String[] paises) {
+    this.paises = paises;
+  }
+
+  public String[] getGrupos() {
+    return grupos;
+  }
+
+  public void setGrupos(String[] grupos) {
+    this.grupos = grupos;
+  }
+
+  public int getStatus() {
+    return status;
+  }
+
+  public void setStatus(int status) {
+    this.status = status;
+  }
+
+  public Usuario getUsuario() {
+    return usuario;
+  }
+
+  public void setUsuario(Usuario usuario) {
+    this.usuario = usuario;
+  }
+
+  //Verificacion de si el tratado es bilateral o multilateral
+  //Si se tienen mas de dos paises, o al menos un grupo involucrado en el tratado
+  //entonces la clasificacion pasa a ser multilateral.
+  //Multilateral = True
+  //Bilateral = False
+  public void checkClasificacion() {
+    int i;
+    
+    this.clasificacion = false;
+    
+    for(i=0; i<this.grupos.length; i++ ){
+      if (!this.grupos[i].equals("")){
+        this.clasificacion = true;
+      }
+    }
+    
+    if (this.paises.length >= 2) {
+      this.clasificacion = true;
+    }
+  }
+}
