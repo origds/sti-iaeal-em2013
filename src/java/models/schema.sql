@@ -77,6 +77,7 @@ OIDS=FALSE
 CREATE TABLE "STI".log
 (
   nombreUser VARCHAR(15) NOT NULL,
+  tipoUser VARCHAR(15),
   accion VARCHAR(100) NOT NULL,
   campoBusqueda VARCHAR(800),
   idTratado INT,
