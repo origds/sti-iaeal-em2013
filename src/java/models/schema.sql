@@ -72,6 +72,19 @@ WITH (
 OIDS=FALSE
 );
 
+-- Table: "STI".log
+
+CREATE TABLE "STI".log
+(
+  nombreuser VARCHAR(15) NOT NULL,
+  accion VARCHAR(100) NOT NULL,
+  idTratado INT NOT NULL,
+  fechahora DATETIME NOT NULL,
+)
+WITH (
+OIDS=FALSE
+);
+
 -- Alter Table Usuario
 
 ALTER TABLE "STI".usuario ADD CONSTRAINT "PK_nombre_usuario" PRIMARY KEY (usuario);
@@ -104,7 +117,6 @@ ALTER TABLE "STI".tratado ADD CONSTRAINT "restriccion_fechaDeposito" CHECK (fech
 
 ALTER TABLE "STI".tratado ADD CONSTRAINT "restriccion_entradaVigor" CHECK (entradaVigor<=current_date);
 
-
 -- Alter Table Pais
 
 ALTER TABLE "STI".pais ADD CONSTRAINT "PK_pais" PRIMARY KEY (idTP, pais);
@@ -117,33 +129,13 @@ ALTER TABLE "STI".grupo ADD CONSTRAINT "PK_grupo" PRIMARY KEY (idTG, grupo);
 
 ALTER TABLE "STI".grupo ADD CONSTRAINT "FK_grupo_tratado" FOREIGN KEY (idTG) REFERENCES "STI".tratado;
 
+-- Alter Table Log
+
+ALTER TABLE "STI".log ADD CONSTRAINT "PK_log" PRIMARY KEY (nombreuser, fechahora);
+
+ALTER TABLE "STI".log ADD CONSTRAINT "FK_log_usuario" FOREIGN KEY (nombreuser) REFERENCES "STI".usuario;
+
+ALTER TABLE "STI".log ADD CONSTRAINT "FK_log_tratado" FOREIGN KEY (idTratado) REFERENCES "STI".tratado;
+
 -- Extension que permite desacentuar palabras dentro de la base de datos
 CREATE EXTENSION unaccent;
-
-CREATE TABLE "STI".log
-(
-  tipo VARCHAR(100) NOT NULL,
-  id SERIAL,
-  titulo VARCHAR(800) NOT NULL,
-  clasificacion BOOLEAN NOT NULL DEFAULT FALSE,
-  aprobado BOOLEAN NOT NULL DEFAULT FALSE,
-  firmaLugar VARCHAR(140),
-  firmaFecha DATE,
-  numGaceta VARCHAR(20),
-  fechaGaceta DATE,
-  canjeNotificacion DATE,
-  deposito BOOLEAN DEFAULT FALSE,
-  fechaDeposito DATE,
-  entradaVigor DATE,
-  duracion VARCHAR(120),
-  periodo NUMERIC(4),
-  volumen NUMERIC(4),
-  pagina NUMERIC(4),
-  observacion VARCHAR(320),
-  contenido TEXT,
-  status NUMERIC(1) NOT NULL,
-  usuarioT VARCHAR(15) NOT NULL
-)
-WITH (
-OIDS=FALSE
-);
