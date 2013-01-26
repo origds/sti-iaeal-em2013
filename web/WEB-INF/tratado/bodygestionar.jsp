@@ -77,7 +77,7 @@
             <thead>
               <tr>
                 <th> Título </th>
-                <th> Fecha Firma </th>
+                <th> Fecha Firma (MM/DD/AA)</th>
               </tr>
             </thead>
             <tbody>
