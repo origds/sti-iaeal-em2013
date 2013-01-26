@@ -80,7 +80,7 @@ CREATE TABLE "STI".log
   accion VARCHAR(100) NOT NULL,
   campoBusqueda VARCHAR(800),
   idTratado INT,
-  fechaHora DATETIME NOT NULL
+  fechaHora VARCHAR(50) NOT NULL
 )
 WITH (
 OIDS=FALSE
