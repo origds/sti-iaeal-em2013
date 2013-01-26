@@ -76,10 +76,11 @@ OIDS=FALSE
 
 CREATE TABLE "STI".log
 (
-  nombreuser VARCHAR(15) NOT NULL,
+  nombreUser VARCHAR(15) NOT NULL,
   accion VARCHAR(100) NOT NULL,
-  idTratado INT NOT NULL,
-  fechahora DATETIME NOT NULL,
+  campoBusqueda VARCHAR(800),
+  idTratado INT,
+  fechaHora DATETIME NOT NULL
 )
 WITH (
 OIDS=FALSE
