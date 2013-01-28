@@ -158,7 +158,6 @@ public class DatabaseUsuario {
   
    public Boolean log_iniciar_sesion(Usuario u) {
     try {
-      System.out.println("iniciar sesion en log -----------------------------------------------------------------------------------------------");
       //Calendar fechaLogCalendar = new GregorianCalendar();
       System.out.println("ENTRE EN LOG INICIAR");
       java.util.Date fecha = new Date();
