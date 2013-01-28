@@ -80,7 +80,7 @@ CREATE TABLE "STI".log
   tipoUser VARCHAR(15),
   accion VARCHAR(100) NOT NULL,
   campoBusqueda VARCHAR(800),
-  idTratado INT,
+  ttuloTratado VARCHAR(800),
   fechaHora VARCHAR(50) NOT NULL
 )
 WITH (
