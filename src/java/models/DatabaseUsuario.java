@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.GregorianCalendar;
 import javabeans.Usuario;
 
@@ -106,6 +107,8 @@ public class DatabaseUsuario {
       ex.printStackTrace();
       //Logger.getLogger(DatabaseUsuario.class.getName()).log(Level.SEVERE, null, ex);
     }
+    if (updated > 0)
+        log_iniciar_sesion(u);
     return updated > 0;
   }
 
@@ -151,5 +154,24 @@ public class DatabaseUsuario {
       //Logger.getLogger(DatabaseUsuario.class.getName()).log(Level.SEVERE, null, ex);
     }
     return null;
+  }
+  
+   public Boolean log_iniciar_sesion(Usuario u) {
+    try {
+      System.out.println("iniciar sesion en log -----------------------------------------------------------------------------------------------");
+      //Calendar fechaLogCalendar = new GregorianCalendar();
+      System.out.println("ENTRE EN LOG INICIAR");
+      java.util.Date fecha = new Date();
+      //Fecha.setFechaAsString(fechaLogCalendar, fecha, datePattern);
+      String sqlquery = "INSERT INTO \"STI\".log VALUES (lower('" + u.getUsuario() + "'), '', 'inicio sesion', '', 0, '" + fecha.toString() + "')";
+      System.out.println(sqlquery);
+      Statement st = database.getConnection().createStatement();
+      Integer i = st.executeUpdate(sqlquery);
+      System.out.println("INSERTE EN EL LOG: " + i);
+      return i > 0;
+    } catch (SQLException ex) {
+      ex.printStackTrace();
+    }
+    return false;
   }
 }

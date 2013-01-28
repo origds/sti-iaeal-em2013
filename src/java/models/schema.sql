@@ -137,7 +137,7 @@ ALTER TABLE "STI".log ADD CONSTRAINT "PK_log" PRIMARY KEY (nombreuser, fechahora
 
 ALTER TABLE "STI".log ADD CONSTRAINT "FK_log_usuario" FOREIGN KEY (nombreuser) REFERENCES "STI".usuario;
 
-ALTER TABLE "STI".log ADD CONSTRAINT "FK_log_tratado" FOREIGN KEY (idTratado) REFERENCES "STI".tratado;
+
 
 -- Extension que permite desacentuar palabras dentro de la base de datos
 CREATE EXTENSION unaccent;
