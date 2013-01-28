@@ -9,6 +9,7 @@ import javabeans.Tratado;
 import javabeans.Usuario;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import models.DatabaseLog;
 import models.DatabaseTratado;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
@@ -25,11 +26,18 @@ public class GestionTratado extends MappingDispatchAction {
     private final static String SUCCESS = "success";
     private static final String FAILURE = "failure";
     private DatabaseTratado dt;
+    private DatabaseLog dl;
 
     private void createDatabaseTratado() {
         String driver = this.getServlet().getServletContext().getInitParameter("driver");
         String databaseUrl = this.getServlet().getServletContext().getInitParameter("databaseUrl");
         dt = new DatabaseTratado(driver, databaseUrl);
+    }
+    
+    private void createDatabaseLog() {
+        String driver = this.getServlet().getServletContext().getInitParameter("driver");
+        String databaseUrl = this.getServlet().getServletContext().getInitParameter("databaseUrl");
+        dl = new DatabaseLog(driver, databaseUrl);
     }
 
     public ActionForward crear(ActionMapping mapping, ActionForm form,
@@ -118,6 +126,8 @@ public class GestionTratado extends MappingDispatchAction {
         //Arrojar excepcion o mensaje o redireccion a otra pagina por FAILURE
       }
       request.setAttribute("exito","tratadoModificar");
+      createDatabaseLog();
+      dl.log_actualizar_tratado(t,(Usuario)request.getSession().getAttribute("login"));
       return mapping.findForward(SUCCESS);
     }
 
@@ -142,8 +152,11 @@ public class GestionTratado extends MappingDispatchAction {
     public ActionForward eliminar(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-        Tratado t = (Tratado) form;
         createDatabaseTratado();
+        createDatabaseLog();
+        Tratado t = (Tratado) form;
+        dt.get(t, true);
+        dl.log_eliminar_tratado(t);
         // FALTA COLOCAR LA MISMA VERIFICACION QUE EL ACTUALIZAR FORM
         if (!dt.delete(t)) {
             //Arrojar excepcion o mensaje o redireccion a otra pagina por FAILURE
@@ -198,6 +211,8 @@ public class GestionTratado extends MappingDispatchAction {
     if (!dt.update(t)) {
       //Arrojar excepcion o mensaje o redireccion a otra pagina por FAILURE
     }
+    createDatabaseLog();
+    dl.log_aprobar_tratado(t);
     return mapping.findForward(SUCCESS);
   }
   
@@ -213,6 +228,8 @@ public class GestionTratado extends MappingDispatchAction {
     if (!dt.update(t)) {
       //Arrojar excepcion o mensaje o redireccion a otra pagina por FAILURE
     }
+    createDatabaseLog();
+    dl.log_rechazar_tratado(t);
     return mapping.findForward(SUCCESS);
   }
     
@@ -228,6 +245,8 @@ public class GestionTratado extends MappingDispatchAction {
     if (!dt.update(t)) {
       //Arrojar excepcion o mensaje o redireccion a otra pagina por FAILURE
     }
+    createDatabaseLog();
+    dl.log_agregar_tratado(t);    
     return mapping.findForward(SUCCESS);
   }
     
