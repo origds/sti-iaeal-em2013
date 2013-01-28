@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 import javabeans.Fecha;
 import javabeans.Tratado;
@@ -116,6 +117,10 @@ public class DatabaseTratado {
       } catch (SQLException ex) {
           ex.printStackTrace();
           //Logger.getLogger(DatabaseUsuario.class.getName()).log(Level.SEVERE, null, ex);
+      }
+      if (savedTratado>0 && savedPais>0 && savedGrupo>=0){
+        System.out.println("-----------" + t.getStatus() + "--------");
+        log_agregar_tratado(t);
       }
       return (savedTratado>0 && savedPais>0 && savedGrupo>=0);
   }
@@ -456,6 +461,29 @@ public class DatabaseTratado {
       //Logger.getLogger(DatabaseUsuario.class.getName()).log(Level.SEVERE, null, ex);
     }
     return null;
+  }
+  
+   public Boolean log_agregar_tratado(Tratado t) {
+    try {
+      System.out.println("ENTRE EN LOG AGREGO TRATADO");
+      java.util.Date fecha = new Date();
+      String sqlquery = "";
+      if (t.getStatus() == 0) {
+        sqlquery = "INSERT INTO \"STI\".log VALUES (lower('" + t.getUsuario().getUsuario() + "'), '', 'transcriptor agrego tratado en temporal', '', '" + t.getTitulo() + "', '" + fecha.toString() + "')";
+      } else if (t.getStatus() == 2) {
+        sqlquery = "INSERT INTO \"STI\".log VALUES (lower('" + t.getUsuario().getUsuario() + "'), '', 'administrador agrego tratado', '', '" + t.getTitulo() + "', '" + fecha.toString() + "')";
+      } else if (t.getStatus() == 1) {
+         sqlquery = "INSERT INTO \"STI\".log VALUES (lower('" + t.getUsuario().getUsuario() + "'), '', 'transcriptor marco tratado como \"pendiente\"', '', '" + t.getTitulo() + "', '" + fecha.toString() + "')";    
+      }
+      System.out.println(sqlquery);
+      Statement st = database.getConnection().createStatement();
+      Integer i = st.executeUpdate(sqlquery);
+      System.out.println("INSERTE EN EL LOG: " + i);
+      return i > 0;
+    } catch (SQLException ex) {
+      ex.printStackTrace();
+    }
+    return false;
   }
   
 }
