@@ -68,10 +68,12 @@ public class DatabaseLog {
       System.out.println("ENTRE EN LOG AGREGO TRATADO");
       java.util.Date fecha = new Date();
       String sqlquery = "";
-      if (t.getStatus() == 1) {
-        sqlquery = "INSERT INTO \"STI\".log VALUES (lower('" + t.getUsuario() + "'), '', 'transcriptor agrego tratado en temporal', '', '" + t.getId() + "', '" + fecha.toString() + "')";
+      if (t.getStatus() == 0) {
+        sqlquery = "INSERT INTO \"STI\".log VALUES (lower('" + t.getUsuario().getUsuario() + "'), '', 'transcriptor agrego tratado en temporal', '', '" + t.getTitulo() + "', '" + fecha.toString() + "')";
       } else if (t.getStatus() == 2) {
-        sqlquery = "INSERT INTO \"STI\".log VALUES (lower('" + t.getUsuario() + "'), '', 'administrador agrego tratado', '', '" + t.getId() + "', '" + fecha.toString() + "')";
+        sqlquery = "INSERT INTO \"STI\".log VALUES (lower('" + t.getUsuario().getUsuario() + "'), '', 'administrador agrego tratado', '', '" + t.getTitulo() + "', '" + fecha.toString() + "')";
+      } else if (t.getStatus() == 1) {
+         sqlquery = "INSERT INTO \"STI\".log VALUES (lower('" + t.getUsuario().getUsuario() + "'), '', 'transcriptor marco tratado como \"pendiente\"', '', '" + t.getTitulo() + "', '" + fecha.toString() + "')";    
       }
       System.out.println(sqlquery);
       Statement st = database.getConnection().createStatement();
@@ -84,15 +86,15 @@ public class DatabaseLog {
     return false;
   }
 
-  public Boolean log_actualizar_tratado(Tratado t) {
+  public Boolean log_actualizar_tratado(Tratado t, Usuario u) {
     try {
       System.out.println("ENTRE EN LOG ACTUALIZAR TRATADO");
       java.util.Date fecha = new Date();
       String sqlquery = "";
       if (t.getStatus() == 1) {
-        sqlquery = "INSERT INTO \"STI\".log VALUES (lower('" + t.getUsuario() + "'), '', 'transcriptor actualizo tratado en temporal', '', '" + t.getId() + "', '" + fecha.toString() + "')";
+        sqlquery = "INSERT INTO \"STI\".log VALUES (lower('" + u.getUsuario() + "'), '', 'transcriptor actualizo tratado en temporal', '', '" + t.getTitulo() + "', '" + fecha.toString() + "')";
       } else if (t.getStatus() == 2) {
-        sqlquery = "INSERT INTO \"STI\".log VALUES (lower('" + t.getUsuario() + "'), '', administrador actualizo tratado', '', '" + t.getId() + "', '" + fecha.toString() + "')";
+        sqlquery = "INSERT INTO \"STI\".log VALUES (lower('" + u.getUsuario() + "'), '', administrador actualizo tratado', '', '" + t.getTitulo() + "', '" + fecha.toString() + "')";
       }
       System.out.println(sqlquery);
       Statement st = database.getConnection().createStatement();
@@ -110,11 +112,44 @@ public class DatabaseLog {
       System.out.println("ENTRE EN LOG ELIMINO TRATADO");
       java.util.Date fecha = new Date();
       String sqlquery = "";
+      System.out.println("---"+ t.getStatus()+ "-----");
       if (t.getStatus() == 1) {
-        sqlquery = "INSERT INTO \"STI\".log VALUES (lower('" + t.getUsuario() + "'), '', 'transcriptor elimino tratado en temporal', '', '" + t.getId() + "', '" + fecha.toString() + "')";
+        sqlquery += "INSERT INTO \"STI\".log VALUES (lower('" + t.getUsuario().getUsuario() + "'), '', 'transcriptor elimino tratado en temporal', '', '" + t.getTitulo() + "', '" + fecha.toString() + "')";
       } else if (t.getStatus() == 2) {
-        sqlquery = "INSERT INTO \"STI\".log VALUES (lower('" + t.getUsuario() + "'), '', 'administrador elimino tratado', '', '" + t.getId() + "', '" + fecha.toString() + "')";
+        sqlquery += "INSERT INTO \"STI\".log VALUES (lower('" + t.getUsuario().getUsuario() + "'), '', 'administrador elimino tratado', '', '" + t.getTitulo() + "', '" + fecha.toString() + "')";
       }
+      System.out.println(sqlquery);
+      Statement st = database.getConnection().createStatement();
+      Integer i = st.executeUpdate(sqlquery);
+      System.out.println("INSERTE EN EL LOG: " + i);
+      return i > 0;
+    } catch (SQLException ex) {
+      ex.printStackTrace();
+    }
+    return false;
+  }
+  
+  public Boolean log_aprobar_tratado(Tratado t) {
+    try {
+      System.out.println("ENTRE EN LOG APROBAR TRATADO");
+      java.util.Date fecha = new Date();
+      String sqlquery = "INSERT INTO \"STI\".log VALUES (lower('" + t.getUsuario().getUsuario() + "'), '', 'administrador aprobo tratado de transcriptor', '', '" + t.getTitulo() + "', '" + fecha.toString() + "')";
+      System.out.println(sqlquery);
+      Statement st = database.getConnection().createStatement();
+      Integer i = st.executeUpdate(sqlquery);
+      System.out.println("INSERTE EN EL LOG: " + i);
+      return i > 0;
+    } catch (SQLException ex) {
+      ex.printStackTrace();
+    }
+    return false;
+  }
+  
+  public Boolean log_rechazar_tratado(Tratado t) {
+    try {
+      System.out.println("ENTRE EN LOG APROBAR TRATADO");
+      java.util.Date fecha = new Date();
+      String sqlquery = "INSERT INTO \"STI\".log VALUES (lower('" + t.getUsuario().getUsuario() + "'), '', 'administrador rechazo tratado de transcriptor', '', '" + t.getTitulo() + "', '" + fecha.toString() + "')";
       System.out.println(sqlquery);
       Statement st = database.getConnection().createStatement();
       Integer i = st.executeUpdate(sqlquery);
