@@ -71,7 +71,8 @@ public class GestionLog extends MappingDispatchAction {
            throws Exception {
               createDatabaseLog();
               Tratado t = new Tratado();
-              Boolean logActT = dt.log_actualizar_tratado(t);
+              Usuario u = new Usuario();
+              Boolean logActT = dt.log_actualizar_tratado(t, u);
               if (logActT) {
                 return mapping.findForward(SUCCESS);
               } else {
