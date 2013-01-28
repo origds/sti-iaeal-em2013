@@ -14,6 +14,7 @@ import javabeans.SHAHashing;
 import javabeans.Usuario;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import models.DatabaseLog;
 import models.DatabaseUsuario;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
@@ -29,11 +30,18 @@ public class GestionUsuario extends MappingDispatchAction {
   private final static String SUCCESS = "success";
   private static final String FAILURE = "failure";
   private DatabaseUsuario dt;
+  private DatabaseLog dl;
 
   private void createDatabaseUsuario() {
       String driver = this.getServlet().getServletContext().getInitParameter("driver");
       String databaseUrl = this.getServlet().getServletContext().getInitParameter("databaseUrl");
       dt = new DatabaseUsuario(driver, databaseUrl);
+  }
+  
+  private void createDatabaseLog() {
+      String driver = this.getServlet().getServletContext().getInitParameter("driver");
+      String databaseUrl = this.getServlet().getServletContext().getInitParameter("databaseUrl");
+      dl = new DatabaseLog(driver, databaseUrl);
   }
 
   public ActionForward iniciarSesion(ActionMapping mapping, ActionForm form,
@@ -65,6 +73,8 @@ public class GestionUsuario extends MappingDispatchAction {
   public ActionForward cerrarSesion(ActionMapping mapping, ActionForm form,
           HttpServletRequest request, HttpServletResponse response)
           throws Exception {    
+    createDatabaseLog();
+    dl.log_cerrar_sesion((Usuario)request.getSession().getAttribute("login"));
     request.getSession().invalidate();
     return mapping.findForward(SUCCESS);
   }
