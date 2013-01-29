@@ -72,7 +72,7 @@ WITH (
 OIDS=FALSE
 );
 
--- Table: "STI".log
+-- Table: "STI".log guarda logs
 
 CREATE TABLE "STI".log
 (
@@ -134,10 +134,6 @@ ALTER TABLE "STI".grupo ADD CONSTRAINT "FK_grupo_tratado" FOREIGN KEY (idTG) REF
 -- Alter Table Log
 
 ALTER TABLE "STI".log ADD CONSTRAINT "PK_log" PRIMARY KEY (nombreuser, fechahora);
-
-ALTER TABLE "STI".log ADD CONSTRAINT "FK_log_usuario" FOREIGN KEY (nombreuser) REFERENCES "STI".usuario;
-
-
 
 -- Extension que permite desacentuar palabras dentro de la base de datos
 CREATE EXTENSION unaccent;
