@@ -90,6 +90,8 @@ public class GestionUsuario extends MappingDispatchAction {
       return mapping.findForward(FAILURE); // Revisar
     }
     request.setAttribute("exito","usuarioCrear");
+    createDatabaseLog();
+    dl.log_crear_usuario((Usuario)request.getSession().getAttribute("login"),u);
     return mapping.findForward(SUCCESS);
   }
 
@@ -202,6 +204,9 @@ public class GestionUsuario extends MappingDispatchAction {
           throws Exception {
     Usuario u = (Usuario) form;
     createDatabaseUsuario();
+    createDatabaseLog();
+    dt.get(u, true);
+    dl.log_eliminar_usuario((Usuario) request.getSession().getAttribute("login"));
     if (!dt.delete(u)) {
       return mapping.findForward(FAILURE); // Revisar
     }

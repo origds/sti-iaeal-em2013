@@ -77,10 +77,10 @@ OIDS=FALSE
 CREATE TABLE "STI".log
 (
   nombreUser VARCHAR(15) NOT NULL,
-  tipoUser VARCHAR(15),
+  tipoUser VARCHAR(35),
   accion VARCHAR(100) NOT NULL,
   campoBusqueda VARCHAR(800),
-  ttuloTratado VARCHAR(800),
+  tituloTratado VARCHAR(800),
   fechaHora VARCHAR(50) NOT NULL
 )
 WITH (

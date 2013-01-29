@@ -28,7 +28,7 @@ public class DatabaseLog {
   public DatabaseLog(String driver, String databaseUrl) {
     this.database = Database.getInstance(driver, databaseUrl);
   }
-
+  
   public Boolean log_iniciar_sesion(Usuario u) {
     try {
       //Calendar fechaLogCalendar = new GregorianCalendar();
@@ -63,6 +63,8 @@ public class DatabaseLog {
     return false;
   }
 
+  /*Ademas de guardar el log cuando se agregan tratados tambien guarda el log cuando un tratado se agrega como pendiente*/
+  
   public Boolean log_agregar_tratado(Tratado t) {
     try {
       System.out.println("ENTRE EN LOG AGREGO TRATADO");
@@ -183,9 +185,9 @@ public class DatabaseLog {
       java.util.Date fecha = new Date();
       String sqlquery = "INSERT INTO \"STI\".log VALUES (lower('" + creador.getUsuario() + "'), ";
       if (creado.isAdministrador()) {
-        sqlquery += " 'administrador', 'creo un usuario', '', '', '" + fecha.toString() + "')";
+        sqlquery += " 'administrador \""+creado.getUsuario()+"\"', 'creo un usuario', '', '', '" + fecha.toString() + "')";
       } else {
-        sqlquery += " 'transcriptor', 'creo un usuario', '', '', '" + fecha.toString() + "')";
+        sqlquery += " 'transcriptor \""+creado.getUsuario()+"\"', 'creo un usuario', '', '', '" + fecha.toString() + "')";
       }
       System.out.println(sqlquery);
       Statement st = database.getConnection().createStatement();
@@ -200,7 +202,7 @@ public class DatabaseLog {
 
   public Boolean log_eliminar_usuario(Usuario u) {
     try {
-      System.out.println("ENTRE EN CREAR USUARIO");
+      System.out.println("ENTRE EN ELIMINAR USUARIO");
       java.util.Date fecha = new Date();
       String sqlquery = "INSERT INTO \"STI\".log VALUES (lower('" + u.getUsuario() + "', '', 'elimino un usuario', '', '', '" + fecha.toString() + "')";
       System.out.println(sqlquery);
