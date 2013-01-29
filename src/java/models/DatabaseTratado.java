@@ -477,7 +477,7 @@ public class DatabaseTratado {
       System.out.println(sqlquery);
       Statement st = database.getConnection().createStatement();
       Integer i = st.executeUpdate(sqlquery);
-      System.out.println("INSERTE EN EL LOG: " + i);
+      System.out.println("INSERTE EN EL LOG: " + i); //bien
       return i > 0;
     } catch (SQLException ex) {
       ex.printStackTrace();
