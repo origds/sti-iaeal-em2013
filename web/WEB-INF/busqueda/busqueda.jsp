@@ -89,7 +89,7 @@
                 <td colspan="2">
                   <center>
                     Tipo de Usuario:
-                    <html:select property="claves">
+                    <html:select property="tipoUsuario"> <!--hola oriana-->
                         <option>Estudiante</option>
                         <option>Profesor</option>
                         <option>Otro</option>
