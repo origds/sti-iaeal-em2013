@@ -12,6 +12,7 @@ import javabeans.Tratado;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import models.DatabaseBusqueda;
+import models.DatabaseLog;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
@@ -27,11 +28,18 @@ public class GestionBusqueda extends MappingDispatchAction {
   private static final String SUCCESS = "success";
   private static final String FAILURE = "failure";
   private DatabaseBusqueda db;
-
+  private DatabaseLog dl;
+  
   private void createDatabaseBusqueda() {
     String driver = this.getServlet().getServletContext().getInitParameter("driver");
     String databaseUrl = this.getServlet().getServletContext().getInitParameter("databaseUrl");
     db = new DatabaseBusqueda(driver, databaseUrl);
+  }
+  
+  private void createDatabaseLog() {
+    String driver = this.getServlet().getServletContext().getInitParameter("driver");
+    String databaseUrl = this.getServlet().getServletContext().getInitParameter("databaseUrl");
+    dl = new DatabaseLog(driver, databaseUrl);
   }
 
   public ActionForward buscar(ActionMapping mapping, ActionForm form,
@@ -40,14 +48,13 @@ public class GestionBusqueda extends MappingDispatchAction {
     BusquedaForm b = (BusquedaForm) form;
     ArrayList<Tratado> t = new ArrayList<Tratado>();
     b.setClaves(omitirAcentos(b.getClaves()));
-    System.out.println("----clave= " + b.getClaves());
     b.setPais(omitirAcentos(b.getPais()));
-
+    
     createDatabaseBusqueda();
     if (!db.get(b, t)) {
       //exception
     }
-    System.out.println("---->"+t);
+    
     request.getSession().setAttribute("paises", b.getPais());
     if ((b.getFechaini().compareTo("") != 0) || (b.getFechafin().compareTo("") != 0)) {
       request.getSession().setAttribute("fechafin",b.getFechafin());
@@ -56,7 +63,11 @@ public class GestionBusqueda extends MappingDispatchAction {
       request.getSession().setAttribute("fechafin", b.getAnio());
       request.getSession().setAttribute("fechaini", b.getAnio());
     }
-    request.getSession().setAttribute("tratados", t);
+    request.getSession().setAttribute("tratados", t); 
+    
+    createDatabaseLog();
+    dl.log_buscar_tratado(b.getTipoUsuario(),b.getClaves());
+    
     return mapping.findForward(SUCCESS);
   }
 
