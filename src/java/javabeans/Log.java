@@ -8,7 +8,7 @@ import org.apache.struts.action.ActionForm;
 
 /**
  *
- * @author mary
+ * @author mary blabla
  */
 public class Log extends ActionForm {
     private String usuario;
