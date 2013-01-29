@@ -119,7 +119,6 @@ public class DatabaseTratado {
           //Logger.getLogger(DatabaseUsuario.class.getName()).log(Level.SEVERE, null, ex);
       }
       if (savedTratado>0 && savedPais>0 && savedGrupo>=0){
-        System.out.println("-----------" + t.getStatus() + "--------");
         log_agregar_tratado(t);
       }
       return (savedTratado>0 && savedPais>0 && savedGrupo>=0);
@@ -469,11 +468,11 @@ public class DatabaseTratado {
       java.util.Date fecha = new Date();
       String sqlquery = "";
       if (t.getStatus() == 0) {
-        sqlquery = "INSERT INTO \"STI\".log VALUES (lower('" + t.getUsuario().getUsuario() + "'), '', 'transcriptor agrego tratado en temporal', '', '" + t.getTitulo() + "', '" + fecha.toString() + "')";
+        sqlquery = "INSERT INTO \"STI\".log VALUES ('" + t.getUsuario().getUsuario() + "', '', 'transcriptor agrego tratado en temporal', '', '" + t.getTitulo() + "', '" + fecha.toString() + "')";
       } else if (t.getStatus() == 2) {
-        sqlquery = "INSERT INTO \"STI\".log VALUES (lower('" + t.getUsuario().getUsuario() + "'), '', 'administrador agrego tratado', '', '" + t.getTitulo() + "', '" + fecha.toString() + "')";
+        sqlquery = "INSERT INTO \"STI\".log VALUES ('" + t.getUsuario().getUsuario() + "', '', 'administrador agrego tratado', '', '" + t.getTitulo() + "', '" + fecha.toString() + "')";
       } else if (t.getStatus() == 1) {
-         sqlquery = "INSERT INTO \"STI\".log VALUES (lower('" + t.getUsuario().getUsuario() + "'), '', 'transcriptor marco tratado como \"pendiente\"', '', '" + t.getTitulo() + "', '" + fecha.toString() + "')";    
+         sqlquery = "INSERT INTO \"STI\".log VALUES ('" + t.getUsuario().getUsuario() + "', '', 'transcriptor marco tratado como \"pendiente\"', '', '" + t.getTitulo() + "', '" + fecha.toString() + "')";    
       }
       System.out.println(sqlquery);
       Statement st = database.getConnection().createStatement();
