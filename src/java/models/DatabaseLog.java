@@ -132,7 +132,7 @@ public class DatabaseLog {
     return false;
   }
   
-  //el primer nombre es el user del que escribio tratado y el segundo es el nombre del administrador que lo aprobo
+  /*el primer nombre es el user del que escribio tratado y el segundo es el nombre del administrador que lo aprobo*/
   public Boolean log_aprobar_tratado(Tratado t, Usuario u) {
     try {
       System.out.println("ENTRE EN LOG APROBAR TRATADO");
@@ -149,7 +149,7 @@ public class DatabaseLog {
     return false;
   }
   
-  //el primer nombre es el user del que escribio tratado y el segundo es el nombre del administrador que lo rechazo
+  /*el primer nombre es el user del que escribio tratado y el segundo es el nombre del administrador que lo rechazo*/
   public Boolean log_rechazar_tratado(Tratado t, Usuario u) { 
     try {
       System.out.println("ENTRE EN LOG APROBAR TRATADO");
@@ -168,8 +168,9 @@ public class DatabaseLog {
 
   public Boolean log_buscar_tratado(String tipouser, String campoB) {
     try {
-      System.out.println("ENTRE EN LOG AGREGO TRANS");
+      System.out.println("ENTRE EN LOG BUSCAR");
       java.util.Date fecha = new Date();
+      
       String sqlquery = "INSERT INTO \"STI\".log VALUES ('Usuario', '" + tipouser + "', 'busco tratado', '" + campoB + "', '', '" + fecha.toString() + "')";
       System.out.println(sqlquery);
       Statement st = database.getConnection().createStatement();
