@@ -206,7 +206,7 @@ public class GestionUsuario extends MappingDispatchAction {
     createDatabaseUsuario();
     createDatabaseLog();
     dt.get(u, true);
-    dl.log_eliminar_usuario((Usuario) request.getSession().getAttribute("login"));
+    dl.log_eliminar_usuario((Usuario) request.getSession().getAttribute("login"), u);
     if (!dt.delete(u)) {
       return mapping.findForward(FAILURE); // Revisar
     }
