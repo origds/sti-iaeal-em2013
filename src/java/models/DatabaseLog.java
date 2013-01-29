@@ -111,15 +111,17 @@ public class DatabaseLog {
     return false;
   }
 
-  public Boolean log_eliminar_tratado(Tratado t) {
+  public Boolean log_eliminar_tratado(Tratado t, Usuario u) {
     try {
       System.out.println("ENTRE EN LOG ELIMINO TRATADO");
       java.util.Date fecha = new Date();
       String sqlquery = "";
       if (t.getStatus() == 1) {
-        sqlquery += "INSERT INTO \"STI\".log VALUES ('" + t.getUsuario().getUsuario() + "', '', 'transcriptor elimino tratado en temporal', '', '" + t.getTitulo() + "', '" + fecha.toString() + "')";
+        sqlquery += "INSERT INTO \"STI\".log VALUES ('" + t.getUsuario().getUsuario() + "', '"+ u.getUsuario() +"', 'administrador elimino tratado en temporal', '', '" + t.getTitulo() + "', '" + fecha.toString() + "')";
       } else if (t.getStatus() == 2) {
-        sqlquery += "INSERT INTO \"STI\".log VALUES ('" + t.getUsuario().getUsuario() + "', '', 'administrador elimino tratado', '', '" + t.getTitulo() + "', '" + fecha.toString() + "')";
+        sqlquery += "INSERT INTO \"STI\".log VALUES ('" + t.getUsuario().getUsuario() + "', '"+ u.getUsuario() +"', 'administrador elimino tratado', '', '" + t.getTitulo() + "', '" + fecha.toString() + "')";
+      } else if (t.getStatus() == 0) {
+        sqlquery += "INSERT INTO \"STI\".log VALUES ('" + t.getUsuario().getUsuario() + "', '"+ u.getUsuario() +"', 'transcriptor elimino tratado en temporal', '', '" + t.getTitulo() + "', '" + fecha.toString() + "')";
       }
       System.out.println(sqlquery);
       Statement st = database.getConnection().createStatement();
@@ -204,11 +206,11 @@ public class DatabaseLog {
     return false;
   }
 
-  public Boolean log_eliminar_usuario(Usuario u) {
+  public Boolean log_eliminar_usuario(Usuario u, Usuario eliminado) {
     try {
       System.out.println("ENTRE EN ELIMINAR USUARIO");
       java.util.Date fecha = new Date();
-      String sqlquery = "INSERT INTO \"STI\".log VALUES ('" + u.getUsuario() + "', '', 'elimino un usuario', '', '', '" + fecha.toString() + "')";
+      String sqlquery = "INSERT INTO \"STI\".log VALUES ('" + u.getUsuario() + "', '"+ eliminado.getUsuario() +"', 'elimino un usuario', '', '', '" + fecha.toString() + "')";
       System.out.println(sqlquery);
       Statement st = database.getConnection().createStatement();
       Integer i = st.executeUpdate(sqlquery);
