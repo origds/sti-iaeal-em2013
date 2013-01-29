@@ -156,7 +156,7 @@ public class GestionTratado extends MappingDispatchAction {
         createDatabaseLog();
         Tratado t = (Tratado) form;
         dt.get(t, true);
-        dl.log_eliminar_tratado(t);
+        dl.log_eliminar_tratado(t, (Usuario) request.getSession().getAttribute("login"));
         // FALTA COLOCAR LA MISMA VERIFICACION QUE EL ACTUALIZAR FORM
         if (!dt.delete(t)) {
             //Arrojar excepcion o mensaje o redireccion a otra pagina por FAILURE
