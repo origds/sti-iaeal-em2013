@@ -207,12 +207,12 @@ public class GestionTratado extends MappingDispatchAction {
     if (!dt.get(t, true)) {
       //Arrojar excepcion o mensaje o redireccion a otra pagina por FAILURE
     }
-    t.setStatus(2);
+    t.setStatus(2); // 2 es status aprobado
     if (!dt.update(t)) {
       //Arrojar excepcion o mensaje o redireccion a otra pagina por FAILURE
     }
     createDatabaseLog();
-    dl.log_aprobar_tratado(t);
+    dl.log_aprobar_tratado(t, (Usuario) request.getSession().getAttribute("login"));
     return mapping.findForward(SUCCESS);
   }
   
@@ -224,12 +224,12 @@ public class GestionTratado extends MappingDispatchAction {
     if (!dt.get(t, true)) {
       //Arrojar excepcion o mensaje o redireccion a otra pagina por FAILURE
     }
-    t.setStatus(0);
+    t.setStatus(0); // 0 es status temporal
     if (!dt.update(t)) {
       //Arrojar excepcion o mensaje o redireccion a otra pagina por FAILURE
     }
     createDatabaseLog();
-    dl.log_rechazar_tratado(t);
+    dl.log_rechazar_tratado(t,(Usuario) request.getSession().getAttribute("login"));
     return mapping.findForward(SUCCESS);
   }
     
