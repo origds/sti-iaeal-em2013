@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Scanner;
 import javabeans.BusquedaForm;
 import javabeans.Tratado;
@@ -140,7 +141,7 @@ public class DatabaseBusqueda {
       //System.out.println("---titulo= " + rs.getString("titulo"));
       int id;
       if (got) {
-
+        
         t = new Tratado();
         t.setId(rs.getInt("id"));
         t.setTitulo(rs.getString("titulo"));
@@ -167,6 +168,22 @@ public class DatabaseBusqueda {
     return got;
   }
 
+   public Boolean log_buscar_tratado(String tipouser, String campoB) {
+    try {
+      System.out.println("ENTRE EN LOG BUSCAR TRATADO");
+      java.util.Date fecha = new Date();
+      String sqlquery = "INSERT INTO \"STI\".log VALUES ('Usuario', '" + tipouser + "', 'busco tratado', '" + campoB + "', '', '" + fecha.toString() + "')";
+      System.out.println(sqlquery);
+      Statement st = database.getConnection().createStatement();
+      Integer i = st.executeUpdate(sqlquery);
+      System.out.println("INSERTE EN EL LOG: " + i);
+      return i > 0;
+    } catch (SQLException ex) {
+      ex.printStackTrace();
+    }
+    return false;
+  }
+   
   static private String fromChinesetoGregorian(String date) {
     String items[];
 
