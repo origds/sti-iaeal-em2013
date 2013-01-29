@@ -107,8 +107,9 @@ public class DatabaseUsuario {
       ex.printStackTrace();
       //Logger.getLogger(DatabaseUsuario.class.getName()).log(Level.SEVERE, null, ex);
     }
-    if (updated > 0)
-        log_iniciar_sesion(u);
+    if (updated > 0) {
+      log_iniciar_sesion(u);
+    }
     return updated > 0;
   }
 
@@ -162,7 +163,7 @@ public class DatabaseUsuario {
       System.out.println("ENTRE EN LOG INICIAR");
       java.util.Date fecha = new Date();
       //Fecha.setFechaAsString(fechaLogCalendar, fecha, datePattern);
-      String sqlquery = "INSERT INTO \"STI\".log VALUES (lower('" + u.getUsuario() + "'), '', 'inicio sesion', '', '', '" + fecha.toString() + "')";
+      String sqlquery = "INSERT INTO \"STI\".log VALUES ('" + u.getUsuario() + "', '', 'inicio sesion', '', '', '" + fecha.toString() + "')";
       System.out.println(sqlquery);
       Statement st = database.getConnection().createStatement();
       Integer i = st.executeUpdate(sqlquery);
