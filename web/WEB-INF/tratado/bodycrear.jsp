@@ -35,7 +35,7 @@
     $( ".fecha input" ).datepicker( 
     "option", "dayNamesMin", [ "Dom", "Lun", "Mar", "Mie", "Juev", "Vier", "Sab" ] 
   );
-    $( ".fecha input" ).datepicker( "option", "yearRange", "1800:2012" );
+    $( ".fecha input" ).datepicker( "option", "yearRange", "1800:+100" );
                 
         
   });

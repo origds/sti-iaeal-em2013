@@ -89,7 +89,7 @@
           <td>
             <fieldset id="divisionPais">
               <legend>País(es)</legend>
-              <!-- <input type="text" name="paises" /> -->
+              <!--<input type="text" name="paises" -->
               <!-- Dropdown con los paises-->
               <logic:iterate id="element" name="tratado" property="paises" indexId="index">
                 ${element}</br>
