@@ -17,6 +17,7 @@ public class BusquedaForm extends ValidatorForm {
     private String fechaini;
     private String fechafin;
     private String claves;
+    private String tipoUsuario; //nuevo
     private boolean Mgrupo;
     private boolean Mpais;
     private boolean Mfecha;
@@ -24,12 +25,13 @@ public class BusquedaForm extends ValidatorForm {
     public BusquedaForm() {
     }
 
-    public BusquedaForm(String pais, String anio, String fechaini, String fechafin, String claves, boolean Mgrupo, boolean Mpais, boolean Mfecha) {
+    public BusquedaForm(String pais, String anio, String fechaini, String fechafin, String claves, String tipoUsuario, boolean Mgrupo, boolean Mpais, boolean Mfecha) {
         this.pais = pais;
         this.anio = anio;
         this.fechaini = fechaini;
         this.fechafin = fechafin;
         this.claves = claves;
+        this.tipoUsuario = tipoUsuario;
         this.Mgrupo = Mgrupo;
         this.Mpais = Mpais;
         this.Mfecha = Mfecha;
@@ -73,6 +75,14 @@ public class BusquedaForm extends ValidatorForm {
 
     public void setClaves(String claves) {
         this.claves = claves;
+    }
+    
+    public String getTipoUsuario() {
+        return tipoUsuario;
+    }
+
+    public void setTipoUsuario(String tipoUsuario) {
+        this.tipoUsuario = tipoUsuario;
     }
 
     public boolean isMgrupo() {
