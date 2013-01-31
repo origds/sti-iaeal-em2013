@@ -12,9 +12,10 @@
         <form-bean name="Usuario" type="javabeans.Usuario"/>
         <form-bean name="LoginForm" type="javabeans.LoginForm"/>   
         <form-bean name="Tratado" type="javabeans.Tratado"/>
+ <!--       <form-bean name="EstadisticaForm" type="javabeans.EstadisticaForm"/>   -->
         <form-bean name="BusquedaForm" type="javabeans.BusquedaForm"/>
-        <form-bean name="EstadisticaForm" type="javabeans.EstadisticaForm"/>
         <form-bean name="Buscable" type="javabeans.Buscable"/>
+         <form-bean name="ClaseEstadistica" type="javabeans.ClaseEstadistica"/>
     </form-beans>
     
     <global-exceptions>
@@ -50,18 +51,25 @@
       </action>
 
       <!-- ESTADISTICA -->
-
+<!--
       <action path="/generarEstadistica" name="EstadisticaForm" scope="request"
-              input= "estadistica.form" type="servlets.GestionEstadistica" parameter="generarEstadistica" validate="true">
+              input= "estadistica.form" type="servlets.GestionEstadistica" parameter="generarEstadistica" validate="false">
+        <forward name="success" path="estadistica.exito"/>
+        <forward name="failure" path="estadistica.form"/>
+      </action>
+ -->     
+       <action path="/BuscarEstadistica" name="ClaseEstadistica" scope="request"
+              type="servlets.GestionEstadistica" validate="false">
         <forward name="success" path="estadistica.exito"/>
         <forward name="failure" path="estadistica.form"/>
       </action>
 
-      <action path="/estadisticaForm" name="EstadisticaForm" scope="request"
+
+      <action path="/estadisticaForm" name="ClaseEstadistica" scope="request"
               type="servlets.GestionEstadistica" parameter="estadisticaForm" validate="false">
         <forward name="success" path="estadistica.form"/>
       </action>
-      
+     
       <!-- USUARIO -->
 
       <!-- Iniciar Sesion-->

@@ -14,52 +14,69 @@
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 
 <!DOCTYPE html>
+
+        
+	<link href="../../interfaz/CSS/basic.css" type="text/css" rel="stylesheet" />
+	<script type="text/javascript" src="http://filamentgroup.github.com/EnhanceJS/enhance.js"></script>	
+	<script type="text/javascript">
+		// Run capabilities test
+		enhance({
+			loadScripts: [
+				{src: '../../interfaz/javaScript/excanvas.js', iecondition: 'all'},
+				'../../interfaz/javaScript/jquery.js',
+				'../../interfaz/javaScript/visualize.jQuery.js',
+				'../../interfaz/javaScript/example-editable.js'
+			],
+			loadStyles: [
+				'../../interfaz/CSS/visualize.css',
+				'../../interfaz/CSS/visualize-dark.css'
+			]	
+		});   
+    </script>
+    <style type="text/css">
+    	table { float: left; margin: 140px 40px 0 0;  }
+    	td input { border: 1px solid orange; background: yellow; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; position: absolute; padding: 8px 0; text-align: center; width: 60px; margin: -17px 0 0 4px; font-size: 1.4em; }
+    	td.input { padding: 0; position: relative; }
+    	.visualize { float: left; }
+    </style>
+
+
+
 <div id="body">
   <div id="barraBusqueda">
     <div class="box"> 
       <div class="inbox" style="height: 450px;" id="cajaBusqueda">
         <div class="titulo">Resultado Estadistica</div></br>
-        <table style="width:400px; padding-top: 20px; padding-bottom: 30px; font-size: 15px;">
-          <%
-            int i = 0;
-            String dato[] = (String[]) request.getSession().getAttribute("elemento");
-            int cont[] = (int[]) request.getSession().getAttribute("conteo");
-            double porc[] = (double[]) request.getSession().getAttribute("porcentaje");
-%>
-          <thead style="font-weight: 900;">
-            <tr>
-              <td>Datos</td>
-              <td>Tratados</td>
-              <td>Porcentaje</td>
-            </tr>
-            <tr></tr>
-            <tr></tr>
-          </thead>
-          <tbody>
-            <%
-              for (i = 0; i < dato.length; i++) {
-            %>
-            <tr>
-              <td valign="top">
-                <div id="cajaTitulo">
-                  <%= dato[i]%>
-                </div>
-              </td>
-              <td valign="top">
-                <%= cont[i]%>
-              </td>
-              <td valign="top">
-                <%= porc[i]%>%
-              </td>
-            </tr>
-            <% }%>
-          </tbody>
-        </table>
-        <fieldset style="border:none; border-top: 2px solid #00627A; width: 550px;">
-          <div class="titulo" style="margin-top: 20px;">Grafica</div>
-          <table style="width: 400px; padding-top: 20px;">
-          </table>
-        </fieldset>
+        
+         <logic:present name="est">
+                    
+                  
+              
+             <table style="width:813px;heigth:101px;margin:12px -11px 0 0">
+	<caption></caption>
+	<thead>
+		<tr>
+			<th scope="col">Paises</th>
+			<th scope="col">Numero Tratados</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<th scope="row"><bean:write name="est" property="pais1"/></th>
+			<td><bean:write name="est" property="primero"/></td>
+		</tr>
+		<tr>
+			<th scope="row"><bean:write name="est" property="pais2"/></th>
+			<td><bean:write name="est" property="segundo"/></td>
+		</tr>
+		<tr>
+			<th scope="row"><bean:write name="est" property="pais3"/></th>
+			<td><bean:write name="est" property="tercero"/></td>
+		</tr>		
+	</tbody>
+</table>       
+</logic:present> 
+        
       </div>
     </div>
   </div>
