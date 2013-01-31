@@ -13,7 +13,7 @@ import org.apache.struts.action.ActionForm;
 public class Log extends ActionForm {
     private String usuario;
     private String accion;
-    private int idTratado;
+    private String idTratado;
     private String fecha_hora;
     private String tipoUser;
     private String campoBusqueda;
@@ -21,7 +21,7 @@ public class Log extends ActionForm {
     public Log(){
     }
     
-    public Log(String usuario, String accion, int idTratado, String fecha_hora, String tipo, String campo){
+    public Log(String usuario, String accion, String idTratado, String fecha_hora, String tipo, String campo){
         this.usuario = usuario;
         this.accion = accion;
         this.idTratado = idTratado;
@@ -42,11 +42,11 @@ public class Log extends ActionForm {
         return fecha_hora;
     }
 
-    public int getIdTratado() {
+    public String getIdTratado() {
       return idTratado;
     }
 
-    public void setIdTratado(int idTratado) {
+    public void setIdTratado(String idTratado) {
       this.idTratado = idTratado;
     }
 

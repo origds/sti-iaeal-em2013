@@ -6,7 +6,10 @@ import javabeans.Log;
 import javabeans.Tratado;
 import javabeans.Usuario;
 import javabeans.BusquedaForm;
+import javabeans.ClaseEstadistica;
+import javabeans.est;
 import javax.servlet.http.HttpServletRequest;
+import models.DatabaseEstadistica;
 import models.DatabaseLog;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
@@ -46,10 +49,13 @@ public class GestionLog extends MappingDispatchAction {
     public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request, HttpServletResponse response)
            throws Exception {
               createDatabaseLog();
-              ArrayList<Log> lista = dt.list_log();
+              ArrayList<Log> lista = DatabaseLog.getInstance().list_log();
               request.setAttribute("log", lista);
-              System.out.println("Tamaño de log recibidos"+ lista.size());
+              if (lista==null)
+              System.out.println("Tamaño de log recibidos 0");
               return mapping.findForward(SUCCESS);
+
+
     }
   
 }

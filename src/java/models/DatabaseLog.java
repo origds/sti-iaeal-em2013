@@ -4,6 +4,8 @@
  */
 package models;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -25,6 +27,36 @@ public class DatabaseLog {
   private Database database;
   private String datePattern = "MM/dd/yyyy";
 
+  static private Connection conexion;
+  
+  protected DatabaseLog() {
+    }
+    static private DatabaseLog instance = null;
+
+    static public DatabaseLog getInstance() {
+        if (null == DatabaseLog.instance) {
+            DatabaseLog.instance = new DatabaseLog();
+        }
+        conectar();
+        return DatabaseLog.instance;
+    }
+
+    public static boolean conectar() {
+        try {
+            Class.forName("org.postgresql.Driver");
+            conexion = DriverManager.getConnection(
+                    "jdbc:postgresql://localhost:5432/postgres",
+                    "postgres",
+                    "postgres");
+            return true;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return false;
+    }
+  
+  
+  
   public DatabaseLog(String driver, String databaseUrl) {
     this.database = Database.getInstance(driver, databaseUrl);
   }
@@ -231,14 +263,18 @@ public class DatabaseLog {
       Statement st = Database.getConnection().createStatement();
       ResultSet rs = st.executeQuery(sqlquery);
       while (rs.next()) {
-        Log log = new Log(rs.getString("usuario"),
+        Log log = new Log(rs.getString("nombreUser"),
                 rs.getString("accion"),
-                rs.getInt("idTratado"),
-                rs.getString("fecha_hora"),
+                rs.getString("tituloTratado"),
+                rs.getString("fechaHora"),
                 rs.getString("tipoUser"),
                 rs.getString("campoBusqueda"));
+        
+        
         l.add(log);
       }
+      if (l == null)
+          System.out.println("VACIAAAAAAAAAAAAAAAAAAAAA \n");
       return l;
     } catch (SQLException ex) {
       ex.printStackTrace();

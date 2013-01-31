@@ -31,6 +31,12 @@
         <div class="texto">Incorporar Tratado</div>
       </div>
     </html:link>
+    
+    <html:link action="/ListarLog">
+      <div class="opcionesDer">
+        <div class="texto">Logs</div>
+      </div>
+    </html:link> 
 
     <logic:equal name="login" property="administrador" value="true" scope="session">
       <html:link action="/usuario/crearForm">
