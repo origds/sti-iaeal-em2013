@@ -143,7 +143,7 @@ public class DatabaseTratado {
         + "firmaFecha = '" + c.getTime() + "'";
     }
 
-    System.out.println("SQLQUERIES:");
+    System.out.println("*********SQLQUERIES:");
 
     
     try {
@@ -189,7 +189,7 @@ public class DatabaseTratado {
         }
 
         ArrayList<String> paises = new ArrayList<String>();
-        ArrayList<String> grupos = new ArrayList<String>();
+        ArrayList<String> grupos = new ArrayList<String>();       
         
         st = Database.getConnection().createStatement();
         rs = st.executeQuery(sqlqueryPais);
@@ -198,6 +198,9 @@ public class DatabaseTratado {
           paises.add(rs.getString("pais"));
         }
 
+        for(int i = 0; i < paises.size(); i++){
+          System.out.println("***** PAISES: " +paises.get(i));
+        }
         st = Database.getConnection().createStatement();
         rs = st.executeQuery(sqlqueryGrupo);
 
