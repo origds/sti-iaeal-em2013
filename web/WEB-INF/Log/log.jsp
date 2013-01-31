@@ -69,7 +69,7 @@
   <logic:notEmpty name="log">
     <div id="listarTratados" style="padding: 50px 7px 0px 7px">
         <div id="resultbusq" class="inbox" style="width: 800px;">
-          <div class="titulo" style="width: 100%; text-align: left;"> Resultados de la Busqueda</div>
+          <div class="titulo" style="width: 100%; text-align: left;"> Historial</div>
           <br>
           <br>
           <br>
@@ -113,6 +113,3 @@
     </div>
   </logic:notEmpty>
 </logic:present>
-<logic:notPresent name="tratados">
-  <h1>No hay registros</h1>
-</logic:notPresent>

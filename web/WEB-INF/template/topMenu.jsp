@@ -12,13 +12,21 @@
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 
 <div class="barraGris" id="topMenu">
-  <html:link action="/buscarForm">
+  <html:link action="/buscarForm">Logs
     <div class="opcionesIzq">
       <div class="texto">
         Búsqueda
       </div>						
     </div>
   </html:link>
+    
+  <html:link action="/estadisticaForm">
+    <div class="opcionesIzq">
+      <div class="texto">
+        Estadística
+      </div>						
+    </div>
+  </html:link>  
 
     <html:link action="/home">
       <div class="opcionesDer">
@@ -34,7 +42,7 @@
     
     <html:link action="/ListarLog">
       <div class="opcionesDer">
-        <div class="texto">Logs</div>
+        <div class="texto">Historial</div>
       </div>
     </html:link> 
 
