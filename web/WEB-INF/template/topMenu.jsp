@@ -12,7 +12,7 @@
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 
 <div class="barraGris" id="topMenu">
-  <html:link action="/buscarForm">Logs
+  <html:link action="/buscarForm">
     <div class="opcionesIzq">
       <div class="texto">
         Búsqueda
