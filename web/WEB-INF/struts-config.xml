@@ -36,6 +36,8 @@
       <action path="/home" type="servlets.home" scope="request">
        <forward name="success" path="principal" ></forward>
      </action>
+     
+     <!-- LOG -->
       
       <action path="/ListarLog" type="servlets.GestionLog" scope="request" 
         name="Log">
