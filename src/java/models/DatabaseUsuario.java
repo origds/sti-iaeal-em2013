@@ -163,7 +163,7 @@ public class DatabaseUsuario {
       System.out.println("ENTRE EN LOG INICIAR");
       java.util.Date fecha = new Date();
       //Fecha.setFechaAsString(fechaLogCalendar, fecha, datePattern);
-      String sqlquery = "INSERT INTO \"STI\".log VALUES ('" + u.getUsuario() + "', '', 'inicio sesion', '', '', '" + fecha.toString() + "')";
+      String sqlquery = "INSERT INTO \"STI\".log VALUES ('" + u.getUsuario() + "', '', 'Inició Sesión', '', '', '" + fecha.toString() + "')";
       System.out.println(sqlquery);
       Statement st = database.getConnection().createStatement();
       Integer i = st.executeUpdate(sqlquery);
