@@ -82,7 +82,7 @@
               </td>
             </tr>
           </table>
-          <fieldset style="border:none; border-top: 2px solid #00627A; width: 550px;">
+          <fieldset style="border:none; border-top: 2px solid #00627A; width: 520px;">
             <div class="titulo" style="margin-top: 20px;">Avanzada</div>
             <table style="width: 400px; padding-top: 20px;">
               <tr>
@@ -151,15 +151,15 @@
             </table>
           </fieldset>
           <fieldset style="border:none">
-            <div class="botonBusqueda" style="float:left; font-size: 12pt; padding-left: 15px; padding-bottom: 0px;">
+            <div class="botonBusqueda" style="float:left; ">
               <html:link action="/tratado/gestionar">
                 Ver Todos
               </html:link>
             </div>
             </td>
             <td>
-              <div class="botonBusqueda" style="float: right;">
-                <html:submit value="Buscar"/>
+              <div style="float: right;">
+                <html:submit value= "Buscar"/>
               </div>
             </html:form> 
             </div>

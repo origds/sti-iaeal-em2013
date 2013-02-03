@@ -24,7 +24,7 @@
         <div class="titulo">Generar estadística de la búsqueda realizada.</div>
 <html:form method="POST" action="/BuscarEstadistica">                        
                         <p>           
-                        
+                      <br> <br> <br>
                       1er Pais &nbsp;
                         <html:select name="ClaseEstadistica" property="codigo1">
                             <option>Abjasia</option>
@@ -715,7 +715,10 @@
                             <option>Zimbabue</option>
                         </html:select>
                         <br> <br> <br>
-                        <html:submit> Generar </html:submit>
+                        <div style="float: center;">
+                            <html:submit> Generar </html:submit>
+                        </div>
+                        <br><br>
                 </html:form> 
       </div>
     </div>
