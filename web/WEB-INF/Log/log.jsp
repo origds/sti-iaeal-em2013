@@ -50,7 +50,7 @@
 <logic:notPresent name="log">  <%--Si no hay tratados que mostrar--%>
   <div id="noHayTratados" style="margin: auto; font-size: 30px; font-family: Helvetica; color: grey;">
     </br>
-    El log no tiene registros
+    El Log no tiene registros
     </br>
     </br>
   </div>
@@ -60,7 +60,7 @@
   <logic:empty name="log">
     <div id="noHayTratados" style="margin: auto; font-size: 30px; font-family: Helvetica; color: grey;">
       </br>
-      El log no tiene registros
+      El Log no tiene registros
       </br>
       </br>
     </div>
@@ -78,23 +78,27 @@
           <table id="tablaResultados" style="padding-top: 40px !important">
             <thead>
               <tr>
-                <th> Usuario </th>
-                <th> Accion </th>
-                <th> Fecha(MM/DD/AA) </th>
+                <th>Fecha</th>  
+                <th>Usuario</th>
+                <th>Accion</th>
+                <th>Busqueda</th>
               </tr>
             </thead>
             <tbody>
               <logic:iterate name="log" id="tratado">
                 <tr>
                   <td valign="top">
+                    <bean:write name="tratado" property="fecha_hora"></bean:write>
+                  </td>  
+                  <td valign="top">
                     <div class="cajaTitulo">
-                        <bean:write name="tratado" property="usuario"></bean:write><!--styling es consultaTratado-->
+                        <bean:write name="tratado" property="usuario"></bean:write> &nbsp; <bean:write name="tratado" property="tipoUser"></bean:write><!--styling es consultaTratado-->
                     </div>
                   </td>
                   <td valign="top"><bean:write name="tratado" property="accion"></bean:write></td>
-                  <td valign="top">
-                    <bean:write name="tratado" property="fecha_hora"></bean:write>
-                  </td>
+                  <td valign="top"><bean:write name="tratado" property="campoBusqueda"></bean:write></td>
+                  
+                  
                 </tr>
               </logic:iterate>
             </tbody>
