@@ -1,6 +1,5 @@
 a{
   text-decoration: none;
-
 }
 
 /*Borde de la pagina*/
@@ -223,18 +222,18 @@ div.box{
   font-family: helvetica;
   font-size: 12px;
   color: #747481;
-  background-color: #00627A;
+  background-color: #0099CC;
   border-radius: 4px;
   -moz-border-radius: 4px;
   border: 2px solid #00627A;
 }
 #resultbusq{
-    font-family: helvetica;
+  font-family: helvetica;
   font-size: 12px;
   color: #747481;
   border-radius: 4px;
   -moz-border-radius: 4px;
-  border: 2px solid #00627A;
+  border: 2px solid #0099CC;
 }
 
 div.inbox{
@@ -334,11 +333,11 @@ div.box input[type="submit"]{
   margin-top: 30px;
   margin-left: 50px;
   width: 600px;
-  height: 800px !important;
+  /* height: 800px !important; */
 }
 #barraBusqueda input[type="text"]{
   height: 20px;
-  width: 500px;
+  width: 400px;
   margin: 10px 30px 15px 30px;
   border: 1px solid #CFCFE6;
   border-radius: 3px;
@@ -511,8 +510,6 @@ span.textoCheck{
   margin-bottom: 10px !important;
   background: #00627A;
   text-align: center;
-  height: 30px !important;
-  width: 100px !important;
   color: white !important;
   cursor: pointer;
   border: #888 1px solid;
@@ -522,12 +519,12 @@ span.textoCheck{
 
 #botonPeriodo{
   float: right;
-  margin-right: 140px;
+  margin-right: 120px;
 }
 
 #botonAnio{
   float: left; 
-  margin-left: 140px;
+  margin-left: 120px;
 }
 
 .botonEstadistica{
@@ -821,5 +818,93 @@ body .ui-tooltip {
 }
 
 /*Division entre tratado en lista*/
+div[style="float: center;"] input[type="submit"] {
+    float: center;
+}
 
+.botonBusqueda, div[style="float: right;"] input[type="submit"], input[value="Registrar"], input[value="Actualizar"], input[value="Generar"], input[value="Eliminar"], .box input[type="submit"]{
+	font-size:12px !important;    
+	-moz-box-shadow:inset 0px 1px 0px 0px #cae3fc;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #cae3fc;
+	box-shadow:inset 0px 1px 0px 0px #cae3fc;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #79bbff), color-stop(1, #4197ee) );
+	background:-moz-linear-gradient( center top, #79bbff 5%, #4197ee 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#79bbff', endColorstr='#4197ee');
+	background-color:#79bbff;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #469df5;
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial;
+	font-weight:bold;
+	padding:6px 10px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #287ace;
+        margin-right: 0px;
+        height: auto;
+        width: auto;
+}.botonBusqueda:hover, div[style="float: right;"] input[type="submit"]:hover, input[value="Registrar"]:hover, input[value="Actualizar"]:hover, input[value="Generar"]:hover, input[value="Eliminar"]:hover, .box input[type="submit"]:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #4197ee), color-stop(1, #79bbff) );
+	background:-moz-linear-gradient( center top, #4197ee 5%, #79bbff 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#4197ee', endColorstr='#79bbff');
+	background-color:#4197ee;
+}.botonBusqueda:active, div[style="float: right;"] input[type="submit"]:active, input[value="Registrar"]:active, input[value="Actualizar"]:active, input[value="Generar"]:active, input[value="Eliminar"]:active, .box input[type="submit"]:active {
+	position:relative;
+	top:1px;
+}
+div.opcionesDer {
+    width: auto;
+    padding: 0px 5px 0px 5px;
+}
 
+input[value="Registrar"], input[value="Actualizar"], input[value="Generar"]{
+    padding-left: 10px !important;
+    color:white !important;
+}
+
+.barraGris,div.opcionesVer {
+    background: #0099CC;
+}
+
+#borde {
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.titulo {
+    text-align: left;
+    float: center;
+}
+
+.box {
+    margin: 10px 15px;
+}
+
+#listarUsuario {
+    padding: 20px 10px;
+}
+#tablaResultados td {
+    padding: 10px 50px;
+}
+#registroUsuario {
+    width: 350px;
+    padding: 0px;
+}
+
+div.inbox input[type="password"] {
+    width:220px;
+}
+
+.inbox {
+    padding:5px; 
+}
+
+#cajaLogin input[type="password"] {
+    width:90%;
+}
+
+#login {
+    margin-left:650px !important;
+}
