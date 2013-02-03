@@ -172,7 +172,7 @@ public class DatabaseBusqueda {
     try {
       System.out.println("ENTRE EN LOG BUSCAR TRATADO");
       java.util.Date fecha = new Date();
-      String sqlquery = "INSERT INTO \"STI\".log VALUES ('Usuario', '" + tipouser + "', 'busco tratado', '" + campoB + "', '', '" + fecha.toString() + "')";
+      String sqlquery = "INSERT INTO \"STI\".log VALUES ('Usuario', '" + tipouser + "', 'Buscó tratado', '" + campoB + "', '', '" + fecha.toString() + "')";
       System.out.println(sqlquery);
       Statement st = database.getConnection().createStatement();
       Integer i = st.executeUpdate(sqlquery);
