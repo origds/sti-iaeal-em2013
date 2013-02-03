@@ -31,21 +31,7 @@
 
 <script type="text/javascript" src="<%=request.getContextPath()%>/interfaz/javaScript/jquery.tablesorter.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/interfaz/javaScript/jquery.paginatetable.js"></script>
-<script>
-  $(document).ready(function(){
-    $(".cajaTitulo").click(function(){
-      for (var i=0; i<this.childNodes.length; ++i){
-        if (this.childNodes[i].nodeName == "FORM"){
-          this.childNodes[i].submit();
-        }
-      }
-    });
-    $("#tablaResultados")
-    .tablesorter({sortList: [[0,0]]})
-    .paginateTable({ rowsPerPage: 10 });
-  } 
-);
-</script>
+
 
 <logic:notPresent name="log">  <%--Si no hay tratados que mostrar--%>
   <div id="noHayTratados" style="margin: auto; font-size: 30px; font-family: Helvetica; color: grey;">
@@ -70,7 +56,11 @@
     <div id="listarTratados" style="padding: 50px 7px 0px 7px">
         <div id="resultbusq" class="inbox" style="width: 800px;">
           <div class="titulo" style="width: 100%; text-align: left;"> Historial</div>
-          <br><br><br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
           <table id="tablaResultados" style="padding-top: 40px !important">
             <thead>
               <tr>
@@ -84,9 +74,7 @@
             <tbody>
               <logic:iterate name="log" id="tratado">
                 <tr>
-                  <td valign="top">
-                    <bean:write name="tratado" property="fecha_hora"></bean:write>
-                  </td>  
+                  <td valign="top"><bean:write name="tratado" property="fecha_hora"></bean:write></td>  
                   <td valign="top">
                     <div class="cajaTitulo">
                         <bean:write name="tratado" property="usuario"></bean:write> &nbsp; <bean:write name="tratado" property="tipoUser"></bean:write><!--styling es consultaTratado-->
