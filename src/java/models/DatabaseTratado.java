@@ -471,11 +471,11 @@ public class DatabaseTratado {
       java.util.Date fecha = new Date();
       String sqlquery = "";
       if (t.getStatus() == 0) {
-        sqlquery = "INSERT INTO \"STI\".log VALUES ('" + t.getUsuario().getUsuario() + "', '', 'transcriptor agrego tratado en temporal', '', '" + t.getTitulo() + "', '" + fecha.toString() + "')";
+        sqlquery = "INSERT INTO \"STI\".log VALUES ('" + t.getUsuario().getUsuario() + "', '', 'Transcriptor agregó tratado en temporal', '', '" + t.getTitulo() + "', '" + fecha.toString() + "')";
       } else if (t.getStatus() == 2) {
-        sqlquery = "INSERT INTO \"STI\".log VALUES ('" + t.getUsuario().getUsuario() + "', '', 'administrador agrego tratado', '', '" + t.getTitulo() + "', '" + fecha.toString() + "')";
+        sqlquery = "INSERT INTO \"STI\".log VALUES ('" + t.getUsuario().getUsuario() + "', '', 'Administrador agregó tratado', '', '" + t.getTitulo() + "', '" + fecha.toString() + "')";
       } else if (t.getStatus() == 1) {
-         sqlquery = "INSERT INTO \"STI\".log VALUES ('" + t.getUsuario().getUsuario() + "', '', 'transcriptor marco tratado como \"pendiente\"', '', '" + t.getTitulo() + "', '" + fecha.toString() + "')";    
+         sqlquery = "INSERT INTO \"STI\".log VALUES ('" + t.getUsuario().getUsuario() + "', '', 'Transcriptor marcó tratado como \"Pendiente\"', '', '" + t.getTitulo() + "', '" + fecha.toString() + "')";    
       }
       System.out.println(sqlquery);
       Statement st = database.getConnection().createStatement();
