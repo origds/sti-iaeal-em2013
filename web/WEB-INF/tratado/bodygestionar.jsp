@@ -94,7 +94,6 @@
                   <td valign="top">
                     <bean:write name="tratado" property="firmaFecha"></bean:write>
                   </td>
-                </tr> listar
               </div>
             </logic:iterate>
             </tbody>

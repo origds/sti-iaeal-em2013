@@ -71,11 +71,6 @@
     <div id="listarTratados" style="padding: 50px 7px 0px 7px">
         <div id="resultbusq" class="inbox" style="width: 800px;">
           <div class="titulo" style="width: 100%; text-align: left;"> Resultados de la Busqueda</div>
-          <div class="botonEstadistica" id="botonEstadistica">
-            <html:link action="/estadisticaForm"> 
-              Generar Estadística
-            </html:link>
-          </div>
           <br>
           <br>
           <br>
