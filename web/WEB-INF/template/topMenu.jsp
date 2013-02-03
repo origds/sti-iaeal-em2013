@@ -40,11 +40,13 @@
       </div>
     </html:link>
     
+    <logic:equal name="login" property="administrador" value="true" scope="session">
     <html:link action="/ListarLog">
       <div class="opcionesDer">
         <div class="texto">Historial</div>
       </div>
-    </html:link> 
+    </html:link>
+    </logic:equal>
 
     <logic:equal name="login" property="administrador" value="true" scope="session">
       <html:link action="/usuario/crearForm">
