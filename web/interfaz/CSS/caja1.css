@@ -886,7 +886,7 @@ input[value="Registrar"], input[value="Actualizar"], input[value="Generar"]{
     padding: 20px 10px;
 }
 #tablaResultados td {
-    padding: 10px 50px;
+    padding: 10px 40px;
 }
 #registroUsuario {
     width: 350px;

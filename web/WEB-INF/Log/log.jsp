@@ -82,6 +82,7 @@
                 <th>Usuario</th>
                 <th>Accion</th>
                 <th>Busqueda</th>
+                <th>Tratado</th>
               </tr>
             </thead>
             <tbody>
@@ -97,7 +98,7 @@
                   </td>
                   <td valign="top"><bean:write name="tratado" property="accion"></bean:write></td>
                   <td valign="top"><bean:write name="tratado" property="campoBusqueda"></bean:write></td>
-                  
+                  <td valign="top"><bean:write name="tratado" property="idTratado"></bean:write></td>
                   
                 </tr>
               </logic:iterate>
