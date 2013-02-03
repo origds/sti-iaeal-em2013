@@ -50,7 +50,7 @@
 <logic:notPresent name="log">  <%--Si no hay tratados que mostrar--%>
   <div id="noHayTratados" style="margin: auto; font-size: 30px; font-family: Helvetica; color: grey;">
     </br>
-    El Log no tiene registros
+    El log no tiene registros
     </br>
     </br>
   </div>
@@ -60,7 +60,7 @@
   <logic:empty name="log">
     <div id="noHayTratados" style="margin: auto; font-size: 30px; font-family: Helvetica; color: grey;">
       </br>
-      El Log no tiene registros
+      El log no tiene registros
       </br>
       </br>
     </div>
