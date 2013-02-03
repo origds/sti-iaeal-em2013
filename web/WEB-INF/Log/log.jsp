@@ -107,13 +107,6 @@
           <br>
           <br>
           <br>
-          <div class='pager'>
-            <a href='#' alt='First' class='firstPage'>Primero</a>
-            <a href='#' alt='Previous' class='prevPage'><html:img page="/interfaz/imagenes/anterior.png"/></a>
-            <span class='currentPage'></span> de <span class='totalPages'></span>
-            <a href='#' alt='Next' class='nextPage'> <html:img page="/interfaz/imagenes/siguiente.png"/></a>
-            <a href='#' alt='Last' class='lastPage'>Ultimo</a>
-          </div>
       </div>
     </div>
   </logic:notEmpty>
