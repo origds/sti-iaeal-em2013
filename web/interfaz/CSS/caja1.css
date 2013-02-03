@@ -175,7 +175,7 @@ div.opcionUsuario input[type="submit"]{
 }
 
 #dropDownMenu:hover{
-  text-decoration: underline;
+  background-color: background-color: rgba(0, 128, 170, 0.96);
 }
 
 #dropDownMenu table{
@@ -596,13 +596,13 @@ span.textoCheck{
 .ui-datepicker a{
   text-decoration: none;
 }
-
+div class
 .ui-datepicker table {  
   width: 100%;  
 } 
 
 .ui-datepicker-header {  
-  background-color: #00627A;
+  background-color: #0099CC;
   height: 30px;
   color: #e0e0e0;  
   font-weight: bold;  

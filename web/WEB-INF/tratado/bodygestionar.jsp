@@ -72,7 +72,8 @@
     <div id="listarTratados" style="padding: 50px 7px 0px 7px;">   
         <div id ="resultbusq" class="inbox" style="width: 800px; min-height: 600px;">
           <div class="titulo" style="width: 100%; text-align: left;"> Lista de Tratados</div>
-         <table class="display" id="example">
+          <br><br><br>
+          <table class="display" id="example">
             <thead>
               <tr>
                 <th> Título </th>

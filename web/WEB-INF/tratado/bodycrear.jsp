@@ -752,7 +752,7 @@
             </tr>
             <tr>
               <td>
-                <html:submit property="submit" value="Registrar" style="font-size: 17px"/>
+                <html:submit property="submit" value="Registrar" style="font-size: 17px" style="float: center;"/>
               </td>
             </tr>
           </table>

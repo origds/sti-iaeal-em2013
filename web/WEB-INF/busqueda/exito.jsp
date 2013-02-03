@@ -71,11 +71,7 @@
     <div id="listarTratados" style="padding: 50px 7px 0px 7px">
         <div id="resultbusq" class="inbox" style="width: 800px;">
           <div class="titulo" style="width: 100%; text-align: left;"> Resultados de la Busqueda</div>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
+          <br><br><br>
           <table id="tablaResultados" style="padding-top: 40px !important">
             <thead>
               <tr>

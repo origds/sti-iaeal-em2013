@@ -755,6 +755,7 @@
           </tr>
         </table>
         <html:submit property="submit" value="Actualizar" style="font-size: 17px"/>
+        <br><br><br>
       </html:form>
     </div>
   </div>
