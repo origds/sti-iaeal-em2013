@@ -67,7 +67,7 @@ public class DatabaseLog {
       System.out.println("ENTRE EN LOG INICIAR");
       java.util.Date fecha = new Date();
       //Fecha.setFechaAsString(fechaLogCalendar, fecha, datePattern);
-      String sqlquery = "INSERT INTO \"STI\".log VALUES ('" + u.getUsuario() + "', '', 'Inicio Sesión', '', '', '" + fecha.toString() + "')";
+      String sqlquery = "INSERT INTO \"STI\".log VALUES ('" + u.getUsuario() + "', '', 'Inició Sesión', '', '', '" + fecha.toString() + "')";
       System.out.println(sqlquery);
       Statement st = database.getConnection().createStatement();
       Integer i = st.executeUpdate(sqlquery);
@@ -83,7 +83,7 @@ public class DatabaseLog {
     try {
       System.out.println("ENTRE EN LOG CERRAR");
       java.util.Date fecha = new Date();
-      String sqlquery = "INSERT INTO \"STI\".log VALUES ('" + u.getUsuario() + "', '', 'Cerro Sesión', '', '', '" + fecha.toString() + "')";
+      String sqlquery = "INSERT INTO \"STI\".log VALUES ('" + u.getUsuario() + "', '', 'Cerró Sesión', '', '', '" + fecha.toString() + "')";
       System.out.println(sqlquery);
       Statement st = database.getConnection().createStatement();
       Integer i = st.executeUpdate(sqlquery);
@@ -128,9 +128,9 @@ public class DatabaseLog {
       if (t.getStatus() == 0) {
         sqlquery = "INSERT INTO \"STI\".log VALUES ('" + u.getUsuario() + "', '', 'Transcriptor actualizó tratado en Temporal', '', '" + t.getTitulo() + "', '" + fecha.toString() + "')";
       } else if (t.getStatus() == 2) {
-        sqlquery = "INSERT INTO \"STI\".log VALUES ('" + u.getUsuario() + "', '', 'administrador actualizo tratado', '', '" + t.getTitulo() + "', '" + fecha.toString() + "')";
+        sqlquery = "INSERT INTO \"STI\".log VALUES ('" + u.getUsuario() + "', '', 'Administrador actualizó tratado', '', '" + t.getTitulo() + "', '" + fecha.toString() + "')";
       } else if (t.getStatus() == 1) {
-        sqlquery = "INSERT INTO \"STI\".log VALUES ('" + u.getUsuario() + "', '', 'administrador actualizo tratado en temporal', '', '" + t.getTitulo() + "', '" + fecha.toString() + "')";
+        sqlquery = "INSERT INTO \"STI\".log VALUES ('" + u.getUsuario() + "', '', 'Administrador actualizó tratado en Temporal', '', '" + t.getTitulo() + "', '" + fecha.toString() + "')";
       }
       System.out.println(sqlquery);
       Statement st = database.getConnection().createStatement();
@@ -223,9 +223,9 @@ public class DatabaseLog {
       java.util.Date fecha = new Date();
       String sqlquery = "INSERT INTO \"STI\".log VALUES ('" + creador.getUsuario() + "',";
       if (creado.isAdministrador()) {
-        sqlquery += " 'administrador \""+creado.getUsuario()+"\"', 'Creo un usuario', '', '', '" + fecha.toString() + "')";
+        sqlquery += " 'administrador \""+creado.getUsuario()+"\"', 'Creó un usuario', '', '', '" + fecha.toString() + "')";
       } else {
-        sqlquery += " 'transcriptor \""+creado.getUsuario()+"\"', 'Creo un usuario', '', '', '" + fecha.toString() + "')";
+        sqlquery += " 'transcriptor \""+creado.getUsuario()+"\"', 'Creó un usuario', '', '', '" + fecha.toString() + "')";
       }
       System.out.println(sqlquery);
       Statement st = database.getConnection().createStatement();
@@ -242,7 +242,7 @@ public class DatabaseLog {
     try {
       System.out.println("ENTRE EN ELIMINAR USUARIO");
       java.util.Date fecha = new Date();
-      String sqlquery = "INSERT INTO \"STI\".log VALUES ('" + u.getUsuario() + "', '"+ eliminado.getUsuario() +"', 'Elimino un usuario', '', '', '" + fecha.toString() + "')";
+      String sqlquery = "INSERT INTO \"STI\".log VALUES ('" + u.getUsuario() + "', '"+ eliminado.getUsuario() +"', 'Eliminó un usuario', '', '', '" + fecha.toString() + "')";
       System.out.println(sqlquery);
       Statement st = database.getConnection().createStatement();
       Integer i = st.executeUpdate(sqlquery);
