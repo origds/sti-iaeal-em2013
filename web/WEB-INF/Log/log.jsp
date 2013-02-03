@@ -80,8 +80,8 @@
               <tr>
                 <th>Fecha</th>  
                 <th>Usuario</th>
-                <th>Accion</th>
-                <th>Busqueda</th>
+                <th>Acción</th>
+                <th>Búsqueda</th>
                 <th>Tratado</th>
               </tr>
             </thead>
