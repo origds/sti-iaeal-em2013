@@ -78,9 +78,9 @@ public class DescargarPDF extends DownloadAction {
       Image usblogo = Image.getInstance("logoiaeal.png");
       //document.add(usblogo);
 
-      //Logos
+      //Logos Descarga
       /*String imageUrl = "http://www.iaeal.usb.ve/Logo%20para%20web.png";
-      Image usblogo = Image.getInstance(new URL(imageUrl));*/
+      Image usblogo = Image.getInstance(new URL(imageUrl));*/ 
       usblogo.scaleAbsolute(120f, 60f);
       usblogo.setAbsolutePosition(400f, 720f);
       document.add(usblogo);
