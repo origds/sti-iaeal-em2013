@@ -72,6 +72,10 @@
         <forward name="failure" path="estadistica.form"/>
       </action>
 
+         <action path="/pdf" name="Tratado" scope="request"
+              type="servlets.DescargarPDF" validate="false">
+        <forward name="success" path="/home"/>
+      </action>
 
       <action path="/estadisticaForm" name="ClaseEstadistica" scope="request"
               type="servlets.GestionEstadistica" parameter="estadisticaForm" validate="false">
@@ -223,6 +227,8 @@
               type="servlets.GestionTratado" parameter="marcarPendiente" validate="false">
         <forward name="success" path="/tratado/gestionarMisTratados.do"/>
       </action>
+      
+    
 
     </action-mappings>
     
