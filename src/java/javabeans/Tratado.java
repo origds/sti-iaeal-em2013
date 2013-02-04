@@ -8,6 +8,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+/*
+import com.itextpdf.text.Document;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.Phrase;
+import com.itextpdf.text.Rectangle;
+import com.itextpdf.text.pdf.ColumnText;
+import com.itextpdf.text.pdf.PdfPageEventHelper;
+import com.itextpdf.text.pdf.PdfWriter;
+*/
 
 /**
  *
@@ -295,17 +304,29 @@ public class Tratado extends org.apache.struts.validator.ValidatorForm {
   //Bilateral = False
   public void checkClasificacion() {
     int i;
-    
+
     this.clasificacion = false;
-    
-    for(i=0; i<this.grupos.length; i++ ){
-      if (!this.grupos[i].equals("")){
+
+    for (i = 0; i < this.grupos.length; i++) {
+      if (!this.grupos[i].equals("")) {
         this.clasificacion = true;
       }
     }
-    
+
     if (this.paises.length >= 2) {
       this.clasificacion = true;
     }
   }
+/*
+  public void onEndPage(PdfWriter writer, Document document) {
+    Rectangle rect = writer.getBoxSize("art");
+    //Cabecera
+    //ColumnText.showTextAligned(writer.getDirectContent(),
+    //        Element.ALIGN_LEFT, new Phrase("Reporte Nro." + this.getId() + "      Programa de igualdad de oportunidades"),
+    //        rect.getLeft(), rect.getTop(), 0);
+    //Pie
+    ColumnText.showTextAligned(writer.getDirectContent(),
+            Element.ALIGN_CENTER, new Phrase(String.format("Titulo %d                " + this.getTitulo(), writer.getPageNumber())),
+            (rect.getLeft() + rect.getRight()) / 2, rect.getBottom() - 18, 0);
+  }*/
 }
