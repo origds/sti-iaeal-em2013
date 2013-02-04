@@ -80,11 +80,11 @@ public class DescargarPDF extends DownloadAction {
 
       //Logos
       /*String imageUrl = "http://www.iaeal.usb.ve/Logo%20para%20web.png";
-      Image usblogo = Image.getInstance(new URL(imageUrl));*/
+      Image usblogo = Image.getInstance(new URL(imageUrl));*
       usblogo.scaleAbsolute(120f, 60f);
       usblogo.setAbsolutePosition(400f, 720f);
       document.add(usblogo);
-      
+      */
 
       String encabezado = "\nSartenejas " + dates.format(date) + "\n"
               + "República Bolivariana de Venezuela \n"
