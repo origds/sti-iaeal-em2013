@@ -85,6 +85,9 @@
             </fieldset>
           </td>
         </tr>
+        <html:link action="/pdf">
+          Descargar
+        </html:link>
         <tr>
           <td>
             <fieldset id="divisionPais">
