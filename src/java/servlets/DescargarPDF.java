@@ -74,13 +74,17 @@ public class DescargarPDF extends DownloadAction {
       Date date = new Date();
 
 
+      
+      Image usblogo = Image.getInstance("logoiaeal.png");
+      //document.add(usblogo);
+
       //Logos
-      String imageUrl = "http://www.iaeal.usb.ve/Logo%20para%20web.png";
-      Image usblogo = Image.getInstance(new URL(imageUrl));
+      /*String imageUrl = "http://www.iaeal.usb.ve/Logo%20para%20web.png";
+      Image usblogo = Image.getInstance(new URL(imageUrl));*/
       usblogo.scaleAbsolute(120f, 60f);
       usblogo.setAbsolutePosition(400f, 720f);
       document.add(usblogo);
-
+      
 
       String encabezado = "\nSartenejas " + dates.format(date) + "\n"
               + "República Bolivariana de Venezuela \n"
@@ -181,4 +185,4 @@ public class DescargarPDF extends DownloadAction {
 
     return new FileStreamInfo(contentType, file);
   }
-}
+} 
