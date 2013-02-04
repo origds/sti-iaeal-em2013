@@ -24,7 +24,7 @@
     
     <script type="text/javascript" charset="utf-8"> 
             $(document).ready(function() {
-            $('#tablaResultados').dataTable();
+            $('#example').dataTable();
             } );
     </script>
 
@@ -61,7 +61,7 @@
           <br>
           <br>
           <br>
-          <table id="tablaResultados" style="padding-top: 40px !important">
+          <table class="display" id="example">
             <thead>
               <tr>
                 <th>Fecha</th>  
