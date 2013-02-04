@@ -44,7 +44,7 @@ a{
   max-width: 400px;
 }
 
-.actualizar, .eliminar, .pendiente, .aprobado, .rechazado{
+.actualizar, .eliminar, .pendiente, .aprobado, .rechazado, .descargar{
   width: 21px;
   height: 21px;
   background: transparent !important;
@@ -74,6 +74,10 @@ a{
 
 .rechazado{
   background-image: url('../imagenes/rechazado.png') !important;  
+}
+
+.descargar{
+  background-image: url('../imagenes/descargar.png') !important;  
 }
 
 /*Styling cajas menu*/
