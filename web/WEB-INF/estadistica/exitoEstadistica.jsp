@@ -52,26 +52,26 @@
                     
                   
               
-             <table style="width:813px;heigth:101px;margin:12px -11px 0 0">
+             <table style="width:600px;heigth:101px;margin:12px -11px 0 0">
 	<caption></caption>
 	<thead>
 		<tr>
-			<th scope="col">Paises</th>
-			<th scope="col">Numero Tratados</th>
+			<th scope="col" style="color:red">PAISES</th>
+			<th scope="col" style="color:red">NUMERO DE TRATADOS</th>
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
 			<th scope="row"><bean:write name="est" property="pais1"/></th>
-			<td><bean:write name="est" property="primero"/></td>
+			<th><bean:write name="est" property="primero"/></th>
 		</tr>
 		<tr>
 			<th scope="row"><bean:write name="est" property="pais2"/></th>
-			<td><bean:write name="est" property="segundo"/></td>
+			<th><bean:write name="est" property="segundo"/></th>
 		</tr>
 		<tr>
 			<th scope="row"><bean:write name="est" property="pais3"/></th>
-			<td><bean:write name="est" property="tercero"/></td>
+			<th><bean:write name="est" property="tercero"/></th>
 		</tr>		
 	</tbody>
 </table>       
