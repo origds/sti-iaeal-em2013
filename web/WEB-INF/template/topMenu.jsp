@@ -31,7 +31,7 @@
   <html:link action="/plantilla">
     <div class="opcionesIzq">
       <div class="texto">
-        Ver Plantilla Tratado
+        Plantilla Tratado
       </div>						
     </div>
   </html:link> 
