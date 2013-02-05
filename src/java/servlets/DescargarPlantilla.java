@@ -78,7 +78,7 @@ public class DescargarPlantilla extends DownloadAction {
       String encabezado = "\nSartenejas " + dates.format(date) + "\n"
               + "República Bolivariana de Venezuela \n"
               + "Universidad Simón Bolívar \n"
-              + "Instituto de Altos Estudios de America Latina \n"
+              + "Instituto de Altos Estudios de América Latina \n"
               + "Sistema de Tratados y Acuerdos Internacionales de Venezuela\n";
       Paragraph pa = new Paragraph(encabezado, fuenteEnc);
       pa.setSpacingBefore(20);
@@ -89,7 +89,7 @@ public class DescargarPlantilla extends DownloadAction {
       // Titulo del Tratado.
 
       PdfPTable cuadro = new PdfPTable(1);
-      Paragraph p = new Paragraph("Titulo: \n\n\n\n\n", fuenteTitulo);
+      Paragraph p = new Paragraph("Título: \n\n\n\n\n", fuenteTitulo);
       cuadro.addCell(p);
       document.add(cuadro);
 
@@ -103,31 +103,31 @@ public class DescargarPlantilla extends DownloadAction {
       s = "Lugar de Firma: \n\n\n";
       cuadro1.addCell(new Paragraph(s, fuenteText));
 
-      s = "Fecha de Deposito: \n\n\n";
+      s = "Fecha de Depósito: \n\n\n";
       cuadro1.addCell(new Paragraph(s, fuenteText));
 
       s = "Entrada en Vigor: \n\n\n";
       cuadro1.addCell(new Paragraph(s, fuenteText));
 
-      s = "Fecha de Publicacion en Gaceta Oficial: \n\n\n";
+      s = "Fecha de Publicación en Gaceta Oficial: \n\n\n";
       cuadro1.addCell(new Paragraph(s, fuenteText));
 
       s = "Numero de Gaceta Oficial: \n\n\n";
       cuadro1.addCell(new Paragraph(s, fuenteText));
 
-      s = "Duracion: \n\n\n";
+      s = "Duración: \n\n\n";
       cuadro1.addCell(new Paragraph(s, fuenteText));
 
-      s = "Periodo: \n\n\n";
+      s = "Período: \n\n\n";
       cuadro1.addCell(new Paragraph(s, fuenteText));
 
-      s = "Volumen: \n\n\n";
+      s = "Volúmen: \n\n\n";
       cuadro1.addCell(new Paragraph(s, fuenteText));
 
-      s = "Pagina: \n\n\n";
+      s = "Página: \n\n\n";
       cuadro1.addCell(new Paragraph(s, fuenteText));
 
-      s = "Paises: \n\n\n\n\n\n\n\n\n\n\n\n\n\n";
+      s = "Países: \n\n\n\n\n\n\n\n\n\n\n\n\n\n";
       cuadro1.addCell(new Paragraph(s, fuenteText));
 
       s = "Grupos: \n\n\n\n\n\n\n\n\n\n\n\n\n\n";
