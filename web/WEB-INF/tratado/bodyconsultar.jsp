@@ -27,10 +27,6 @@
   <div class="box">
     <div class="inbox">
       <div class="titulo">Consultar Tratado</div>
-      <html:form action="/pdf" method="POST" enctype="multipart/form-data">
-        <html:hidden name="tratado" property="id"/> 
-        <input type="submit" value="" class="descargar" title="Descargar PDF"/>
-      </html:form>
       <logic:present name="login">
         <!-- Si es administrador...-->
         <logic:equal name="login" property="administrador" value="true" scope="session">
@@ -41,10 +37,6 @@
           <html:form action="/tratado/actualizarForm" method="POST" enctype="multipart/form-data">
             <html:hidden name="tratado" property="id"/> 
             <input type="submit" value="" class="actualizar" title="Modificar Tratado"/>
-          </html:form>
-          <html:form action="/pdf" method="POST" enctype="multipart/form-data">
-            <html:hidden name="tratado" property="id"/> 
-            <input type="submit" value="" class="descargar" title="Descargar PDF"/>
           </html:form>
           <!-- Si el tratado no esta aprobado y eres administrador, muestra las opciones -->
           <logic:equal name="tratado" property="status" value="1">
@@ -60,10 +52,6 @@
         </logic:equal>
         <!-- Si no es administrador el usuario-->
         <logic:notEqual name="login" property="administrador" value="true" scope="session">
-          <html:form action="/pdf" method="POST" enctype="multipart/form-data">
-            <html:hidden name="tratado" property="id"/> 
-            <input type="submit" value="" class="descargar" title="Descargar PDF"/>
-          </html:form>
           <!-- script para que aparezcan modicicables los tratados pertenecientes a ese usuario-->
           <% Usuario u = (Usuario) request.getSession().getAttribute("login");
             Tratado t = (Tratado) request.getAttribute("tratado");
@@ -83,9 +71,12 @@
 
           <%}%>
         </logic:notEqual>
-
       </logic:present>
 
+      <html:form action="/pdf" method="POST" enctype="multipart/form-data">
+        <html:hidden name="tratado" property="id"/> 
+        <input type="submit" value="" class="descargar" title="Descargar Tratado"/>
+      </html:form>
       </br>
       <fieldset style="border:none"></fieldset>
       <table class="camposRegistro">	
