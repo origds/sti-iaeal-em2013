@@ -77,7 +77,7 @@ a{
 }
 
 .descargar{
-  background-image: url('../imagenes/descargar.png') !important;  
+  background-image: url('../imagenes/descargar.png') !important; 
 }
 
 /*Styling cajas menu*/
@@ -550,7 +550,7 @@ span.textoCheck{
 #botonEstadistica a {
   color: white !important;
   font-size: 12pt;
-  
+
 }
 
 .botonBusqueda a{
@@ -822,92 +822,92 @@ body .ui-tooltip {
 
 /*Division entre tratado en lista*/
 div[style="float: center;"] input[type="submit"] {
-    float: center;
+  float: center;
 }
 
 .botonBusqueda, div[style="float: right;"] input[type="submit"], input[value="Registrar"], input[value="Actualizar"], input[value="Generar"], input[value="Eliminar"], .box input[type="submit"]{
-	font-size:12px !important;    
-	-moz-box-shadow:inset 0px 1px 0px 0px #cae3fc;
-	-webkit-box-shadow:inset 0px 1px 0px 0px #cae3fc;
-	box-shadow:inset 0px 1px 0px 0px #cae3fc;
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #79bbff), color-stop(1, #4197ee) );
-	background:-moz-linear-gradient( center top, #79bbff 5%, #4197ee 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#79bbff', endColorstr='#4197ee');
-	background-color:#79bbff;
-	-moz-border-radius:6px;
-	-webkit-border-radius:6px;
-	border-radius:6px;
-	border:1px solid #469df5;
-	display:inline-block;
-	color:#ffffff;
-	font-family:arial;
-	font-weight:bold;
-	padding:6px 10px;
-	text-decoration:none;
-	text-shadow:1px 1px 0px #287ace;
-        margin-right: 0px;
-        height: auto;
-        width: auto;
+  font-size:12px !important;    
+  -moz-box-shadow:inset 0px 1px 0px 0px #cae3fc;
+  -webkit-box-shadow:inset 0px 1px 0px 0px #cae3fc;
+  box-shadow:inset 0px 1px 0px 0px #cae3fc;
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #79bbff), color-stop(1, #4197ee) );
+  background:-moz-linear-gradient( center top, #79bbff 5%, #4197ee 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#79bbff', endColorstr='#4197ee');
+  background-color:#79bbff;
+  -moz-border-radius:6px;
+  -webkit-border-radius:6px;
+  border-radius:6px;
+  border:1px solid #469df5;
+  display:inline-block;
+  color:#ffffff;
+  font-family:arial;
+  font-weight:bold;
+  padding:6px 10px;
+  text-decoration:none;
+  text-shadow:1px 1px 0px #287ace;
+  margin-right: 0px;
+  height: auto;
+  width: auto;
 }.botonBusqueda:hover, div[style="float: right;"] input[type="submit"]:hover, input[value="Registrar"]:hover, input[value="Actualizar"]:hover, input[value="Generar"]:hover, input[value="Eliminar"]:hover, .box input[type="submit"]:hover {
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #4197ee), color-stop(1, #79bbff) );
-	background:-moz-linear-gradient( center top, #4197ee 5%, #79bbff 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#4197ee', endColorstr='#79bbff');
-	background-color:#4197ee;
+  background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #4197ee), color-stop(1, #79bbff) );
+  background:-moz-linear-gradient( center top, #4197ee 5%, #79bbff 100% );
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#4197ee', endColorstr='#79bbff');
+  background-color:#4197ee;
 }.botonBusqueda:active, div[style="float: right;"] input[type="submit"]:active, input[value="Registrar"]:active, input[value="Actualizar"]:active, input[value="Generar"]:active, input[value="Eliminar"]:active, .box input[type="submit"]:active {
-	position:relative;
-	top:1px;
+  position:relative;
+  top:1px;
 }
 div.opcionesDer {
-    width: auto;
-    padding: 0px 5px 0px 5px;
+  width: auto;
+  padding: 0px 5px 0px 5px;
 }
 
 input[value="Registrar"], input[value="Actualizar"], input[value="Generar"]{
-    padding-left: 10px !important;
-    color:white !important;
+  padding-left: 10px !important;
+  color:white !important;
 }
 
 .barraGris,div.opcionesVer {
-    background: #0099CC;
+  background: #0099CC;
 }
 
 #borde {
-    padding-bottom: 20px;
-    margin-bottom: 30px;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .titulo {
-    text-align: left;
-    float: center;
+  text-align: left;
+  float: center;
 }
 
 .box {
-    margin: 10px 15px;
+  margin: 10px 15px;
 }
 
 #listarUsuario {
-    padding: 20px 10px;
+  padding: 20px 10px;
 }
 #tablaResultados td {
-    padding: 10px 40px;
+  padding: 10px 40px;
 }
 #registroUsuario {
-    width: 350px;
-    padding: 0px;
+  width: 350px;
+  padding: 0px;
 }
 
 div.inbox input[type="password"] {
-    width:220px;
+  width:220px;
 }
 
 .inbox {
-    padding:5px; 
+  padding:5px; 
 }
 
 #cajaLogin input[type="password"] {
-    width:90%;
+  width:90%;
 }
 
 #login {
-    margin-left:650px !important;
+  margin-left:650px !important;
 }
