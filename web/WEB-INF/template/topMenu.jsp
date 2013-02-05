@@ -41,6 +41,7 @@
       <div class="texto">Inicio</div>
     </div>
   </html:link>
+  
   <logic:present name="login">
     <html:link action="/tratado/crearForm">
       <div class="opcionesDer">
