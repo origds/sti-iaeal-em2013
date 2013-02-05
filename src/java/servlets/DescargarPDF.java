@@ -89,7 +89,7 @@ public class DescargarPDF extends DownloadAction {
       String encabezado = "\nSartenejas " + dates.format(date) + "\n"
               + "República Bolivariana de Venezuela \n"
               + "Universidad Simón Bolívar \n"
-              + "Instituto de Altos Estudios de America Latina \n"
+              + "Instituto de Altos Estudios de América Latina \n"
               + "Sistema de Tratados y Acuerdos Internacionales de Venezuela\n";
 
       Paragraph pa = new Paragraph(encabezado, fuenteEnc);
@@ -110,8 +110,8 @@ public class DescargarPDF extends DownloadAction {
 
       s = "Fecha de Firma: " + t.getFirmaFecha() + " en " + t.getFirmaLugar()
               + "\nEntrada en Vigor: " + t.getEntradaVigor()
-              + "\nFecha de Publicacion en Gaceta Oficial: " + t.getFechaGaceta()
-              + "\nNumero de Gaceta Oficial: " + t.getNumGaceta();
+              + "\nFecha de Publicación en Gaceta Oficial: " + t.getFechaGaceta()
+              + "\nNúmero de Gaceta Oficial: " + t.getNumGaceta();
       p = new Paragraph(s, fuenteText);
       p.setSpacingBefore(5);
       p.setIndentationLeft(50);
@@ -120,11 +120,11 @@ public class DescargarPDF extends DownloadAction {
       //Mostrar Paises y Grupos involucrados
       System.out.println("****s es: " + s);
 
-      s = "Paises involucrados: ";
+      s = "Países involucrados: ";
       p = new Paragraph(s);
 
       if (t.getPaises().length == 0) {
-        s += " No se han agregado paises para este tratado";
+        s += " No se han agregado países para este tratado";
       } else {
         for (int i = 0; i != t.getPaises().length; i++) {
           if (i == t.getPaises().length - 2) {
