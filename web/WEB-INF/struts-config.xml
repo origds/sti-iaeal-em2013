@@ -76,6 +76,11 @@
               type="servlets.DescargarPDF" validate="false">
         <forward name="success" path="/home"/>
       </action>
+      
+      <action path="/plantilla" name="Tratado" scope="request"
+              type="servlets.DescargarPlantilla" validate="false">
+        <forward name="success" path="/home"/>
+      </action>
 
       <action path="/estadisticaForm" name="ClaseEstadistica" scope="request"
               type="servlets.GestionEstadistica" parameter="estadisticaForm" validate="false">
