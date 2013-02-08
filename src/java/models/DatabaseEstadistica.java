@@ -60,17 +60,23 @@ public class DatabaseEstadistica {
         ArrayList<Tratado> trads2 = new ArrayList<Tratado>(0);
         ArrayList<Tratado> trads3 = new ArrayList<Tratado>(0);
         est estad = new est();
-        
+        boolean cont;
+        String sqlquery;
         
         try {
-            String sqlquery = "SELECT * FROM \"STI\".pais WHERE ";
-            boolean cont = false;
+            if ((b.getPeriodoIni()!=0) && (b.getPeriodoFin()!=0)) {
+              sqlquery = "SELECT * FROM \"STI\".tratado, \"STI\".pais WHERE ("+ b.getPeriodoIni() +" <= (extract(year from firmaFecha) <= " + b.getPeriodoFin() + ") AND (idTp = id)";
+              cont = true;
+            } else {
+              sqlquery = "SELECT * FROM \"STI\".tratado, \"STI\".pais WHERE ";
+              cont = false;
+            }     
             
             if (b.getCodigo1() != ""){
                 if (cont == true){
-                    sqlquery = sqlquery + "AND pais like upper('%" + b.getCodigo1() + "%')";
+                    sqlquery += "AND pais like insensitive('%" + b.getCodigo1() + "%')";
                 } else {
-                    sqlquery = sqlquery + "pais like upper('%" + b.getCodigo1() + "%')";
+                    sqlquery += "pais like insensitive('%" + b.getCodigo1() + "%')";
                 }
                 cont = true;
             }
@@ -91,14 +97,19 @@ public class DatabaseEstadistica {
             estad.setPrimero(i);
             estad.setPais1(b.getCodigo1());
             
-                   sqlquery = "SELECT * FROM \"STI\".pais WHERE ";
-            cont = false;
+            if ((b.getPeriodoIni()!=0) && (b.getPeriodoFin()!=0)) {
+              sqlquery = "SELECT * FROM \"STI\".tratado, \"STI\".pais WHERE ("+ b.getPeriodoIni() +" <= (extract(year from firmaFecha) <= " + b.getPeriodoFin() + ") AND (idTp = id)";
+              cont = true;
+            } else {
+              sqlquery = "SELECT * FROM \"STI\".tratado, \"STI\".pais WHERE ";
+              cont = false;
+            }
             
             if (b.getCodigo2() != ""){
                 if (cont == true){
-                    sqlquery = sqlquery + "AND pais like upper('%" + b.getCodigo2() + "%')";
+                    sqlquery += "AND pais like insensitive('%" + b.getCodigo2() + "%')";
                 } else {
-                    sqlquery = sqlquery + "pais like upper('%" + b.getCodigo2() + "%')";
+                    sqlquery += "pais like insensitive('%" + b.getCodigo2() + "%')";
                 }
                 cont = true;
             }
@@ -118,21 +129,26 @@ public class DatabaseEstadistica {
             estad.setSegundo(j);
             estad.setPais2(b.getCodigo2()); 
             
-            String sqlquery2 = "SELECT * FROM \"STI\".pais WHERE ";
-            cont = false;
+            if ((b.getPeriodoIni()!=0) && (b.getPeriodoFin()!=0)) {
+              sqlquery = "SELECT * FROM \"STI\".tratado, \"STI\".pais WHERE ("+ b.getPeriodoIni() +" <= (extract(year from firmaFecha) <= " + b.getPeriodoFin() + ") AND (idTp = id)";
+              cont = true;
+            } else {
+              sqlquery = "SELECT * FROM \"STI\".tratado, \"STI\".pais WHERE ";
+              cont = false;
+            }
             
             if (b.getCodigo3() != ""){
                 if (cont == true){
-                    sqlquery2 = sqlquery2 + "AND pais like upper('%" + b.getCodigo3() + "%')";
+                    sqlquery += "AND pais like insensitive('%" + b.getCodigo3() + "%')";
                 } else {
-                    sqlquery2 = sqlquery2 + "pais like upper('%" + b.getCodigo3() + "%')";
+                    sqlquery += "pais like insensitive('%" + b.getCodigo3() + "%')";
                 }
                 cont = true;
             }
             
             Statement stmt3 = conexion.createStatement();
-            System.out.println(sqlquery2);
-            ResultSet rs3 = stmt3.executeQuery(sqlquery2);
+            System.out.println(sqlquery);
+            ResultSet rs3 = stmt3.executeQuery(sqlquery);
             while (rs3.next()) {
                 System.out.println("HOLA!");
                 Tratado t = new Tratado();
