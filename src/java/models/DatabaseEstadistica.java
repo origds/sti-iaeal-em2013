@@ -65,10 +65,10 @@ public class DatabaseEstadistica {
         
         try {
             if ((b.getPeriodoIni()!=0) && (b.getPeriodoFin()!=0)) {
-              sqlquery = "SELECT DISTINCT * FROM \"STI\".tratado, \"STI\".pais WHERE ("+ b.getPeriodoIni() +" <= (extract(year from firmaFecha) <= " + b.getPeriodoFin() + ") AND (idTp = id)";
+              sqlquery = "SELECT DISTINCT * FROM \"STI\".pais WHERE ("+ b.getPeriodoIni() +" <= (extract(year from firmaFecha) <= " + b.getPeriodoFin() + ") AND (idTp = id)";
               cont = true;
             } else {
-              sqlquery = "SELECT DISTINCT * FROM \"STI\".tratado, \"STI\".pais WHERE ";
+              sqlquery = "SELECT DISTINCT * FROM \"STI\".pais WHERE ";
               cont = false;
             }     
             
@@ -98,10 +98,10 @@ public class DatabaseEstadistica {
             estad.setPais1(b.getCodigo1());
             
             if ((b.getPeriodoIni()!=0) && (b.getPeriodoFin()!=0)) {
-              sqlquery = "SELECT DISTINCT * FROM \"STI\".tratado, \"STI\".pais WHERE ("+ b.getPeriodoIni() +" <= (extract(year from firmaFecha) <= " + b.getPeriodoFin() + ") AND (idTp = id)";
+              sqlquery = "SELECT DISTINCT * FROM \"STI\".pais WHERE ("+ b.getPeriodoIni() +" <= (extract(year from firmaFecha) <= " + b.getPeriodoFin() + ") AND (idTp = id)";
               cont = true;
             } else {
-              sqlquery = "SELECT DISTINCT * FROM \"STI\".tratado, \"STI\".pais WHERE ";
+              sqlquery = "SELECT DISTINCT * FROM \"STI\".pais WHERE ";
               cont = false;
             }
             
@@ -130,10 +130,10 @@ public class DatabaseEstadistica {
             estad.setPais2(b.getCodigo2()); 
             
             if ((b.getPeriodoIni()!=0) && (b.getPeriodoFin()!=0)) {
-              sqlquery = "SELECT DISTINCT * FROM \"STI\".tratado, \"STI\".pais WHERE ("+ b.getPeriodoIni() +" <= (extract(year from firmaFecha) <= " + b.getPeriodoFin() + ") AND (idTp = id)";
+              sqlquery = "SELECT DISTINCT * FROM \"STI\".pais WHERE ("+ b.getPeriodoIni() +" <= (extract(year from firmaFecha) <= " + b.getPeriodoFin() + ") AND (idTp = id)";
               cont = true;
             } else {
-              sqlquery = "SELECT DISTINCT * FROM \"STI\".tratado, \"STI\".pais WHERE ";
+              sqlquery = "SELECT DISTINCT * FROM \"STI\".pais WHERE ";
               cont = false;
             }
             
