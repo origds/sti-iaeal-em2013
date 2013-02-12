@@ -74,9 +74,9 @@ public class DatabaseEstadistica {
             
             if (b.getCodigo1() != ""){
                 if (cont == true){
-                    sqlquery += "AND pais like insensitive('%" + b.getCodigo1() + "%')";
+                    sqlquery += "AND pais like upper('%" + b.getCodigo1() + "%')";
                 } else {
-                    sqlquery += "pais like insensitive('%" + b.getCodigo1() + "%')";
+                    sqlquery += "pais like upper('%" + b.getCodigo1() + "%')";
                 }
                 cont = true;
             }
@@ -107,9 +107,9 @@ public class DatabaseEstadistica {
             
             if (b.getCodigo2() != ""){
                 if (cont == true){
-                    sqlquery += "AND pais like insensitive('%" + b.getCodigo2() + "%')";
+                    sqlquery += "AND pais like upper('%" + b.getCodigo2() + "%')";
                 } else {
-                    sqlquery += "pais like insensitive('%" + b.getCodigo2() + "%')";
+                    sqlquery += "pais like upper('%" + b.getCodigo2() + "%')";
                 }
                 cont = true;
             }
@@ -139,9 +139,9 @@ public class DatabaseEstadistica {
             
             if (b.getCodigo3() != ""){
                 if (cont == true){
-                    sqlquery += "AND pais like insensitive('%" + b.getCodigo3() + "%')";
+                    sqlquery += "AND pais like upper('%" + b.getCodigo3() + "%')";
                 } else {
-                    sqlquery += "pais like insensitive('%" + b.getCodigo3() + "%')";
+                    sqlquery += "pais like upper('%" + b.getCodigo3() + "%')";
                 }
                 cont = true;
             }
