@@ -65,10 +65,10 @@ public class DatabaseEstadistica {
         
         try {
             if ((b.getPeriodoIni()!=0) && (b.getPeriodoFin()!=0)) {
-              sqlquery = "SELECT * FROM \"STI\".tratado, \"STI\".pais WHERE ("+ b.getPeriodoIni() +" <= (extract(year from firmaFecha) <= " + b.getPeriodoFin() + ") AND (idTp = id)";
+              sqlquery = "SELECT DISTINCT * FROM \"STI\".tratado, \"STI\".pais WHERE ("+ b.getPeriodoIni() +" <= (extract(year from firmaFecha) <= " + b.getPeriodoFin() + ") AND (idTp = id)";
               cont = true;
             } else {
-              sqlquery = "SELECT * FROM \"STI\".tratado, \"STI\".pais WHERE ";
+              sqlquery = "SELECT DISTINCT * FROM \"STI\".tratado, \"STI\".pais WHERE ";
               cont = false;
             }     
             
@@ -85,7 +85,7 @@ public class DatabaseEstadistica {
             System.out.println(sqlquery);
             ResultSet rs = stmt.executeQuery(sqlquery);
             while (rs.next()) {
-                System.out.println("HOLA!");
+                //System.out.println("HOLA!");
                 Tratado t = new Tratado();
                 
                 
@@ -98,10 +98,10 @@ public class DatabaseEstadistica {
             estad.setPais1(b.getCodigo1());
             
             if ((b.getPeriodoIni()!=0) && (b.getPeriodoFin()!=0)) {
-              sqlquery = "SELECT * FROM \"STI\".tratado, \"STI\".pais WHERE ("+ b.getPeriodoIni() +" <= (extract(year from firmaFecha) <= " + b.getPeriodoFin() + ") AND (idTp = id)";
+              sqlquery = "SELECT DISTINCT * FROM \"STI\".tratado, \"STI\".pais WHERE ("+ b.getPeriodoIni() +" <= (extract(year from firmaFecha) <= " + b.getPeriodoFin() + ") AND (idTp = id)";
               cont = true;
             } else {
-              sqlquery = "SELECT * FROM \"STI\".tratado, \"STI\".pais WHERE ";
+              sqlquery = "SELECT DISTINCT * FROM \"STI\".tratado, \"STI\".pais WHERE ";
               cont = false;
             }
             
@@ -118,7 +118,7 @@ public class DatabaseEstadistica {
             System.out.println(sqlquery);
             ResultSet rs2 = stmt2.executeQuery(sqlquery);
             while (rs2.next()) {
-                System.out.println("HOLA!");
+                //System.out.println("HOLA!");
                 Tratado t = new Tratado();
                 
                t.setTitulo("titulo");
@@ -130,10 +130,10 @@ public class DatabaseEstadistica {
             estad.setPais2(b.getCodigo2()); 
             
             if ((b.getPeriodoIni()!=0) && (b.getPeriodoFin()!=0)) {
-              sqlquery = "SELECT * FROM \"STI\".tratado, \"STI\".pais WHERE ("+ b.getPeriodoIni() +" <= (extract(year from firmaFecha) <= " + b.getPeriodoFin() + ") AND (idTp = id)";
+              sqlquery = "SELECT DISTINCT * FROM \"STI\".tratado, \"STI\".pais WHERE ("+ b.getPeriodoIni() +" <= (extract(year from firmaFecha) <= " + b.getPeriodoFin() + ") AND (idTp = id)";
               cont = true;
             } else {
-              sqlquery = "SELECT * FROM \"STI\".tratado, \"STI\".pais WHERE ";
+              sqlquery = "SELECT DISTINCT * FROM \"STI\".tratado, \"STI\".pais WHERE ";
               cont = false;
             }
             
@@ -150,7 +150,7 @@ public class DatabaseEstadistica {
             System.out.println(sqlquery);
             ResultSet rs3 = stmt3.executeQuery(sqlquery);
             while (rs3.next()) {
-                System.out.println("HOLA!");
+               // System.out.println("HOLA!");
                 Tratado t = new Tratado();
                 
                t.setTitulo("titulo");
