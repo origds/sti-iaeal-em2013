@@ -818,12 +818,12 @@
                     <div id ="periodos1">
                         <fieldset style="border:none;">
                             <legend>Inicio de período</legend>                  
-                            <input type ="text" class="anioBusqueda" name="fechaini" id="ini"/>
+                            <input type ="text" class="anioBusqueda" name="fechaini" property="periodoIni" id="ini"/>
                             <div class="error">
                                 <html:errors property="fechaini"/>
                             </div>  
                             <legend>Finalización de período</legend>
-                            <input type ="text" class="anioBusqueda" name="fechafin" id="fin"/>
+                            <input type ="text" class="anioBusqueda" name="fechafin" property="periodoFin" id="fin"/>
                             <div class="error">
                                 <html:errors property="fechafin"/>
                             </div>
