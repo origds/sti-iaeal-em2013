@@ -16,8 +16,9 @@
 <script>
     $(document).ready(function() {
         $("#botonPaises").hide();
-        $("#periodo1").hide();
-        $("#periodo2").hide();
+        $("#periodos1").hide();
+        $("#periodos2").hide();
+        $("#periodos3").hide();
     
         $("#botonPeriodo").click(function(){
       
@@ -26,16 +27,18 @@
       
             $("#botonPaises").show();
             $("#botonPeriodo").hide();
-            $("#periodo1").show();
-            $("#periodo2").show();
+            $("#periodos1").show();
+            $("#periodos2").show();
+            $("#periodos3").show();
         });
     
         $("#botonPaises").click(function(){
       
 
             
-            $("#periodo1").hide();
-            $("#periodo2").hide();
+            $("#periodos1").hide();
+            $("#periodos2").hide();
+            $("#periodos3").hide();
             $("#botonPeriodo").show();
             $("#botonPaises").hide();
         });
@@ -812,26 +815,48 @@
                         <option>Zimbabue</option>
                     </html:select>
                     <br> <br> <br>
-
-                    <div id="periodo1">
+                    <div id ="periodos1">
                         <fieldset style="border:none;">
                             <legend>Inicio de período</legend>                  
                             <input type ="text" class="anioBusqueda" name="fechaini" id="ini"/>
                             <div class="error">
                                 <html:errors property="fechaini"/>
                             </div>  
-                        </fieldset>
-                    </div>
-                    <div id="periodo2">
-                        <fieldset style="border:none;">
                             <legend>Finalización de período</legend>
                             <input type ="text" class="anioBusqueda" name="fechafin" id="fin"/>
                             <div class="error">
                                 <html:errors property="fechafin"/>
                             </div>
                         </fieldset>
-                    </div>
-
+                    </div> 
+                    <div id ="periodos2">
+                        <fieldset style="border:none;">
+                            <legend>Inicio de período</legend>                  
+                            <input type ="text" class="anioBusqueda" name="fechaini" id="ini"/>
+                            <div class="error">
+                                <html:errors property="fechaini"/>
+                            </div>  
+                            <legend>Finalización de período</legend>
+                            <input type ="text" class="anioBusqueda" name="fechafin" id="fin"/>
+                            <div class="error">
+                                <html:errors property="fechafin"/>
+                            </div>
+                        </fieldset>
+                    </div> 
+                    <div id ="periodos3">
+                        <fieldset style="border:none;">
+                            <legend>Inicio de período</legend>                  
+                            <input type ="text" class="anioBusqueda" name="fechaini" id="ini"/>
+                            <div class="error">
+                                <html:errors property="fechaini"/>
+                            </div>  
+                            <legend>Finalización de período</legend>
+                            <input type ="text" class="anioBusqueda" name="fechafin" id="fin"/>
+                            <div class="error">
+                                <html:errors property="fechafin"/>
+                            </div>
+                        </fieldset>
+                    </div> 
                     <div id="Generar" style="float: center;">
                         <html:submit> Generar </html:submit>
                     </div>
