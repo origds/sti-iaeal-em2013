@@ -15,13 +15,13 @@ public class ClaseEstadistica extends ActionForm {
    private String codigo1;
    private String codigo2;
    private String codigo3;
-   private int periodoIni;
-   private int periodoFin;
+   private Integer periodoIni;
+   private Integer periodoFin;
 
     public ClaseEstadistica() {
     }
 
-    public ClaseEstadistica(String codigo1, String codigo2, String codigo3, int periodoIni, int periodoFin) {
+    public ClaseEstadistica(String codigo1, String codigo2, String codigo3, Integer periodoIni, Integer periodoFin) {
         this.codigo1 = codigo1;
         this.codigo2 = codigo2;
         this.codigo3 = codigo3;
@@ -57,15 +57,15 @@ public class ClaseEstadistica extends ActionForm {
     return periodoIni;
   }
 
-  public void setPeriodoIni(int periodoIni) {
+  public void setPeriodoIni(Integer periodoIni) {
     this.periodoIni = periodoIni;
   }
 
-  public int getPeriodoFin() {
+  public Integer getPeriodoFin() {
     return periodoFin;
   }
 
-  public void setPeriodoFin(int periodoFin) {
+  public void setPeriodoFin(Integer periodoFin) {
     this.periodoFin = periodoFin;
   }
       
