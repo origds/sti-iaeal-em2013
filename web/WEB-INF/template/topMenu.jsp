@@ -36,6 +36,15 @@
     </div>
   </html:link> 
 
+    
+  <html:link action="/consultarFAQ">
+    <div class="opcionesIzq">
+      <div class="texto">
+        FAQ
+      </div>						
+    </div>
+  </html:link> 
+
   <html:link action="/home">
     <div class="opcionesDer">
       <div class="texto">Inicio</div>
