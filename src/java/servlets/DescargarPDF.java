@@ -49,12 +49,16 @@ public class DescargarPDF extends DownloadAction {
     // Action Mapping's parameter
     String contentType = "application/pdf";
     System.out.println("");
-    File file = new File(String.valueOf(request.getSession().getAttribute("tratado")));
-    //File file = new File("/home/mary/Desktop/PruebaPDF.pdf");
+    
     Tratado t = (Tratado) form;
-    System.out.println("***** idd " + t.getId());
     createDatabaseTratado();
     dt.get(t, true);
+    
+    System.out.println("-------- " + t.getTitulo());
+    File file = new File( t.getTitulo() );
+   
+    System.out.println("***** idd " + t.getId());
+
 
     FileOutputStream f = new FileOutputStream(file);
     Document document = new Document();
