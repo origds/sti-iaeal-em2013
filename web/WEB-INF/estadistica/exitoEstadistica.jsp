@@ -179,16 +179,18 @@
                                 <tr>
                                     <th scope="col" style="color:red">PAISES</th>
                                     <th scope="col" style="color:red">NUMERO DE TRATADOS</th>
-
+                                    <th scope="col" style="color:black">PERIODOS</th> 
                             </thead>
                             <tbody>
                                 <tr>
                                     <th id ="pa1" scope="row"><bean:write name="est" property="pais1"/></th>
                                     <th id ="num1" ><bean:write name="est" property="primero"/></th>
+                                    <th id ="ano1" ><bean:write name="est" property="ano1"/></th>
+                                    <th id ="ano2" ><bean:write name="est" property="ano2"/></th>
                                 </tr>
                                 <tr>
                                     <th id ="pa2" scope="row"><bean:write name="est" property="pais2"/></th>
-                                    <th id ="num2" ><bean:write name="est" property="segundo"/></th>
+                                    <th id ="num2" ><bean:write name="est" property="segundo"/></th>                                    
                                 </tr>
                                 <tr>
                                     <th id ="pa3" scope="row"><bean:write name="est" property="pais3"/></th>
