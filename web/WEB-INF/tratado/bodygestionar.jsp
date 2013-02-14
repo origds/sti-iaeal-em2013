@@ -99,6 +99,8 @@
             </logic:iterate>
             </tbody>
           </table>
+          <br>
+          <br>
         </div>
     </div>
   </logic:notEmpty>
