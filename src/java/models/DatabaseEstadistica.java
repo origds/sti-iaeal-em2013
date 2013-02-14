@@ -72,7 +72,7 @@ public class DatabaseEstadistica {
         cont = false;
       }
 
-      if (b.getCodigo1() != "") {
+      if (!"".equals(b.getCodigo1())) {
         if (cont == true) {
           sqlquery += "AND upper(pais) like upper('%" + b.getCodigo1() + "%')";
         } else {
@@ -91,8 +91,10 @@ public class DatabaseEstadistica {
         trads1.add(t);
       }
       int i = trads1.size();
-      estad.setPrimero(i);
+      estad.setPrimero(i);      
       estad.setPais1(b.getCodigo1());
+      estad.setAno1(b.getPeriodoIni());
+      estad.setAno2(b.getPeriodoFin());
 
       if ((b.getPeriodoIni() != 0) && (b.getPeriodoFin() != 0)) {
         sqlquery = "SELECT DISTINCT * FROM \"STI\".tratado, \"STI\".pais WHERE (" + b.getPeriodoIni() + " <= (extract(year from firmaFecha) <= " + b.getPeriodoFin() + ") AND (idTp = id)";
@@ -102,7 +104,7 @@ public class DatabaseEstadistica {
         cont = false;
       }
 
-      if (b.getCodigo2() != "") {
+      if (!"".equals(b.getCodigo2())) {
         if (cont == true) {
           sqlquery += "AND upper(pais) like upper('%" + b.getCodigo2() + "%')";
         } else {
@@ -123,6 +125,8 @@ public class DatabaseEstadistica {
       int j = trads2.size();
       estad.setSegundo(j);
       estad.setPais2(b.getCodigo2());
+      estad.setAno1(b.getPeriodoIni());
+      estad.setAno2(b.getPeriodoFin());
 
       if ((b.getPeriodoIni() != 0) && (b.getPeriodoFin() != 0)) {
         sqlquery = "SELECT DISTINCT * FROM \"STI\".tratado, \"STI\".pais WHERE (" + b.getPeriodoIni() + " <= (extract(year from firmaFecha) <= " + b.getPeriodoFin() + ") AND (idTp = id)";
@@ -132,7 +136,7 @@ public class DatabaseEstadistica {
         cont = false;
       }
 
-      if (b.getCodigo3() != "") {
+      if (!"".equals(b.getCodigo3())) {
         if (cont == true) {
           sqlquery += "AND upper(pais) like upper('%" + b.getCodigo3() + "%')";
         } else {
@@ -154,8 +158,10 @@ public class DatabaseEstadistica {
       int k = trads3.size();
       estad.setTercero(k);
       estad.setPais3(b.getCodigo3());
-      System.out.println();
-      System.out.println();
+      estad.setAno1(b.getPeriodoIni());
+      estad.setAno2(b.getPeriodoFin());
+      System.out.println(b.getPeriodoIni());
+      
     } catch (SQLException ex) {
       System.out.println("EXCEPCION");
       ex.printStackTrace();
