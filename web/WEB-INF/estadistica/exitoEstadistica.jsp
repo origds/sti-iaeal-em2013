@@ -179,7 +179,7 @@
                                 <tr>
                                     <th scope="col" style="color:red">PAISES</th>
                                     <th scope="col" style="color:red">NUMERO DE TRATADOS</th>
-                                    <th scope="col" style="color:black">PERIODOS</th> 
+                                    <th scope="col" style="color:red">PERIODOS</th> 
                             </thead>
                             <tbody>
                                 <tr>
