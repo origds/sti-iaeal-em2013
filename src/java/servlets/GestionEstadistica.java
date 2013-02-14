@@ -35,6 +35,7 @@ public class GestionEstadistica extends MappingDispatchAction {
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
             ClaseEstadistica b = (ClaseEstadistica) form;
+            System.out.println(b.getPeriodoIni());
             est Estad;
             Estad = DatabaseEstadistica.getInstance().BuscarEstadistica(b);
             request.setAttribute("est", Estad);
