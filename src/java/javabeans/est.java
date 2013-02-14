@@ -17,6 +17,8 @@ public class est extends ActionForm{
     String pais2;
     int tercero;
     String pais3;
+    int ano1;
+    int ano2;
 
     public est() {
     }
@@ -67,6 +69,22 @@ public class est extends ActionForm{
 
     public void setTercero(int tercero) {
         this.tercero = tercero;
+    }
+    
+    public int getAno1(){
+        return ano1;
+    }
+    
+    public void setAno1(int ano1){
+        this.ano1 = ano1;
+    }
+    
+     public int getAno2(){
+        return ano2;
+    }
+    
+    public void setAno2(int ano2){
+        this.ano1 = ano2;
     }
     
     
