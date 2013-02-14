@@ -15,8 +15,8 @@ public class ClaseEstadistica extends ActionForm {
    private String codigo1;
    private String codigo2;
    private String codigo3;
-   private Integer periodoIni;
-   private Integer periodoFin;
+   private int periodoIni;
+   private int periodoFin;
 
     public ClaseEstadistica() {
     }
