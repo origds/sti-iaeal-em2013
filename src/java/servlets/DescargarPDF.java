@@ -55,7 +55,7 @@ public class DescargarPDF extends DownloadAction {
     dt.get(t, true);
     
     System.out.println("-------- " + t.getTitulo());
-    File file = new File( t.getTitulo() );
+    File file = new File(String.valueOf(request.getSession().getAttribute("tratado")));
    
     System.out.println("***** idd " + t.getId());
 
