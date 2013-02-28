@@ -55,119 +55,216 @@ public class DatabaseEstadistica {
     this.database = Database.getInstance(driver, databaseUrl);
   }
 
+  public String ArmarQuery (int ini, int fin, String codigo) {
+    boolean cont;
+    String sqlquery;
+
+    if ((ini != 0) && (fin != 0)) {
+      sqlquery = "SELECT * FROM \"STI\".tratado, \"STI\".pais WHERE (" + ini 
+                  + " <= (extract(year from firmaFecha)) " 
+                  + "AND (extract(year from firmaFecha)) <= " + fin + ") AND (idTp = id) ";
+      cont = true;
+    } else {
+      sqlquery = "SELECT * FROM \"STI\".pais WHERE ";
+      cont = false;
+    }
+    
+    System.out.println ("Periodos del query");
+    System.out.println (ini);
+    System.out.println (fin);
+    if (!"".equals(codigo)) {
+      if (cont == true) {
+        sqlquery += "AND upper(pais) like upper('%" + codigo + "%')";
+      } else {
+        sqlquery += "upper(pais) like upper('%" + codigo + "%')";
+      }
+      cont = true;
+    }
+    return sqlquery;
+  }
+  
   public est BuscarEstadistica(ClaseEstadistica b) {
     ArrayList<Tratado> trads1 = new ArrayList<Tratado>(0);
     ArrayList<Tratado> trads2 = new ArrayList<Tratado>(0);
     ArrayList<Tratado> trads3 = new ArrayList<Tratado>(0);
     est estad = new est();
-    boolean cont;
     String sqlquery;
-
+    int i;
+    
     try {
-      if ((b.getPeriodoIni() != 0) && (b.getPeriodoFin() != 0)) {
-        sqlquery = "SELECT * FROM \"STI\".tratado, \"STI\".pais WHERE (" + b.getPeriodoIni() 
-                    + " <= (extract(year from firmaFecha)) AND (extract(year from firmaFecha)) <= " + b.getPeriodoFin() + ") AND (idTp = id) ";
-        cont = true;
-      } else {
-        sqlquery = "SELECT * FROM \"STI\".pais WHERE ";
-        cont = false;
-      }
-      System.out.println ("Periodos del query");
-      System.out.println (b.getPeriodoIni());
-      System.out.println (b.getPeriodoFin());
-      if (!"".equals(b.getCodigo1())) {
-        if (cont == true) {
-          sqlquery += "AND upper(pais) like upper('%" + b.getCodigo1() + "%')";
-        } else {
-          sqlquery += "upper(pais) like upper('%" + b.getCodigo1() + "%')";
-        }
-        cont = true;
-      }
-
-      System.out.println(sqlquery);
-      Statement stmt = conexion.createStatement();
-      ResultSet rs = stmt.executeQuery(sqlquery);
-      while (rs.next()) {
-        //System.out.println("HOLA!");
-        Tratado t = new Tratado();
-        t.setTitulo("titulo");
-        trads1.add(t);
-      }
-      int i = trads1.size();
-      estad.setPrimero(i);      
-      estad.setPais1(b.getCodigo1());
-      estad.setAno1(b.getPeriodoIni());
-      estad.setAno2(b.getPeriodoFin());
-
-      if ((b.getPeriodoIni() != 0) && (b.getPeriodoFin() != 0)) {
-        sqlquery = "SELECT * FROM \"STI\".tratado, \"STI\".pais WHERE (" + b.getPeriodoIni() + " <= (extract(year from firmaFecha)) AND (extract(year from firmaFecha)) <= " + b.getPeriodoFin() + ") AND (idTp = id)";
-        cont = true;
-      } else {
-        sqlquery = "SELECT * FROM \"STI\".pais WHERE ";
-        cont = false;
-      }
-
-      if (!"".equals(b.getCodigo2())) {
-        if (cont == true) {
-          sqlquery += "AND upper(pais) like upper('%" + b.getCodigo2() + "%')";
-        } else {
-          sqlquery += "upper(pais) like upper('%" + b.getCodigo2() + "%')";
-        }
-        cont = true;
-      }
-
-      Statement stmt2 = conexion.createStatement();
-      System.out.println(sqlquery);
-      ResultSet rs2 = stmt2.executeQuery(sqlquery);
-      while (rs2.next()) {
-        //System.out.println("HOLA!");
-        Tratado t = new Tratado();
-        t.setTitulo("titulo");
-        trads2.add(t);
-      }
-      int j = trads2.size();
-      estad.setSegundo(j);
-      estad.setPais2(b.getCodigo2());
-      estad.setAno1(b.getPeriodoIni());
-      estad.setAno2(b.getPeriodoFin());
-
-      if ((b.getPeriodoIni() != 0) && (b.getPeriodoFin() != 0)) {
-        sqlquery = "SELECT * FROM \"STI\".tratado, \"STI\".pais WHERE (" + b.getPeriodoIni() + " <= (extract(year from firmaFecha)) AND (extract(year from firmaFecha)) <= " + b.getPeriodoFin() + ") AND (idTp = id) ";
-        cont = true;
-      } else {
-        sqlquery = "SELECT * FROM \"STI\".pais WHERE ";
-        cont = false;
-      }
-
-      if (!"".equals(b.getCodigo3())) {
-        if (cont == true) {
-          sqlquery += "AND upper(pais) like upper('%" + b.getCodigo3() + "%')";
-        } else {
-          sqlquery += "upper(pais) like upper('%" + b.getCodigo3() + "%')";
-        }
-        cont = true;
-      }
-
-      Statement stmt3 = conexion.createStatement();
-      System.out.println(sqlquery);
-      ResultSet rs3 = stmt3.executeQuery(sqlquery);
-      while (rs3.next()) {
-        // System.out.println("HOLA!");
-        Tratado t = new Tratado();
-
-        t.setTitulo("titulo");
-        trads3.add(t);
-      }
-      int k = trads3.size();
-      estad.setTercero(k);
-      estad.setPais3(b.getCodigo3());
-      estad.setAno1(b.getPeriodoIni());
-      estad.setAno2(b.getPeriodoFin());
-      System.out.println(b.getPeriodoIni());
       
+      //Para cuando no hay peridos
+      if ((b.getPeriodoIni1() == 0) & (b.getPeriodoFin1() == 0)) {
+        
+         // Query para el primer pais
+        sqlquery = ArmarQuery(0,0,b.getCodigo1());
+        System.out.println(sqlquery);
+        Statement stmt = conexion.createStatement();
+        ResultSet rs = stmt.executeQuery(sqlquery);
+        while (rs.next()) {
+          Tratado t = new Tratado();
+          t.setTitulo("titulo");
+          trads1.add(t);
+        }
+        i = trads1.size();
+        estad.setPrimero(i);      
+        estad.setPais1(b.getCodigo1());
+        estad.setAno1(b.getPeriodoIni1());
+        estad.setAno2(b.getPeriodoFin1());
+        
+        //Query para el segundo pais
+        sqlquery = ArmarQuery(0,0,b.getCodigo2());
+        System.out.println(sqlquery);
+        Statement stmt2 = conexion.createStatement();
+        ResultSet rs2 = stmt2.executeQuery(sqlquery);
+        while (rs2.next()) {
+          Tratado t = new Tratado();
+          t.setTitulo("titulo");
+          trads2.add(t);
+        }
+        i = trads2.size();
+        estad.setSegundo(i);      
+        estad.setPais2(b.getCodigo2());
+        estad.setAno1(b.getPeriodoIni1());
+        estad.setAno2(b.getPeriodoFin1());       
+        
+        //Query para el tercer pais
+        sqlquery = ArmarQuery(0,0,b.getCodigo3());
+        System.out.println(sqlquery);
+        Statement stmt3 = conexion.createStatement();
+        ResultSet rs3 = stmt3.executeQuery(sqlquery);
+        while (rs3.next()) {
+          Tratado t = new Tratado();
+          t.setTitulo("titulo");
+          trads3.add(t);
+        }
+        i = trads3.size();
+        estad.setTercero(i);      
+        estad.setPais3(b.getCodigo3());
+        estad.setAno1(b.getPeriodoIni1());
+        estad.setAno2(b.getPeriodoFin1());
+      
+      }
+      
+      //Query para el primer periodo
+      if ((b.getPeriodoIni1() != 0) && (b.getPeriodoFin1() != 0)) {
+        
+        if (b.getPeriodoIni1() > b.getPeriodoFin1()) {
+          throw new Exception("El inicio del periodo 1 debe ser mayor al final");
+        }
+        
+        // Query para el primer pais
+        sqlquery = ArmarQuery(b.getPeriodoIni1(),b.getPeriodoFin1(),b.getCodigo1());
+        System.out.println(sqlquery);
+        Statement stmt = conexion.createStatement();
+        ResultSet rs = stmt.executeQuery(sqlquery);
+        while (rs.next()) {
+          Tratado t = new Tratado();
+          t.setTitulo("titulo");
+          trads1.add(t);
+        }
+        i = trads1.size();
+        estad.setPrimero(i);      
+        estad.setPais1(b.getCodigo1());
+        estad.setAno1(b.getPeriodoIni1());
+        estad.setAno2(b.getPeriodoFin1());
+        
+        //Query para el segundo pais
+        sqlquery = ArmarQuery(b.getPeriodoIni1(),b.getPeriodoFin1(),b.getCodigo2());
+        System.out.println(sqlquery);
+        Statement stmt2 = conexion.createStatement();
+        ResultSet rs2 = stmt2.executeQuery(sqlquery);
+        while (rs2.next()) {
+          Tratado t = new Tratado();
+          t.setTitulo("titulo");
+          trads2.add(t);
+        }
+        i = trads2.size();
+        estad.setSegundo(i);      
+        estad.setPais2(b.getCodigo2());
+        estad.setAno1(b.getPeriodoIni1());
+        estad.setAno2(b.getPeriodoFin1());       
+        
+        //Query para el tercer pais
+        sqlquery = ArmarQuery(b.getPeriodoIni1(),b.getPeriodoFin1(),b.getCodigo3());
+        System.out.println(sqlquery);
+        Statement stmt3 = conexion.createStatement();
+        ResultSet rs3 = stmt3.executeQuery(sqlquery);
+        while (rs3.next()) {
+          Tratado t = new Tratado();
+          t.setTitulo("titulo");
+          trads3.add(t);
+        }
+        i = trads3.size();
+        estad.setTercero(i);      
+        estad.setPais3(b.getCodigo3());
+        estad.setAno1(b.getPeriodoIni1());
+        estad.setAno2(b.getPeriodoFin1());
+      
+      }
+        
+      //Query para el segundo periodo
+      if ((b.getPeriodoIni2() != 0) && (b.getPeriodoFin2() != 0)) {
+        
+        if (b.getPeriodoIni2() > b.getPeriodoFin2()) {
+          throw new Exception("El inicio del periodo 2 debe ser mayor al final");
+        }
+        
+        // Query para el primer pais
+        sqlquery = ArmarQuery(b.getPeriodoIni2(),b.getPeriodoFin2(),b.getCodigo1());
+        System.out.println(sqlquery);
+        Statement stmt4 = conexion.createStatement();
+        ResultSet rs4 = stmt4.executeQuery(sqlquery);
+        while (rs4.next()) {
+          Tratado t = new Tratado();
+          t.setTitulo("titulo");
+          trads1.add(t);
+        }
+        i = trads1.size();
+        estad.setCuarto(i);      
+        estad.setPais1(b.getCodigo1());
+        estad.setAno3(b.getPeriodoIni2());
+        estad.setAno4(b.getPeriodoFin2());
+        
+        //Query para el segundo pais
+        sqlquery = ArmarQuery(b.getPeriodoIni2(),b.getPeriodoFin2(),b.getCodigo2());
+        System.out.println(sqlquery);
+        Statement stmt5 = conexion.createStatement();
+        ResultSet rs5 = stmt5.executeQuery(sqlquery);
+        while (rs5.next()) {
+          Tratado t = new Tratado();
+          t.setTitulo("titulo");
+          trads2.add(t);
+        }
+        i = trads2.size();
+        estad.setQuinto(i);      
+        estad.setPais2(b.getCodigo2());
+        estad.setAno3(b.getPeriodoIni2());
+        estad.setAno4(b.getPeriodoFin2());       
+        
+        //Query para el tercer pais
+        sqlquery = ArmarQuery(b.getPeriodoIni2(),b.getPeriodoFin2(),b.getCodigo3());
+        System.out.println(sqlquery);
+        Statement stmt6 = conexion.createStatement();
+        ResultSet rs6 = stmt6.executeQuery(sqlquery);
+        while (rs6.next()) {
+          Tratado t = new Tratado();
+          t.setTitulo("titulo");
+          trads3.add(t);
+        }
+        i = trads3.size();
+        estad.setSexto(i);      
+        estad.setPais3(b.getCodigo3());
+        estad.setAno3(b.getPeriodoIni2());
+        estad.setAno4(b.getPeriodoFin2());
+        
+      }
+         
     } catch (SQLException ex) {
       System.out.println("EXCEPCION");
       ex.printStackTrace();
+    } catch (Exception ex) {
+      System.out.println(ex.getMessage());
     }
     return estad;
   }
