@@ -59,12 +59,15 @@
         var p1 = document.getElementById('pa1').lastChild.nodeValue
         var p2 = document.getElementById('pa2').lastChild.nodeValue
         var p3 = document.getElementById('pa3').lastChild.nodeValue
+        var b1 = Number(document.getElementById('ano1').lastChild.nodeValue)
+        var b2 = Number(document.getElementById('ano2').lastChild.nodeValue)
+        var c1 = Number(document.getElementById('num1').lastChild.nodeValue)
+        var c2 = Number(document.getElementById('num2').lastChild.nodeValue)
+        var c3 = Number(document.getElementById('num3').lastChild.nodeValue)
         var data = google.visualization.arrayToDataTable([
             ['Periodos', p1, p2, p3],
-            ['2004',      1000,     400,     365  ],
-            ['2005',      1170,     460,     845  ],
-            ['2006',       660,    1120,     942  ],
-            ['2007',      1030,     540,     1520 ]
+            [ b1 ,  c1, c2, c3  ],
+            [ b2 ,  c1, c2, c3  ]
         ]);
 
         var options = {
@@ -87,12 +90,15 @@
         var p1 = document.getElementById('pa1').lastChild.nodeValue
         var p2 = document.getElementById('pa2').lastChild.nodeValue
         var p3 = document.getElementById('pa3').lastChild.nodeValue
+        var b1 = Number(document.getElementById('ano1').lastChild.nodeValue)
+        var b2 = Number(document.getElementById('ano2').lastChild.nodeValue)
+        var c1 = Number(document.getElementById('num1').lastChild.nodeValue)
+        var c2 = Number(document.getElementById('num2').lastChild.nodeValue)
+        var c3 = Number(document.getElementById('num3').lastChild.nodeValue)
         var data = google.visualization.arrayToDataTable([
             ['Periodos', p1, p2, p3],
-            ['2004',      1000,     400,      500 ],
-            ['2005',      1170,     460,      700 ],
-            ['2006',       660,    1120,     1120 ],
-            ['2007',      1030,     540,      320 ]
+            [ b1 ,  c1, c2, c3  ],
+            [ b2 ,  c1, c2, c3  ]
         ]);
 
         var options = {
