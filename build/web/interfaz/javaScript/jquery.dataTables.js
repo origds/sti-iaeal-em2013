@@ -1284,7 +1284,7 @@
 			 *   from the first array, and the displayed value to the end user comes from the second
 			 *   array. 2D example: [ [ 10, 25, 50, 100, -1 ], [ 10, 25, 50, 100, 'All' ] ];
 			 */
-			this.aLengthMenu = [ 5, 15, 50, 100 ];
+			this.aLengthMenu = [ 100,5, 15, 50];
 			
 			/*
 			 * Variable: iDraw
@@ -1308,7 +1308,7 @@
 			 * Notes:    These variable must NOT be used externally to get the data length. Rather, use
 			 *   the fnRecordsTotal() (etc) functions.
 			 */
-			this._iDisplayLength = 5;
+			this._iDisplayLength = 100;
 			this._iDisplayStart = 0;
 			this._iDisplayEnd = 5;
 			

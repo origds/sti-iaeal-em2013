@@ -65,13 +65,16 @@ public class DatabaseEstadistica {
 
     try {
       if ((b.getPeriodoIni() != 0) && (b.getPeriodoFin() != 0)) {
-        sqlquery = "SELECT DISTINCT * FROM \"STI\".tratado, \"STI\".pais WHERE (" + b.getPeriodoIni() + " <= (extract(year from firmaFecha) <= " + b.getPeriodoFin() + ") AND (idTp = id)";
+        sqlquery = "SELECT * FROM \"STI\".tratado, \"STI\".pais WHERE (" + b.getPeriodoIni() 
+                    + " <= (extract(year from firmaFecha)) AND (extract(year from firmaFecha)) <= " + b.getPeriodoFin() + ") AND (idTp = id) ";
         cont = true;
       } else {
         sqlquery = "SELECT * FROM \"STI\".pais WHERE ";
         cont = false;
       }
-
+      System.out.println ("Periodos del query");
+      System.out.println (b.getPeriodoIni());
+      System.out.println (b.getPeriodoFin());
       if (!"".equals(b.getCodigo1())) {
         if (cont == true) {
           sqlquery += "AND upper(pais) like upper('%" + b.getCodigo1() + "%')";
@@ -81,8 +84,8 @@ public class DatabaseEstadistica {
         cont = true;
       }
 
-      Statement stmt = conexion.createStatement();
       System.out.println(sqlquery);
+      Statement stmt = conexion.createStatement();
       ResultSet rs = stmt.executeQuery(sqlquery);
       while (rs.next()) {
         //System.out.println("HOLA!");
@@ -97,7 +100,7 @@ public class DatabaseEstadistica {
       estad.setAno2(b.getPeriodoFin());
 
       if ((b.getPeriodoIni() != 0) && (b.getPeriodoFin() != 0)) {
-        sqlquery = "SELECT DISTINCT * FROM \"STI\".tratado, \"STI\".pais WHERE (" + b.getPeriodoIni() + " <= (extract(year from firmaFecha) <= " + b.getPeriodoFin() + ") AND (idTp = id)";
+        sqlquery = "SELECT * FROM \"STI\".tratado, \"STI\".pais WHERE (" + b.getPeriodoIni() + " <= (extract(year from firmaFecha)) AND (extract(year from firmaFecha)) <= " + b.getPeriodoFin() + ") AND (idTp = id)";
         cont = true;
       } else {
         sqlquery = "SELECT * FROM \"STI\".pais WHERE ";
@@ -129,7 +132,7 @@ public class DatabaseEstadistica {
       estad.setAno2(b.getPeriodoFin());
 
       if ((b.getPeriodoIni() != 0) && (b.getPeriodoFin() != 0)) {
-        sqlquery = "SELECT DISTINCT * FROM \"STI\".tratado, \"STI\".pais WHERE (" + b.getPeriodoIni() + " <= (extract(year from firmaFecha) <= " + b.getPeriodoFin() + ") AND (idTp = id)";
+        sqlquery = "SELECT * FROM \"STI\".tratado, \"STI\".pais WHERE (" + b.getPeriodoIni() + " <= (extract(year from firmaFecha)) AND (extract(year from firmaFecha)) <= " + b.getPeriodoFin() + ") AND (idTp = id) ";
         cont = true;
       } else {
         sqlquery = "SELECT * FROM \"STI\".pais WHERE ";

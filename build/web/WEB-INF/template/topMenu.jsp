@@ -20,17 +20,51 @@
     </div>
   </html:link>
 
-    <html:link action="/home">
-      <div class="opcionesDer">
-        <div class="texto">Inicio</div>
-      </div>
-    </html:link>
+  <html:link action="/estadisticaForm">
+    <div class="opcionesIzq">
+      <div class="texto">
+        Estadística
+      </div>						
+    </div>
+  </html:link>  
+
+  <html:link action="/plantilla">
+    <div class="opcionesIzq">
+      <div class="texto">
+        Plantilla Tratado
+      </div>						
+    </div>
+  </html:link> 
+
+    
+  <html:link action="/consultarFAQ">
+    <div class="opcionesIzq">
+      <div class="texto">
+        FAQ
+      </div>						
+    </div>
+  </html:link> 
+
+  <html:link action="/home">
+    <div class="opcionesDer">
+      <div class="texto">Inicio</div>
+    </div>
+  </html:link>
+  
   <logic:present name="login">
     <html:link action="/tratado/crearForm">
       <div class="opcionesDer">
         <div class="texto">Incorporar Tratado</div>
       </div>
     </html:link>
+
+    <logic:equal name="login" property="administrador" value="true" scope="session">
+      <html:link action="/ListarLog">
+        <div class="opcionesDer">
+          <div class="texto">Historial</div>
+        </div>
+      </html:link>
+    </logic:equal>
 
     <logic:equal name="login" property="administrador" value="true" scope="session">
       <html:link action="/usuario/crearForm">
@@ -50,13 +84,13 @@
 </div>
 
 <logic:present name="revisar">
-    <logic:equal name="revisar" value="usuarioInvalido">
-        <script>
-            $(document).ready(function(){
-                alert("Combinacion Usuario-Contrasena incorrecta");
-            });
-        </script>
-    </logic:equal>
+  <logic:equal name="revisar" value="usuarioInvalido">
+    <script>
+      $(document).ready(function(){
+        alert("Combinacion Usuario-Contrasena incorrecta");
+      });
+    </script>
+  </logic:equal>
 </logic:present>
 
 

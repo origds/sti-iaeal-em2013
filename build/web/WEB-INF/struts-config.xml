@@ -12,9 +12,12 @@
         <form-bean name="Usuario" type="javabeans.Usuario"/>
         <form-bean name="LoginForm" type="javabeans.LoginForm"/>   
         <form-bean name="Tratado" type="javabeans.Tratado"/>
+ <!--   <form-bean name="EstadisticaForm" type="javabeans.EstadisticaForm"/>   -->
         <form-bean name="BusquedaForm" type="javabeans.BusquedaForm"/>
-        <form-bean name="EstadisticaForm" type="javabeans.EstadisticaForm"/>
         <form-bean name="Buscable" type="javabeans.Buscable"/>
+        <form-bean name="ClaseEstadistica" type="javabeans.ClaseEstadistica"/>
+        <form-bean name="Log" type="javabeans.Log" />
+        <form-bean name="FAQ" type="javabeans.FAQ" />
     </form-beans>
     
     <global-exceptions>
@@ -31,11 +34,25 @@
 
       <action path="/Index"   forward="/index.jsp"/>
       
-      <!-- Ir al home -->
-      <action path="/home" type="servlets.home">
-          <forward name="success" path="base"/>
+      <action path="/home" type="servlets.home" scope="request">
+       <forward name="success" path="principal" ></forward>
+     </action>
+     
+     <!-- LOG -->
+      
+      <action path="/ListarLog" type="servlets.GestionLog" scope="request" 
+        name="Log">
+        <forward name="success" path="Log.log" ></forward>
       </action>
 
+     
+     <!-- FAQ -->
+      
+      <action path="/consultarFAQ" type="servlets.GestionFAQ" scope="request" 
+        name="FAQ">
+        <forward name="success" path="faq.FAQ" ></forward>
+      </action>
+      
       <!-- BUSQUEDA -->
 
       <action path="/buscar" name="BusquedaForm" validate="true" scope="request"
@@ -50,18 +67,34 @@
       </action>
 
       <!-- ESTADISTICA -->
-
+<!--
       <action path="/generarEstadistica" name="EstadisticaForm" scope="request"
-              input= "estadistica.form" type="servlets.GestionEstadistica" parameter="generarEstadistica" validate="true">
+              input= "estadistica.form" type="servlets.GestionEstadistica" parameter="generarEstadistica" validate="false">
+        <forward name="success" path="estadistica.exito"/>
+        <forward name="failure" path="estadistica.form"/>
+      </action>
+ -->     
+       <action path="/BuscarEstadistica" name="ClaseEstadistica" scope="request"
+              type="servlets.GestionEstadistica" validate="false">
         <forward name="success" path="estadistica.exito"/>
         <forward name="failure" path="estadistica.form"/>
       </action>
 
-      <action path="/estadisticaForm" name="EstadisticaForm" scope="request"
+      <action path="/pdf" name="Tratado" scope="request"
+              type="servlets.DescargarPDF" validate="false">
+        <forward name="success" path="/home"/>
+      </action>
+      
+      <action path="/plantilla" name="Tratado" scope="request"
+              type="servlets.DescargarPlantilla" validate="false">
+        <forward name="success" path="/home"/>
+      </action>
+
+      <action path="/estadisticaForm" name="ClaseEstadistica" scope="request"
               type="servlets.GestionEstadistica" parameter="estadisticaForm" validate="false">
         <forward name="success" path="estadistica.form"/>
       </action>
-      
+     
       <!-- USUARIO -->
 
       <!-- Iniciar Sesion-->
@@ -207,6 +240,8 @@
               type="servlets.GestionTratado" parameter="marcarPendiente" validate="false">
         <forward name="success" path="/tratado/gestionarMisTratados.do"/>
       </action>
+      
+    
 
     </action-mappings>
     
@@ -243,18 +278,18 @@
     true : validate. DTD should be specified in file header (default)
     false : no validation
 
-    Paths found in Tiles definitions are relative to the main context.
-    -->
-    <plug-in className="org.apache.struts.tiles.TilesPlugin" >
-        <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />      
-        <set-property property="moduleAware" value="true" />
-    </plug-in>
+  Paths found in Tiles definitions are relative to the main context.
+  -->
+  <plug-in className="org.apache.struts.tiles.TilesPlugin" >
+    <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />      
+    <set-property property="moduleAware" value="true" />
+  </plug-in>
     
-    <!-- ========================= Validator plugin ================================= -->
-    <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
-        <set-property
-            property="pathnames"
-            value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
-    </plug-in>
+  <!-- ========================= Validator plugin ================================= -->
+  <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+    <set-property
+      property="pathnames"
+      value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+  </plug-in>
   
 </struts-config>

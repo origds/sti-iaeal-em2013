@@ -35,13 +35,18 @@ public class GestionEstadistica extends MappingDispatchAction {
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
             ClaseEstadistica b = (ClaseEstadistica) form;
-            System.out.println(b.getPeriodoIni());
             est Estad;
             Estad = DatabaseEstadistica.getInstance().BuscarEstadistica(b);
+            System.out.println("PERIODOOOS");
+            System.out.println(b.getPeriodoIni());
+            System.out.println(b.getPeriodoFin());
+            
             request.setAttribute("est", Estad);
             System.out.println("ESTADISTICAAAAAAAAAAAAAAAAAA " + Estad.getPrimero());
             System.out.println("ESTADISTICAAAAAAAAAAAAAAAAAA " + Estad.getSegundo());
             System.out.println("ESTADISTICAAAAAAAAAAAAAAAAAA " + Estad.getTercero());
+            System.out.println(Estad.getAno1());
+            System.out.println(Estad.getAno2());
             return mapping.findForward(SUCCESS);
 
     }

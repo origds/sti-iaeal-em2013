@@ -123,14 +123,14 @@
   </div>
 
   <div id="stickers">
-    <a href="http://www.mre.gov.ve/">
-      <html:img page="/interfaz/imagenes/Sticker CANCILLERIA.png"/>
+    <a href="http://www.usb.ve/">
+      <html:img page="/interfaz/imagenes/Sticker USB.png"/>
     </a>
     <a href="http://www.iaeal.usb.ve/">
       <html:img page="/interfaz/imagenes/Sticker IAEAL.png"/>
     </a>
-    <a href="http://www.usb.ve/">
-      <html:img page="/interfaz/imagenes/Sticker USB.png"/>
+    <a href="http://www.mre.gov.ve/">
+      <html:img page="/interfaz/imagenes/Sticker CANCILLERIA.png"/>
     </a>
     <a href="http://www.aladi.org/">
       <html:img page="/interfaz/imagenes/Sticker ALADI.png"/>

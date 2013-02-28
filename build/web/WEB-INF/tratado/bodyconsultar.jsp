@@ -38,19 +38,19 @@
             <html:hidden name="tratado" property="id"/> 
             <input type="submit" value="" class="actualizar" title="Modificar Tratado"/>
           </html:form>
-            <!-- Si el tratado no esta aprobado y eres administrador, muestra las opciones -->
+          <!-- Si el tratado no esta aprobado y eres administrador, muestra las opciones -->
           <logic:equal name="tratado" property="status" value="1">
-              <html:form action="/tratado/rechazar" method="POST" enctype="multipart/form-data" onsubmit= "if(!confirm('Seguro desea rechazar este Tratado?')) return false">
-                <html:hidden name="tratado" property="id"/>  
-                <input type="submit" value="" class="rechazado" title="Rechazar el tratado"/>
-              </html:form>
+            <html:form action="/tratado/rechazar" method="POST" enctype="multipart/form-data" onsubmit= "if(!confirm('Seguro desea rechazar este Tratado?')) return false">
+              <html:hidden name="tratado" property="id"/>  
+              <input type="submit" value="" class="rechazado" title="Rechazar el tratado"/>
+            </html:form>
             <html:form action="/tratado/aprobar" method="POST" enctype="multipart/form-data" onsubmit= "if(!confirm('Seguro desea aprobar este Tratado?')) return false">
               <html:hidden name="tratado" property="id"/> 
               <input type="submit" value="" class="aprobado" title="Aprobar el tratado"/>
             </html:form>
           </logic:equal>
         </logic:equal>
-              <!-- Si no es administrador el usuario-->
+        <!-- Si no es administrador el usuario-->
         <logic:notEqual name="login" property="administrador" value="true" scope="session">
           <!-- script para que aparezcan modicicables los tratados pertenecientes a ese usuario-->
           <% Usuario u = (Usuario) request.getSession().getAttribute("login");
@@ -71,9 +71,12 @@
 
           <%}%>
         </logic:notEqual>
-
       </logic:present>
 
+      <html:form action="/pdf" method="POST" enctype="multipart/form-data">
+        <html:hidden name="tratado" property="id"/> 
+        <input type="submit" value="" class="descargar" title="Descargar Tratado"/>
+      </html:form>
       </br>
       <fieldset style="border:none"></fieldset>
       <table class="camposRegistro">	
@@ -89,7 +92,7 @@
           <td>
             <fieldset id="divisionPais">
               <legend>País(es)</legend>
-              <!-- <input type="text" name="paises" /> -->
+              <!--<input type="text" name="paises" -->
               <!-- Dropdown con los paises-->
               <logic:iterate id="element" name="tratado" property="paises" indexId="index">
                 ${element}</br>

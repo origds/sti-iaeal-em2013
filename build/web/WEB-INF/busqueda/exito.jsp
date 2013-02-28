@@ -25,7 +25,7 @@
     
     <script type="text/javascript" charset="utf-8"> 
             $(document).ready(function() {
-            $('#tablaResultados').dataTable();
+            $('#example').dataTable();
             } );
     </script>
 
@@ -71,21 +71,16 @@
     <div id="listarTratados" style="padding: 50px 7px 0px 7px">
         <div id="resultbusq" class="inbox" style="width: 800px;">
           <div class="titulo" style="width: 100%; text-align: left;"> Resultados de la Busqueda</div>
-          <div class="botonEstadistica" id="botonEstadistica">
-            <html:link action="/estadisticaForm"> 
-              Generar Estadística
-            </html:link>
-          </div>
           <br>
           <br>
           <br>
           <br>
           <br>
-          <table id="tablaResultados" style="padding-top: 40px !important">
+         <table class="display" id="example">
             <thead>
               <tr>
                 <th> Título </th>
-                <th> Fecha Firma </th>
+                <th> Fecha Firma (MM/DD/AA) </th>
               </tr>
             </thead>
             <tbody>
@@ -109,13 +104,6 @@
           <br>
           <br>
           <br>
-          <div class='pager'>
-            <a href='#' alt='First' class='firstPage'>Primero</a>
-            <a href='#' alt='Previous' class='prevPage'><html:img page="/interfaz/imagenes/anterior.png"/></a>
-            <span class='currentPage'></span> de <span class='totalPages'></span>
-            <a href='#' alt='Next' class='nextPage'> <html:img page="/interfaz/imagenes/siguiente.png"/></a>
-            <a href='#' alt='Last' class='lastPage'>Ultimo</a>
-          </div>
       </div>
     </div>
   </logic:notEmpty>

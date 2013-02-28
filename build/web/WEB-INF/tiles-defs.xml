@@ -22,6 +22,11 @@
     
     <definition name="principal" extends="base">
     </definition>
+    
+    <!--GESTION DE LOG. -->              
+    <definition name="Log.log" extends="base">
+      <put name="body"  value="/WEB-INF/Log/log.jsp"/>
+    </definition>
 
     <!--GESTION DE USUARIOS. -->              
     <definition name="usuario.gestionar" extends="base">
@@ -103,6 +108,17 @@
     <definition name="estadistica.exito" extends="base">
         <put name="body" value="/WEB-INF/estadistica/exitoEstadistica.jsp"/>
     </definition>
+    <definition name="log" extends="base">
+        <put name="body" value="/WEB-INF/Log/bodylog.jsp"/>
+    </definition>
+    
+    
+    <!--FAQ
+    <definition name="FAQ.consultarFAQ" extends="base">
+      <put name="body" value="/WEB-INF/FAQ/consultarFAQ.jsp"/>
+    </definition>
+    -->
+    
     <!-- sample tiles definitions
     <definition name=".mainLayout" path="/common/layouts/classicLayout.jsp">
         <put name="title"  value="Sample Page Title" />
@@ -126,9 +142,9 @@
         <put name="body"   value=".aPage.body" />
     </definition>
 
-    end samples -->
+  end samples -->
 
-    <definition name="${YOUR_DEFINITION_HERE}">
-    </definition>
+  <definition name="${YOUR_DEFINITION_HERE}">
+  </definition>
 
 </tiles-definitions>

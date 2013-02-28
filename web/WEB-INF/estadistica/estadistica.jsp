@@ -811,10 +811,10 @@
                     <div id ="periodos1">
                         <fieldset style="border:none;">
                             <legend>Inicio de período</legend>                  
-                            <input type ="text" name="ClaseEstadistica" property="periodoIni" />
+                            <html:text property="periodoIni" />
                              
                             <legend>Finalización de período</legend>
-                            <input type ="text" name="ClaseEstadistica" property="periodoFin" />               
+                            <html:text property="periodoFin" />               
                         </fieldset>
                     </div> 
                             

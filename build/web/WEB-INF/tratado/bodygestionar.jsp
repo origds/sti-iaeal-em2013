@@ -19,8 +19,8 @@
     <script type="text/javascript" language="javascript" src="<%=request.getContextPath()%>/interfaz/javaScript/jquery.dataTables.js"></script>   
     
     <style type="text/css" title="currentStyle"> 
-			@import "<%=request.getContextPath()%>/interfaz/demo_page.css";
-			@import "<%=request.getContextPath()%>/interfaz/demo_table.css";
+    	@import "<%=request.getContextPath()%>/interfaz/demo_page.css";
+	@import "<%=request.getContextPath()%>/interfaz/demo_table.css";
     </style> 
     
    <script type="text/javascript" charset="utf-8"> 
@@ -69,15 +69,15 @@
     </div>
   </logic:empty>
   <logic:notEmpty name="tratados">
-    <div id="listarTratados" style="padding: 50px 7px 0px 7px;">
-      
+    <div id="listarTratados" style="padding: 50px 7px 0px 7px;">   
         <div id ="resultbusq" class="inbox" style="width: 800px; min-height: 600px;">
           <div class="titulo" style="width: 100%; text-align: left;"> Lista de Tratados</div>
-         <table class="display" id="example">
+          <br><br><br>
+          <table class="display" id="example">
             <thead>
               <tr>
                 <th> Título </th>
-                <th> Fecha Firma </th>
+                <th> Fecha Firma (MM/DD/AA)</th>
               </tr>
             </thead>
             <tbody>
@@ -95,15 +95,13 @@
                   <td valign="top">
                     <bean:write name="tratado" property="firmaFecha"></bean:write>
                   </td>
-                </tr> 
               </div>
             </logic:iterate>
             </tbody>
           </table>
-        
-       
+          <br>
+          <br>
         </div>
-
     </div>
   </logic:notEmpty>
 </logic:present>

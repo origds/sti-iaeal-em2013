@@ -35,7 +35,7 @@
     $( ".fecha input" ).datepicker( 
     "option", "dayNamesMin", [ "Dom", "Lun", "Mar", "Mie", "Juev", "Vier", "Sab" ] 
   );
-    $( ".fecha input" ).datepicker( "option", "yearRange", "1800:2012" );
+    $( ".fecha input" ).datepicker( "option", "yearRange", "1800:+100" );
                 
         
   });
@@ -752,7 +752,7 @@
             </tr>
             <tr>
               <td>
-                <html:submit property="submit" value="Registrar" style="font-size: 17px"/>
+                <html:submit property="submit" value="Registrar" style="font-size: 17px; float: center;"/>
               </td>
             </tr>
           </table>

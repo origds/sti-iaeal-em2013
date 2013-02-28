@@ -84,7 +84,7 @@ public class est extends ActionForm{
     }
     
     public void setAno2(int ano2){
-        this.ano1 = ano2;
+        this.ano2 = ano2;
     }
     
     
