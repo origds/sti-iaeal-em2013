@@ -816,33 +816,23 @@
           <div id ="periodos1">
             <fieldset style="border:none; ">
               <legend>Inicio de período</legend>                  
-              <html:text property="periodoIni" value="" />
+              <html:text property="periodoIni1" value="" />
             </fieldset> 
             <fieldset style="border:none;">
               <legend>Finalización de período</legend>
-              <html:text property="periodoFin" value = "" />               
+              <html:text property="periodoFin1" value = "" />               
             </fieldset>
           </div> 
           <div id ="periodos2">
             <fieldset style="border:none; ">
               <legend>Inicio de período</legend>                  
-              <html:text property="periodoIni" value="" />
+              <html:text property="periodoIni2" value="" />
             </fieldset> 
             <fieldset style="border:none;">
               <legend>Finalización de período</legend>
-              <html:text property="periodoFin" value = "" />               
+              <html:text property="periodoFin2" value = "" />               
             </fieldset>
-          </div> 
-          <div id ="periodos3">
-            <fieldset style="border:none; ">
-              <legend>Inicio de período</legend>                  
-              <html:text property="periodoIni" value="" />
-            </fieldset> 
-            <fieldset style="border:none;">
-              <legend>Finalización de período</legend>
-              <html:text property="periodoFin" value = "" />               
-            </fieldset>
-          </div> 
+          </div>  
 
           <div id="Generar" style="float: center;">
             <html:submit> Generar </html:submit>
