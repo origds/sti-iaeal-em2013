@@ -15,18 +15,22 @@ public class ClaseEstadistica extends ActionForm {
    private String codigo1;
    private String codigo2;
    private String codigo3;
-   private int periodoIni;
-   private int periodoFin;
+   private int periodoIni1;
+   private int periodoFin1;
+   private int periodoIni2;
+   private int periodoFin2;
 
     public ClaseEstadistica() {
     }
 
-    public ClaseEstadistica(String codigo1, String codigo2, String codigo3, int periodoIni, int periodoFin) {
+    public ClaseEstadistica(String codigo1, String codigo2, String codigo3, int periodoIni1, int periodoFin1,  int periodoIni2, int periodoFin2) {
         this.codigo1 = codigo1;
         this.codigo2 = codigo2;
         this.codigo3 = codigo3;
-        this.periodoIni = periodoIni;
-        this.periodoFin = periodoFin;
+        this.periodoIni1 = periodoIni1;
+        this.periodoFin1 = periodoFin1;
+        this.periodoIni2 = periodoIni2;
+        this.periodoFin2 = periodoFin2;
     }
 
     public String getCodigo1() {
@@ -53,20 +57,36 @@ public class ClaseEstadistica extends ActionForm {
         this.codigo3 = codigo3;
     }
 
-  public int getPeriodoIni() {
-    return periodoIni;
+  public int getPeriodoIni1() {
+    return periodoIni1;
   }
 
-  public void setPeriodoIni(int periodoIni) {
-    this.periodoIni = periodoIni;
+  public void setPeriodoIni1(int periodoIni1) {
+    this.periodoIni1 = periodoIni1;
   }
 
-  public int getPeriodoFin() {
-    return periodoFin;
+  public int getPeriodoIni2() {
+    return periodoIni2;
   }
 
-  public void setPeriodoFin(int periodoFin) {
-    this.periodoFin = periodoFin;
+  public void setPeriodoIni2(int periodoIni2) {
+    this.periodoIni2 = periodoIni2;
+  }
+  
+  public int getPeriodoFin1() {
+    return periodoFin1;
+  }
+
+  public void setPeriodoFin1(int periodoFin1) {
+    this.periodoFin1 = periodoFin1;
+  }
+  
+  public int getPeriodoFin2() {
+    return periodoFin2;
+  }
+
+  public void setPeriodoFin2(int periodoFin2) {
+    this.periodoFin2 = periodoFin2;
   }
       
 }
