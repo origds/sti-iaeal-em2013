@@ -38,8 +38,10 @@ public class GestionEstadistica extends MappingDispatchAction {
             est Estad;
             Estad = DatabaseEstadistica.getInstance().BuscarEstadistica(b);
             System.out.println("PERIODOOOS");
-            System.out.println(b.getPeriodoIni());
-            System.out.println(b.getPeriodoFin());
+            System.out.println(b.getPeriodoIni2());
+            System.out.println(b.getPeriodoFin2());
+            System.out.println(b.getPeriodoIni2());
+            System.out.println(b.getPeriodoFin2());
             
             request.setAttribute("est", Estad);
             System.out.println("ESTADISTICAAAAAAAAAAAAAAAAAA " + Estad.getPrimero());
