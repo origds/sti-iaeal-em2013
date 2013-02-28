@@ -17,8 +17,13 @@ public class est extends ActionForm{
     String pais2;
     int tercero;
     String pais3;
+    int cuarto;
+    int quinto;
+    int sexto;
     int ano1;
     int ano2;
+    int ano3;
+    int ano4;
 
     public est() {
     }
@@ -59,6 +64,18 @@ public class est extends ActionForm{
         return tercero;
     }
 
+    public int getCuarto() {
+      return cuarto;
+    }
+
+    public int getQuinto() {
+      return quinto;
+    }
+
+    public int getSexto() {
+      return sexto;
+    }
+
     public void setPrimero(int primero) {
         this.primero = primero;
     }
@@ -69,6 +86,18 @@ public class est extends ActionForm{
 
     public void setTercero(int tercero) {
         this.tercero = tercero;
+    }
+
+    public void setCuarto(int cuarto) {
+      this.cuarto = cuarto;
+    }
+    
+    public void setQuinto(int quinto) {
+      this.quinto = quinto;
+    }
+
+    public void setSexto(int sexto) {
+      this.sexto = sexto;
     }
     
     public int getAno1(){
@@ -85,6 +114,22 @@ public class est extends ActionForm{
     
     public void setAno2(int ano2){
         this.ano2 = ano2;
+    }
+    
+    public int getAno3(){
+        return ano3;
+    }
+    
+    public void setAno3(int ano3){
+        this.ano3 = ano3;
+    }
+    
+     public int getAno4(){
+        return ano4;
+    }
+    
+    public void setAno4(int ano4){
+        this.ano4 = ano4;
     }
     
     
