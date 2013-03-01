@@ -9,6 +9,7 @@
   
     <form-beans>
         <form-bean name="home" type="servlets.home"/>
+        <form-bean name="faq" type="servlets.faq"/>
         <form-bean name="Usuario" type="javabeans.Usuario"/>
         <form-bean name="LoginForm" type="javabeans.LoginForm"/>   
         <form-bean name="Tratado" type="javabeans.Tratado"/>
@@ -17,7 +18,7 @@
         <form-bean name="Buscable" type="javabeans.Buscable"/>
         <form-bean name="ClaseEstadistica" type="javabeans.ClaseEstadistica"/>
         <form-bean name="Log" type="javabeans.Log" />
-        <form-bean name="FAQ" type="javabeans.FAQ" />
+        
     </form-beans>
     
     <global-exceptions>
@@ -47,11 +48,13 @@
 
      
      <!-- FAQ -->
-      
-      <action path="/consultarFAQ" type="servlets.GestionFAQ" scope="request" 
+      <action path="/faq" type="servlets.faq" scope="request">
+       <forward name="success" path="faq" ></forward>
+     </action>
+      <!--<action path="/consultarFAQ" type="servlets.GestionFAQ" scope="request" 
         name="FAQ">
         <forward name="success" path="faq.FAQ" ></forward>
-      </action>
+      </action>-->
       
       <!-- BUSQUEDA -->
 

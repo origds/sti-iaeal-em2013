@@ -112,12 +112,12 @@
         <put name="body" value="/WEB-INF/Log/bodylog.jsp"/>
     </definition>
     
-    
-    <!--FAQ
-    <definition name="FAQ.consultarFAQ" extends="base">
-      <put name="body" value="/WEB-INF/FAQ/consultarFAQ.jsp"/>
+     <!--FAQ-->
+   
+     <definition name="faq" extends="base">
+      <put name="body" value="/WEB-INF/faq/FAQ.jsp"/>
     </definition>
-    -->
+      
     
     <!-- sample tiles definitions
     <definition name=".mainLayout" path="/common/layouts/classicLayout.jsp">

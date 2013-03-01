@@ -37,11 +37,9 @@
   </html:link> 
 
     
-  <html:link action="/consultarFAQ">
+  <html:link action="/faq">
     <div class="opcionesIzq">
-      <div class="texto">
-        FAQ
-      </div>						
+      <div class="texto"> FAQ </div>						
     </div>
   </html:link> 
 
@@ -92,5 +90,4 @@
     </script>
   </logic:equal>
 </logic:present>
-
 

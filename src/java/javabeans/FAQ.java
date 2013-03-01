@@ -5,10 +5,14 @@
 package javabeans;
 
 import org.apache.struts.action.ActionForm;
+
 /**
  *
- * @author isaj
+ * @author mary blabla
  */
-public class FAQ {
+public class FAQ extends ActionForm {
+
+    public FAQ(){
+    }
     
-}
+}		
