@@ -250,7 +250,8 @@ div.inbox{
 }
 div.box a{
   float: left;
-  color: #747481;
+  color: white;
+  font-weight: bolder;
   margin-right: 5px;
 }
 .titulo{
