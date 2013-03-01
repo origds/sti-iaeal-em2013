@@ -22,7 +22,7 @@
     <div class="box"> 
       <div class="inbox" id="cajaBusqueda">
           <div class="titulo">FAQ</div> <br><br>
-    <div class="tituloFAQ"><a href="#" onclick='$("#info1").slideToggle();'>Bla</a>¿Cómo busco un tratado?</div>
+    <div class="tituloFAQ"><a href="#" onclick='$("#info1").slideToggle();'>+</a>¿Cómo busco un tratado?</div>
     <div class="infoFAQ" id="info1">
        Para buscar un tratado en la Base de Datos, es necesario presionar el 
        botón de "Búsqueda" en el Menú superior. El Sistema dará la opción
@@ -33,33 +33,21 @@
        con nuevas palabras claves en un campo que se encuentra en la esquina
        superior derecha de la página de Resultados.
     </div>
-    <div class="tituloFAQ"><a href="#" onclick='$("#info2").slideToggle();'>Bla</a>Pregunta 2</div>
+    <div class="tituloFAQ"><a href="#" onclick='$("#info2").slideToggle();'>+</a>¿Puedo agregar tratados al Sistema?</div>
     <div class="infoFAQ" id="info2">
-       Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla
-       Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla
-       Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla
-       Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla
-       Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla
-       Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla
-       Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla
-       Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla
-       Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla
-       Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla
+       Únicamente los administradores del Sistemas agregarán tratados. 
+       La información se obtiene del Libro Amarillo de la Cancillería de 
+       Venezuela y es agregada manualmente al Sistema.
     </div>
-    <div class="tituloFAQ"><a href="#" onclick='$("#info3").slideToggle();'>Bla</a>Pregunta 3</div>
+    <div class="tituloFAQ"><a href="#" onclick='$("#info3").slideToggle();'>+</a>¿Cómo guardo información de un tratado que busqué?</div>
     <div class="infoFAQ" id="info3">
-       Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla
-       Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla
-       Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla
-       Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla
-       Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla
-       Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla
-       Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla
-       Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla
-       Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla
-       Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla
+       Luego de realizar una búsqueda, seleccione el tratado que desee guardar
+       para ver la Planilla de este. En la esquina superior de la planilla 
+       presione el botón "Descargar" para que comience la descarga.
+       Al finalizar la descarga podrá guardar la planilla del tratado en formato
+       PDF.
     </div>
-    <div class="tituloFAQ"><a href="#" onclick='$("#info4").slideToggle();'>Bla</a>Pregunta 4</div>
+<%--     <div class="tituloFAQ"><a href="#" onclick='$("#info4").slideToggle();'>Bla</a>Pregunta 4</div>
     <div class="infoFAQ" id="info4">
        Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla
        Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla
@@ -84,7 +72,7 @@
        Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla
        Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla
        Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla
-    </div>
+    </div> --%>
     <div onload="carga();"></div>
     </div>
   </div>
