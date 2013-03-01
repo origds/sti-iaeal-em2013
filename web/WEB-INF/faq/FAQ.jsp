@@ -22,18 +22,16 @@
     <div class="box"> 
       <div class="inbox" id="cajaBusqueda">
           <div class="titulo">FAQ</div> <br><br>
-    <div class="tituloFAQ"><a href="#" onclick='$("#info1").slideToggle();'>Bla</a>Pregunta 1</div>
+    <div class="tituloFAQ"><a href="#" onclick='$("#info1").slideToggle();'>Bla</a>¿Cómo busco un tratado?</div>
     <div class="infoFAQ" id="info1">
-       Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla
-       Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla
-       Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla
-       Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla
-       Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla
-       Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla
-       Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla
-       Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla
-       Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla
-       Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla
+       Para buscar un tratado en la Base de Datos, es necesario presionar el 
+       botón de "Búsqueda" en el Menú superior. El Sistema dará la opción
+       de escribir palabras claves que se deseen encontrar en el título de
+       los tratados y presionar "Buscar" y dará la opción de "Ver Todos",
+       lo cual listará todos los tratados existentes en la Base de Datos.
+       Ambas opciones darán una lista de tratados la cual podrá ser filtrada
+       con nuevas palabras claves en un campo que se encuentra en la esquina
+       superior derecha de la página de Resultados.
     </div>
     <div class="tituloFAQ"><a href="#" onclick='$("#info2").slideToggle();'>Bla</a>Pregunta 2</div>
     <div class="infoFAQ" id="info2">
