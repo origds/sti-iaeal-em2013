@@ -54,9 +54,9 @@
                 <div class="titulo">Generar estadística de la búsqueda realizada.</div>
                 <br> <br> <br>
 
-                <div style="float: right;">
-                    <button id="botonPeriodo" style="color:#003333;font-size: 12pt">Con Periodos</button>
-                    <button id="botonPaises" style="color:#003333;font-size: 12pt">Solo Paises</button>
+                <div style="float: center;">
+                    <button id="botonPeriodo" class="botonBusqueda">Con Periodos</button>
+                    <button id="botonPaises" class="botonBusqueda">Solo Paises</button>
                 </div>
 
                 <html:form method="POST" action="/BuscarEstadistica">                        

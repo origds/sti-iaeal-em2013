@@ -51,7 +51,7 @@
        Al finalizar la descarga podrá guardar la planilla del tratado en formato
        PDF.
     </div>
-<%--     <div class="tituloFAQ"><a href="#" onclick='$("#info4").slideToggle();'>Bla</a>Pregunta 4</div>
+<%--     <div class="tituloFAQ"><a href="#" onclick='$("#info4").slideToggle();'>+</a>Pregunta 4</div>
     <div class="infoFAQ" id="info4">
        Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla
        Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla
@@ -64,7 +64,7 @@
        Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla
        Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla
     </div>
-    <div class="tituloFAQ"><a href="#" onclick='$("#info5").slideToggle();'>Bla</a>Pregunta 5</div>
+    <div class="tituloFAQ"><a href="#" onclick='$("#info5").slideToggle();'>+</a>Pregunta 5</div>
     <div class="infoFAQ" id="info5">
        Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla
        Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla
