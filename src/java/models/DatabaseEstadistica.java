@@ -107,7 +107,7 @@ public class DatabaseEstadistica {
           trads1.add(t);
         }
         i = trads1.size();
-        estad.setPrimero(i);      
+        estad.settotal1(i);
         estad.setPais1(b.getCodigo1());
         estad.setAno1(b.getPeriodoIni1());
         estad.setAno2(b.getPeriodoFin1());
@@ -122,8 +122,8 @@ public class DatabaseEstadistica {
           t.setTitulo("titulo");
           trads2.add(t);
         }
-        i = trads2.size();
-        estad.setSegundo(i);      
+        i = trads2.size();  
+        estad.settotal2(i);
         estad.setPais2(b.getCodigo2());
         estad.setAno1(b.getPeriodoIni1());
         estad.setAno2(b.getPeriodoFin1());       
@@ -139,7 +139,7 @@ public class DatabaseEstadistica {
           trads3.add(t);
         }
         i = trads3.size();
-        estad.setTercero(i);      
+        estad.settotal3(i);
         estad.setPais3(b.getCodigo3());
         estad.setAno1(b.getPeriodoIni1());
         estad.setAno2(b.getPeriodoFin1());
@@ -164,7 +164,7 @@ public class DatabaseEstadistica {
           trads1.add(t);
         }
         i = trads1.size();
-        estad.setPrimero(i);      
+        estad.setPrimero(i);
         estad.setPais1(b.getCodigo1());
         estad.setAno1(b.getPeriodoIni1());
         estad.setAno2(b.getPeriodoFin1());
@@ -200,6 +200,10 @@ public class DatabaseEstadistica {
         estad.setPais3(b.getCodigo3());
         estad.setAno1(b.getPeriodoIni1());
         estad.setAno2(b.getPeriodoFin1());
+        
+        estad.settotal1(estad.getPrimero() + estad.getCuarto()); 
+        estad.settotal2(estad.getSegundo() + estad.getQuinto());
+        estad.settotal3(estad.getTercero() + estad.getSexto());
       
       }
         
@@ -257,6 +261,10 @@ public class DatabaseEstadistica {
         estad.setPais3(b.getCodigo3());
         estad.setAno3(b.getPeriodoIni2());
         estad.setAno4(b.getPeriodoFin2());
+        
+        estad.settotal1(estad.getPrimero() + estad.getCuarto()); 
+        estad.settotal2(estad.getSegundo() + estad.getQuinto());
+        estad.settotal3(estad.getTercero() + estad.getSexto());
         
       }
          

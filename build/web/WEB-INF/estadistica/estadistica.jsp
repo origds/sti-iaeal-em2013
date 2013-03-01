@@ -15,8 +15,9 @@
 
 <script>
     $(document).ready(function() {
-        $("#botonPaises").hide();
         $("#periodos1").hide();
+        $("#periodos2").hide();
+        $("#periodos3").hide();
     
         $("#botonPeriodo").click(function(){
       
@@ -24,15 +25,19 @@
             $("#fin").val("");
       
             $("#botonPaises").show();
-            $("#botonPeriodo").hide();
+            $("#botonPeriodo").show();
             $("#periodos1").show();
+            $("#periodos2").show();
+            $("#periodos3").show();
         });
     
         $("#botonPaises").click(function(){
      
             $("#periodos1").hide();
+            $("#periodos2").hide();
+            $("#periodos3").hide();
             $("#botonPeriodo").show();
-            $("#botonPaises").hide();
+            $("#botonPaises").show();
         });
     });
 </script>
@@ -807,22 +812,35 @@
                         <option>Zimbabue</option>
                     </html:select>
                     <br> <br> <br>
-                    
+
                     <div id ="periodos1">
-                        <fieldset style="border:none;">
-                            <legend>Inicio de período</legend>                  
-                            <html:text property="periodoIni" />
-                             
-                            <legend>Finalización de período</legend>
-                            <html:text property="periodoFin" />               
-                        </fieldset>
-                    </div> 
+                        <fieldset>
+                            <legend>Período 1</legend>                  
+                            <legend>Inicio de período</legend>   
                             
-                    <div id="Generar" style="float: center;">
-                        <html:submit> Generar </html:submit>
+                            <html:text property="periodoIni1" value=""/>
+
+                            <legend>Finalización de período</legend>
+                            <html:text property="periodoFin1" value = "" />               
+                        </fieldset>   
                     </div>
 
-                    <br><br>
+                    <div id ="periodos2">
+                        <fieldset>
+                            <legend>Período 2</legend>                  
+                            <legend>Inicio de período</legend>                  
+                            <html:text property="periodoIni2" value="" />
+
+                            <legend>Finalización de período</legend>
+                            <html:text property="periodoFin2" value = "" />               
+                        </fieldset>
+                    </div>  
+
+                    <div id="Generar" style="float: center;">
+                        <html:submit> Generar </html:submit>
+                        </div>
+
+                        <br><br>
                 </html:form> 
             </div>
         </div>

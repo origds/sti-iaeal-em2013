@@ -12,21 +12,50 @@ import org.apache.struts.action.ActionForm;
  */
 public class est extends ActionForm{
     int primero;
+    int cuarto;
     String pais1;
     int segundo;
+    int quinto;
     String pais2;
     int tercero;
-    String pais3;
-    int cuarto;
-    int quinto;
     int sexto;
+    String pais3;
     int ano1;
     int ano2;
     int ano3;
     int ano4;
+    int total1;
+    int total2;
+    int total3;
 
+    
     public est() {
     }
+    
+    public void settotal1(int total1) {
+        this.total1 = total1;
+    }
+
+    public int gettotal1() {
+        return total1;
+    }
+    
+    public void settotal2(int total2) {
+        this.total2 = total2;
+    }
+
+    public int gettotal2() {
+        return total2;
+    }
+    
+    public void settotal3(int total3) {
+        this.total3 = total3;
+    }
+
+    public int gettotal3() {
+        return total3;
+    }
+    
 
     public void setPais1(String pais1) {
         this.pais1 = pais1;

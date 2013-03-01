@@ -30,9 +30,9 @@
         var p1 = document.getElementById('pa1').lastChild.nodeValue
         var p2 = document.getElementById('pa2').lastChild.nodeValue
         var p3 = document.getElementById('pa3').lastChild.nodeValue
-        var c1 = Number(document.getElementById('num1').lastChild.nodeValue)
-        var c2 = Number(document.getElementById('num2').lastChild.nodeValue)
-        var c3 = Number(document.getElementById('num3').lastChild.nodeValue)
+        var c1 = Number(document.getElementById('num01').lastChild.nodeValue)
+        var c2 = Number(document.getElementById('num02').lastChild.nodeValue)
+        var c3 = Number(document.getElementById('num03').lastChild.nodeValue)
         var data = google.visualization.arrayToDataTable([
             ['Paises', 'Cantidad de Tratados'],
             [p1, c1],
@@ -59,12 +59,18 @@
         var p1 = document.getElementById('pa1').lastChild.nodeValue
         var p2 = document.getElementById('pa2').lastChild.nodeValue
         var p3 = document.getElementById('pa3').lastChild.nodeValue
+        var b1 = (document.getElementById('anio1').lastChild.nodeValue)
+        var b2 = (document.getElementById('anio2').lastChild.nodeValue)
+        var c1 = Number(document.getElementById('num1').lastChild.nodeValue)
+        var c2 = Number(document.getElementById('num2').lastChild.nodeValue)
+        var c3 = Number(document.getElementById('num3').lastChild.nodeValue)      
+        var c4 = Number(document.getElementById('num4').lastChild.nodeValue)
+        var c5 = Number(document.getElementById('num5').lastChild.nodeValue)
+        var c6 = Number(document.getElementById('num6').lastChild.nodeValue)
         var data = google.visualization.arrayToDataTable([
-            ['Periodos', p1, p2, p3],
-            ['2004',      1000,     400,     365  ],
-            ['2005',      1170,     460,     845  ],
-            ['2006',       660,    1120,     942  ],
-            ['2007',      1030,     540,     1520 ]
+            ['Periodos',  p1, p2, p3  ],
+            [ b1   ,  c1, c2, c3  ],    
+            [ b2   ,  c4, c5, c6  ]
         ]);
 
         var options = {
@@ -87,12 +93,18 @@
         var p1 = document.getElementById('pa1').lastChild.nodeValue
         var p2 = document.getElementById('pa2').lastChild.nodeValue
         var p3 = document.getElementById('pa3').lastChild.nodeValue
+        var b1 = (document.getElementById('anio1').lastChild.nodeValue)
+        var b2 = (document.getElementById('anio2').lastChild.nodeValue)
+        var c1 = Number(document.getElementById('num1').lastChild.nodeValue)
+        var c2 = Number(document.getElementById('num2').lastChild.nodeValue)
+        var c3 = Number(document.getElementById('num3').lastChild.nodeValue)      
+        var c4 = Number(document.getElementById('num4').lastChild.nodeValue)
+        var c5 = Number(document.getElementById('num5').lastChild.nodeValue)
+        var c6 = Number(document.getElementById('num6').lastChild.nodeValue)
         var data = google.visualization.arrayToDataTable([
-            ['Periodos', p1, p2, p3],
-            ['2004',      1000,     400,      500 ],
-            ['2005',      1170,     460,      700 ],
-            ['2006',       660,    1120,     1120 ],
-            ['2007',      1030,     540,      320 ]
+            ['Periodos',  p1, p2, p3  ],
+            [ b1   ,  c1, c2, c3  ],    
+            [ b2   ,  c4, c5, c6  ]
         ]);
 
         var options = {
@@ -112,7 +124,6 @@
     $(document).ready(function() {
         $("#Barra").hide();
         $("#Area").hide();
-        $("#botonTorta").hide();
         
     
         $("#botonBarra").click(function(){
@@ -123,7 +134,7 @@
             $("#Barra").show();
             $("#botonArea").show();
             $("#botonTorta").show();
-            $("#botonBarra").hide();
+            $("#botonBarra").show();
             $("#Torta").hide();
             $("#Area").hide();
         });
@@ -138,7 +149,7 @@
             $("#botonBarra").show();
             $("#Area").hide();
             $("#Barra").hide();
-            $("#botonTorta").hide();
+            $("#botonTorta").show();
         });
     
         $("#botonArea").click(function(){
@@ -149,7 +160,7 @@
             $("#Area").show();
             $("#botonBarra").show();
             $("#botonTorta").show();
-            $("#botonArea").hide();
+            $("#botonArea").show();
             $("#Barra").hide();
             $("#Torta").hide();
         });
@@ -173,50 +184,57 @@
                 <logic:present name="est">
                     <div>
 
-                        <table style="float:left ;width:300px;margin:12px -11px 0 0">
+                        <table style="float:left ;width:500px;margin:12px -11px 0 0">
                             <caption></caption>
                             <thead>
                                 <tr>
                                     <th scope="col" style="color:red">PAISES</th>
                                     <th scope="col" style="color:red">NUMERO DE TRATADOS</th>
-                                    <th scope="col" style="color:red">PERIODOS</th> 
+                                    <th id="anio1" scope="col" style="color:red"><bean:write name="est" property="ano1"/> - <bean:write name="est" property="ano2"/></th> 
+                                    <th id="anio2" scope="col" style="color:red"><bean:write name="est" property="ano3"/> - <bean:write name="est" property="ano4"/></th> 
                             </thead>
                             <tbody>
                                 <tr>
                                     <th id ="pa1" scope="row"><bean:write name="est" property="pais1"/></th>
+                                    <th id ="num01" ><bean:write name="est" property="total1"/></th>
                                     <th id ="num1" ><bean:write name="est" property="primero"/></th>
-                                    <th id ="ano1" ><bean:write name="est" property="ano1"/></th>
-                                    <th id ="ano2" ><bean:write name="est" property="ano2"/></th>
+                                    <th id ="num4" ><bean:write name="est" property="cuarto"/></th>
                                 </tr>
                                 <tr>
                                     <th id ="pa2" scope="row"><bean:write name="est" property="pais2"/></th>
-                                    <th id ="num2" ><bean:write name="est" property="segundo"/></th>                                    
+                                    <th id ="num02" ><bean:write name="est" property="total2"/></th>
+                                    <th id ="num2" ><bean:write name="est" property="segundo"/></th>   
+                                    <th id ="num5" ><bean:write name="est" property="quinto"/></th>
                                 </tr>
                                 <tr>
                                     <th id ="pa3" scope="row"><bean:write name="est" property="pais3"/></th>
+                                    <th id ="num03" ><bean:write name="est" property="total3"/></th>
                                     <th id ="num3" ><bean:write name="est" property="tercero"/></th>
+                                    <th id ="num6" ><bean:write name="est" property="sexto"/></th>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-                    <div>
-                        <br><br><br>
-                        <th  style="float: right;" >
-                            <button id="botonArea" style="color:#003333;font-size: 12pt">Area</button>
-                        </th>
-                        <th style="float: right;" >
-                            <button id="botonBarra" style="color:#003333;font-size: 12pt">Barra</button>
-                        </th>
-                        <th style="float: right;" >
-                            <button id="botonTorta" style="color:#003333;font-size: 12pt">Torta</button>
-                        </th>
-                    </div>
 
                     <br><br><br><br><br>
-                    <div id="Torta" style="width: 400px; height: 300px;"></div>
-                    <div id="Barra" style="width: 600px; height: 600px;"></div>
-                    <div id="Area" style="width: 600px; height: 600px;"></div>
+                    <div>
+                        <br><br><br>
+                        <div id="Torta" style="width: 400px; height: 300px;"></div>
+                        <div id="Barra" style="width: 400px; height: 300px;"></div>
+                        <div id="Area" style="width: 400px; height: 300px;"></div>
+                    </div>
+
+
+                    <th  style="float: right;" >
+                        <button id="botonArea" style="color:#003333;font-size: 12pt">Area</button>
                     </th>
+                    <th style="float: right;" >
+                        <button id="botonBarra" style="color:#003333;font-size: 12pt">Barra</button>
+                    </th>
+                    <th style="float: right;" >
+                        <button id="botonTorta" style="color:#003333;font-size: 12pt">Torta</button>
+                    </th>
+
                 </logic:present>
 
             </div>
