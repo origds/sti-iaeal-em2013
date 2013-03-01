@@ -25,17 +25,21 @@
     <div class="tituloFAQ"><a href="#" onclick='$("#info1").slideToggle();'>+</a>¿Cómo busco un tratado?</div>
     <div class="infoFAQ" id="info1">
        Para buscar un tratado en la Base de Datos, es necesario presionar el 
-       botón de "Búsqueda" en el Menú superior. El Sistema dará la opción
-       de escribir palabras claves que se deseen encontrar en el título de
-       los tratados y presionar "Buscar" y dará la opción de "Ver Todos",
-       lo cual listará todos los tratados existentes en la Base de Datos.
+       botón de "Búsqueda" en el Menú superior. La página ofrece dos
+       alternativas para la búsqueda de tratados. 
+       La primera consiste en escribir en el campo de búsqueda palabras claves 
+       que se deseen encontrar en el título de los tratados y luego debe 
+       presionar "Buscar". 
+       La segunda alternativa consiste en presionar "Ver Todos", lo cual listará
+       todos los tratados existentes en la Base de Datos.
        Ambas opciones darán una lista de tratados la cual podrá ser filtrada
        con nuevas palabras claves en un campo que se encuentra en la esquina
        superior derecha de la página de Resultados.
     </div>
     <div class="tituloFAQ"><a href="#" onclick='$("#info2").slideToggle();'>+</a>¿Puedo agregar tratados al Sistema?</div>
     <div class="infoFAQ" id="info2">
-       Únicamente los administradores del Sistemas agregarán tratados. 
+       Únicamente los administradores del Sistemas agregarán tratados para
+       asegurar la veracidad de la información. 
        La información se obtiene del Libro Amarillo de la Cancillería de 
        Venezuela y es agregada manualmente al Sistema.
     </div>
