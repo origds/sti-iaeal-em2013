@@ -225,14 +225,14 @@
                     </div>
 
 
-                    <th  style="float: right;" >
-                        <button id="botonArea" style="color:#003333;font-size: 12pt">Area</button>
+                    <th  style="float: center;" >
+                        <button id="botonArea" class="botonBusqueda">Area</button>
                     </th>
                     <th style="float: right;" >
-                        <button id="botonBarra" style="color:#003333;font-size: 12pt">Barra</button>
+                        <button id="botonBarra" class="botonBusqueda">Barra</button>
                     </th>
                     <th style="float: right;" >
-                        <button id="botonTorta" style="color:#003333;font-size: 12pt">Torta</button>
+                        <button id="botonTorta" class="botonBusqueda">Torta</button>
                     </th>
 
                 </logic:present>
