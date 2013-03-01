@@ -20,7 +20,8 @@
     <script language="JavaScript" src="<%=request.getContextPath()%>/interfaz/javaScript/base.js"></script>
     <script language="JavaScript" src="<%=request.getContextPath()%>/interfaz/javaScript/jquery-1.8.2.min.js"></script>
     <script language="JavaScript" src="<%=request.getContextPath()%>/interfaz/javaScript/jquery-ui-1.9.1.custom.js"></script>
-
+    <script language="JavaScript" src="<%=request.getContextPath()%>/interfaz/javaScript/propias.js"></script>
+    
     <!-- Funcion para mostrar el box de login -->
 
  
@@ -28,7 +29,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title><tiles:getAsString name="head"/></title>
     </head>
-    <body> 
+    <body onload="carga();"> 
 
     <center>
         <div id="borde">
