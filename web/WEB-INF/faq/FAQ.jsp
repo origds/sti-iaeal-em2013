@@ -21,7 +21,7 @@
   <div id="barraBusqueda">
     <div class="box"> 
       <div class="inbox" id="cajaBusqueda">
-          <div class="titulo">FAQ</div> <br><br>
+          <div class="titulo">Preguntas Frecuentes</div> <br><br>
     <div class="tituloFAQ"><a href="#" onclick='$("#info1").slideToggle();'>+</a>¿Cómo busco un tratado?</div>
     <div class="infoFAQ" id="info1">
        Para buscar un tratado en la Base de Datos, es necesario presionar el 
