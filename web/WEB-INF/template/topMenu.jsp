@@ -39,7 +39,7 @@
     
   <html:link action="/faq">
     <div class="opcionesIzq">
-      <div class="texto"> FAQ </div>						
+      <div class="texto"> Ayuda </div>						
     </div>
   </html:link> 
 
