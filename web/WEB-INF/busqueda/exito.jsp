@@ -80,6 +80,7 @@
             <thead>
               <tr>
                 <th> Título </th>
+                <th> Pais ID </th>
                 <th> Fecha Firma (MM/DD/AA) </th>
               </tr>
             </thead>
@@ -93,6 +94,9 @@
                         <bean:write name="tratado" property="titulo"></bean:write><!--styling es consultaTratado-->
                       </html:form>
                     </div>
+                  </td>
+                  <td valign="top">
+                    <bean:write name="tratado" property="id"></bean:write>
                   </td>
                   <td valign="top">
                     <bean:write name="tratado" property="firmaFecha"></bean:write>
