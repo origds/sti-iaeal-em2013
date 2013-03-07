@@ -130,7 +130,6 @@ public class DatabaseBusqueda {
     System.out.println("");
     System.out.println("");
 
-    ArrayList<String> paises = new ArrayList<String>();
     ArrayList<String> grupos = new ArrayList<String>();
     Tratado t;
 
@@ -157,6 +156,32 @@ public class DatabaseBusqueda {
           t.setTitulo(rs.getString("titulo"));
           t.setFirmaFecha(fromChinesetoGregorian(rs.getDate("firmaFecha").toString()));
           tratados.add(t);
+        }
+        
+        for (int i=0;i<tratados.size();i++){
+          String sqlqueryPais = "SELECT pais FROM \"STI\".pais "
+                                + "WHERE idTP = '" + tratados.get(i).getId() + "'";
+
+          System.out.println(sqlqueryPais);
+          ArrayList<String> paises = new ArrayList<String>();
+          st = Database.getConnection().createStatement();
+          rs = st.executeQuery(sqlqueryPais);
+
+          while(rs.next()) {
+            paises.add(rs.getString("pais"));
+          }
+
+          for(int j = 0; j < paises.size(); j++){
+            System.out.println("***** PAISES: " +paises.get(j));
+          }
+
+
+          String [] paisesArreglo = new String [paises.size()];
+          for(int j = 0 ; j < paises.size(); ++j) {
+            paisesArreglo[j] = paises.get(j);
+          }
+
+          tratados.get(i).setPaises(paisesArreglo);
         }
       }
     } catch (SQLException ex) {
