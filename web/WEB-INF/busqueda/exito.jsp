@@ -96,7 +96,7 @@
                     </div>
                   </td>
                   <td valign="top">
-                    <bean:write name="tratado" property="id"></bean:write>
+                    <bean:write name="tratado" property="paises[0]"></bean:write>
                   </td>
                   <td valign="top">
                     <bean:write name="tratado" property="firmaFecha"></bean:write>
