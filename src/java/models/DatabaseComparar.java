@@ -13,27 +13,27 @@ import java.util.ArrayList;
 import javabeans.Buscable;
 import javabeans.Tratado;
 import javabeans.est;
-import javabeans.ClaseEstadistica;
+import javabeans.Comparar;
 
 /**
  *
- * @author betocols
+ * @author Isa
  */
-public class DatabaseEstadistica {
+public class DatabaseComparar {
 
   private Database database;
   static private Connection conexion;
 
-  protected DatabaseEstadistica() {
+  protected DatabaseComparar() {
   }
-  static private DatabaseEstadistica instance = null;
+  static private DatabaseComparar instance = null;
 
-  static public DatabaseEstadistica getInstance() {
-    if (null == DatabaseEstadistica.instance) {
-      DatabaseEstadistica.instance = new DatabaseEstadistica();
+  static public DatabaseComparar getInstance() {
+    if (null == DatabaseComparar.instance) {
+      DatabaseComparar.instance = new DatabaseComparar();
     }
     conectar();
-    return DatabaseEstadistica.instance;
+    return DatabaseComparar.instance;
   }
 
   public static boolean conectar() {
@@ -50,7 +50,7 @@ public class DatabaseEstadistica {
     return false;
   }
 
-  public DatabaseEstadistica(String driver, String databaseUrl) {
+  public DatabaseComparar(String driver, String databaseUrl) {
     this.database = Database.getInstance(driver, databaseUrl);
   }
 
@@ -82,7 +82,7 @@ public class DatabaseEstadistica {
     return sqlquery;
   }
   
-  public est BuscarEstadistica(ClaseEstadistica b) {
+  public est BuscarComparar(Comparar b) {
     ArrayList<Tratado> trads1 = new ArrayList<Tratado>(0);
     ArrayList<Tratado> trads2 = new ArrayList<Tratado>(0);
     ArrayList<Tratado> trads3 = new ArrayList<Tratado>(0);

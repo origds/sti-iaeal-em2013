@@ -18,6 +18,7 @@
         <form-bean name="Buscable" type="javabeans.Buscable"/>
         <form-bean name="ClaseEstadistica" type="javabeans.ClaseEstadistica"/>
         <form-bean name="Log" type="javabeans.Log" />
+        <form-bean name="comparar" type="javabeans.Comparar"/>
         
     </form-beans>
     
