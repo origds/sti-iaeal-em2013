@@ -99,6 +99,12 @@
         <forward name="success" path="estadistica.form"/>
       </action>
      
+   <!-- COMPARAR -->
+      <action path="/comparar" name="Comparar" scope="request"
+              type="servlets.GestionComparar" parameter="comparar" validate="false">
+        <forward name="success" path="comparar"/>
+      </action>
+           
       <!-- USUARIO -->
 
       <!-- Iniciar Sesion-->

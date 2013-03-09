@@ -117,6 +117,12 @@
      <definition name="faq" extends="base">
       <put name="body" value="/WEB-INF/faq/FAQ.jsp"/>
     </definition>
+    
+     <!--COMPARAR-->
+   
+     <definition name="comparar" extends="base">
+      <put name="body" value="/WEB-INF/comparar/comparar.jsp"/>
+    </definition>
       
     
     <!-- sample tiles definitions
