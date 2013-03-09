@@ -42,6 +42,12 @@
       <div class="texto"> Ayuda </div>						
     </div>
   </html:link> 
+    
+  <html:link action="/comparar">
+    <div class="opcionesIzq">
+      <div class="texto"> Comparar </div>						
+    </div>
+  </html:link> 
 
   <html:link action="/home">
     <div class="opcionesDer">
