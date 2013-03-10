@@ -52,10 +52,6 @@
       <action path="/faq" type="servlets.faq" scope="request">
        <forward name="success" path="faq" ></forward>
      </action>
-      <!--<action path="/consultarFAQ" type="servlets.GestionFAQ" scope="request" 
-        name="FAQ">
-        <forward name="success" path="faq.FAQ" ></forward>
-      </action>-->
       
       <!-- BUSQUEDA -->
 
@@ -71,13 +67,7 @@
       </action>
 
       <!-- ESTADISTICA -->
-<!--
-      <action path="/generarEstadistica" name="EstadisticaForm" scope="request"
-              input= "estadistica.form" type="servlets.GestionEstadistica" parameter="generarEstadistica" validate="false">
-        <forward name="success" path="estadistica.exito"/>
-        <forward name="failure" path="estadistica.form"/>
-      </action>
- -->     
+
        <action path="/BuscarEstadistica" name="ClaseEstadistica" scope="request"
               type="servlets.GestionEstadistica" validate="false">
         <forward name="success" path="estadistica.exito"/>
