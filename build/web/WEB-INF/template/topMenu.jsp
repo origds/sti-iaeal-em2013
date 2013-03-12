@@ -37,11 +37,15 @@
   </html:link> 
 
     
-  <html:link action="/consultarFAQ">
+  <html:link action="/faq">
     <div class="opcionesIzq">
-      <div class="texto">
-        FAQ
-      </div>						
+      <div class="texto"> Ayuda </div>						
+    </div>
+  </html:link> 
+    
+  <html:link action="/compararForm">
+    <div class="opcionesIzq">
+      <div class="texto"> Comparar </div>						
     </div>
   </html:link> 
 
@@ -92,5 +96,4 @@
     </script>
   </logic:equal>
 </logic:present>
-
 

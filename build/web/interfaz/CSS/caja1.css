@@ -250,7 +250,8 @@ div.inbox{
 }
 div.box a{
   float: left;
-  color: #747481;
+  color: white;
+  font-weight: bolder;
   margin-right: 5px;
 }
 .titulo{
@@ -825,7 +826,7 @@ div[style="float: center;"] input[type="submit"] {
   float: center;
 }
 
-.botonBusqueda, div[style="float: right;"] input[type="submit"], input[value="Registrar"], input[value="Actualizar"], input[value="Generar"], input[value="Eliminar"], .box input[type="submit"]{
+.botonBusqueda, .torta, div[style="float: right;"] input[type="submit"], input[value="Registrar"], input[value="botonPaises"], input[value="Actualizar"], input[value="Generar"], input[value="Eliminar"], .box input[type="submit"]{
   font-size:12px !important;    
   -moz-box-shadow:inset 0px 1px 0px 0px #cae3fc;
   -webkit-box-shadow:inset 0px 1px 0px 0px #cae3fc;

@@ -43,7 +43,7 @@
     </div>
   </html:link> 
     
-  <html:link action="/comparar">
+  <html:link action="/compararForm">
     <div class="opcionesIzq">
       <div class="texto"> Comparar </div>						
     </div>

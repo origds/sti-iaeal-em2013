@@ -289,6 +289,8 @@
         "<option value=\"Yibuti\">Yibuti</option>"+
         "<option value=\"Zambia\">Zambia</option>"+
         "<option value=\"Zimbabue\">Zimbabue</option>"+
+        "<option value=\"Varios Estados\">Varios Estados</option>"+
+        "<option value=\"Otros\">Otros</option>"+
         "</select>"
     );
     })

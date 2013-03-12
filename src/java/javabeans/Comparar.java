@@ -11,8 +11,8 @@ import org.apache.struts.action.ActionForm;
  * @author Isa
  */
 public class Comparar extends ActionForm {
-   private String cantidad1;
-   private String cantidad2;
+   private int cantidad1;
+   private int cantidad2;
    private int periodoIni1;
    private int periodoFin1;
    private int periodoIni2;
@@ -21,7 +21,7 @@ public class Comparar extends ActionForm {
    public Comparar() {
    }
 
-   public Comparar(String cantidad1, String cantidad2, int periodoIni1, int periodoFin1,  int periodoIni2, int periodoFin2) {
+   public Comparar(int cantidad1, int cantidad2, int periodoIni1, int periodoFin1,  int periodoIni2, int periodoFin2) {
        this.cantidad1 = cantidad1;
        this.cantidad2 = cantidad2;
        this.periodoIni1 = periodoIni1;
@@ -62,19 +62,19 @@ public class Comparar extends ActionForm {
       this.periodoFin2 = periodoFin2;
     }
 
-  public String getCantidad1() {
+  public int getCantidad1() {
     return cantidad1;
   }
 
-  public void setCantidad1(String cantidad1) {
+  public void setCantidad1(int cantidad1) {
     this.cantidad1 = cantidad1;
   }
 
-  public String getCantidad2() {
+  public int getCantidad2() {
     return cantidad2;
   }
 
-  public void setCantidad2(String cantidad2) {
+  public void setCantidad2(int cantidad2) {
     this.cantidad2 = cantidad2;
   }
       

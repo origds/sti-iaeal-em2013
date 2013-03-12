@@ -54,9 +54,9 @@
                 <div class="titulo">Generar estadística de la búsqueda realizada.</div>
                 <br> <br> <br>
 
-                <div style="float: right;">
-                    <button id="botonPeriodo" style="color:#003333;font-size: 12pt">Con Periodos</button>
-                    <button id="botonPaises" style="color:#003333;font-size: 12pt">Solo Paises</button>
+                <div style="float: center;">
+                    <button id="botonPeriodo" class="botonBusqueda">Con Periodos</button>
+                    <button id="botonPaises" class="botonBusqueda">Solo Paises</button>
                 </div>
 
                 <html:form method="POST" action="/BuscarEstadistica">                        
@@ -310,6 +310,8 @@
                         <option>Yibuti</option> 
                         <option>Zambia</option> 
                         <option>Zimbabue</option>
+                        <option>Varios Estados</option>
+                        <option>Otros</option>
                     </html:select> 
                     <br> <br> <br>
                     2do Pais &nbsp;
@@ -560,6 +562,8 @@
                         <option>Yibuti</option> 
                         <option>Zambia</option> 
                         <option>Zimbabue</option>
+                        <option>Varios Estados</option>
+                        <option>Otros</option>
                     </html:select> 
                     <br> <br> <br>
                     3er Pais &nbsp;
@@ -810,6 +814,8 @@
                         <option>Yibuti</option> 
                         <option>Zambia</option> 
                         <option>Zimbabue</option>
+                        <option>Varios Estados</option>
+                        <option>Otros</option>
                     </html:select>
                     <br> <br> <br>
 

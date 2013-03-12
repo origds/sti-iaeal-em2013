@@ -84,6 +84,11 @@
         <put name="body" value="/WEB-INF/estadistica/estadistica.jsp"/>
     </definition>
     
+    <!-- GESTION COMPARAR -->
+    <definition name="comparar.form" extends="base">
+        <put name="body" value="/WEB-INF/comparar/comparar.jsp"/>
+    </definition>
+    
     <!-- Mensajes de exito -->
     <definition name="usuario.exito" extends="base">
         <put name="body" value="/WEB-INF/usuario/exito.jsp"/>
@@ -108,6 +113,11 @@
     <definition name="estadistica.exito" extends="base">
         <put name="body" value="/WEB-INF/estadistica/exitoEstadistica.jsp"/>
     </definition>
+    
+    <definition name="comparar.exito" extends="base">
+        <put name="body" value="/WEB-INF/comparar/exitoComparar.jsp"/>
+    </definition>
+    
     <definition name="log" extends="base">
         <put name="body" value="/WEB-INF/Log/bodylog.jsp"/>
     </definition>
@@ -116,12 +126,6 @@
    
      <definition name="faq" extends="base">
       <put name="body" value="/WEB-INF/faq/FAQ.jsp"/>
-    </definition>
-    
-     <!--COMPARAR-->
-   
-     <definition name="comparar" extends="base">
-      <put name="body" value="/WEB-INF/comparar/comparar.jsp"/>
     </definition>
       
     

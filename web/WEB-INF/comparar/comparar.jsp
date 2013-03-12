@@ -42,12 +42,8 @@
             <div class="inbox" id="cajaBusqueda">
                 <div class="titulo">Comparar Tratados.</div>
                 <br> <br> <br>
-
-                <%-- CAMBIAR BuscarEstadistica por BuscarComparar
-                       cuando este lista. Vacia no deja que corra 
-                --%>
                 
-                <html:form method="POST" action="/BuscarEstadistica">                        
+                <html:form method="POST" action="/comparar">                        
                     <p>           
                     <div id ="periodos1">
                         <fieldset>

@@ -18,7 +18,7 @@
         <form-bean name="Buscable" type="javabeans.Buscable"/>
         <form-bean name="ClaseEstadistica" type="javabeans.ClaseEstadistica"/>
         <form-bean name="Log" type="javabeans.Log" />
-        <form-bean name="comparar" type="javabeans.Comparar"/>
+        <form-bean name="Comparar" type="javabeans.Comparar"/>
         
     </form-beans>
     
@@ -74,6 +74,13 @@
         <forward name="failure" path="estadistica.form"/>
       </action>
 
+      <action path="/estadisticaForm" name="ClaseEstadistica" scope="request"
+              type="servlets.GestionEstadistica" parameter="estadisticaForm" validate="false">
+        <forward name="success" path="estadistica.form"/>
+      </action>
+      
+      <!-- DESCARGAR -->
+      
       <action path="/pdf" name="Tratado" scope="request"
               type="servlets.DescargarPDF" validate="false">
         <forward name="success" path="/home"/>
@@ -83,16 +90,17 @@
               type="servlets.DescargarPlantilla" validate="false">
         <forward name="success" path="/home"/>
       </action>
-
-      <action path="/estadisticaForm" name="ClaseEstadistica" scope="request"
-              type="servlets.GestionEstadistica" parameter="estadisticaForm" validate="false">
-        <forward name="success" path="estadistica.form"/>
-      </action>
      
    <!-- COMPARAR -->
       <action path="/comparar" name="Comparar" scope="request"
-              type="servlets.GestionComparar" parameter="comparar" validate="false">
-        <forward name="success" path="comparar"/>
+              type="servlets.GestionComparar" validate="false">
+        <forward name="success" path="comparar.exito"/>
+        <forward name="failure" path="comparar.form"/>
+      </action>
+      
+      <action path="/compararForm" name="Comparar" scope="request"
+              type="servlets.GestionComparar" parameter="compararForm" validate="false">
+        <forward name="success" path="comparar.form"/>
       </action>
            
       <!-- USUARIO -->
@@ -278,18 +286,18 @@
     true : validate. DTD should be specified in file header (default)
     false : no validation
 
-  Paths found in Tiles definitions are relative to the main context.
-  -->
-  <plug-in className="org.apache.struts.tiles.TilesPlugin" >
-    <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />      
-    <set-property property="moduleAware" value="true" />
-  </plug-in>
+    Paths found in Tiles definitions are relative to the main context.
+    -->
+    <plug-in className="org.apache.struts.tiles.TilesPlugin" >
+        <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />      
+        <set-property property="moduleAware" value="true" />
+    </plug-in>
     
-  <!-- ========================= Validator plugin ================================= -->
-  <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
-    <set-property
-      property="pathnames"
-      value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
-  </plug-in>
+    <!-- ========================= Validator plugin ================================= -->
+    <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+        <set-property
+            property="pathnames"
+            value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+    </plug-in>
   
 </struts-config>
