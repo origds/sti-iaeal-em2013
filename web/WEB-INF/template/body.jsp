@@ -81,7 +81,7 @@
           <fieldset style="border:none;">
           <html:submit value="Entrar" style="font-size: 13px"/>	
           <br><br><br>
-          <a href="./WEB-INF/template/restaurar.jsp" class="contraseña">¿Olvidaste tu contraseña?</a>
+            <html:link action="/recordar" style="color:#FF0000;">¿Olvidaste tu contraseña?</html:link>
           </fieldset>
         </html:form>			
       </div>
