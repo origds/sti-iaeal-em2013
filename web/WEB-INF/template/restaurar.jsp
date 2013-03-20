@@ -53,15 +53,15 @@
                 <div class="titulo">Restaurar Contraseña</div>
                 <br> <br> <br>  
                 <center>
-                <html:form action="/iniciarSesion" acceptCharset="UTF-8">
+                <html:form action="/enviar" acceptCharset="UTF-8">
                     <fieldset style="border:none; text-align: left;">
                         <center>
                       Introduzca su correo electrónico
                         
                       <div class="error">
-                        <html:errors property="usuarioLogin"/>
+                        <html:errors property="correo"/>
                       </div>
-                      <html:text property="usuarioLogin"  value=""/>         
+                      <html:text property="correo"  value=""/>         
                     </fieldset>
                     <fieldset style="border:none; text-align: left; ">
       

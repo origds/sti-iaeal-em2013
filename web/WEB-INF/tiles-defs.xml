@@ -23,6 +23,10 @@
     <definition name="principal" extends="base">
     </definition>
     
+    <definition name="restaurar" extends="base">
+      <put name="body" value="/WEB-INF/template/restaurar.jsp"/>
+    </definition>
+    
     <!--GESTION DE LOG. -->              
     <definition name="Log.log" extends="base">
       <put name="body"  value="/WEB-INF/Log/log.jsp"/>

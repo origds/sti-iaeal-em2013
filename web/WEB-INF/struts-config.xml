@@ -8,7 +8,9 @@
 <struts-config>
   
     <form-beans>
+         <form-bean name="Mail" type="javabeans.Mail"/>
         <form-bean name="home" type="servlets.home"/>
+        <form-bean name="recordar" type="servlets.recordar"/>
         <form-bean name="faq" type="servlets.faq"/>
         <form-bean name="Usuario" type="javabeans.Usuario"/>
         <form-bean name="LoginForm" type="javabeans.LoginForm"/>   
@@ -38,6 +40,16 @@
       
       <action path="/home" type="servlets.home" scope="request">
        <forward name="success" path="principal" ></forward>
+     </action>
+     
+      <action path="/enviar" name="Usuario" scope="request"
+              type="servlets.enviar" validate="false">
+        <forward name="success" path="principal"/>
+        <forward name="failure" path="estadistica.exito"/>
+      </action>
+     
+     <action path="/recordar" type="servlets.recordar" scope="request">
+       <forward name="success" path="restaurar" ></forward>
      </action>
      
      <!-- LOG -->
