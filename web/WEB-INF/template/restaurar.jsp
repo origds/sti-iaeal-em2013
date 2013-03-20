@@ -50,20 +50,25 @@
     <div id="barraBusqueda">
         <div class="box"> 
             <div class="inbox" id="cajaBusqueda">
-                <div class="titulo">Restaurar Contraseña.</div>
+                <div class="titulo">Restaurar Contraseña</div>
+                <br> <br> <br>  
+                <center>
                 <html:form action="/iniciarSesion" acceptCharset="UTF-8">
                     <fieldset style="border:none; text-align: left;">
+                        <center>
                       Introduzca su correo electrónico
+                        
                       <div class="error">
                         <html:errors property="usuarioLogin"/>
                       </div>
                       <html:text property="usuarioLogin"  value=""/>         
                     </fieldset>
                     <fieldset style="border:none; text-align: left; ">
-
-                        <html:password property="contrasenaLogin" value=""/>
+      
                     </fieldse >
-                <html:submit value="Envíar Contraseña" style="font-size: 13px"/>	
+                 
+                <html:submit value="Envíar" style="font-size: 13px"/>
+                </center>
                 </fieldset>
               </html:form>	
             </div>
