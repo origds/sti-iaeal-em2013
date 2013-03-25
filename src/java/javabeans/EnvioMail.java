@@ -31,8 +31,8 @@ public class EnvioMail {
     
     public void Enviar() {
         String host = "smtp.gmail.com";
-        String userid = "jhosbert.ac";
-        String password = "JHOSBERT1925";
+        String userid = "sgtiaeal";
+        String password = "admin123456";
         
         try {
             Properties props = System.getProperties();

@@ -38,14 +38,16 @@ import org.apache.struts.actions.MappingDispatchAction;
             throws Exception {
             Usuario e = (Usuario) form;
             String s = DataBaseMail.getInstance().enviarMail(e);
-             System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>     "+s);
+             //System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>     "+s);
             //request.setAttribute("Comparar", c);
              
-             String asunto = "asunto";
-             String from = "jhosbert.ac@gmail.com";
+             String cor = e.getCorreo();
+             String asunto = "Cambio de Contrasena";
+             String from = "sgtiaeal@gmail.com";
              String[] dest = new String[1];
-             dest[0] = "andelnunez@gmail.com";
-             String mensaje = "mensaje";
+             dest[0] = cor;
+             Double nr = Math.random()*890000+100000;
+             String mensaje = "Mensaje para la reposicion de la contrasena.. \n\n\n Su Nueva Contrasena : " + nr + ". \n\n\n Le recomendamos entrar al sistema y cambiar su contrasena.";
              
              EnvioMail correo = new EnvioMail(from,dest[0],asunto,mensaje);
              

@@ -63,17 +63,20 @@ public class DataBaseMail {
             if (c.getCorreo().compareTo("")!=0) {
               
                 
-                sqlmail = "SELECT * FROM \"STI\".usuario WHERE correo LIKE 'isa@gmail.com';";
+                sqlmail = "SELECT * FROM \"STI\".usuario WHERE correo LIKE '"+ c.getCorreo() +"';";
                 
                 System.out.println(sqlmail);
                 Statement stmt = conexion.createStatement();
                 ResultSet rs = stmt.executeQuery(sqlmail);
                 int p =0;
                 while(rs.next()) {
-                    resul = rs.getString("nombre");
+                    resul = rs.getString("contrasena");
                     p++;
                  }
-                System.out.println("hayyyyyyyyyy " + p);
+                Double nr = Math.random()*890000+100000;
+                
+                System.out.println("Random " + nr);
+               // System.out.println("hayyyyyyyyyy " + p);
                 rs.close();
             }
             
