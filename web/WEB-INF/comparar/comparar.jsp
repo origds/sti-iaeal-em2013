@@ -41,170 +41,1106 @@
         <div class="box"> 
             <div class="inbox" id="cajaBusqueda">
                 <div class="titulo">Comparar Tratados.</div>
-                <br> <br> <br>
-                
+                <br> <br> <br>       
                 <html:form method="POST" action="/comparar">                        
                     <p>           
                     <div id ="periodos1">
-                      
-                            Período 1               
-                            Inicio de período  
-y
+                            Período 1     <br> <br>           
+                            Inicio de período   <br> <br> 
                             <html:select name="Comparar" property="diaIni1">
-                                <option>Día..</option> 
-                                <option>01</option> 
-                                <option>02</option> 
-                                <option>03</option> 
-                                <option>04</option> 
-                                <option>05</option> 
-                                <option>06</option> 
-                                <option>07</option> 
-                                <option>08</option> 
-                                <option>09</option> 
-                                <option>10</option> 
-                                <option>11</option> 
-                                <option>12</option> 
-                                <option>13</option> 
-                                <option>14</option> 
-                                <option>15</option> 
-                                <option>16</option> 
-                                <option>17</option> 
-                                <option>18</option> 
-                                <option>19</option> 
-                                <option>20</option> 
-                                <option>21</option> 
-                                <option>22</option> 
-                                <option>23</option> 
-                                <option>24</option> 
-                                <option>25</option> 
-                                <option>26</option> 
-                                <option>27</option> 
-                                <option>28</option> 
-                                <option>29</option> 
-                                <option>30</option> 
-                                <option>31</option> 
-                            </html:select> 
- 
+                                <option> Dia.. </option>
+                                <option> 01 </option>
+                                <option> 02 </option>
+                                <option> 03 </option>
+                                <option> 04 </option>
+                                <option> 05 </option>
+                                <option> 06 </option>
+                                <option> 07 </option>
+                                <option> 08 </option>
+                                <option> 09 </option>
+                                <option> 10 </option>
+                                <option> 11 </option>
+                                <option> 12 </option>
+                                <option> 13 </option>
+                                <option> 14 </option>
+                                <option> 15 </option>
+                                <option> 16 </option>
+                                <option> 17 </option>
+                                <option> 18 </option>
+                                <option> 19 </option>
+                                <option> 20 </option>
+                                <option> 21 </option>
+                                <option> 22 </option>
+                                <option> 23 </option>
+                                <option> 24 </option>
+                                <option> 25 </option>
+                                <option> 26 </option>
+                                <option> 27 </option>
+                                <option> 28 </option>
+                                <option> 29 </option>
+                                <option> 30 </option>
+                                <option> 31 </option>
+                            <html:select>
+                                
                             <html:select name="Comparar" property="mesIni1">
-                                <option>Mes..</option> 
-                                <option>01</option> 
-                                <option>02</option> 
-                                <option>03</option> 
-                                <option>04</option> 
-                                <option>05</option> 
-                                <option>06</option> 
-                                <option>07</option> 
-                                <option>08</option> 
-                                <option>09</option> 
-                                <option>10</option> 
-                                <option>11</option> 
-                                <option>12</option> 
-                            </html:select> 
-                                
+                                <option> Mes.. </option>
+                                <option> 01 </option>
+                                <option> 02 </option>
+                                <option> 03 </option>
+                                <option> 04 </option>
+                                <option> 05 </option>
+                                <option> 06 </option>
+                                <option> 07 </option>
+                                <option> 08 </option>
+                                <option> 09 </option>
+                                <option> 10 </option>
+                                <option> 11 </option>
+                                <option> 12 </option>
+                            <html:select>
+                          
                             <html:select name="Comparar" property="anoIni1">
-                                <option>Año..</option> 
-                                <option>2002</option> 
-                                <option>2003</option> 
-                                <option>2004</option> 
-                                <option>2005</option> 
-                                <option>2006</option> 
-                                <option>2007</option> 
-                                <option>2008</option> 
-                                <option>2009</option> 
-                                <option>2010</option> 
-                                <option>2011</option> 
-                                <option>2012</option> 
-                                <option>2013</option> 
-                            </html:select> 
-                                
-                            Finalización de período
-                            
+                                <option> Año.. </option>
+                                    <option> 	1800	 </option>
+                                    <option> 	1801	 </option>
+                                    <option> 	1802	 </option>
+                                    <option> 	1803	 </option>
+                                    <option> 	1804	 </option>
+                                    <option> 	1805	 </option>
+                                    <option> 	1806	 </option>
+                                    <option> 	1807	 </option>
+                                    <option> 	1808	 </option>
+                                    <option> 	1809	 </option>
+                                    <option> 	1810	 </option>
+                                    <option> 	1811	 </option>
+                                    <option> 	1812	 </option>
+                                    <option> 	1813	 </option>
+                                    <option> 	1814	 </option>
+                                    <option> 	1815	 </option>
+                                    <option> 	1816	 </option>
+                                    <option> 	1817	 </option>
+                                    <option> 	1818	 </option>
+                                    <option> 	1819	 </option>
+                                    <option> 	1820	 </option>
+                                    <option> 	1821	 </option>
+                                    <option> 	1822	 </option>
+                                    <option> 	1823	 </option>
+                                    <option> 	1824	 </option>
+                                    <option> 	1825	 </option>
+                                    <option> 	1826	 </option>
+                                    <option> 	1827	 </option>
+                                    <option> 	1828	 </option>
+                                    <option> 	1829	 </option>
+                                    <option> 	1830	 </option>
+                                    <option> 	1831	 </option>
+                                    <option> 	1832	 </option>
+                                    <option> 	1833	 </option>
+                                    <option> 	1834	 </option>
+                                    <option> 	1835	 </option>
+                                    <option> 	1836	 </option>
+                                    <option> 	1837	 </option>
+                                    <option> 	1838	 </option>
+                                    <option> 	1839	 </option>
+                                    <option> 	1840	 </option>
+                                    <option> 	1841	 </option>
+                                    <option> 	1842	 </option>
+                                    <option> 	1843	 </option>
+                                    <option> 	1844	 </option>
+                                    <option> 	1845	 </option>
+                                    <option> 	1846	 </option>
+                                    <option> 	1847	 </option>
+                                    <option> 	1848	 </option>
+                                    <option> 	1849	 </option>
+                                    <option> 	1850	 </option>
+                                    <option> 	1851	 </option>
+                                    <option> 	1852	 </option>
+                                    <option> 	1853	 </option>
+                                    <option> 	1854	 </option>
+                                    <option> 	1855	 </option>
+                                    <option> 	1856	 </option>
+                                    <option> 	1857	 </option>
+                                    <option> 	1858	 </option>
+                                    <option> 	1859	 </option>
+                                    <option> 	1860	 </option>
+                                    <option> 	1861	 </option>
+                                    <option> 	1862	 </option>
+                                    <option> 	1863	 </option>
+                                    <option> 	1864	 </option>
+                                    <option> 	1865	 </option>
+                                    <option> 	1866	 </option>
+                                    <option> 	1867	 </option>
+                                    <option> 	1868	 </option>
+                                    <option> 	1869	 </option>
+                                    <option> 	1870	 </option>
+                                    <option> 	1871	 </option>
+                                    <option> 	1872	 </option>
+                                    <option> 	1873	 </option>
+                                    <option> 	1874	 </option>
+                                    <option> 	1875	 </option>
+                                    <option> 	1876	 </option>
+                                    <option> 	1877	 </option>
+                                    <option> 	1878	 </option>
+                                    <option> 	1879	 </option>
+                                    <option> 	1880	 </option>
+                                    <option> 	1881	 </option>
+                                    <option> 	1882	 </option>
+                                    <option> 	1883	 </option>
+                                    <option> 	1884	 </option>
+                                    <option> 	1885	 </option>
+                                    <option> 	1886	 </option>
+                                    <option> 	1887	 </option>
+                                    <option> 	1888	 </option>
+                                    <option> 	1889	 </option>
+                                    <option> 	1890	 </option>
+                                    <option> 	1891	 </option>
+                                    <option> 	1892	 </option>
+                                    <option> 	1893	 </option>
+                                    <option> 	1894	 </option>
+                                    <option> 	1895	 </option>
+                                    <option> 	1896	 </option>
+                                    <option> 	1897	 </option>
+                                    <option> 	1898	 </option>
+                                    <option> 	1899	 </option>
+                                    <option> 	1900	 </option>
+                                    <option> 	1901	 </option>
+                                    <option> 	1902	 </option>
+                                    <option> 	1903	 </option>
+                                    <option> 	1904	 </option>
+                                    <option> 	1905	 </option>
+                                    <option> 	1906	 </option>
+                                    <option> 	1907	 </option>
+                                    <option> 	1908	 </option>
+                                    <option> 	1909	 </option>
+                                    <option> 	1910	 </option>
+                                    <option> 	1911	 </option>
+                                    <option> 	1912	 </option>
+                                    <option> 	1913	 </option>
+                                    <option> 	1914	 </option>
+                                    <option> 	1915	 </option>
+                                    <option> 	1916	 </option>
+                                    <option> 	1917	 </option>
+                                    <option> 	1918	 </option>
+                                    <option> 	1919	 </option>
+                                    <option> 	1920	 </option>
+                                    <option> 	1921	 </option>
+                                    <option> 	1922	 </option>
+                                    <option> 	1923	 </option>
+                                    <option> 	1924	 </option>
+                                    <option> 	1925	 </option>
+                                    <option> 	1926	 </option>
+                                    <option> 	1927	 </option>
+                                    <option> 	1928	 </option>
+                                    <option> 	1929	 </option>
+                                    <option> 	1930	 </option>
+                                    <option> 	1931	 </option>
+                                    <option> 	1932	 </option>
+                                    <option> 	1933	 </option>
+                                    <option> 	1934	 </option>
+                                    <option> 	1935	 </option>
+                                    <option> 	1936	 </option>
+                                    <option> 	1937	 </option>
+                                    <option> 	1938	 </option>
+                                    <option> 	1939	 </option>
+                                    <option> 	1940	 </option>
+                                    <option> 	1941	 </option>
+                                    <option> 	1942	 </option>
+                                    <option> 	1943	 </option>
+                                    <option> 	1944	 </option>
+                                    <option> 	1945	 </option>
+                                    <option> 	1946	 </option>
+                                    <option> 	1947	 </option>
+                                    <option> 	1948	 </option>
+                                    <option> 	1949	 </option>
+                                    <option> 	1950	 </option>
+                                    <option> 	1951	 </option>
+                                    <option> 	1952	 </option>
+                                    <option> 	1953	 </option>
+                                    <option> 	1954	 </option>
+                                    <option> 	1955	 </option>
+                                    <option> 	1956	 </option>
+                                    <option> 	1957	 </option>
+                                    <option> 	1958	 </option>
+                                    <option> 	1959	 </option>
+                                    <option> 	1960	 </option>
+                                    <option> 	1961	 </option>
+                                    <option> 	1962	 </option>
+                                    <option> 	1963	 </option>
+                                    <option> 	1964	 </option>
+                                    <option> 	1965	 </option>
+                                    <option> 	1966	 </option>
+                                    <option> 	1967	 </option>
+                                    <option> 	1968	 </option>
+                                    <option> 	1969	 </option>
+                                    <option> 	1970	 </option>
+                                    <option> 	1971	 </option>
+                                    <option> 	1972	 </option>
+                                    <option> 	1973	 </option>
+                                    <option> 	1974	 </option>
+                                    <option> 	1975	 </option>
+                                    <option> 	1976	 </option>
+                                    <option> 	1977	 </option>
+                                    <option> 	1978	 </option>
+                                    <option> 	1979	 </option>
+                                    <option> 	1980	 </option>
+                                    <option> 	1981	 </option>
+                                    <option> 	1982	 </option>
+                                    <option> 	1983	 </option>
+                                    <option> 	1984	 </option>
+                                    <option> 	1985	 </option>
+                                    <option> 	1986	 </option>
+                                    <option> 	1987	 </option>
+                                    <option> 	1988	 </option>
+                                    <option> 	1989	 </option>
+                                    <option> 	1990	 </option>
+                                    <option> 	1991	 </option>
+                                    <option> 	1992	 </option>
+                                    <option> 	1993	 </option>
+                                    <option> 	1994	 </option>
+                                    <option> 	1995	 </option>
+                                    <option> 	1996	 </option>
+                                    <option> 	1997	 </option>
+                                    <option> 	1998	 </option>
+                                    <option> 	1999	 </option>
+                                    <option> 	2000	 </option>
+                                    <option> 	2001	 </option>
+                                    <option> 	2002	 </option>
+                                    <option> 	2003	 </option>
+                                    <option> 	2004	 </option>
+                                    <option> 	2005	 </option>
+                                    <option> 	2006	 </option>
+                                    <option> 	2007	 </option>
+                                    <option> 	2008	 </option>
+                                    <option> 	2009	 </option>
+                                    <option> 	2010	 </option>
+                                    <option> 	2011	 </option>
+                                    <option> 	2012	 </option>
+                                    <option> 	2013	 </option>
+
+                            <html:select>    
+                            <br> <br> 
+                            Finalización de período <br> <br> 
                             <html:select name="Comparar" property="diaFin1">
-                                <option>Día..</option> 
-                                <option>01</option> 
-                                <option>02</option> 
-                                <option>03</option> 
-                                <option>04</option> 
-                                <option>05</option> 
-                                <option>06</option> 
-                                <option>07</option> 
-                                <option>08</option> 
-                                <option>09</option> 
-                                <option>10</option> 
-                                <option>11</option> 
-                                <option>12</option> 
-                                <option>13</option> 
-                                <option>14</option> 
-                                <option>15</option> 
-                                <option>16</option> 
-                                <option>17</option> 
-                                <option>18</option> 
-                                <option>19</option> 
-                                <option>20</option> 
-                                <option>21</option> 
-                                <option>22</option> 
-                                <option>23</option> 
-                                <option>24</option> 
-                                <option>25</option> 
-                                <option>26</option> 
-                                <option>27</option> 
-                                <option>28</option> 
-                                <option>29</option> 
-                                <option>30</option> 
-                                <option>31</option> 
-                            </html:select> 
- 
-                            <html:select name="Comparar" property="mesFin1">
-                                <option>Mes..</option> 
-                                <option>01</option> 
-                                <option>02</option> 
-                                <option>03</option> 
-                                <option>04</option> 
-                                <option>05</option> 
-                                <option>06</option> 
-                                <option>07</option> 
-                                <option>08</option> 
-                                <option>09</option> 
-                                <option>10</option> 
-                                <option>11</option> 
-                                <option>12</option> 
-                            </html:select> 
+                                <option> Dia.. </option>
+                                <option> 01 </option>
+                                <option> 02 </option>
+                                <option> 03 </option>
+                                <option> 04 </option>
+                                <option> 05 </option>
+                                <option> 06 </option>
+                                <option> 07 </option>
+                                <option> 08 </option>
+                                <option> 09 </option>
+                                <option> 10 </option>
+                                <option> 11 </option>
+                                <option> 12 </option>
+                                <option> 13 </option>
+                                <option> 14 </option>
+                                <option> 15 </option>
+                                <option> 16 </option>
+                                <option> 17 </option>
+                                <option> 18 </option>
+                                <option> 19 </option>
+                                <option> 20 </option>
+                                <option> 21 </option>
+                                <option> 22 </option>
+                                <option> 23 </option>
+                                <option> 24 </option>
+                                <option> 25 </option>
+                                <option> 26 </option>
+                                <option> 27 </option>
+                                <option> 28 </option>
+                                <option> 29 </option>
+                                <option> 30 </option>
+                                <option> 31 </option>
+                            <html:select>
                                 
+                            <html:select name="Comparar" property="mesFin1">
+                                <option> Mes.. </option>
+                                <option> 01 </option>
+                                <option> 02 </option>
+                                <option> 03 </option>
+                                <option> 04 </option>
+                                <option> 05 </option>
+                                <option> 06 </option>
+                                <option> 07 </option>
+                                <option> 08 </option>
+                                <option> 09 </option>
+                                <option> 10 </option>
+                                <option> 11 </option>
+                                <option> 12 </option>
+                            <html:select>
+                          
                             <html:select name="Comparar" property="anoFin1">
-                                <option>Año..</option> 
-                                <option>2002</option> 
-                                <option>2003</option> 
-                                <option>2004</option> 
-                                <option>2005</option> 
-                                <option>2006</option> 
-                                <option>2007</option> 
-                                <option>2008</option> 
-                                <option>2009</option> 
-                                <option>2010</option> 
-                                <option>2011</option> 
-                                <option>2012</option> 
-                                <option>2013</option> 
-                            </html:select>              
-             
+                                <option> Año.. </option>
+                                    <option> 	1800	 </option>
+                                    <option> 	1801	 </option>
+                                    <option> 	1802	 </option>
+                                    <option> 	1803	 </option>
+                                    <option> 	1804	 </option>
+                                    <option> 	1805	 </option>
+                                    <option> 	1806	 </option>
+                                    <option> 	1807	 </option>
+                                    <option> 	1808	 </option>
+                                    <option> 	1809	 </option>
+                                    <option> 	1810	 </option>
+                                    <option> 	1811	 </option>
+                                    <option> 	1812	 </option>
+                                    <option> 	1813	 </option>
+                                    <option> 	1814	 </option>
+                                    <option> 	1815	 </option>
+                                    <option> 	1816	 </option>
+                                    <option> 	1817	 </option>
+                                    <option> 	1818	 </option>
+                                    <option> 	1819	 </option>
+                                    <option> 	1820	 </option>
+                                    <option> 	1821	 </option>
+                                    <option> 	1822	 </option>
+                                    <option> 	1823	 </option>
+                                    <option> 	1824	 </option>
+                                    <option> 	1825	 </option>
+                                    <option> 	1826	 </option>
+                                    <option> 	1827	 </option>
+                                    <option> 	1828	 </option>
+                                    <option> 	1829	 </option>
+                                    <option> 	1830	 </option>
+                                    <option> 	1831	 </option>
+                                    <option> 	1832	 </option>
+                                    <option> 	1833	 </option>
+                                    <option> 	1834	 </option>
+                                    <option> 	1835	 </option>
+                                    <option> 	1836	 </option>
+                                    <option> 	1837	 </option>
+                                    <option> 	1838	 </option>
+                                    <option> 	1839	 </option>
+                                    <option> 	1840	 </option>
+                                    <option> 	1841	 </option>
+                                    <option> 	1842	 </option>
+                                    <option> 	1843	 </option>
+                                    <option> 	1844	 </option>
+                                    <option> 	1845	 </option>
+                                    <option> 	1846	 </option>
+                                    <option> 	1847	 </option>
+                                    <option> 	1848	 </option>
+                                    <option> 	1849	 </option>
+                                    <option> 	1850	 </option>
+                                    <option> 	1851	 </option>
+                                    <option> 	1852	 </option>
+                                    <option> 	1853	 </option>
+                                    <option> 	1854	 </option>
+                                    <option> 	1855	 </option>
+                                    <option> 	1856	 </option>
+                                    <option> 	1857	 </option>
+                                    <option> 	1858	 </option>
+                                    <option> 	1859	 </option>
+                                    <option> 	1860	 </option>
+                                    <option> 	1861	 </option>
+                                    <option> 	1862	 </option>
+                                    <option> 	1863	 </option>
+                                    <option> 	1864	 </option>
+                                    <option> 	1865	 </option>
+                                    <option> 	1866	 </option>
+                                    <option> 	1867	 </option>
+                                    <option> 	1868	 </option>
+                                    <option> 	1869	 </option>
+                                    <option> 	1870	 </option>
+                                    <option> 	1871	 </option>
+                                    <option> 	1872	 </option>
+                                    <option> 	1873	 </option>
+                                    <option> 	1874	 </option>
+                                    <option> 	1875	 </option>
+                                    <option> 	1876	 </option>
+                                    <option> 	1877	 </option>
+                                    <option> 	1878	 </option>
+                                    <option> 	1879	 </option>
+                                    <option> 	1880	 </option>
+                                    <option> 	1881	 </option>
+                                    <option> 	1882	 </option>
+                                    <option> 	1883	 </option>
+                                    <option> 	1884	 </option>
+                                    <option> 	1885	 </option>
+                                    <option> 	1886	 </option>
+                                    <option> 	1887	 </option>
+                                    <option> 	1888	 </option>
+                                    <option> 	1889	 </option>
+                                    <option> 	1890	 </option>
+                                    <option> 	1891	 </option>
+                                    <option> 	1892	 </option>
+                                    <option> 	1893	 </option>
+                                    <option> 	1894	 </option>
+                                    <option> 	1895	 </option>
+                                    <option> 	1896	 </option>
+                                    <option> 	1897	 </option>
+                                    <option> 	1898	 </option>
+                                    <option> 	1899	 </option>
+                                    <option> 	1900	 </option>
+                                    <option> 	1901	 </option>
+                                    <option> 	1902	 </option>
+                                    <option> 	1903	 </option>
+                                    <option> 	1904	 </option>
+                                    <option> 	1905	 </option>
+                                    <option> 	1906	 </option>
+                                    <option> 	1907	 </option>
+                                    <option> 	1908	 </option>
+                                    <option> 	1909	 </option>
+                                    <option> 	1910	 </option>
+                                    <option> 	1911	 </option>
+                                    <option> 	1912	 </option>
+                                    <option> 	1913	 </option>
+                                    <option> 	1914	 </option>
+                                    <option> 	1915	 </option>
+                                    <option> 	1916	 </option>
+                                    <option> 	1917	 </option>
+                                    <option> 	1918	 </option>
+                                    <option> 	1919	 </option>
+                                    <option> 	1920	 </option>
+                                    <option> 	1921	 </option>
+                                    <option> 	1922	 </option>
+                                    <option> 	1923	 </option>
+                                    <option> 	1924	 </option>
+                                    <option> 	1925	 </option>
+                                    <option> 	1926	 </option>
+                                    <option> 	1927	 </option>
+                                    <option> 	1928	 </option>
+                                    <option> 	1929	 </option>
+                                    <option> 	1930	 </option>
+                                    <option> 	1931	 </option>
+                                    <option> 	1932	 </option>
+                                    <option> 	1933	 </option>
+                                    <option> 	1934	 </option>
+                                    <option> 	1935	 </option>
+                                    <option> 	1936	 </option>
+                                    <option> 	1937	 </option>
+                                    <option> 	1938	 </option>
+                                    <option> 	1939	 </option>
+                                    <option> 	1940	 </option>
+                                    <option> 	1941	 </option>
+                                    <option> 	1942	 </option>
+                                    <option> 	1943	 </option>
+                                    <option> 	1944	 </option>
+                                    <option> 	1945	 </option>
+                                    <option> 	1946	 </option>
+                                    <option> 	1947	 </option>
+                                    <option> 	1948	 </option>
+                                    <option> 	1949	 </option>
+                                    <option> 	1950	 </option>
+                                    <option> 	1951	 </option>
+                                    <option> 	1952	 </option>
+                                    <option> 	1953	 </option>
+                                    <option> 	1954	 </option>
+                                    <option> 	1955	 </option>
+                                    <option> 	1956	 </option>
+                                    <option> 	1957	 </option>
+                                    <option> 	1958	 </option>
+                                    <option> 	1959	 </option>
+                                    <option> 	1960	 </option>
+                                    <option> 	1961	 </option>
+                                    <option> 	1962	 </option>
+                                    <option> 	1963	 </option>
+                                    <option> 	1964	 </option>
+                                    <option> 	1965	 </option>
+                                    <option> 	1966	 </option>
+                                    <option> 	1967	 </option>
+                                    <option> 	1968	 </option>
+                                    <option> 	1969	 </option>
+                                    <option> 	1970	 </option>
+                                    <option> 	1971	 </option>
+                                    <option> 	1972	 </option>
+                                    <option> 	1973	 </option>
+                                    <option> 	1974	 </option>
+                                    <option> 	1975	 </option>
+                                    <option> 	1976	 </option>
+                                    <option> 	1977	 </option>
+                                    <option> 	1978	 </option>
+                                    <option> 	1979	 </option>
+                                    <option> 	1980	 </option>
+                                    <option> 	1981	 </option>
+                                    <option> 	1982	 </option>
+                                    <option> 	1983	 </option>
+                                    <option> 	1984	 </option>
+                                    <option> 	1985	 </option>
+                                    <option> 	1986	 </option>
+                                    <option> 	1987	 </option>
+                                    <option> 	1988	 </option>
+                                    <option> 	1989	 </option>
+                                    <option> 	1990	 </option>
+                                    <option> 	1991	 </option>
+                                    <option> 	1992	 </option>
+                                    <option> 	1993	 </option>
+                                    <option> 	1994	 </option>
+                                    <option> 	1995	 </option>
+                                    <option> 	1996	 </option>
+                                    <option> 	1997	 </option>
+                                    <option> 	1998	 </option>
+                                    <option> 	1999	 </option>
+                                    <option> 	2000	 </option>
+                                    <option> 	2001	 </option>
+                                    <option> 	2002	 </option>
+                                    <option> 	2003	 </option>
+                                    <option> 	2004	 </option>
+                                    <option> 	2005	 </option>
+                                    <option> 	2006	 </option>
+                                    <option> 	2007	 </option>
+                                    <option> 	2008	 </option>
+                                    <option> 	2009	 </option>
+                                    <option> 	2010	 </option>
+                                    <option> 	2011	 </option>
+                                    <option> 	2012	 </option>
+                                    <option> 	2013	 </option>
+                            </html:select>
+                                    <br> <br> <br> <br> 
                     </div>
 
                     <div id ="periodos2">
-                  
-                            <br> <br> <br>
-                            <legend>Período 2</legend>                  
-                            <legend>Inicio de período</legend>                  
-                   
+                        
+                            Período 2     <br> <br>           
+                            Inicio de período   <br> <br> 
+                            <html:select name="Comparar" property="diaIni2">
+                                <option> Dia.. </option>
+                                <option> 01 </option>
+                                <option> 02 </option>
+                                <option> 03 </option>
+                                <option> 04 </option>
+                                <option> 05 </option>
+                                <option> 06 </option>
+                                <option> 07 </option>
+                                <option> 08 </option>
+                                <option> 09 </option>
+                                <option> 10 </option>
+                                <option> 11 </option>
+                                <option> 12 </option>
+                                <option> 13 </option>
+                                <option> 14 </option>
+                                <option> 15 </option>
+                                <option> 16 </option>
+                                <option> 17 </option>
+                                <option> 18 </option>
+                                <option> 19 </option>
+                                <option> 20 </option>
+                                <option> 21 </option>
+                                <option> 22 </option>
+                                <option> 23 </option>
+                                <option> 24 </option>
+                                <option> 25 </option>
+                                <option> 26 </option>
+                                <option> 27 </option>
+                                <option> 28 </option>
+                                <option> 29 </option>
+                                <option> 30 </option>
+                                <option> 31 </option>
+                            </html:select>
+                                
+                            <html:select name="Comparar" property="mesIni2">
+                                <option> Mes.. </option>
+                                <option> 01 </option>
+                                <option> 02 </option>
+                                <option> 03 </option>
+                                <option> 04 </option>
+                                <option> 05 </option>
+                                <option> 06 </option>
+                                <option> 07 </option>
+                                <option> 08 </option>
+                                <option> 09 </option>
+                                <option> 10 </option>
+                                <option> 11 </option>
+                                <option> 12 </option>
+                            </html:select>
+                          
+                            <html:select name="Comparar" property="anoIni2">
+                                <option> Año.. </option>
+                                    <option> 	1800	 </option>
+                                    <option> 	1801	 </option>
+                                    <option> 	1802	 </option>
+                                    <option> 	1803	 </option>
+                                    <option> 	1804	 </option>
+                                    <option> 	1805	 </option>
+                                    <option> 	1806	 </option>
+                                    <option> 	1807	 </option>
+                                    <option> 	1808	 </option>
+                                    <option> 	1809	 </option>
+                                    <option> 	1810	 </option>
+                                    <option> 	1811	 </option>
+                                    <option> 	1812	 </option>
+                                    <option> 	1813	 </option>
+                                    <option> 	1814	 </option>
+                                    <option> 	1815	 </option>
+                                    <option> 	1816	 </option>
+                                    <option> 	1817	 </option>
+                                    <option> 	1818	 </option>
+                                    <option> 	1819	 </option>
+                                    <option> 	1820	 </option>
+                                    <option> 	1821	 </option>
+                                    <option> 	1822	 </option>
+                                    <option> 	1823	 </option>
+                                    <option> 	1824	 </option>
+                                    <option> 	1825	 </option>
+                                    <option> 	1826	 </option>
+                                    <option> 	1827	 </option>
+                                    <option> 	1828	 </option>
+                                    <option> 	1829	 </option>
+                                    <option> 	1830	 </option>
+                                    <option> 	1831	 </option>
+                                    <option> 	1832	 </option>
+                                    <option> 	1833	 </option>
+                                    <option> 	1834	 </option>
+                                    <option> 	1835	 </option>
+                                    <option> 	1836	 </option>
+                                    <option> 	1837	 </option>
+                                    <option> 	1838	 </option>
+                                    <option> 	1839	 </option>
+                                    <option> 	1840	 </option>
+                                    <option> 	1841	 </option>
+                                    <option> 	1842	 </option>
+                                    <option> 	1843	 </option>
+                                    <option> 	1844	 </option>
+                                    <option> 	1845	 </option>
+                                    <option> 	1846	 </option>
+                                    <option> 	1847	 </option>
+                                    <option> 	1848	 </option>
+                                    <option> 	1849	 </option>
+                                    <option> 	1850	 </option>
+                                    <option> 	1851	 </option>
+                                    <option> 	1852	 </option>
+                                    <option> 	1853	 </option>
+                                    <option> 	1854	 </option>
+                                    <option> 	1855	 </option>
+                                    <option> 	1856	 </option>
+                                    <option> 	1857	 </option>
+                                    <option> 	1858	 </option>
+                                    <option> 	1859	 </option>
+                                    <option> 	1860	 </option>
+                                    <option> 	1861	 </option>
+                                    <option> 	1862	 </option>
+                                    <option> 	1863	 </option>
+                                    <option> 	1864	 </option>
+                                    <option> 	1865	 </option>
+                                    <option> 	1866	 </option>
+                                    <option> 	1867	 </option>
+                                    <option> 	1868	 </option>
+                                    <option> 	1869	 </option>
+                                    <option> 	1870	 </option>
+                                    <option> 	1871	 </option>
+                                    <option> 	1872	 </option>
+                                    <option> 	1873	 </option>
+                                    <option> 	1874	 </option>
+                                    <option> 	1875	 </option>
+                                    <option> 	1876	 </option>
+                                    <option> 	1877	 </option>
+                                    <option> 	1878	 </option>
+                                    <option> 	1879	 </option>
+                                    <option> 	1880	 </option>
+                                    <option> 	1881	 </option>
+                                    <option> 	1882	 </option>
+                                    <option> 	1883	 </option>
+                                    <option> 	1884	 </option>
+                                    <option> 	1885	 </option>
+                                    <option> 	1886	 </option>
+                                    <option> 	1887	 </option>
+                                    <option> 	1888	 </option>
+                                    <option> 	1889	 </option>
+                                    <option> 	1890	 </option>
+                                    <option> 	1891	 </option>
+                                    <option> 	1892	 </option>
+                                    <option> 	1893	 </option>
+                                    <option> 	1894	 </option>
+                                    <option> 	1895	 </option>
+                                    <option> 	1896	 </option>
+                                    <option> 	1897	 </option>
+                                    <option> 	1898	 </option>
+                                    <option> 	1899	 </option>
+                                    <option> 	1900	 </option>
+                                    <option> 	1901	 </option>
+                                    <option> 	1902	 </option>
+                                    <option> 	1903	 </option>
+                                    <option> 	1904	 </option>
+                                    <option> 	1905	 </option>
+                                    <option> 	1906	 </option>
+                                    <option> 	1907	 </option>
+                                    <option> 	1908	 </option>
+                                    <option> 	1909	 </option>
+                                    <option> 	1910	 </option>
+                                    <option> 	1911	 </option>
+                                    <option> 	1912	 </option>
+                                    <option> 	1913	 </option>
+                                    <option> 	1914	 </option>
+                                    <option> 	1915	 </option>
+                                    <option> 	1916	 </option>
+                                    <option> 	1917	 </option>
+                                    <option> 	1918	 </option>
+                                    <option> 	1919	 </option>
+                                    <option> 	1920	 </option>
+                                    <option> 	1921	 </option>
+                                    <option> 	1922	 </option>
+                                    <option> 	1923	 </option>
+                                    <option> 	1924	 </option>
+                                    <option> 	1925	 </option>
+                                    <option> 	1926	 </option>
+                                    <option> 	1927	 </option>
+                                    <option> 	1928	 </option>
+                                    <option> 	1929	 </option>
+                                    <option> 	1930	 </option>
+                                    <option> 	1931	 </option>
+                                    <option> 	1932	 </option>
+                                    <option> 	1933	 </option>
+                                    <option> 	1934	 </option>
+                                    <option> 	1935	 </option>
+                                    <option> 	1936	 </option>
+                                    <option> 	1937	 </option>
+                                    <option> 	1938	 </option>
+                                    <option> 	1939	 </option>
+                                    <option> 	1940	 </option>
+                                    <option> 	1941	 </option>
+                                    <option> 	1942	 </option>
+                                    <option> 	1943	 </option>
+                                    <option> 	1944	 </option>
+                                    <option> 	1945	 </option>
+                                    <option> 	1946	 </option>
+                                    <option> 	1947	 </option>
+                                    <option> 	1948	 </option>
+                                    <option> 	1949	 </option>
+                                    <option> 	1950	 </option>
+                                    <option> 	1951	 </option>
+                                    <option> 	1952	 </option>
+                                    <option> 	1953	 </option>
+                                    <option> 	1954	 </option>
+                                    <option> 	1955	 </option>
+                                    <option> 	1956	 </option>
+                                    <option> 	1957	 </option>
+                                    <option> 	1958	 </option>
+                                    <option> 	1959	 </option>
+                                    <option> 	1960	 </option>
+                                    <option> 	1961	 </option>
+                                    <option> 	1962	 </option>
+                                    <option> 	1963	 </option>
+                                    <option> 	1964	 </option>
+                                    <option> 	1965	 </option>
+                                    <option> 	1966	 </option>
+                                    <option> 	1967	 </option>
+                                    <option> 	1968	 </option>
+                                    <option> 	1969	 </option>
+                                    <option> 	1970	 </option>
+                                    <option> 	1971	 </option>
+                                    <option> 	1972	 </option>
+                                    <option> 	1973	 </option>
+                                    <option> 	1974	 </option>
+                                    <option> 	1975	 </option>
+                                    <option> 	1976	 </option>
+                                    <option> 	1977	 </option>
+                                    <option> 	1978	 </option>
+                                    <option> 	1979	 </option>
+                                    <option> 	1980	 </option>
+                                    <option> 	1981	 </option>
+                                    <option> 	1982	 </option>
+                                    <option> 	1983	 </option>
+                                    <option> 	1984	 </option>
+                                    <option> 	1985	 </option>
+                                    <option> 	1986	 </option>
+                                    <option> 	1987	 </option>
+                                    <option> 	1988	 </option>
+                                    <option> 	1989	 </option>
+                                    <option> 	1990	 </option>
+                                    <option> 	1991	 </option>
+                                    <option> 	1992	 </option>
+                                    <option> 	1993	 </option>
+                                    <option> 	1994	 </option>
+                                    <option> 	1995	 </option>
+                                    <option> 	1996	 </option>
+                                    <option> 	1997	 </option>
+                                    <option> 	1998	 </option>
+                                    <option> 	1999	 </option>
+                                    <option> 	2000	 </option>
+                                    <option> 	2001	 </option>
+                                    <option> 	2002	 </option>
+                                    <option> 	2003	 </option>
+                                    <option> 	2004	 </option>
+                                    <option> 	2005	 </option>
+                                    <option> 	2006	 </option>
+                                    <option> 	2007	 </option>
+                                    <option> 	2008	 </option>
+                                    <option> 	2009	 </option>
+                                    <option> 	2010	 </option>
+                                    <option> 	2011	 </option>
+                                    <option> 	2012	 </option>
+                                    <option> 	2013	 </option>
 
-                            <legend>Finalización de período</legend>
-                               
-                       
-                    </div>  
-                    <br> <br> <br>
-                    <div id="Comparar" >
-                        <html:submit> Comparar </html:submit>
-                    </div>
-                </html:form> 
+                            </html:select>    
+                            <br> <br> 
+                            Finalización de período <br> <br> 
+                            <html:select name="Comparar" property="diaFin2">
+                                <option> Dia.. </option>
+                                <option> 01 </option>
+                                <option> 02 </option>
+                                <option> 03 </option>
+                                <option> 04 </option>
+                                <option> 05 </option>
+                                <option> 06 </option>
+                                <option> 07 </option>
+                                <option> 08 </option>
+                                <option> 09 </option>
+                                <option> 10 </option>
+                                <option> 11 </option>
+                                <option> 12 </option>
+                                <option> 13 </option>
+                                <option> 14 </option>
+                                <option> 15 </option>
+                                <option> 16 </option>
+                                <option> 17 </option>
+                                <option> 18 </option>
+                                <option> 19 </option>
+                                <option> 20 </option>
+                                <option> 21 </option>
+                                <option> 22 </option>
+                                <option> 23 </option>
+                                <option> 24 </option>
+                                <option> 25 </option>
+                                <option> 26 </option>
+                                <option> 27 </option>
+                                <option> 28 </option>
+                                <option> 29 </option>
+                                <option> 30 </option>
+                                <option> 31 </option>
+                            </html:select>
+                                
+                            <html:select name="Comparar" property="mesFin2">
+                                <option> Mes.. </option>
+                                <option> 01 </option>
+                                <option> 02 </option>
+                                <option> 03 </option>
+                                <option> 04 </option>
+                                <option> 05 </option>
+                                <option> 06 </option>
+                                <option> 07 </option>
+                                <option> 08 </option>
+                                <option> 09 </option>
+                                <option> 10 </option>
+                                <option> 11 </option>
+                                <option> 12 </option>
+                            </html:select>
+                          
+                            <html:select name="Comparar" property="anoFin2">
+                                <option> Año.. </option>
+                                    <option> 	1800	 </option>
+                                    <option> 	1801	 </option>
+                                    <option> 	1802	 </option>
+                                    <option> 	1803	 </option>
+                                    <option> 	1804	 </option>
+                                    <option> 	1805	 </option>
+                                    <option> 	1806	 </option>
+                                    <option> 	1807	 </option>
+                                    <option> 	1808	 </option>
+                                    <option> 	1809	 </option>
+                                    <option> 	1810	 </option>
+                                    <option> 	1811	 </option>
+                                    <option> 	1812	 </option>
+                                    <option> 	1813	 </option>
+                                    <option> 	1814	 </option>
+                                    <option> 	1815	 </option>
+                                    <option> 	1816	 </option>
+                                    <option> 	1817	 </option>
+                                    <option> 	1818	 </option>
+                                    <option> 	1819	 </option>
+                                    <option> 	1820	 </option>
+                                    <option> 	1821	 </option>
+                                    <option> 	1822	 </option>
+                                    <option> 	1823	 </option>
+                                    <option> 	1824	 </option>
+                                    <option> 	1825	 </option>
+                                    <option> 	1826	 </option>
+                                    <option> 	1827	 </option>
+                                    <option> 	1828	 </option>
+                                    <option> 	1829	 </option>
+                                    <option> 	1830	 </option>
+                                    <option> 	1831	 </option>
+                                    <option> 	1832	 </option>
+                                    <option> 	1833	 </option>
+                                    <option> 	1834	 </option>
+                                    <option> 	1835	 </option>
+                                    <option> 	1836	 </option>
+                                    <option> 	1837	 </option>
+                                    <option> 	1838	 </option>
+                                    <option> 	1839	 </option>
+                                    <option> 	1840	 </option>
+                                    <option> 	1841	 </option>
+                                    <option> 	1842	 </option>
+                                    <option> 	1843	 </option>
+                                    <option> 	1844	 </option>
+                                    <option> 	1845	 </option>
+                                    <option> 	1846	 </option>
+                                    <option> 	1847	 </option>
+                                    <option> 	1848	 </option>
+                                    <option> 	1849	 </option>
+                                    <option> 	1850	 </option>
+                                    <option> 	1851	 </option>
+                                    <option> 	1852	 </option>
+                                    <option> 	1853	 </option>
+                                    <option> 	1854	 </option>
+                                    <option> 	1855	 </option>
+                                    <option> 	1856	 </option>
+                                    <option> 	1857	 </option>
+                                    <option> 	1858	 </option>
+                                    <option> 	1859	 </option>
+                                    <option> 	1860	 </option>
+                                    <option> 	1861	 </option>
+                                    <option> 	1862	 </option>
+                                    <option> 	1863	 </option>
+                                    <option> 	1864	 </option>
+                                    <option> 	1865	 </option>
+                                    <option> 	1866	 </option>
+                                    <option> 	1867	 </option>
+                                    <option> 	1868	 </option>
+                                    <option> 	1869	 </option>
+                                    <option> 	1870	 </option>
+                                    <option> 	1871	 </option>
+                                    <option> 	1872	 </option>
+                                    <option> 	1873	 </option>
+                                    <option> 	1874	 </option>
+                                    <option> 	1875	 </option>
+                                    <option> 	1876	 </option>
+                                    <option> 	1877	 </option>
+                                    <option> 	1878	 </option>
+                                    <option> 	1879	 </option>
+                                    <option> 	1880	 </option>
+                                    <option> 	1881	 </option>
+                                    <option> 	1882	 </option>
+                                    <option> 	1883	 </option>
+                                    <option> 	1884	 </option>
+                                    <option> 	1885	 </option>
+                                    <option> 	1886	 </option>
+                                    <option> 	1887	 </option>
+                                    <option> 	1888	 </option>
+                                    <option> 	1889	 </option>
+                                    <option> 	1890	 </option>
+                                    <option> 	1891	 </option>
+                                    <option> 	1892	 </option>
+                                    <option> 	1893	 </option>
+                                    <option> 	1894	 </option>
+                                    <option> 	1895	 </option>
+                                    <option> 	1896	 </option>
+                                    <option> 	1897	 </option>
+                                    <option> 	1898	 </option>
+                                    <option> 	1899	 </option>
+                                    <option> 	1900	 </option>
+                                    <option> 	1901	 </option>
+                                    <option> 	1902	 </option>
+                                    <option> 	1903	 </option>
+                                    <option> 	1904	 </option>
+                                    <option> 	1905	 </option>
+                                    <option> 	1906	 </option>
+                                    <option> 	1907	 </option>
+                                    <option> 	1908	 </option>
+                                    <option> 	1909	 </option>
+                                    <option> 	1910	 </option>
+                                    <option> 	1911	 </option>
+                                    <option> 	1912	 </option>
+                                    <option> 	1913	 </option>
+                                    <option> 	1914	 </option>
+                                    <option> 	1915	 </option>
+                                    <option> 	1916	 </option>
+                                    <option> 	1917	 </option>
+                                    <option> 	1918	 </option>
+                                    <option> 	1919	 </option>
+                                    <option> 	1920	 </option>
+                                    <option> 	1921	 </option>
+                                    <option> 	1922	 </option>
+                                    <option> 	1923	 </option>
+                                    <option> 	1924	 </option>
+                                    <option> 	1925	 </option>
+                                    <option> 	1926	 </option>
+                                    <option> 	1927	 </option>
+                                    <option> 	1928	 </option>
+                                    <option> 	1929	 </option>
+                                    <option> 	1930	 </option>
+                                    <option> 	1931	 </option>
+                                    <option> 	1932	 </option>
+                                    <option> 	1933	 </option>
+                                    <option> 	1934	 </option>
+                                    <option> 	1935	 </option>
+                                    <option> 	1936	 </option>
+                                    <option> 	1937	 </option>
+                                    <option> 	1938	 </option>
+                                    <option> 	1939	 </option>
+                                    <option> 	1940	 </option>
+                                    <option> 	1941	 </option>
+                                    <option> 	1942	 </option>
+                                    <option> 	1943	 </option>
+                                    <option> 	1944	 </option>
+                                    <option> 	1945	 </option>
+                                    <option> 	1946	 </option>
+                                    <option> 	1947	 </option>
+                                    <option> 	1948	 </option>
+                                    <option> 	1949	 </option>
+                                    <option> 	1950	 </option>
+                                    <option> 	1951	 </option>
+                                    <option> 	1952	 </option>
+                                    <option> 	1953	 </option>
+                                    <option> 	1954	 </option>
+                                    <option> 	1955	 </option>
+                                    <option> 	1956	 </option>
+                                    <option> 	1957	 </option>
+                                    <option> 	1958	 </option>
+                                    <option> 	1959	 </option>
+                                    <option> 	1960	 </option>
+                                    <option> 	1961	 </option>
+                                    <option> 	1962	 </option>
+                                    <option> 	1963	 </option>
+                                    <option> 	1964	 </option>
+                                    <option> 	1965	 </option>
+                                    <option> 	1966	 </option>
+                                    <option> 	1967	 </option>
+                                    <option> 	1968	 </option>
+                                    <option> 	1969	 </option>
+                                    <option> 	1970	 </option>
+                                    <option> 	1971	 </option>
+                                    <option> 	1972	 </option>
+                                    <option> 	1973	 </option>
+                                    <option> 	1974	 </option>
+                                    <option> 	1975	 </option>
+                                    <option> 	1976	 </option>
+                                    <option> 	1977	 </option>
+                                    <option> 	1978	 </option>
+                                    <option> 	1979	 </option>
+                                    <option> 	1980	 </option>
+                                    <option> 	1981	 </option>
+                                    <option> 	1982	 </option>
+                                    <option> 	1983	 </option>
+                                    <option> 	1984	 </option>
+                                    <option> 	1985	 </option>
+                                    <option> 	1986	 </option>
+                                    <option> 	1987	 </option>
+                                    <option> 	1988	 </option>
+                                    <option> 	1989	 </option>
+                                    <option> 	1990	 </option>
+                                    <option> 	1991	 </option>
+                                    <option> 	1992	 </option>
+                                    <option> 	1993	 </option>
+                                    <option> 	1994	 </option>
+                                    <option> 	1995	 </option>
+                                    <option> 	1996	 </option>
+                                    <option> 	1997	 </option>
+                                    <option> 	1998	 </option>
+                                    <option> 	1999	 </option>
+                                    <option> 	2000	 </option>
+                                    <option> 	2001	 </option>
+                                    <option> 	2002	 </option>
+                                    <option> 	2003	 </option>
+                                    <option> 	2004	 </option>
+                                    <option> 	2005	 </option>
+                                    <option> 	2006	 </option>
+                                    <option> 	2007	 </option>
+                                    <option> 	2008	 </option>
+                                    <option> 	2009	 </option>
+                                    <option> 	2010	 </option>
+                                    <option> 	2011	 </option>
+                                    <option> 	2012	 </option>
+                                    <option> 	2013	 </option>
+                                </html:select>
+                            </div>  
+                            <br> <br> <br>
+                            <div id="Comparar" style="float: center;">
+                                <html:submit> Comparar </html:submit>
+                            </div>
+                         </p>
+                    </html:form> 
+                </div>
             </div>
         </div>
     </div>	
-</div> 
+</div>  
