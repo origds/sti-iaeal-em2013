@@ -80,7 +80,7 @@
                                 <option> 29 </option>
                                 <option> 30 </option>
                                 <option> 31 </option>
-                            <html:select>
+                            </html:select>
                                 
                             <html:select name="Comparar" property="mesIni1">
                                 <option> Mes.. </option>
@@ -96,7 +96,7 @@
                                 <option> 10 </option>
                                 <option> 11 </option>
                                 <option> 12 </option>
-                            <html:select>
+                            </html:select>
                           
                             <html:select name="Comparar" property="anoIni1">
                                 <option> Año.. </option>
@@ -315,7 +315,7 @@
                                     <option> 	2012	 </option>
                                     <option> 	2013	 </option>
 
-                            <html:select>    
+                            </html:select>    
                             <br> <br> 
                             Finalización de período <br> <br> 
                             <html:select name="Comparar" property="diaFin1">
@@ -351,7 +351,7 @@
                                 <option> 29 </option>
                                 <option> 30 </option>
                                 <option> 31 </option>
-                            <html:select>
+                            </html:select>
                                 
                             <html:select name="Comparar" property="mesFin1">
                                 <option> Mes.. </option>
@@ -367,7 +367,7 @@
                                 <option> 10 </option>
                                 <option> 11 </option>
                                 <option> 12 </option>
-                            <html:select>
+                            </html:select>
                           
                             <html:select name="Comparar" property="anoFin1">
                                 <option> Año.. </option>

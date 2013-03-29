@@ -37,8 +37,8 @@
                             <caption></caption>
                             <thead>
                                 <tr>
-                                    <th id="anio1" scope="col" style="color:red"><bean:write name="Comparar" property="periodoIni1"/> - <bean:write name="Comparar" property="periodoFin1"/></th> 
-                                    <th id="anio2" scope="col" style="color:red"><bean:write name="Comparar" property="periodoIni2"/> - <bean:write name="Comparar" property="periodoFin2"/></th> 
+                                    <th id="anio1" scope="col" style="color:red"><bean:write name="Comparar" property="anoIni1"/> - <bean:write name="Comparar" property="anoFin1"/></th> 
+                                    <th id="anio2" scope="col" style="color:red"><bean:write name="Comparar" property="anoIni2"/> - <bean:write name="Comparar" property="anoFin2"/></th> 
                             </thead>
                             <tbody>
                                 <tr>                                    
