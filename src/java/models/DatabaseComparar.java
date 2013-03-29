@@ -69,18 +69,20 @@ public class DatabaseComparar {
                     throw new Exception("El inicio del periodo 1 debe ser mayor al final");
                 }
                 
-                sqlcomparar = "SELECT COUNT (*) AS contador FROM \"STI\".tratado WHERE " 
+                sqlcomparar = "SELECT COUNT (*) AS contador FROM \"STI\".tratado WHERE "
+                        + "firmaFecha in (SELECT firmaFecha FROM \"STI\".tratado WHERE "
                         + c.getAnoIni1() + " <= extract(year from firmaFecha) "
                         + "AND extract(year from firmaFecha) <= " + c.getAnoFin1() 
-                        + " AND extract(month from firmaFecha) IN "
-                        + "(SELECT extract(month from firmaFecha) from \"STI\".tratado WHERE "
-                        + c.getMesIni1() + " <= extract(month from firmaFecha) "
-                        + "AND extract(month from firmaFecha) <= " + c.getMesFin1()
-                        + ") AND extract(day from firmaFecha) IN "
-                        + "(SELECT extract(day from firmaFecha) from \"STI\".tratado WHERE "
-                        + c.getDiaIni1() + " <= extract(day from firmaFecha) "
-                        + "AND extract(day from firmaFecha) <= " + c.getDiaFin1() 
-                        + ")";
+                        + " EXCEPT SELECT firmaFecha FROM \"STI\".tratado WHERE "
+                        + "((extract(year from firmaFecha)= " + c.getAnoIni1()
+                        + " AND extract(month from firmaFecha) < " + c.getMesIni1()
+                        + ") OR (extract(year from firmaFecha)= " + c.getAnoIni1() 
+                        + " AND extract(day from firmaFecha) < " + c.getDiaIni1()
+                        + ")) OR ((extract(year from firmaFecha)= " + c.getAnoFin1()
+                        + " AND extract(month from firmaFecha) > " + c.getMesFin1()
+                        + ") OR (extract(year from firmaFecha)= " + c.getAnoFin1()
+                        + " AND extract(day from firmaFecha) > " + c.getDiaFin1()
+                        + ")))";
                 
                 System.out.println(sqlcomparar);
                 Statement stmt = conexion.createStatement();
@@ -100,18 +102,20 @@ public class DatabaseComparar {
                     throw new Exception("El inicio del periodo 2 debe ser mayor al final");
                 }
                 
-                 sqlcomparar = "SELECT COUNT (*) AS contador FROM \"STI\".tratado WHERE " 
-                        + c.getAnoIni2() + " <= extract(year from firmaFecha) "
-                        + "AND extract(year from firmaFecha) <= " + c.getAnoFin2() 
-                        + " AND extract(month from firmaFecha) IN "
-                        + "(SELECT extract(month from firmaFecha) from \"STI\".tratado WHERE "
-                        + c.getMesIni2() + " <= extract(month from firmaFecha) "
-                        + "AND extract(month from firmaFecha) <= " + c.getMesFin2()
-                        + ") AND extract(day from firmaFecha) IN "
-                        + "(SELECT extract(day from firmaFecha) from \"STI\".tratado WHERE "
-                        + c.getDiaIni2() + " <= extract(day from firmaFecha) "
-                        + "AND extract(day from firmaFecha) <= " + c.getDiaFin2() 
-                        + ")";
+                sqlcomparar = "SELECT COUNT (*) AS contador FROM \"STI\".tratado WHERE "
+                        + "firmaFecha in (SELECT firmaFecha FROM \"STI\".tratado WHERE "
+                        + c.getAnoIni1() + " <= extract(year from firmaFecha) "
+                        + "AND extract(year from firmaFecha) <= " + c.getAnoFin1() 
+                        + " EXCEPT SELECT firmaFecha FROM \"STI\".tratado WHERE "
+                        + "((extract(year from firmaFecha)= " + c.getAnoIni2()
+                        + " AND extract(month from firmaFecha) < " + c.getMesIni2()
+                        + ") OR (extract(year from firmaFecha)= " + c.getAnoIni2() 
+                        + " AND extract(day from firmaFecha) < " + c.getDiaIni2()
+                        + ")) OR ((extract(year from firmaFecha)= " + c.getAnoFin2()
+                        + " AND extract(month from firmaFecha) > " + c.getMesFin2()
+                        + ") OR (extract(year from firmaFecha)= " + c.getAnoFin2()
+                        + " AND extract(day from firmaFecha) > " + c.getDiaFin2()
+                        + ")))";
                 
                 System.out.println(sqlcomparar);
                 Statement stmt = conexion.createStatement();
