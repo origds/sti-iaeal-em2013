@@ -11,6 +11,35 @@
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 
 <!DOCTYPE html>
+
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+<!--------------------------------->
+<!-- Genera el Grafico de Torta  -->
+<!--------------------------------->
+<script type="text/javascript">
+    google.load("visualization", "1", {packages:["corechart"]});
+    google.setOnLoadCallback(drawChart);
+    function drawChart() {
+        var p1 = document.getElementById('anio1').lastChild.nodeValue
+        var p2 = document.getElementById('anio2').lastChild.nodeValue
+        var c1 = Number(document.getElementById('num1').lastChild.nodeValue)
+        var c2 = Number(document.getElementById('num2').lastChild.nodeValue)
+        var data = google.visualization.arrayToDataTable([
+            ['Periodos', 'Cantidad de Tratados'],
+            [p1, c1],
+            [p2, c2]
+        ]);
+
+        var options = {
+            title: 'Cantidad de Tratados por peeriodos'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('Torta'));
+        chart.draw(data, options);
+    }
+</script>
+
 <style>
     .error{font-size: 10px;color: #cc0000; float:left; padding:0}
     .error ul{list-style: none;}
@@ -26,13 +55,12 @@
 <div id="body">
     <div id="barraBusqueda">
         <div class="box"> 
-            <div class="inbox" style="height: 200px;" id="cajaBusqueda">
+            <div class="inbox" style="height: 450px;" id="cajaBusqueda">
                 <div class="titulo">Resultado de la Comparación</div>
                 <br><br>
 
                 <logic:present name="Comparar">
                     <div>
-
                         <table style="float:left ;width:500px;margin:12px -11px 0 0">
                             <caption></caption>
                             <thead>
@@ -49,7 +77,8 @@
                         </table>
                     </div>
                 </logic:present>
-
+                <br><br><br><br><br><br><br>
+                <div id="Torta" style="width: 400px; height: 300px;"></div>                    
             </div>
         </div>
     </div>
