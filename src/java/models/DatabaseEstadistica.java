@@ -92,6 +92,67 @@ public class DatabaseEstadistica {
     
     try {
       
+      //Para cuando no hay paises
+      if (b.getCodigo1().equals("Paises...") & b.getCodigo2().equals("Paises...")
+          & b.getCodigo3().equals("Paises...")) {
+        
+         if ((b.getPeriodoIni1() == 0) & (b.getPeriodoFin1() == 0)) {
+                if ((b.getPeriodoIni2() == 0) & (b.getPeriodoFin2() == 0)) {
+                    throw new Exception("Debe ingresar un periodo valido");
+                }
+            }            
+            
+            if ((b.getPeriodoIni1() != 0) && (b.getPeriodoFin1() != 0)) {
+                if (b.getPeriodoIni1() > b.getPeriodoFin1()) {
+                    throw new Exception("El inicio del periodo 1 debe ser mayor al final");
+                }
+                
+                sqlquery = "SELECT COUNT (*) AS contador FROM \"STI\".tratado WHERE (" + b.getPeriodoIni1()
+                        + " <= (extract(year from firmaFecha)) "
+                        + "AND (extract(year from firmaFecha)) <= "
+                        + b.getPeriodoFin1() + ")";
+                
+                System.out.println(sqlquery);
+                Statement stmt = conexion.createStatement();
+                ResultSet rs = stmt.executeQuery(sqlquery);
+                rs.next();
+                int count = rs.getInt("contador");
+                rs.close();
+ 
+                estad.settotal1(count);
+                estad.setAno1(b.getPeriodoIni1());
+                estad.setAno2(b.getPeriodoFin1());
+                System.out.println("CANTIDAAAD 1");
+                System.out.println(estad.gettotal1());
+
+            }
+            
+            if ((b.getPeriodoIni2() != 0) && (b.getPeriodoFin2() != 0)) {
+                if (b.getPeriodoIni2() > b.getPeriodoFin2()) {
+                    throw new Exception("El inicio del periodo 2 debe ser mayor al final");
+                }
+                
+                sqlquery = "SELECT COUNT (*) AS contador FROM \"STI\".tratado WHERE (" + b.getPeriodoIni2()
+                        + " <= (extract(year from firmaFecha)) "
+                        + "AND (extract(year from firmaFecha)) <= "
+                        + b.getPeriodoFin2() + ")";
+                
+                System.out.println(sqlquery);
+                Statement stmt = conexion.createStatement();
+                ResultSet rs = stmt.executeQuery(sqlquery);
+                rs.next();
+                int count = rs.getInt("contador");
+                rs.close();
+ 
+                estad.settotal2(count);
+                estad.setAno3(b.getPeriodoIni2());
+                estad.setAno4(b.getPeriodoFin2());
+                System.out.println("CANTIDAAAD 2");
+                System.out.println(estad.gettotal2());
+            }
+      }
+      
+      
       //Para cuando no hay peridos
       if ((b.getPeriodoIni1() == 0) & (b.getPeriodoFin1() == 0)) {
         
