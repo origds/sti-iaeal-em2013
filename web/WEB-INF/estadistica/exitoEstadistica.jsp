@@ -216,9 +216,9 @@
                             <thead>
                                 <tr>
                                     <th scope="col" style="color:red">PAISES</th>
-                                    <th scope="col" style="color:red">NUMERO DE TRATADOS</th>
+                                    <th scope="col" style="color:red">TRATADOS POR PAISES</th>
                                     <th id="anio1" scope="col" style="color:red"><bean:write name="est" property="ano1"/> - <bean:write name="est" property="ano2"/></th> 
-                                    <th id="anio2" scope="col" style="color:red"><bean:write name="est" property="ano3"/> - <bean:write name="est" property="ano4"/></th> 
+                                    <th id="anio2" scope="col" style="color:red"><bean:write name="est" property="ano3"/> - <bean:write name="est" property="ano4"/></th>   
                             </thead>
                             <tbody>
                                 <tr>
@@ -239,23 +239,15 @@
                                     <th id ="num3" ><bean:write name="est" property="tercero"/></th>
                                     <th id ="num6" ><bean:write name="est" property="sexto"/></th>
                                 </tr>
-                            </tbody>
-                        </table>
-
-                        <table id="tablaPeriodos" style="float:left ;width:500px;margin:12px -11px 0 0">
-                            <caption></caption>
-                            <thead>
                                 <tr>
-                                    <th id="anio1" scope="col" style="color:red"><bean:write name="Comparar" property="anoIni1"/> - <bean:write name="Comparar" property="anoFin1"/></th> 
-                                    <th id="anio2" scope="col" style="color:red"><bean:write name="Comparar" property="anoIni2"/> - <bean:write name="Comparar" property="anoFin2"/></th> 
-                            </thead>
-                            <tbody>
-                                <tr>                                    
-                                    <th id ="num1" ><bean:write name="Comparar" property="cantidad1"/></th>
-                                    <th id ="num2" ><bean:write name="Comparar" property="cantidad2"/></th>
+                                    <th scope="col" style="color:red">TOTAL POR PERIODOS</th>
+                                    <th> </th>                                   
+                                    <th id ="per1" ><bean:write name="est" property="totalP1"/></th>
+                                    <th id ="per2" ><bean:write name="est" property="totalP2"/></th>
                                 </tr>
+                                
                             </tbody>
-                        </table>        
+                        </table>       
 
                     </div>
 
