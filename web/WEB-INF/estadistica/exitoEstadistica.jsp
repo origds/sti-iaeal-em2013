@@ -50,7 +50,34 @@
 </script>
 
 <!--------------------------------->
-<!-- Genera el Grafico de Barras -->
+<!-- Genera el Grafico de Torta para paises -->
+<!--------------------------------->
+<script type="text/javascript">
+    google.load("visualization", "1", {packages:["corechart"]});
+    google.setOnLoadCallback(drawChart);
+    function drawChart() {
+        var p1 = document.getElementById('periodo1').lastChild.nodeValue
+        var p2 = document.getElementById('periodo2').lastChild.nodeValue
+        var c1 = Number(document.getElementById('num01').lastChild.nodeValue)
+        var c2 = Number(document.getElementById('num02').lastChild.nodeValue)
+        var data = google.visualization.arrayToDataTable([
+            ['Periodos', 'Cantidad de Tratados'],
+            [p1, c1],
+            [p2, c2]
+        ]);
+
+        var options = {
+            title: 'Cantidad de Tratados por periodos'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('Torta'));
+        chart.draw(data, options);
+    }
+</script>
+
+
+<!--------------------------------->
+<!-- Genera el Grafico de Barras para periodos -->
 <!--------------------------------->
 <script type="text/javascript">
     google.load("visualization", "1", {packages:["corechart"]});
@@ -184,7 +211,7 @@
                 <logic:present name="est">
                     <div>
 
-                        <table style="float:left ;width:500px;margin:12px -11px 0 0">
+                        <table id="tablaTodo" style="float:left ;width:500px;margin:12px -11px 0 0">
                             <caption></caption>
                             <thead>
                                 <tr>
@@ -214,6 +241,22 @@
                                 </tr>
                             </tbody>
                         </table>
+
+                        <table id="tablaPeriodos" style="float:left ;width:500px;margin:12px -11px 0 0">
+                            <caption></caption>
+                            <thead>
+                                <tr>
+                                    <th id="anio1" scope="col" style="color:red"><bean:write name="Comparar" property="anoIni1"/> - <bean:write name="Comparar" property="anoFin1"/></th> 
+                                    <th id="anio2" scope="col" style="color:red"><bean:write name="Comparar" property="anoIni2"/> - <bean:write name="Comparar" property="anoFin2"/></th> 
+                            </thead>
+                            <tbody>
+                                <tr>                                    
+                                    <th id ="num1" ><bean:write name="Comparar" property="cantidad1"/></th>
+                                    <th id ="num2" ><bean:write name="Comparar" property="cantidad2"/></th>
+                                </tr>
+                            </tbody>
+                        </table>        
+
                     </div>
 
                     <br><br><br><br><br>
@@ -234,7 +277,7 @@
                     <th style="float: right;" >
                         <button id="botonTorta" class="botonBusqueda">Torta</button>
                     </th>
-
+                    
                 </logic:present>
 
             </div>
