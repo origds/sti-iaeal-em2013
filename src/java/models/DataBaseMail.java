@@ -12,6 +12,7 @@ import java.sql.Statement;
 import javabeans.Comparar;
 import javabeans.Tratado;
 import javabeans.Usuario;
+import javabeans.SHAHashing;
 /**
  *
  * @author Jhosbert
@@ -53,7 +54,9 @@ public class DataBaseMail {
     
     public String enviarMail(Usuario c) {
         String sqlmail = "";
+        String sqlmail2 = "";
         String resul = "";
+        int updated = 0;
         try {
             if (c.getCorreo().compareTo("")==0){
                     throw new Exception("Debe ingresar un correo");
@@ -62,20 +65,36 @@ public class DataBaseMail {
          
             if (c.getCorreo().compareTo("")!=0) {
               
+                Double nr = Math.random()*890000+100000;
+                int i = nr.intValue();
+                System.out.println("Este es el numero Entero " + i);
+                String cadena = String.valueOf(i); 
                 
-                sqlmail = "SELECT * FROM \"STI\".usuario WHERE correo LIKE '"+ c.getCorreo() +"';";
                 
+                System.out.println("Este es el numero Random " + cadena);
+                sqlmail = "UPDATE \"STI\".usuario SET " 
+                + "contrasena = '" + SHAHashing.cifrar(cadena) + "'";
+                
+       
+                
+                sqlmail += " WHERE correo = '" + c.getCorreo() + "'";
                 System.out.println(sqlmail);
                 Statement stmt = conexion.createStatement();
-                ResultSet rs = stmt.executeQuery(sqlmail);
+                //ResultSet rs1 = stmt.executeUpdate(sqlmail);
+                updated = stmt.executeUpdate(sqlmail);
+                
+                sqlmail2 = "SELECT * FROM \"STI\".usuario WHERE correo LIKE '"+ c.getCorreo() +"';";
+                System.out.println(sqlmail2);
+                Statement stmt2 = conexion.createStatement();
+                ResultSet rs = stmt2.executeQuery(sqlmail2);
+                
                 int p =0;
                 while(rs.next()) {
-                    resul = rs.getString("contrasena");
+                    resul = cadena;
+                     System.out.println("Esta es la Contrasena nueva"+ cadena);
                     p++;
                  }
-                Double nr = Math.random()*890000+100000;
                 
-                System.out.println("Random " + nr);
                // System.out.println("hayyyyyyyyyy " + p);
                 rs.close();
             }
