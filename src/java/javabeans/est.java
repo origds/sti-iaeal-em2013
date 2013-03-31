@@ -27,10 +27,29 @@ public class est extends ActionForm{
     int total1;
     int total2;
     int total3;
+    int totalP1;
+    int totalP2;
 
     
     public est() {
     }
+    
+    public void settotalP1(int totalP1) {
+        this.totalP1 = totalP1;
+    }
+
+    public int gettotalP1() {
+        return totalP1;
+    }
+    
+    public void settotalP2(int totalP2) {
+        this.totalP2 = totalP2;
+    }
+
+    public int gettotalP2() {
+        return totalP2;
+    }
+    
     
     public void settotal1(int total1) {
         this.total1 = total1;
