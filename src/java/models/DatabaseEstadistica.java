@@ -119,7 +119,7 @@ public class DatabaseEstadistica {
                 int count = rs.getInt("contador");
                 rs.close();
  
-                estad.settotal1(count);
+                estad.settotalP1(count);
                 estad.setAno1(b.getPeriodoIni1());
                 estad.setAno2(b.getPeriodoFin1());
                 System.out.println("CANTIDAAAD 1");
@@ -144,7 +144,7 @@ public class DatabaseEstadistica {
                 int count = rs.getInt("contador");
                 rs.close();
  
-                estad.settotal2(count);
+                estad.settotalP2(count);
                 estad.setAno3(b.getPeriodoIni2());
                 estad.setAno4(b.getPeriodoFin2());
                 System.out.println("CANTIDAAAD 2");
