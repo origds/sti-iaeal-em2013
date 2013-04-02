@@ -79,7 +79,9 @@
               <html:password property="contrasenaLogin" value=""/>
           </fieldse >
           <fieldset style="border:none;">
-          <html:submit value="Entrar" style="font-size: 13px"/>			
+          <html:submit value="Entrar" style="font-size: 13px"/>	
+          <br><br><br>
+            <html:link action="/recordar" style="color:#FF0000;">¿Olvidaste tu contraseña?</html:link>
           </fieldset>
         </html:form>			
       </div>
