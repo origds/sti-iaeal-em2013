@@ -57,6 +57,7 @@
     });
 </script>
 
+
 <style>
     .error{font-size: 10px;color: #cc0000; float:left; padding:0}
     .error ul{list-style: none;}
@@ -842,10 +843,15 @@
                         <fieldset>
                             <legend>Período 1</legend>                  
                             <legend>Inicio de período</legend>   
-
+                            <div class="error">
+                                <html:errors property="periodoIni1"/>
+                            </div>
                             <html:text property="periodoIni1" value=""/>
 
                             <legend>Finalización de período</legend>
+                            <div class="error">
+                                <html:errors property="periodoFin1"/>
+                            </div>
                             <html:text property="periodoFin1" value = "" />               
                         </fieldset>   
                     </div>
@@ -853,10 +859,16 @@
                     <div id ="periodos2">
                         <fieldset>
                             <legend>Período 2</legend>                  
-                            <legend>Inicio de período</legend>                  
+                            <legend>Inicio de período</legend>    
+                            <div class="error">
+                                <html:errors property="periodoIni2"/>
+                            </div>
                             <html:text property="periodoIni2" value="" />
 
                             <legend>Finalización de período</legend>
+                            <div class="error">
+                                <html:errors property="periodoFin2"/>
+                            </div>
                             <html:text property="periodoFin2" value = "" />               
                         </fieldset>
                     </div>  
