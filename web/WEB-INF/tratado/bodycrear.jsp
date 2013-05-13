@@ -738,7 +738,7 @@
             <tr>
               <td colspan="4">
                 <fieldset class="contenido">
-                  <legend>Observaciones</legend>
+                  <legend>Tratado disponible en:</legend>
                   <div class="error">
                     <html:errors property="observacion"/>
                   </div>                                
