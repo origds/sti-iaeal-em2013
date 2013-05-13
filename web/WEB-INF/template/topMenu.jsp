@@ -20,6 +20,14 @@
     </div>
   </html:link>
 
+        
+  <html:link action="/compararForm">
+    <div class="opcionesIzq">
+      <div class="texto"> Comparar </div>						
+    </div>
+  </html:link> 
+
+    
   <html:link action="/estadisticaForm">
     <div class="opcionesIzq">
       <div class="texto">
@@ -40,12 +48,6 @@
   <html:link action="/faq">
     <div class="opcionesIzq">
       <div class="texto"> Ayuda </div>						
-    </div>
-  </html:link> 
-    
-  <html:link action="/compararForm">
-    <div class="opcionesIzq">
-      <div class="texto"> Comparar </div>						
     </div>
   </html:link> 
 
