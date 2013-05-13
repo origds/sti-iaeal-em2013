@@ -67,7 +67,7 @@
     <div id="barraBusqueda">
         <div class="box"> 
             <div class="inbox" id="cajaBusqueda">
-                <div class="titulo">Generar estadística de la búsqueda realizada.</div>
+                <div class="titulo">Generar estadística</div>
                 <br> <br> <br>
 
                 <div style="float: right;">
