@@ -40,7 +40,9 @@
                     <div class="error">
                         <html:errors property="usuario"/>
                     </div>
-                    <legend>*Usuario</legend>
+                    <legend>Todos los campos marcados con (*) son requeridos</legend>
+                    <br> <br>
+                    <legend>Usuario (*)</legend>
 
                     <html:text property="usuario" value=""/>
 
@@ -50,7 +52,7 @@
                     <div class="error">
                         <html:errors property="contrasena"/>
                     </div>
-                    <legend>*Contraseña</legend>
+                    <legend>Contraseña (*)</legend>
                     <html:password property="contrasena" value=""/>
                 </fieldset>
                 
@@ -58,7 +60,7 @@
                     <div class="error">
                         <html:errors property="nombre"/>
                     </div>
-                    <legend>*Nombre</legend>
+                    <legend>Nombre (*)</legend>
                     <html:text property="nombre" value=""/>
                 </fieldset>
 
@@ -66,7 +68,7 @@
                     <div class="error">
                         <html:errors property="apellido"/>
                     </div>
-                    <legend>*Apellido</legend>
+                    <legend>Apellido (*)</legend>
                     <html:text property="apellido" value=""/>
                 </fieldset>
 
@@ -74,7 +76,7 @@
                     <div class="error">
                         <html:errors property="correo"/>
                     </div>
-                    <legend>*Correo</legend>
+                    <legend>Correo (*)</legend>
                     <html:text property="correo" value=""/>
                 </fieldset>
 

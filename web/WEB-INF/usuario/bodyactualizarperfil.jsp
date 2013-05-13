@@ -29,7 +29,9 @@
                 </br></br>
 
                 <fieldset>
-                    <legend>Contraseña</legend>
+                    <legend>Todos los campos marcados con (*) son requeridos</legend>
+                    <br><br>
+                    <legend>Contraseña (*)</legend>
                     <div class="error">
                         <html:errors property="contrasena"/>
                     </div>
@@ -37,7 +39,7 @@
                 </fieldset>
 
                 <fieldset>                    
-                    <legend>Nombre</legend>
+                    <legend>Nombre (*)</legend>
                     <div class="error">
                         <html:errors property="nombre"/>
                     </div>
@@ -45,7 +47,7 @@
                 </fieldset>
 
                 <fieldset>                
-                    <legend>Apellido</legend>
+                    <legend>Apellido (*)</legend>
                     <div class="error">
                         <html:errors property="apellido"/>
                     </div>
@@ -53,7 +55,7 @@
                 </fieldset>              
 
                 <fieldset>
-                    <legend>Correo</legend>
+                    <legend>Correo (*)</legend>
                     <div class="error">
                         <html:errors property="correo"/>
                     </div>
