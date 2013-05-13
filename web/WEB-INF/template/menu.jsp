@@ -52,6 +52,28 @@
           <div class="opcionUsuario">Mis Tratados</div>
         </html:link>
       </logic:equal>
+       
+       <logic:equal name="login" property="administrador" value="true" scope="session">    
+            <html:link action="/tratado/crearForm">
+                <div class="opcionUsuario">Incorporar Tratado</div>
+            </html:link>  
+       </logic:equal>      
+       <logic:equal name="login" property="administrador" value="true" scope="session">  
+            <html:link action="/ListarLog">
+                <div class="opcionUsuario">Historial</div>
+            </html:link>
+       </logic:equal>     
+       <logic:equal name="login" property="administrador" value="true" scope="session">    
+            <html:link action="/usuario/crearForm">
+                <div class="opcionUsuario">Crear Usuario</div>
+            </html:link>   
+       </logic:equal>       
+       <logic:equal name="login" property="administrador" value="true" scope="session">  
+            <html:link action="/usuario/gestionar">
+               <div class="opcionUsuario">Listar Usuario</div>
+            </html:link>  
+        </logic:equal>       
+            
       <html:link action="/cerrarSesion">
         <div class="opcionUsuario">Cerrar Sesion</div>
       </html:link>
