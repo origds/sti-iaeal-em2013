@@ -20,6 +20,14 @@
     </div>
   </html:link>
 
+        
+  <html:link action="/compararForm">
+    <div class="opcionesIzq">
+      <div class="texto"> Comparar </div>						
+    </div>
+  </html:link> 
+    
+    
   <html:link action="/estadisticaForm">
     <div class="opcionesIzq">
       <div class="texto">
@@ -42,12 +50,6 @@
       <div class="texto"> Ayuda </div>						
     </div>
   </html:link> 
-    
-  <html:link action="/compararForm">
-    <div class="opcionesIzq">
-      <div class="texto"> Comparar </div>						
-    </div>
-  </html:link> 
 
   <html:link action="/home">
     <div class="opcionesDer">
@@ -56,31 +58,10 @@
   </html:link>
   
   <logic:present name="login">
-    <html:link action="/tratado/crearForm">
-      <div class="opcionesDer">
-        <div class="texto">Incorporar Tratado</div>
-      </div>
-    </html:link>
 
     <logic:equal name="login" property="administrador" value="true" scope="session">
-      <html:link action="/ListarLog">
-        <div class="opcionesDer">
-          <div class="texto">Historial</div>
-        </div>
-      </html:link>
-    </logic:equal>
-
-    <logic:equal name="login" property="administrador" value="true" scope="session">
-      <html:link action="/usuario/crearForm">
-        <div class="opcionesDer">
-          <div class="texto">Crear Usuario</div>
-        </div>
-      </html:link>
-      <html:link action="/usuario/gestionar">
-        <div class="opcionesDer">
-          <div class="texto">Listar Usuarios</div>
-        </div>
-      </html:link>
+  
+     
     </logic:equal>
   </logic:present>
 

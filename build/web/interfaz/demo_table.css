@@ -68,11 +68,13 @@
 .dataTables_info {
 	width: 60%;
 	float: left;
+        position: absolute;
+        top: 3em;
 }
 
 .dataTables_paginate {
 	width: 44px;
-	* width: 50px;
+	width: 50px;
 	float: right;
 	text-align: right;
 }

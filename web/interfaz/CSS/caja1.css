@@ -20,6 +20,10 @@ a{
   background-repeat: no-repeat;
 }
 
+#ui-datepicker-div{
+    display:none;
+}
+
 #topMenu{
   height: 30px;	
 }
@@ -397,6 +401,24 @@ div.box input[type="submit"]{
 
 .camposRegistro{
   padding: 30px;
+}
+
+.camposRegistro textArea{
+    resize:none;
+    width:100%;
+    height:70px
+}
+
+.contenido input[type="text"]{
+    width: 100% !important;
+}
+
+.fieldset.contenido input[type="text"]{
+    width:100% !important;
+}
+
+#textarea_titulo textArea {
+    width: 100%
 }
 
 img.agregarQuitar{
@@ -899,10 +921,6 @@ input[value="Registrar"], input[value="Actualizar"], input[value="Generar"]{
 
 div.inbox input[type="password"] {
   width:220px;
-}
-
-.inbox {
-  padding:5px; 
 }
 
 #cajaLogin input[type="password"] {

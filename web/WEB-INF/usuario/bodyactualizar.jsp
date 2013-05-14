@@ -28,13 +28,15 @@
 
                 </br></br>
                 <fieldset>
+                    <legend>Todos los campos marcados con (*) son requeridos</legend>
+                    <br><br>
                     <legend>Usuario</legend>
                     <bean:write name="Usuario" property="usuario"/>
                     <html:hidden name="Usuario" property="usuario"/>   
                 </fieldset>
 
                 <fieldset>
-                    <legend>Contraseña</legend>
+                    <legend>Contraseña (*)</legend>
                     <div class="error">
                         <html:errors property="contrasena"/>
                     </div>
@@ -42,7 +44,7 @@
                 </fieldset>
 
                 <fieldset>                    
-                    <legend>Nombre</legend>
+                    <legend>Nombre (*)</legend>
                     <div class="error">
                         <html:errors property="nombre"/>
                     </div>
@@ -50,7 +52,7 @@
                 </fieldset>
 
                 <fieldset>                
-                    <legend>Apellido</legend>
+                    <legend>Apellido (*)</legend>
                     <div class="error">
                         <html:errors property="apellido"/>
                     </div>
@@ -58,7 +60,7 @@
                 </fieldset>              
 
                 <fieldset>
-                    <legend>Correo</legend>
+                    <legend>Correo (*)</legend>
                     <div class="error">
                         <html:errors property="correo"/>
                     </div>

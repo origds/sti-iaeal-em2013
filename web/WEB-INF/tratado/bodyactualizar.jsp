@@ -338,11 +338,13 @@
           <tr>
             <td colspan="3">
               <fieldset id="campoTitulo">
-                <legend>*Título</legend>
+                <legend>Todos los campos marcados con (*) son requeridos</legend>
+                <br><br>
+                <legend>Título (*)</legend>
                 <div class="error">
                   <html:errors property="titulo"/>
                 </div>
-                <html:text name="Tratado" property="titulo"/>                          
+                  <html:textarea name="Tratado" property="titulo"></html:textarea>                          
               </fieldset>
             </td>
           </tr>
@@ -739,11 +741,11 @@
           <tr>
             <td colspan="4">
               <fieldset class="contenido">
-                <legend>Observaciones</legend>
+                <legend>Tratado disponible en:</legend>
                 <div class="error">
                   <html:errors property="observacion"/>
                 </div>                                
-                <html:textarea name="Tratado" property="observacion"></html:textarea>
+                <html:text name="Tratado" property="observacion"/>
               </fieldset>
             </td>
           </tr>

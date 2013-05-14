@@ -338,17 +338,20 @@
         <html:form action="/tratado/crear" acceptCharset="ISO-8859-1">
           <fieldset style="border:none"></fieldset>
           <table class="camposRegistro">	
-            <tr>
-              <td colspan="3">
+                          
+              
+              <td colspan="4">
                 <fieldset id="campoTitulo">
-                  <legend>Título</legend>
-                  <div class="error">
-                    <html:errors property="titulo"/>
-                  </div>
-                  <html:text name="Tratado" property="titulo"/>                          
+                    <legend>Todos los campos marcados con (*) son requeridos</legend>
+                    <br><br>
+                    <legend>Título (*)</legend>                
+                    <div class="error">
+                      <html:errors property="titulo"/>
+                    </div>
+                    <html:textarea name="Tratado" property="titulo"></html:textarea>
                 </fieldset>
               </td>
-            </tr>
+                  
             <tr>
               <td>
                 <fieldset id="divisionPais">
@@ -738,11 +741,11 @@
             <tr>
               <td colspan="4">
                 <fieldset class="contenido">
-                  <legend>Observaciones</legend>
+                  <legend>Tratado disponible en:</legend>
                   <div class="error">
                     <html:errors property="observacion"/>
                   </div>                                
-                  <html:textarea property="observacion"></html:textarea>
+                  <html:text property="observacion"></html:text>
                 </fieldset>
               </td>
             </tr>
