@@ -413,29 +413,11 @@
         </form>
         
         <!-- Validacion de Estadistica -->
-        <form name="EstadisticaForm">
-            <!-- Validate clave-->
+        <form name="ClaseEstadistica">
+          
+            <!-- Validate fechaini1 -->
             <field
-                property="ejeX" depends="required,mask">
-                <arg0 key="estadistica.ejeX"/>
-                <msg name="mask" key="mask.invalido"/>
-                <var>
-                    <var-name>mask</var-name>
-                    <var-value>^[0-1]*$</var-value>
-                </var>
-            </field>
-            <!-- Validate pais-->
-            <field
-                property="pais" depends="mask">
-                <msg name="mask" key="mask.comas"/>
-                <var>
-                    <var-name>mask</var-name>
-                    <var-value>^[A-Za-záóéíúñÁÉÍÓÚÑ,.\-\' ]*$</var-value>
-                </var>
-            </field>
-            <!-- Validate fechaini -->
-            <field
-                property="fechaini" depends="maxlength, mask">
+                property="periodoIni1" depends="maxlength, mask">
                 <arg0 key="estadistica.fechaini"/>
                 <msg name="maxlength" key="mask.anio"/>
                 <arg1 name="maxlength" var="${var:maxlength}" resource="false"/>                
@@ -450,9 +432,9 @@
                     <var-value>^[0-9]{1,4}$</var-value>
                 </var>
             </field> 
-            <!-- Validate fechafin -->
+            <!-- Validate fechafin1 -->
             <field
-                property="fechafin" depends="maxlength, mask">
+                property="periodoFin1" depends="maxlength, mask">
                 <arg0 key="estadistica.fechafin"/>
                 <msg name="maxlength" key="mask.anio"/>
                 <arg1 name="maxlength" var="${var:maxlength}" resource="false"/>                
@@ -467,15 +449,41 @@
                     <var-value>^[0-9]{1,4}$</var-value>
                 </var>
             </field>
+            <!-- Validate fechaini2 -->
             <field
-                property="tipoGrafica" depends="required,mask">
-                <arg0 key="estadistica.tipoGrafica"/>
-                <msg name="mask" key="mask.invalido"/>
+                property="periodoIni2" depends="maxlength, mask">
+                <arg0 key="estadistica.fechaini"/>
+                <msg name="maxlength" key="mask.anio"/>
+                <arg1 name="maxlength" var="${var:maxlength}" resource="false"/>                
+                <var>
+                    <var-name>maxlength</var-name>  
+                    <var-value>4</var-value>
+                </var>
+                
+                <msg name="mask" key="mask.int"/>
                 <var>
                     <var-name>mask</var-name>
-                    <var-value>^[0-1]*$</var-value>
+                    <var-value>^[0-9]{1,4}$</var-value>
                 </var>
-            </field>             
+            </field> 
+            <!-- Validate fechafin2 -->
+            <field
+                property="periodoFin2" depends="maxlength, mask">
+                <arg0 key="estadistica.fechafin"/>
+                <msg name="maxlength" key="mask.anio"/>
+                <arg1 name="maxlength" var="${var:maxlength}" resource="false"/>                
+                <var>
+                    <var-name>maxlength</var-name>  
+                    <var-value>4</var-value>
+                </var>
+                
+                <msg name="mask" key="mask.int"/>
+                <var>
+                    <var-name>mask</var-name>
+                    <var-value>^[0-9]{1,4}$</var-value>
+                </var>
+            </field>
+            
         </form>
         
     </formset>

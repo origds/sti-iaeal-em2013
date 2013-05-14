@@ -266,11 +266,11 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <th id ="periodo1" scope="col" style="color:red"><bean:write name="est" property="ano1"/> - <bean:write name="est" property="ano2"/></th>                     
+                                <th id ="periodo1" scope="col"><bean:write name="est" property="ano1"/> - <bean:write name="est" property="ano2"/></th>                     
                                 <th id ="num01" ><bean:write name="est" property="totalP1"/></th>
                             </tr>
                             <tr>
-                                <th id ="periodo2" scope="col" style="color:red"><bean:write name="est" property="ano3"/> - <bean:write name="est" property="ano4"/></th>   
+                                <th id ="periodo2" scope="col"><bean:write name="est" property="ano3"/> - <bean:write name="est" property="ano4"/></th>   
                                 <th id ="num02" ><bean:write name="est" property="totalP2"/></th>
                             </tr>                             
                         </tbody>
