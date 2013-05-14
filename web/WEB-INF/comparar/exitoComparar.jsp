@@ -32,7 +32,7 @@
         ]);
 
         var options = {
-            title: 'Cantidad de Tratados por peeriodos'
+            title: 'Cantidad de Tratados por periodos'
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('Torta'));
