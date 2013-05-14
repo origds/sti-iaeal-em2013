@@ -218,7 +218,9 @@
             <div class="inbox" style="height: 510px;" id="cajaBusqueda">
                 <div class="titulo">Resultado Estadistica</div></br>
                 <br><br>
+
                 <logic:present name="est">
+
                     <div>
                         <%
                             if ((ano1 == 0) && (ano2 == 0) && (ano3 == 0) && (ano4 == 0)) {%>
@@ -275,77 +277,79 @@
                             </tr>                             
                         </tbody>
                     </table>    
+
+                    <br><br><br><br><br>
+                    <div>
+                        <br><br><br>
+                        <div id="TortaPeriodos" style="width: 400px; height: 300px;"></div>                        
+                    </div>
+
+                    <%}%>
+
+                    <%
+                        if ((!(pais1.equals("Paises...")) || !(pais2.equals("Paises...")) || !(pais3.equals("Paises...")))
+                                && ((ano1 != 0) || (ano2 != 0) || (ano3 != 0) || (ano4 != 0))) {%>
+
+                    <table id="tablaTodo" style="float:left ;width:500px;margin:12px -11px 0 0">
+                        <caption></caption>
+                        <thead>
+                            <tr>
+                                <th scope="col" style="color:red">PAISES</th>
+                                <th scope="col" style="color:red">TRATADOS POR PAISES</th>
+                                <th id="anio1" scope="col" style="color:red"><bean:write name="est" property="ano1"/> - <bean:write name="est" property="ano2"/></th> 
+                                <th id="anio2" scope="col" style="color:red"><bean:write name="est" property="ano3"/> - <bean:write name="est" property="ano4"/></th>   
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th id ="pa1" scope="row"><bean:write name="est" property="pais1"/></th>
+                                <th id ="num01" ><bean:write name="est" property="total1"/></th>
+                                <th id ="num1" ><bean:write name="est" property="primero"/></th>
+                                <th id ="num4" ><bean:write name="est" property="cuarto"/></th>
+                            </tr>
+                            <tr>
+                                <th id ="pa2" scope="row"><bean:write name="est" property="pais2"/></th>
+                                <th id ="num02" ><bean:write name="est" property="total2"/></th>
+                                <th id ="num2" ><bean:write name="est" property="segundo"/></th>   
+                                <th id ="num5" ><bean:write name="est" property="quinto"/></th>
+                            </tr>
+                            <tr>
+                                <th id ="pa3" scope="row"><bean:write name="est" property="pais3"/></th>
+                                <th id ="num03" ><bean:write name="est" property="total3"/></th>
+                                <th id ="num3" ><bean:write name="est" property="tercero"/></th>
+                                <th id ="num6" ><bean:write name="est" property="sexto"/></th>
+                            </tr>             
+                        </tbody>
+                    </table>       
+
                 </div>
 
                 <br><br><br><br><br>
                 <div>
                     <br><br><br>
-                    <div id="TortaPeriodos" style="width: 400px; height: 300px;"></div>                        
+                    <div id="Torta" style="width: 400px; height: 300px;"></div>
+                    <div id="Barra" style="width: 400px; height: 300px;"></div>
+                    <div id="Area" style="width: 400px; height: 300px;"></div>
                 </div>
+
+
+                <th  style="float: center;" >
+                    <button id="botonArea" class="botonBusqueda">Area</button>
+                </th>
+                <th style="float: right;" >
+                    <button id="botonBarra" class="botonBusqueda">Barra</button>
+                </th>
+                <th style="float: right;" >
+                    <button id="botonTorta" class="botonBusqueda">Torta</button>
+                </th>
 
                 <%}%>
 
-                <%
-                    if ((!(pais1.equals("Paises...")) || !(pais2.equals("Paises...")) || !(pais3.equals("Paises..."))) &&
-                    ((ano1 != 0) || (ano2 != 0) || (ano3 != 0) || (ano4 != 0))) {%>
-
-                <table id="tablaTodo" style="float:left ;width:500px;margin:12px -11px 0 0">
-                    <caption></caption>
-                    <thead>
-                        <tr>
-                            <th scope="col" style="color:red">PAISES</th>
-                            <th scope="col" style="color:red">TRATADOS POR PAISES</th>
-                            <th id="anio1" scope="col" style="color:red"><bean:write name="est" property="ano1"/> - <bean:write name="est" property="ano2"/></th> 
-                            <th id="anio2" scope="col" style="color:red"><bean:write name="est" property="ano3"/> - <bean:write name="est" property="ano4"/></th>   
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th id ="pa1" scope="row"><bean:write name="est" property="pais1"/></th>
-                            <th id ="num01" ><bean:write name="est" property="total1"/></th>
-                            <th id ="num1" ><bean:write name="est" property="primero"/></th>
-                            <th id ="num4" ><bean:write name="est" property="cuarto"/></th>
-                        </tr>
-                        <tr>
-                            <th id ="pa2" scope="row"><bean:write name="est" property="pais2"/></th>
-                            <th id ="num02" ><bean:write name="est" property="total2"/></th>
-                            <th id ="num2" ><bean:write name="est" property="segundo"/></th>   
-                            <th id ="num5" ><bean:write name="est" property="quinto"/></th>
-                        </tr>
-                        <tr>
-                            <th id ="pa3" scope="row"><bean:write name="est" property="pais3"/></th>
-                            <th id ="num03" ><bean:write name="est" property="total3"/></th>
-                            <th id ="num3" ><bean:write name="est" property="tercero"/></th>
-                            <th id ="num6" ><bean:write name="est" property="sexto"/></th>
-                        </tr>             
-                    </tbody>
-                </table>       
-
+            </logic:present>
+            <div class="botonBusqueda" style="float:left; ">
+                <html:link action="/estadisticaForm">
+                    Nueva Estadistica
+                </html:link>
             </div>
-
-            <br><br><br><br><br>
-            <div>
-                <br><br><br>
-                <div id="Torta" style="width: 400px; height: 300px;"></div>
-                <div id="Barra" style="width: 400px; height: 300px;"></div>
-                <div id="Area" style="width: 400px; height: 300px;"></div>
-            </div>
-
-
-            <th  style="float: center;" >
-                <button id="botonArea" class="botonBusqueda">Area</button>
-            </th>
-            <th style="float: right;" >
-                <button id="botonBarra" class="botonBusqueda">Barra</button>
-            </th>
-            <th style="float: right;" >
-                <button id="botonTorta" class="botonBusqueda">Torta</button>
-            </th>
-            
-            <%}%>
-
-        </logic:present>
-
+        </div>
     </div>
 </div>
-</div>
-</div>	

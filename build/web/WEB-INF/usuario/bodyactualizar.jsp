@@ -24,9 +24,10 @@
     <div class="box">
         <div class="inbox">
             <div class="titulo">Actualizar Usuario</div>
-            <html:form action="/usuario/actualizar" styleId="styleUsuario" >
-
+            <html:form action="/usuario/actualizar" styleId="styleUsuario" >           
                 </br></br>
+                <div style="color:red" >Todos los campos con (*) son requeridos</div>
+                <br>
                 <fieldset>
                     <legend>Usuario</legend>
                     <bean:write name="Usuario" property="usuario"/>
@@ -34,7 +35,7 @@
                 </fieldset>
 
                 <fieldset>
-                    <legend>Contraseña</legend>
+                    <legend>Contraseña (*)</legend>
                     <div class="error">
                         <html:errors property="contrasena"/>
                     </div>
@@ -42,7 +43,7 @@
                 </fieldset>
 
                 <fieldset>                    
-                    <legend>Nombre</legend>
+                    <legend>Nombre (*)</legend>
                     <div class="error">
                         <html:errors property="nombre"/>
                     </div>
@@ -50,7 +51,7 @@
                 </fieldset>
 
                 <fieldset>                
-                    <legend>Apellido</legend>
+                    <legend>Apellido (*)</legend>
                     <div class="error">
                         <html:errors property="apellido"/>
                     </div>
@@ -58,7 +59,7 @@
                 </fieldset>              
 
                 <fieldset>
-                    <legend>Correo</legend>
+                    <legend>Correo (*)</legend>
                     <div class="error">
                         <html:errors property="correo"/>
                     </div>

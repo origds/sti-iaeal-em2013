@@ -329,7 +329,6 @@
   <div class="box">
     <div class="inbox">
       <div class="titulo">Actualizar Tratado</div>
-      </br>
       <html:form action="/tratado/actualizar">
         <html:hidden name="Tratado" property="id"/>
         <html:hidden name="Tratado" property="status"/>
@@ -337,12 +336,15 @@
         <table class="camposRegistro">	
           <tr>
             <td colspan="3">
+              <div style="color:red" >Todos los campos con (*) son requeridos</div>  
+              <br>
               <fieldset id="campoTitulo">
-                <legend>*Título</legend>
+                <br>
+                <legend>Título (*)</legend>
                 <div class="error">
                   <html:errors property="titulo"/>
                 </div>
-                <html:text name="Tratado" property="titulo"/>                          
+                  <html:textarea name="Tratado" property="titulo"></html:textarea>                          
               </fieldset>
             </td>
           </tr>
@@ -739,11 +741,11 @@
           <tr>
             <td colspan="4">
               <fieldset class="contenido">
-                <legend>Observaciones</legend>
+                <legend>Tratado disponible en:</legend>
                 <div class="error">
                   <html:errors property="observacion"/>
                 </div>                                
-                <html:textarea name="Tratado" property="observacion"></html:textarea>
+                <html:text name="Tratado" property="observacion"/>
               </fieldset>
             </td>
           </tr>

@@ -27,10 +27,10 @@
                 <html:hidden name="Usuario" property="usuario"/>
                 <html:hidden name="Usuario" property="administrador"/>
                 </br></br>
-
+                
+                 <div style="color:red" >Todos los campos con (*) son requeridos</div>
+                 <br>
                 <fieldset>
-                    <legend>Todos los campos marcados con (*) son requeridos</legend>
-                    <br><br>
                     <legend>Contraseña (*)</legend>
                     <div class="error">
                         <html:errors property="contrasena"/>

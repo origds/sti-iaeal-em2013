@@ -36,12 +36,12 @@
             <div class="titulo">Nuevo Usuario</div>
             <html:form action="/usuario/crear" styleId="styleUsuario" onsubmit="javascript:checkcontrasena();" acceptCharset="ISO-8859-1">
                 </br></br>
+                 <div style="color:red" >Todos los campos con (*) son requeridos</div>
+                 <br>
                 <fieldset>
                     <div class="error">
                         <html:errors property="usuario"/>
                     </div>
-                    <legend>Todos los campos marcados con (*) son requeridos</legend>
-                    <br> <br>
                     <legend>Usuario (*)</legend>
 
                     <html:text property="usuario" value=""/>

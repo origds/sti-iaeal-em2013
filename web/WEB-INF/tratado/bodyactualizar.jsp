@@ -329,7 +329,6 @@
   <div class="box">
     <div class="inbox">
       <div class="titulo">Actualizar Tratado</div>
-      </br>
       <html:form action="/tratado/actualizar">
         <html:hidden name="Tratado" property="id"/>
         <html:hidden name="Tratado" property="status"/>
@@ -337,9 +336,10 @@
         <table class="camposRegistro">	
           <tr>
             <td colspan="3">
+              <div style="color:red" >Todos los campos con (*) son requeridos</div>  
+              <br>
               <fieldset id="campoTitulo">
-                <legend>Todos los campos marcados con (*) son requeridos</legend>
-                <br><br>
+                <br>
                 <legend>Título (*)</legend>
                 <div class="error">
                   <html:errors property="titulo"/>

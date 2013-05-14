@@ -340,14 +340,17 @@
           <table class="camposRegistro">	
                           
               
+              <td colspan="4">
                 <fieldset id="campoTitulo">
-                  <legend>Título</legend>                
-                  <div class="error">
-                    <html:errors property="titulo"/>
-                  </div>
-                  <html:textarea name="Tratado" property="titulo"></html:textarea>
+                    <legend>Todos los campos marcados con (*) son requeridos</legend>
+                    <br><br>
+                    <legend>Título (*)</legend>                
+                    <div class="error">
+                      <html:errors property="titulo"/>
+                    </div>
+                    <html:textarea name="Tratado" property="titulo"></html:textarea>
                 </fieldset>
-              
+              </td>
                   
             <tr>
               <td>

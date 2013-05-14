@@ -24,12 +24,11 @@
     <div class="box">
         <div class="inbox">
             <div class="titulo">Actualizar Usuario</div>
-            <html:form action="/usuario/actualizar" styleId="styleUsuario" >
-
+            <html:form action="/usuario/actualizar" styleId="styleUsuario" >           
                 </br></br>
+                <div style="color:red" >Todos los campos con (*) son requeridos</div>
+                <br>
                 <fieldset>
-                    <legend>Todos los campos marcados con (*) son requeridos</legend>
-                    <br><br>
                     <legend>Usuario</legend>
                     <bean:write name="Usuario" property="usuario"/>
                     <html:hidden name="Usuario" property="usuario"/>   
