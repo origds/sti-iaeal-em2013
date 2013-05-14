@@ -208,7 +208,7 @@
         <tr>
           <td colspan="4">
             <fieldset class="contenido">
-              <legend>Observaciones</legend>                            
+              <legend>Tratado disponible en:</legend>                            
               <bean:write name="tratado" property="observacion"/>
             </fieldset>
           </td>
@@ -216,8 +216,7 @@
         <tr>
           <td colspan="4">
             <fieldset class="contenido">
-              <legend>Contenido</legend>
-              <bean:write name="tratado" property="contenido"/>
+              <legend>Nota: Para ver el contenido debe descargar el tratado.</legend>
             </fieldset>
           </td>
         </tr>
