@@ -310,13 +310,18 @@ public class Tratado extends org.apache.struts.validator.ValidatorForm {
     for (i = 0; i < this.grupos.length; i++) {
       if (!this.grupos[i].equals("")) {
         this.clasificacion = true;
-      }
+      }        
     }
 
     if (this.paises.length >= 2) {
       this.clasificacion = true;
     }
   }
+  
+  public void checkClasificacionFalse() {
+    this.clasificacion = false;
+  }
+  
 /*
   public void onEndPage(PdfWriter writer, Document document) {
     Rectangle rect = writer.getBoxSize("art");
