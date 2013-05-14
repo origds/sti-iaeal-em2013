@@ -225,6 +225,20 @@ public class DescargarPDF extends DownloadAction {
       p.setIndentationLeft(50);
       document.add(p);
 
+      
+      //Ciclo que permite colocar la linea azul en todas las paginas del documento
+      //recordar que getPageNumber NO es un metodo de document.
+      for (int pgCnt = 1; pgCnt <= writer.getPageNumber(); pgCnt++) {
+            if (pgCnt == 1) {
+                cb.saveState();
+                cb.setColorStroke(new CMYKColor(1f, 0f, 0f, 0f));
+                cb.setColorFill(new CMYKColor(1f, 0f, 0f, 0f));
+                cb.rectangle(20,10,10,820);
+                cb.fill();
+                cb.restoreState();
+            }
+      }     
+      
       document.close();
       f.flush();
       f.close();
