@@ -59,7 +59,6 @@
     });
 </script>
 
-
 <style>
     .error{font-size: 10px;color: #cc0000; float:left; padding:0}
     .error ul{list-style: none;}
@@ -845,9 +844,9 @@
                     <table id ="periodos1" >
                         <br><br>
                         <tr>
-                            <td colspan="2">
+                            <td colspan="3">
                         <center>
-                            <legend style="color:blue; font-size: 20px"> Período 1</legend>   
+                            <legend style="color: #0099CC; font-size: 20px"><b> Período 1 </b></legend>   
                         </center>
                         </td>
                         </tr>                       
@@ -1073,7 +1072,7 @@
                         <div class="error">
                             <html:errors property="periodoIni1"/>
                         </div>
-                        </td>                        
+                        </td>               
                         <td>
                         <legend>Finalización de período</legend>
                         <html:select property="periodoFin1">
@@ -1301,9 +1300,9 @@
                     <br><br><br>
                     <table id ="periodos2">
                         <tr>
-                            <td colspan="2">
+                            <td colspan="3">
                         <center>
-                            <legend style="color:blue; font-size: 20px">Período 2</legend>   
+                            <legend style="color: #0099CC; font-size: 20px"><b> Período 2 </b></legend>   
                         </center>
                         </td>
                         </tr>

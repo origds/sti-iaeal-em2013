@@ -260,7 +260,12 @@ public class DatabaseTratado {
     Fecha.setFechaAsString(entradaVigorCalendar, t.getEntradaVigor(), datePattern);
     
     //Se verifica cual es la nueva clasificacion del tratado.
-    t.checkClasificacion();
+    System.out.println("GRUPOOS" + t.getGrupos());
+    if (t.getGrupos() == null) {
+      t.checkClasificacionFalse();
+    } else {
+      t.checkClasificacion();
+    }
     
     System.out.println("Clasificacion UPDATE= " + t.isClasificacion());
     // Se hace el update para la tabla tratado
@@ -299,9 +304,11 @@ public class DatabaseTratado {
     sqlqueryDeleteGrupo = "DELETE FROM \"STI\".grupo WHERE "
         + "idTG = '" + t.getId() + "'";
 
-    for (int i=0; i < t.getGrupos().length; ++i) {
-      if(!"".equals(t.getGrupos()[i])) {
-        sqlqueryGrupo += "INSERT INTO \"STI\".grupo VALUES ('" + t.getId() + "' , '" + t.getGrupos()[i] + "'); ";
+    if (!(t.getGrupos() == null)) {
+      for (int i=0; i < t.getGrupos().length; ++i) {
+        if(!"".equals(t.getGrupos()[i])) {
+          sqlqueryGrupo += "INSERT INTO \"STI\".grupo VALUES ('" + t.getId() + "' , '" + t.getGrupos()[i] + "'); ";
+        }
       }
     }
     
@@ -328,7 +335,7 @@ public class DatabaseTratado {
     /* Se verifica que de cambiarse los valores para grupo se haya 
     borrado y guardado el nuevo valor */
     boolean b= true;
-    if ((t.getGrupos().length > 0)) {
+    if ((!(t.getGrupos() == null)) && (t.getGrupos().length > 0)) {
       b = (deletedGrupo > 0) && (savedGrupo > 0);
     }
 

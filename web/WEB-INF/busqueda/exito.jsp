@@ -54,6 +54,17 @@
         La búsqueda no arrojó resultados
         </br>
         </br>
+        <table> 
+            <tr>
+                <td colspan="2">
+                    <div class="botonBusqueda" style="float:left; ">
+                        <html:link action="/buscarForm">
+                            Ir a Busqueda Principal
+                        </html:link>
+                    </div>
+                </td>
+            </tr>
+        </table>
     </div>
 </logic:notPresent>
 
@@ -64,6 +75,17 @@
             La búsqueda no arrojó resultados
             </br>
             </br>
+            <table> 
+                <tr>
+                    <td colspan="2">
+                        <div class="botonBusqueda" style="float:left; ">
+                            <html:link action="/buscarForm">
+                                Ir a Busqueda Principal
+                            </html:link>
+                        </div>
+                    </td>
+                </tr>
+            </table>
         </div>
 
     </logic:empty>
@@ -72,6 +94,12 @@
             <div id="resultbusq" class="inbox" style="width: 800px;">
                 <br>
                 <div class="titulo" style="width: 100%; text-align: left;"> Resultados de la Busqueda</div>
+                <br><br><br>
+                <div class="botonBusqueda" style="float:left; ">
+                    <html:link action="/buscarForm">
+                        Ir a Busqueda Principal
+                    </html:link>
+                </div>
                 <br><br><br><br>
                 <table class="display" id="example">
                     <thead>
@@ -122,4 +150,15 @@
 </logic:present>
 <logic:notPresent name="tratados">
     <h1>No hay resultados</h1>
+    <table> 
+        <tr>
+            <td colspan="2">
+                <div class="botonBusqueda" style="float:left; ">
+                    <html:link action="/buscarForm">
+                        Ir a Busqueda Principal
+                    </html:link>
+                </div>
+            </td>
+        </tr>
+    </table>
 </logic:notPresent>
