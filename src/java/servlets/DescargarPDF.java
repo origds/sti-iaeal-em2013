@@ -10,6 +10,10 @@ import com.itextpdf.text.Font;
 import com.itextpdf.text.Image;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.Rectangle;
+import com.itextpdf.text.pdf.CMYKColor;
+import com.itextpdf.text.pdf.PdfContentByte;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -70,6 +74,16 @@ public class DescargarPDF extends DownloadAction {
       //“crop”, “trim”, “art” and “bleed”.
       writer.setBoxSize("art", rct);
       document.open();
+      
+            
+      PdfContentByte cb = writer.getDirectContent();
+      cb.saveState();
+      cb.setColorStroke(new CMYKColor(1f, 0f, 0f, 0f));
+      cb.setColorFill(new CMYKColor(1f, 0f, 0f, 0f));
+      cb.rectangle(20,10,10,820);
+      cb.fill();
+      cb.restoreState();
+      
       //Encabezado
       Font fuenteEnc = new Font(Font.getFamily("ARIAL"), 10, Font.BOLD);
       Font fuenteTitulo = new Font(Font.getFamily("ARIAL"), 14, Font.BOLD);
@@ -81,15 +95,18 @@ public class DescargarPDF extends DownloadAction {
       
       //Image usblogo = Image.getInstance("logoiaeal.png");
       //document.add(usblogo);
-
-      //Logos Descarga
-      String imageUrl = "http://www.iaeal.usb.ve/Logo%20para%20web.png";
+      String imageUrl = "http://img248.imageshack.us/img248/4109/stickeriaeal2.png";
       Image usblogo = Image.getInstance(new URL(imageUrl));
-      usblogo.scaleAbsolute(120f, 60f);
-      usblogo.setAbsolutePosition(400f, 720f);
+      usblogo.scaleAbsolute(100f, 50f);
+      usblogo.setAbsolutePosition(430f, 740f);
       document.add(usblogo);
       
-
+      imageUrl = "http://www.usb.ve/conocer/corporativa/archivos/logos/logo/logo.png";
+      usblogo = Image.getInstance(new URL(imageUrl));
+      usblogo.scaleAbsolute(80f, 45f);
+      usblogo.setAbsolutePosition(90f, 740f);
+      document.add(usblogo);
+      
       String encabezado = "\nSartenejas " + dates.format(date) + "\n"
               + "República Bolivariana de Venezuela \n"
               + "Universidad Simón Bolívar \n"
@@ -97,13 +114,16 @@ public class DescargarPDF extends DownloadAction {
               + "Sistema de Tratados y Acuerdos Internacionales de Venezuela\n";
 
       Paragraph pa = new Paragraph(encabezado, fuenteEnc);
-      pa.setSpacingBefore(20);
+      pa.setSpacingBefore(50);
       pa.setSpacingAfter(10);
       pa.setIndentationLeft(50);
       document.add(pa);
 
-      // Titulo del Tratado.
-      String s = t.getTitulo();
+      
+            // Titulo del Tratado.
+      
+            // Titulo del Tratado.
+      String s = t.getTitulo() + "\n\n";
       Paragraph p = new Paragraph(s, fuenteTitulo);
       p.setAlignment(Element.ALIGN_CENTER);
       p.setSpacingBefore(20);
@@ -111,64 +131,97 @@ public class DescargarPDF extends DownloadAction {
       p.setIndentationLeft(50);
       document.add(p);
 
+      PdfPTable cuadro1 = new PdfPTable(2);
 
-      s = "Fecha de Firma: " + t.getFirmaFecha() + " en " + t.getFirmaLugar()
-              + "\nEntrada en Vigor: " + t.getEntradaVigor()
-              + "\nFecha de Publicación en Gaceta Oficial: " + t.getFechaGaceta()
-              + "\nNúmero de Gaceta Oficial: " + t.getNumGaceta();
+      
+      if (t.getFirmaFecha() == null){
+          s = "Fecha de Firma: Informacion no disponible.";
+      } else {      
+        s = "Fecha de Firma: " + t.getFirmaFecha() + "\n\n";
+      }
       p = new Paragraph(s, fuenteText);
-      p.setSpacingBefore(5);
-      p.setIndentationLeft(50);
-      document.add(p);
+      PdfPCell cell1 = new PdfPCell(p);
+      cuadro1.addCell(cell1);
 
-      //Mostrar Paises y Grupos involucrados
-      System.out.println("****s es: " + s);
+      s = "Lugar de Firma: " + t.getFirmaLugar() ;
+      cuadro1.addCell(new Paragraph(s, fuenteText));
 
-      s = "Países involucrados: ";
-      p = new Paragraph(s);
+      s = "Fecha de Depósito: " + t.getFechaDeposito() + "\n\n";
+      cuadro1.addCell(new Paragraph(s, fuenteText));
 
+      s = "Entrada en Vigor: " + t.getEntradaVigor() ;
+      cuadro1.addCell(new Paragraph(s, fuenteText));
+
+      s = "Fecha de Publicación en Gaceta Oficial: " + t.getFechaGaceta()+ "\n\n" ;
+      cuadro1.addCell(new Paragraph(s, fuenteText));
+
+      s = "Numero de Gaceta Oficial: " + t.getNumGaceta() ;
+      cuadro1.addCell(new Paragraph(s, fuenteText));
+
+      s = "Clasificación: ";
+      if (t.getGrupos().length == 0){
+          s += "Bilateral\n";
+      } else {
+          s+= "Multilateral\n";
+      }
+      cuadro1.addCell(new Paragraph(s, fuenteText));
+      
+      s = "Duración: " + t.getDuracion() + "\n\n";
+      cuadro1.addCell(new Paragraph(s, fuenteText));
+
+      s = "Período: " + t.getPeriodo() ;
+      cuadro1.addCell(new Paragraph(s, fuenteText));
+
+      s = "Volúmen: " + t.getVolumen()+ "\n\n" ;
+      cuadro1.addCell(new Paragraph(s, fuenteText));
+
+      s = "Página: " + t.getPagina() ;
+      cuadro1.addCell(new Paragraph(s, fuenteText));
+
+      s = "Este tratado se encuentra disponible en: " + t.getObservacion() + "\n\n";
+      cuadro1.addCell(new Paragraph(s, fuenteText));
+      
+      s = "Países Involucrados: \n\n";
       if (t.getPaises().length == 0) {
         s += " No se han agregado países para este tratado";
       } else {
         for (int i = 0; i != t.getPaises().length; i++) {
           if (i == t.getPaises().length - 2) {
-            s += t.getPaises()[i] + " y ";
+            s += t.getPaises()[i] + " y \n";
           } else if (i == t.getPaises().length - 1) {
             s += t.getPaises()[i];
           } else {
-            s += t.getPaises()[i] + ", ";
+            s += t.getPaises()[i] + ", \n";
           }
         }
       }
-      p = new Paragraph(s, fuenteText);
-      p.setIndentationLeft(50);
-      document.add(p);
-
-
-      s = "Grupos involucrados: ";
+      cuadro1.addCell(new Paragraph(s, fuenteText));
+      
+           
+      s = "Grupos Participantes: \n\n";      
       if (t.getGrupos().length == 0) {
-        s += "No se han agregado grupos para este tratado.";
+      s += "No se han agregado grupos para este tratado.";
       } else {
         for (int i = 0; i != t.getGrupos().length; i++) {
           if (i == t.getGrupos().length - 2) {
-            s += t.getGrupos()[i] + " y ";
+            s += t.getGrupos()[i] + " y \n";
           } else if (i == t.getGrupos().length - 1) {
             s += t.getGrupos()[i];
           } else {
-            s += t.getGrupos()[i] + ", ";
+            s += t.getGrupos()[i] + ", \n";
           }
         }
-      }
-      p = new Paragraph(s, fuenteText);
-      p.setSpacingAfter(10);
-      p.setIndentationLeft(50);
-      document.add(p);
+      }   
+      
+      cuadro1.addCell(new Paragraph(s, fuenteText));
 
-      //Se muestra el contenido del tratado
+      document.add(cuadro1);
+      document.newPage();
+
       s = t.getContenido();
       p = new Paragraph(s, fuenteText);
-      p.setSpacingBefore(5);
-      p.setSpacingAfter(10);
+      p.setSpacingBefore(50);
+      p.setSpacingAfter(50);
       p.setIndentationLeft(50);
       document.add(p);
 

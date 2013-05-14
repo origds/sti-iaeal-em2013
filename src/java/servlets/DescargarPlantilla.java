@@ -10,6 +10,8 @@ import com.itextpdf.text.Font;
 import com.itextpdf.text.Image;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.Rectangle;
+import com.itextpdf.text.pdf.CMYKColor;
+import com.itextpdf.text.pdf.PdfContentByte;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
@@ -53,6 +55,7 @@ public class DescargarPlantilla extends DownloadAction {
 
     try {
       PdfWriter writer = PdfWriter.getInstance(document, f);
+//      PdfContentByte cb = writer.getDirectContent();
       Rectangle rct = new Rectangle(36, 54, 559, 788);
       //Definimos un nombre y un tamaño para el PageBox los nombres
       //posibles son: “crop”, “trim”, “art” and “bleed”.
@@ -60,6 +63,15 @@ public class DescargarPlantilla extends DownloadAction {
       //HeaderFooter event = new HeaderFooter(this.getId(), this.getNumAutenticacion());
       //writer.setPageEvent(event);
       document.open();
+      
+      PdfContentByte cb = writer.getDirectContent();
+      cb.saveState();
+      cb.setColorStroke(new CMYKColor(1f, 0f, 0f, 0f));
+      cb.setColorFill(new CMYKColor(1f, 0f, 0f, 0f));
+      cb.rectangle(20,10,10,820);
+      cb.fill();
+      cb.restoreState();
+      
       //Encabezado
       Font fuenteEnc = new Font(Font.getFamily("ARIAL"), 10, Font.BOLD);
       Font fuenteTitulo = new Font(Font.getFamily("ARIAL"), 12, Font.BOLD);
@@ -68,12 +80,19 @@ public class DescargarPlantilla extends DownloadAction {
       Date date = new Date();
       //Logos
       //http://upload.wikimedia.org/wikipedia/commons/2/21/USB_logo.svg USB
-      String imageUrl = "http://www.iaeal.usb.ve/Logo%20para%20web.png";
-
+//      String imageUrl = "http://www.iaeal.usb.ve/Logo%20para%20web.png";
+      String imageUrl = "http://img248.imageshack.us/img248/4109/stickeriaeal2.png";
       Image usblogo = Image.getInstance(new URL(imageUrl));
-      usblogo.scaleAbsolute(120f, 60f);
-      usblogo.setAbsolutePosition(400f, 720f);
+      usblogo.scaleAbsolute(100f, 50f);
+      usblogo.setAbsolutePosition(430f, 740f);
       document.add(usblogo);
+      
+      imageUrl = "http://www.usb.ve/conocer/corporativa/archivos/logos/logo/logo.png";
+      usblogo = Image.getInstance(new URL(imageUrl));
+      usblogo.scaleAbsolute(80f, 45f);
+      usblogo.setAbsolutePosition(90f, 740f);
+      document.add(usblogo);
+      
 
       String encabezado = "\nSartenejas " + dates.format(date) + "\n"
               + "República Bolivariana de Venezuela \n"
@@ -81,7 +100,7 @@ public class DescargarPlantilla extends DownloadAction {
               + "Instituto de Altos Estudios de América Latina \n"
               + "Sistema de Tratados y Acuerdos Internacionales de Venezuela\n";
       Paragraph pa = new Paragraph(encabezado, fuenteEnc);
-      pa.setSpacingBefore(20);
+      pa.setSpacingBefore(50);
       pa.setSpacingAfter(50);
       pa.setIndentationLeft(50);
       document.add(pa);
