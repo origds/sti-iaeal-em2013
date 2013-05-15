@@ -51,6 +51,10 @@ public class DescargarPDF extends DownloadAction {
           throws Exception {
     // Download a "pdf" file - gets the file name from the
     // Action Mapping's parameter
+      
+    String fileDir="/descargasPDF"; //directory where all files are created and located 
+    String fileName="/tratado.pdf";   
+      
     String contentType = "application/pdf";
     System.out.println("");
     
@@ -60,8 +64,12 @@ public class DescargarPDF extends DownloadAction {
     
     System.out.println("-------- " + t.getTitulo());
     File file = new File(String.valueOf(request.getSession().getAttribute("tratado")));
-   
-    System.out.println("***** idd " + t.getId());
+    
+    System.out.println(String.valueOf(request.getSession().getAttribute("tratado")));
+    //    File file = new File(request.getRealPath("/WEB-INF")+fileDir+fileName);
+//    System.out.println(file.getAbsolutePath());
+//    System.out.println(file.createNewFile());
+//    System.out.println("HOLAAAA!!!!!!\n" + request.getRealPath("/WEB-INF")+fileDir+fileName);
 
 
     FileOutputStream f = new FileOutputStream(file);
@@ -130,7 +138,6 @@ public class DescargarPDF extends DownloadAction {
       p.setSpacingAfter(10);
       p.setIndentationLeft(50);
       document.add(p);
-
       PdfPTable cuadro1 = new PdfPTable(2);
 
       
@@ -216,19 +223,19 @@ public class DescargarPDF extends DownloadAction {
       cuadro1.addCell(new Paragraph(s, fuenteText));
 
       document.add(cuadro1);
-      document.newPage();
 
-      s = t.getContenido();
-      p = new Paragraph(s, fuenteText);
-      p.setSpacingBefore(50);
-      p.setSpacingAfter(50);
-      p.setIndentationLeft(50);
-      document.add(p);
-
+        
+        s = "Contenido: \n" +t.getContenido() + "\n\n";
+        p = new Paragraph(s, fuenteText);
+        p.setSpacingBefore(50);
+        p.setSpacingAfter(50);
+        p.setIndentationLeft(50);
+        document.add(p);
       
       //Ciclo que permite colocar la linea azul en todas las paginas del documento
       //recordar que getPageNumber NO es un metodo de document.
-      for (int pgCnt = 1; pgCnt <= writer.getPageNumber(); pgCnt++) {
+      int pgCnt=0;
+      for (pgCnt = 1; pgCnt <= writer.getPageNumber(); pgCnt++) {
             if (pgCnt == 1) {
                 cb.saveState();
                 cb.setColorStroke(new CMYKColor(1f, 0f, 0f, 0f));
