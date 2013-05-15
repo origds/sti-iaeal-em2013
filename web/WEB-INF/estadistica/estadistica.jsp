@@ -1309,7 +1309,7 @@
                         <tr>
                             <td>
                         <legend>Inicio de período</legend>
-                        <html:select property="periodoIni1">
+                        <html:select property="periodoIni2">
                             <option>  </option>
                             <option> 1800 </option>
                             <option> 1801 </option>
@@ -1526,12 +1526,12 @@
                             <option> 2013 </option>
                         </html:select>   
                         <div class="error">
-                            <html:errors property="periodoIni1"/>
+                            <html:errors property="periodoIni2"/>
                         </div>
                         </td>
                         <td>
                         <legend>Finalización de período</legend>
-                        <html:select property="periodoFin1">
+                        <html:select property="periodoFin2">
                             <option>  </option>
                             <option> 1800 </option>
                             <option> 1801 </option>
@@ -1748,7 +1748,7 @@
                             <option> 2013 </option>
                         </html:select> 
                         <div class="error">
-                            <html:errors property="periodoFin1"/>
+                            <html:errors property="periodoFin2"/>
                         </div>
                         </td>
                         </tr>
