@@ -254,7 +254,7 @@ div.inbox{
 }
 div.box a{
   float: left;
-  color: white;
+  color: rgb(55, 63, 250);
   font-weight: bolder;
   margin-right: 5px;
 }
