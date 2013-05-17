@@ -224,26 +224,34 @@ public class DescargarPDF extends DownloadAction {
 
       document.add(cuadro1);
 
+        if (t.getContenido() != null) {
+            s = "Contenido: \n\nx" +t.getContenido() + "\n\n";
+            p = new Paragraph(s, fuenteText);
+            p.setSpacingBefore(50);
+            p.setSpacingAfter(50);
+            p.setIndentationLeft(50);
+            document.add(p);
+        } else {
+            s = "Este tratado no posee contenido.\n";
+            p = new Paragraph(s, fuenteText);
+            p.setSpacingBefore(50);
+            p.setSpacingAfter(50);
+            p.setIndentationLeft(50);
+            document.add(p);
+        }
         
-        s = "Contenido: \n" +t.getContenido() + "\n\n";
-        p = new Paragraph(s, fuenteText);
-        p.setSpacingBefore(50);
-        p.setSpacingAfter(50);
-        p.setIndentationLeft(50);
-        document.add(p);
       
       //Ciclo que permite colocar la linea azul en todas las paginas del documento
       //recordar que getPageNumber NO es un metodo de document.
-      int pgCnt=0;
-      for (pgCnt = 1; pgCnt <= writer.getPageNumber(); pgCnt++) {
-            if (pgCnt == 1) {
+      
+      for (int pgCnt = 1; pgCnt <= writer.getPageNumber(); pgCnt++) {
+                System.out.println("ENTRE\n"+ pgCnt);
                 cb.saveState();
                 cb.setColorStroke(new CMYKColor(1f, 0f, 0f, 0f));
                 cb.setColorFill(new CMYKColor(1f, 0f, 0f, 0f));
                 cb.rectangle(20,10,10,820);
                 cb.fill();
                 cb.restoreState();
-            }
       }     
       
       document.close();
