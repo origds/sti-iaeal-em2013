@@ -209,7 +209,7 @@
                     <td colspan="4">
                         <fieldset class="contenido">
                             <legend>Tratado disponible en:</legend>                            
-                            <A HREF= "http://<bean:write name="tratado" property="observacion"/>"><bean:write name="tratado" property="observacion"/></A>
+                            <A HREF= <bean:write name="tratado" property="observacion"/>><bean:write name="tratado" property="observacion"/></A>
                         </fieldset>
                     </td>
                 </tr>
