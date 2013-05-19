@@ -166,6 +166,7 @@ public class DatabaseEstadistica {
                     t.setTitulo("titulo");
                     trads1.add(t);
                 }
+
                 i = trads1.size();
                 estad.settotal1(i);
                 estad.setPais1(b.getCodigo1());

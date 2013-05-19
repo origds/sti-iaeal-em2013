@@ -22,7 +22,7 @@
     <div id="barraBusqueda">
         <div class="box"> 
             <div class="inbox" id="cajaBusqueda">
-                <div class="titulo">Comparar Tratados.</div>
+                <div class="titulo">Comparar Tratados</div>
                 <br> <br> <br>       
                 <html:form method="POST" action="/comparar">                        
                     <p>  
