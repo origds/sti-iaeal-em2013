@@ -119,7 +119,7 @@ ALTER TABLE "STI".tratado ADD CONSTRAINT "restriccion_fechaDeposito" CHECK (fech
 
 ALTER TABLE "STI".tratado ADD CONSTRAINT "restriccion_entradaVigor" CHECK (entradaVigor<=current_date);
 
---ALTER TABLE "STI".tratado ADD CONSTRAINT "restriccion_observacion" CHECK (observacion ~* '/^(ht|f)tps?:\/\/\w+([\.\-\w]+)?\.([a-z]{2,4}|travel)(:\d{2,5})?(\/.*)?$/i');
+ALTER TABLE "STI".tratado ADD CONSTRAINT "restriccion_observacion" CHECK (observacion ~* '^(ht|f)tps?:\/\/\w+([\.\-\w]+)?\.([a-z]{2,4}|travel)(:\d{2,5})?(\/.*)?$');
 
 -- Alter Table Pais
 
