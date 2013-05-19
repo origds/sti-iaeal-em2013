@@ -26,7 +26,7 @@
                 <br> <br> <br>       
                 <html:form method="POST" action="/comparar">                        
                     <p>  
-                    <fieldset>
+                    
                         <legend align="left" style="color: #0099CC; font-size: 20px"><b> Período 1 </b></legend>
                         <br>       
                         Inicio de período   
@@ -572,10 +572,8 @@
                             <option> 	2013	 </option>
                         </html:select>
                         <br> <br> 
-
-                    </fieldset>    
+   
                     <br> <br> <br> <br>
-                    <fieldset>
                         <legend align="left" style="color: #0099CC; font-size: 20px"><b> Período 2 </b></legend>
                         <br>   
                         Inicio de período   <br> <br> 
@@ -1120,7 +1118,6 @@
                         </html:select>
 
                         <br> <br> 
-                    </fieldset>
 
                     <br> <br> <br> <br>
                     <div id="Comparar" style="float: center;">

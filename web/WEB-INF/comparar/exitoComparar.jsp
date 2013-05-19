@@ -55,7 +55,7 @@
 <div id="body">
     <div id="barraBusqueda">
         <div class="box"> 
-            <div class="inbox" style="height: 450px;" id="cajaBusqueda">
+            <div class="inbox" style="height: 460px;" id="cajaBusqueda">
                 <div class="titulo">Resultado de la Comparación</div>
                 <br><br>
 
@@ -77,8 +77,13 @@
                         </table>
                     </div>
                 </logic:present>
-                <br><br><br><br><br><br><br>
-                <div id="Torta" style="width: 400px; height: 300px;"></div>                    
+                <br><br><br><br><br>    
+                <div id="Torta" style="width: 400px; height: 300px;"></div>  
+                <div id="nuevo" class="botonBusqueda" style="float:left; ">
+                    <html:link action="/compararForm">
+                        Nueva Comparacion
+                    </html:link>
+                </div>
             </div>
         </div>
     </div>
