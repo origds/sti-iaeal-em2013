@@ -49,14 +49,14 @@ a{
 }
 
 .actualizar, .eliminar, .pendiente, .aprobado, .rechazado, .descargar{
-  width: 21px;
-  height: 21px;
+  width: 30px !important;
+  height: 42px !important;
   background: transparent !important;
-  background-size: 21px 21px !important;
+  background-size: 25px 25px !important;
   background-repeat: no-repeat !important;
   float: right !important;
-  margin: 10px;
-  margin-left: 0px;
+  margin: 10px ; 
+  margin-left: 15px;
 
 }
 
@@ -65,7 +65,8 @@ a{
 }
 
 .eliminar {
-  background-image: url('../imagenes/DeleteX.png') !important;  
+  background-image: url('../imagenes/DeleteX.png') !important; 
+  margin-right: 10px !important;
 }
 
 .pendiente {
@@ -82,6 +83,7 @@ a{
 
 .descargar{
   background-image: url('../imagenes/descargar.png') !important; 
+  margin-right: 10px !important;
 }
 
 /*Styling cajas menu*/

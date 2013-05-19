@@ -10,7 +10,8 @@ import org.apache.struts.action.ActionForm;
  *
  * @author Andel
  */
-public class est extends ActionForm{
+public class est extends ActionForm {
+
     int primero;
     int cuarto;
     String pais1;
@@ -29,9 +30,26 @@ public class est extends ActionForm{
     int total3;
     int totalP1;
     int totalP2;
+    int totalPP1;
+    int totalPP2;
 
-    
     public est() {
+    }
+
+    public void settotalPP1(int totalPP1) {
+        this.totalPP1 = totalPP1;
+    }
+
+    public int gettotalPP1() {
+        return totalPP1;
+    }
+
+    public void settotalPP2(int totalPP2) {
+        this.totalPP2 = totalPP2;
+    }
+
+    public int gettotalPP2() {
+        return totalPP2;
     }
     
     public void settotalP1(int totalP1) {
@@ -41,7 +59,7 @@ public class est extends ActionForm{
     public int gettotalP1() {
         return totalP1;
     }
-    
+
     public void settotalP2(int totalP2) {
         this.totalP2 = totalP2;
     }
@@ -49,8 +67,7 @@ public class est extends ActionForm{
     public int gettotalP2() {
         return totalP2;
     }
-    
-    
+
     public void settotal1(int total1) {
         this.total1 = total1;
     }
@@ -58,7 +75,7 @@ public class est extends ActionForm{
     public int gettotal1() {
         return total1;
     }
-    
+
     public void settotal2(int total2) {
         this.total2 = total2;
     }
@@ -66,7 +83,7 @@ public class est extends ActionForm{
     public int gettotal2() {
         return total2;
     }
-    
+
     public void settotal3(int total3) {
         this.total3 = total3;
     }
@@ -74,7 +91,6 @@ public class est extends ActionForm{
     public int gettotal3() {
         return total3;
     }
-    
 
     public void setPais1(String pais1) {
         this.pais1 = pais1;
@@ -113,15 +129,15 @@ public class est extends ActionForm{
     }
 
     public int getCuarto() {
-      return cuarto;
+        return cuarto;
     }
 
     public int getQuinto() {
-      return quinto;
+        return quinto;
     }
 
     public int getSexto() {
-      return sexto;
+        return sexto;
     }
 
     public void setPrimero(int primero) {
@@ -137,48 +153,46 @@ public class est extends ActionForm{
     }
 
     public void setCuarto(int cuarto) {
-      this.cuarto = cuarto;
+        this.cuarto = cuarto;
     }
-    
+
     public void setQuinto(int quinto) {
-      this.quinto = quinto;
+        this.quinto = quinto;
     }
 
     public void setSexto(int sexto) {
-      this.sexto = sexto;
+        this.sexto = sexto;
     }
-    
-    public int getAno1(){
+
+    public int getAno1() {
         return ano1;
     }
-    
-    public void setAno1(int ano1){
+
+    public void setAno1(int ano1) {
         this.ano1 = ano1;
     }
-    
-     public int getAno2(){
+
+    public int getAno2() {
         return ano2;
     }
-    
-    public void setAno2(int ano2){
+
+    public void setAno2(int ano2) {
         this.ano2 = ano2;
     }
-    
-    public int getAno3(){
+
+    public int getAno3() {
         return ano3;
     }
-    
-    public void setAno3(int ano3){
+
+    public void setAno3(int ano3) {
         this.ano3 = ano3;
     }
-    
-     public int getAno4(){
+
+    public int getAno4() {
         return ano4;
     }
-    
-    public void setAno4(int ano4){
+
+    public void setAno4(int ano4) {
         this.ano4 = ano4;
     }
-    
-    
 }
