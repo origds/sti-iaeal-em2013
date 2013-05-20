@@ -152,7 +152,6 @@
     $(document).ready(function() {
         $("#Barra").hide();
         $("#Area").hide();
-        $("#nuevo").hide();
         
     
         $("#botonBarra").click(function(){
@@ -257,6 +256,11 @@
                         <br><br><br>
                         <div id="Torta" style="width: 400px; height: 300px;"></div>                        
                     </div>
+                    <div id="nuevo" class="botonBusqueda" style="float:left; ">
+                        <html:link action="/estadisticaForm">
+                            Nueva Estadistica
+                        </html:link>
+                    </div>
 
                     <%}%>
 
@@ -286,6 +290,11 @@
                     <div>
                         <br><br><br>
                         <div id="TortaPeriodos" style="width: 400px; height: 300px;"></div>                        
+                    </div>
+                    <div id="nuevo" class="botonBusqueda" style="float:left; ">
+                        <html:link action="/estadisticaForm">
+                            Nueva Estadistica
+                        </html:link>
                     </div>
 
                     <%}%>
@@ -341,10 +350,10 @@
                     <div id="Barra" style="width: 400px; height: 300px;"></div>
                     <div id="Area" style="width: 400px; height: 300px;"></div>
                 </div>
-                
+
                 <br>
-               
-                
+
+
                 <div id="botonesTodo">
                     <th  style="float: center;" >
                         <button id="botonArea" class="botonBusqueda">Area</button>
@@ -365,11 +374,6 @@
                 <%}%>
 
             </logic:present>
-            <div id="nuevo" class="botonBusqueda" style="float:left; ">
-                <html:link action="/estadisticaForm">
-                    Nueva Estadistica
-                </html:link>
-            </div>
         </div>
     </div>
 </div>

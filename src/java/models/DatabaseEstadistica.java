@@ -152,7 +152,6 @@ public class DatabaseEstadistica {
                 }
             }
 
-
             //Para cuando no hay peridos
             if ((b.getPeriodoIni1() == 0) & (b.getPeriodoFin1() == 0)) {
 
@@ -262,6 +261,10 @@ public class DatabaseEstadistica {
                 estad.setAno1(b.getPeriodoIni1());
                 estad.setAno2(b.getPeriodoFin1());
 
+                estad.settotal1(estad.getPrimero() + estad.getCuarto());
+                estad.settotal2(estad.getSegundo() + estad.getQuinto());
+                estad.settotal3(estad.getTercero() + estad.getSexto());
+
             }
 
             //Query para el segundo periodo
@@ -319,11 +322,11 @@ public class DatabaseEstadistica {
                 estad.setAno3(b.getPeriodoIni2());
                 estad.setAno4(b.getPeriodoFin2());
 
-            }
+                estad.settotal1(estad.getPrimero() + estad.getCuarto());
+                estad.settotal2(estad.getSegundo() + estad.getQuinto());
+                estad.settotal3(estad.getTercero() + estad.getSexto());
 
-            estad.settotal1(estad.getPrimero() + estad.getCuarto());
-            estad.settotal2(estad.getSegundo() + estad.getQuinto());
-            estad.settotal3(estad.getTercero() + estad.getSexto());
+            }
 
             estad.settotalPP1(estad.getPrimero() + estad.getSegundo() + estad.getTercero());
             estad.settotalPP2(estad.getCuarto() + estad.getQuinto() + estad.getSexto());

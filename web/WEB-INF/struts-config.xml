@@ -81,13 +81,14 @@
       <!-- ESTADISTICA -->
 
        <action path="/BuscarEstadistica" name="ClaseEstadistica" scope="request"
-              type="servlets.GestionEstadistica" validate="false">
+              type="servlets.GestionEstadistica" validate="true">
         <forward name="success" path="estadistica.exito"/>
         <forward name="failure" path="estadistica.form"/>
       </action>
 
       <action path="/estadisticaForm" name="ClaseEstadistica" scope="request"
-              type="servlets.GestionEstadistica" parameter="estadisticaForm" validate="true">
+              type="servlets.GestionEstadistica" parameter="estadisticaForm" 
+              validate="false">
         <forward name="success" path="estadistica.form"/>
       </action>
       

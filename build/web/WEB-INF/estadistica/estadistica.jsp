@@ -59,10 +59,21 @@
     });
 </script>
 
+<script>
+    function vacio(){
+        if ((periodoIni1 == 0) && (periodoFin1 == 0) && (periodoIni2 == 0) && (periodoFin2 == 0) &&
+            (codigo1.equals("Paises...")) && (codigo2.equals("Paises...")) && (codigo3.equals("Paises...")))  {
+            alert("No se ha introducido ningun valor");
+        }
+        return true;
+    } 
+</script>
+
 <style>
     .error{font-size: 10px;color: #cc0000; float:left; padding:0}
     .error ul{list-style: none;}
 </style>
+
 
 <div id="body">
     <div id="barraBusqueda">
@@ -76,13 +87,13 @@
                     <button id="botonPaises" class="botonBusqueda">Solo Paises</button>
                     <button id="botonAmbos" class="botonBusqueda">Paises y Periodos</button>
                 </div>
-
-                <div id="barraPaises">
-                    <html:form  method="POST" action="/BuscarEstadistica">                        
-                        <p>           
-                            <br> <br> <br>
-                            1er Pais &nbsp;
-                            <html:select name="ClaseEstadistica" property="codigo1">
+                
+                <html:form method="POST" action="/BuscarEstadistica" onsubmit="return vacio()">                        
+                    <p>           
+                    <div id="barraPaises">
+                        <br> <br> <br>
+                        1er Pais &nbsp;
+                        <html:select name="ClaseEstadistica" property="codigo1">
                             <option>Paises...</option> 
                             <option>Afganistan</option> 
                             <option>Aland</option> 

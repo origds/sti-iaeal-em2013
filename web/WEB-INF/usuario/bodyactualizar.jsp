@@ -25,6 +25,7 @@
         <div class="inbox">
             <div class="titulo">Actualizar Usuario</div>
             <html:form action="/usuario/actualizar" styleId="styleUsuario" >           
+
                 </br></br>
                 <div style="color:red" >Todos los campos con (*) son requeridos</div>
                 <br>

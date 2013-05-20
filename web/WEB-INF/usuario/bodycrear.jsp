@@ -44,7 +44,7 @@
                     </div>
                     <legend>Usuario (*)</legend>
 
-                    <html:text property="usuario" value=""/>
+                    <html:text property="usuario"/>
 
                 </fieldset>
 
@@ -53,7 +53,7 @@
                         <html:errors property="contrasena"/>
                     </div>
                     <legend>Contraseña (*)</legend>
-                    <html:password property="contrasena" value=""/>
+                    <html:password property="contrasena"/>
                 </fieldset>
                 
                 <fieldset>
@@ -61,7 +61,7 @@
                         <html:errors property="nombre"/>
                     </div>
                     <legend>Nombre (*)</legend>
-                    <html:text property="nombre" value=""/>
+                    <html:text property="nombre"/>
                 </fieldset>
 
                 <fieldset>
@@ -69,7 +69,7 @@
                         <html:errors property="apellido"/>
                     </div>
                     <legend>Apellido (*)</legend>
-                    <html:text property="apellido" value=""/>
+                    <html:text property="apellido"/>
                 </fieldset>
 
                 <fieldset>
@@ -77,7 +77,7 @@
                         <html:errors property="correo"/>
                     </div>
                     <legend>Correo (*)</legend>
-                    <html:text property="correo" value=""/>
+                    <html:text property="correo"/>
                 </fieldset>
 
                 Administrador<html:checkbox property="administrador"/>
