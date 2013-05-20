@@ -48,16 +48,17 @@ import org.apache.struts.actions.MappingDispatchAction;
              dest[0] = cor;
              //Double nr = Math.random()*890000+100000;
              String mensaje = "Mensaje para la reposicion de la contrasena.. \n\n\n Su Nueva Contrasena : " + s + " \n\n\n Le recomendamos entrar al sistema y cambiar su contrasena.";
+             if (s != "no"){
+                EnvioMail correo = new EnvioMail(from,dest[0],asunto,mensaje);
              
-             EnvioMail correo = new EnvioMail(from,dest[0],asunto,mensaje);
+                try {
+                    correo.Enviar();
+                }
+                catch (Exception x){
+                    x.printStackTrace();
              
-             try {
-                 correo.Enviar();
-             }
-             catch (Exception x){
-                 x.printStackTrace();
-             
-             }
+                }
+             }  
             return mapping.findForward(SUCCESS);
     }
 }
