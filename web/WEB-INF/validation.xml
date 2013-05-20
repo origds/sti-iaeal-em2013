@@ -327,13 +327,12 @@
             
             <!-- Validate observacion -->
             <field
-                property="observacion" depends="maxlength">
+                property="observacion" depends="mask">
                 <arg0 key="tratado.observacion"/>
-                <arg1 name="maxlength" key="${var:maxlength}" resource="false"/>
-                
+                <arg1 name="mask" key="mask.invalido"/>
                 <var>
-                    <var-name>maxlength</var-name>
-                    <var-value>320</var-value>
+                    <var-name>mask</var-name>
+                    <var-value>^(ht|f)tps?:\/\/\w+([\.\-\w]+)?\.([a-z]{2,4}|travel)(:\d{2,5})?(\/.*)?$ </var-value>
                 </var>
             </field>                            
         </form>
