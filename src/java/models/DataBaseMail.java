@@ -82,6 +82,7 @@ public class DataBaseMail {
                 Statement stmt = conexion.createStatement();
                 //ResultSet rs1 = stmt.executeUpdate(sqlmail);
                 updated = stmt.executeUpdate(sqlmail);
+                System.out.println("UPDATEEEEEE " + updated);
                 
                 sqlmail2 = "SELECT * FROM \"STI\".usuario WHERE correo LIKE '"+ c.getCorreo() +"';";
                 System.out.println(sqlmail2);
@@ -105,7 +106,10 @@ public class DataBaseMail {
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
-        
-        return resul;        
+          if (updated == 0){
+              resul = "no";
+          }
+        return resul;
+               
     }    
 }
