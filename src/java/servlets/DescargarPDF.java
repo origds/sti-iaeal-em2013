@@ -29,6 +29,7 @@ import org.apache.struts.actions.DownloadAction;
 import javabeans.Tratado;
 import models.DatabaseTratado;
 import servlets.GestionTratado;
+import servlets.Evento;
 
 /**
  *
@@ -83,6 +84,8 @@ public class DescargarPDF extends DownloadAction {
       writer.setBoxSize("art", rct);
       document.open();
       
+      Evento evento = new Evento();
+      writer.setPageEvent(evento);
             
       PdfContentByte cb = writer.getDirectContent();
       cb.saveState();
@@ -239,21 +242,7 @@ public class DescargarPDF extends DownloadAction {
             p.setIndentationLeft(50);
             document.add(p);
         }
-        
-      
-      //Ciclo que permite colocar la linea azul en todas las paginas del documento
-      //recordar que getPageNumber NO es un metodo de document.
-      
-      for (int pgCnt = 1; pgCnt <= writer.getPageNumber(); pgCnt++) {
-                System.out.println("ENTRE\n"+ pgCnt);
-                cb.saveState();
-                cb.setColorStroke(new CMYKColor(1f, 0f, 0f, 0f));
-                cb.setColorFill(new CMYKColor(1f, 0f, 0f, 0f));
-                cb.rectangle(20,10,10,820);
-                cb.fill();
-                cb.restoreState();
-      }     
-      
+              
       document.close();
       f.flush();
       f.close();
@@ -263,12 +252,7 @@ public class DescargarPDF extends DownloadAction {
       e.printStackTrace();
     }
 
-
-
-
-
-
-
     return new FileStreamInfo(contentType, file);
   }
+  
 } 
