@@ -44,11 +44,11 @@ public class DescargarPlantilla extends DownloadAction {
     String contentType = "application/pdf";
     System.out.println("");
 
-    File file = new File(String.valueOf(request.getSession().getAttribute("usuario")));
+    String fileDir="/descargasPDF"; //directory where all files are created and located 
+    String fileName="/tratado.pdf";   
     
-    //AUN NO SE QUE VA AQUI! TENGO QUE PREGUNTARLE A ADNRETH, la tire a pegar
-    //con usuario y funciono...
-    //File file = new File("/home/carla/Desktop/PruebaPDF.pdf");
+    File file = new File(request.getRealPath("/WEB-INF")+fileDir+fileName);
+
 
     FileOutputStream f = new FileOutputStream(file);
     Document document = new Document();

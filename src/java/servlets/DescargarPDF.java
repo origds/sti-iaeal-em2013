@@ -64,13 +64,7 @@ public class DescargarPDF extends DownloadAction {
     dt.get(t, true);
     
     System.out.println("-------- " + t.getTitulo());
-    File file = new File(String.valueOf(request.getSession().getAttribute("tratado")));
-    
-    System.out.println(String.valueOf(request.getSession().getAttribute("tratado")));
-    //    File file = new File(request.getRealPath("/WEB-INF")+fileDir+fileName);
-//    System.out.println(file.getAbsolutePath());
-//    System.out.println(file.createNewFile());
-//    System.out.println("HOLAAAA!!!!!!\n" + request.getRealPath("/WEB-INF")+fileDir+fileName);
+  File file = new File(request.getRealPath("/WEB-INF")+fileDir+fileName);
 
 
     FileOutputStream f = new FileOutputStream(file);
@@ -233,6 +227,7 @@ public class DescargarPDF extends DownloadAction {
             p.setSpacingBefore(50);
             p.setSpacingAfter(50);
             p.setIndentationLeft(50);
+            p.setAlignment(Element.ALIGN_JUSTIFIED);
             document.add(p);
         } else {
             s = "Este tratado no posee contenido.\n";
