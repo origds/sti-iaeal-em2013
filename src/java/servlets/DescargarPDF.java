@@ -53,7 +53,7 @@ public class DescargarPDF extends DownloadAction {
     // Download a "pdf" file - gets the file name from the
     // Action Mapping's parameter
       
-    String fileDir="/descargasPDF"; //directory where all files are created and located 
+    String fileDir="/tratado"; //directory where all files are created and located 
     String fileName="/tratado.pdf";   
       
     String contentType = "application/pdf";
@@ -147,21 +147,43 @@ public class DescargarPDF extends DownloadAction {
       PdfPCell cell1 = new PdfPCell(p);
       cuadro1.addCell(cell1);
 
-      s = "Lugar de Firma: " + t.getFirmaLugar() ;
+      if (t.getFirmaLugar() == null ) {
+          s = "Lugar de Firma: Informacion no disponible" ;
+      } else {
+          s = "Lugar de Firma: " + t.getFirmaLugar() ;
+      }
       cuadro1.addCell(new Paragraph(s, fuenteText));
 
-      s = "Fecha de Depósito: " + t.getFechaDeposito() + "\n\n";
+      
+      if (t.getFechaDeposito() == null){
+          s = "Fecha Deposito: Informacion no disponible" ;
+      } else {
+        s = "Fecha de Depósito: " + t.getFechaDeposito() + "\n\n";
+      }
       cuadro1.addCell(new Paragraph(s, fuenteText));
 
-      s = "Entrada en Vigor: " + t.getEntradaVigor() ;
+      if (t.getEntradaVigor() == null) {
+          s = "Entrada Vigor: Informacion no disponible" ;
+      } else {
+        s = "Entrada en Vigor: " + t.getEntradaVigor() ;
+      }
       cuadro1.addCell(new Paragraph(s, fuenteText));
 
-      s = "Fecha de Publicación en Gaceta Oficial: " + t.getFechaGaceta()+ "\n\n" ;
+      if (t.getFechaGaceta() == null){
+          s = "Fecha de Publicacion en Gaceta Oficial: Informacion no disponible" ;
+      } else {
+        s = "Fecha de Publicación en Gaceta Oficial: " + t.getFechaGaceta()+ "\n\n" ;
+      }
       cuadro1.addCell(new Paragraph(s, fuenteText));
 
-      s = "Numero de Gaceta Oficial: " + t.getNumGaceta() ;
+      if (t.getNumGaceta() == null) {
+        s = "Lugar de Firma: Informacion no disponible" ;
+      } else {
+          s = "Numero de Gaceta Oficial: " + t.getNumGaceta() ;
+      }
       cuadro1.addCell(new Paragraph(s, fuenteText));
 
+      
       s = "Clasificación: ";
       if (t.getGrupos().length == 0){
           s += "Bilateral\n";
@@ -170,19 +192,39 @@ public class DescargarPDF extends DownloadAction {
       }
       cuadro1.addCell(new Paragraph(s, fuenteText));
       
-      s = "Duración: " + t.getDuracion() + "\n\n";
+      if (t.getDuracion() == null ){
+          s = "Duracion: Informacion no disponible" ;
+      } else {
+        s = "Duración: " + t.getDuracion() + "\n\n";
+      }
       cuadro1.addCell(new Paragraph(s, fuenteText));
 
-      s = "Período: " + t.getPeriodo() ;
+      if (t.getPeriodo() == 0) {
+          s = "Periodo: Informacion no disponible" ;
+      } else {
+        s = "Período: " + t.getPeriodo() ;
+      }
       cuadro1.addCell(new Paragraph(s, fuenteText));
 
-      s = "Volúmen: " + t.getVolumen()+ "\n\n" ;
+      if (t.getVolumen() == 0) {
+          s = "Volumen: Informacion no disponible" ;
+      } else {
+        s = "Volúmen: " + t.getVolumen()+ "\n\n" ;
+      }
       cuadro1.addCell(new Paragraph(s, fuenteText));
 
-      s = "Página: " + t.getPagina() ;
+      if (t.getPagina() == 0){
+          s = "Pagina: Informacion no disponible" ;
+      } else {
+        s = "Página: " + t.getPagina() ;
+      }
       cuadro1.addCell(new Paragraph(s, fuenteText));
 
-      s = "Este tratado se encuentra disponible en: " + t.getObservacion() + "\n\n";
+      if (t.getObservacion() == null){
+          s = "Este tratado se encuentra disponible en: Informacion no disponible" ;
+      } else {
+        s = "Este tratado se encuentra disponible en: " + t.getObservacion() + "\n\n";
+      }
       cuadro1.addCell(new Paragraph(s, fuenteText));
       
       s = "Países Involucrados: \n\n";
