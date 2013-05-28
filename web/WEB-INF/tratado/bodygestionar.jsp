@@ -38,18 +38,18 @@
 <script type="text/javascript" src="<%=request.getContextPath()%>/interfaz/javaScript/jquery.paginatetable.js"></script>
 <script>
   $(document).ready(function(){
-    $(".cajaTitulo").click(function(){
-      for (var i=0; i<this.childNodes.length; ++i){
-        if (this.childNodes[i].nodeName == "FORM"){
-          this.childNodes[i].submit();
-        }
-      }
-    });
+    
+    
     $("#tablaTratados")
     .tablesorter({sortList: [[0,0]]})
     .paginateTable({ rowsPerPage: 25 });
   } 
 );
+
+function verTratado(div){
+    forms = div.getElementsByTagName("form");
+    $(forms[0]).submit()
+}
 </script>
     
 <logic:notPresent name="tratados">  <%--Si no hay tratados que mostrar--%>
@@ -86,8 +86,8 @@
               <div class="cajaTratado">
                 <tr>
                   <td valign="top">
-                    <div class="cajaTitulo">
-                      <html:form action="/tratado/consultar">
+                      <div class="cajaTitulo" onclick="verTratado(this)">
+                        <html:form action="/tratado/consultar" styleClass="consultarForm">
                         <html:hidden name="tratado" property="id"/>
                         <bean:write name="tratado" property="titulo"></bean:write>
                       </html:form>
