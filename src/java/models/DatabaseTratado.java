@@ -50,7 +50,11 @@ public class DatabaseTratado {
     //Se verifica el tipo de clasificacion del tratado
     t.checkClasificacion();
 
-    // Se insertan los valores a la tabla tratado  
+    String titulomayuscula = t.getTitulo().toUpperCase();
+    t.setTitulo(titulomayuscula);
+    System.out.println("Titulo" + t.getTitulo());
+   
+    // Se insertan los.toUpperCase() valores a la tabla tratado  
     sqlqueryTratado = "INSERT INTO \"STI\".tratado (titulo,"
           + " clasificacion, aprobado, firmaLugar, firmaFecha, numGaceta, "
           + "fechaGaceta, canjeNotificacion, deposito, fechaDeposito, "
@@ -77,7 +81,7 @@ public class DatabaseTratado {
           + t.getStatus() + "', '"
           + t.getUsuario().getUsuario()
           + "')";
-          System.out.println("---titulo = " + t.getTitulo());
+     
       try { //ejecuto los query
         
         System.out.println("SQLQUERIES:");
@@ -266,6 +270,10 @@ public class DatabaseTratado {
     } else {
       t.checkClasificacion();
     }
+    
+    String titulomayus = t.getTitulo().toUpperCase();
+    t.setTitulo(titulomayus);
+    System.out.println("Titulo" + titulomayus);
     
     System.out.println("Clasificacion UPDATE= " + t.isClasificacion());
     // Se hace el update para la tabla tratado
