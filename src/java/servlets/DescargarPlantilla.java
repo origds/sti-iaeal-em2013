@@ -44,7 +44,7 @@ public class DescargarPlantilla extends DownloadAction {
     String contentType = "application/pdf";
     System.out.println("");
 
-    String fileDir="/descargasPDF"; //directory where all files are created and located 
+    String fileDir="/tratado"; //directory where all files are created and located 
     String fileName="/tratado.pdf";   
     
     File file = new File(request.getRealPath("/WEB-INF")+fileDir+fileName);
