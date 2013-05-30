@@ -44,6 +44,7 @@
         doc.body.appendChild(canvas);
         canvg(canvas, svg);
         var imgData = canvas.toDataURL('image/png');
+        alert(imgData);
         canvas.parentNode.removeChild(canvas);
         return imgData;
     }
@@ -54,7 +55,7 @@
         // Replacing the mime-type will force the browser to trigger a download
         // rather than displaying the image in the browser window.
         window.location = imgData.replace('image/png', 'image/octet-stream');
-}
+    }
     
     
 </script>
@@ -296,6 +297,12 @@
                         <br><br><br>
                         <div id="Torta" style="width: 400px; height: 300px;"></div>                        
                     </div>
+                    
+                    
+                    <html:form action="/reporte" method="POST" enctype="multipart/form-data"> 
+                        <input type="submit" value="Gen. Reporte" class="botonEstadistica"/>
+                    </html:form>
+                 
                     <div id="nuevo" class="botonBusqueda" style="float:left; ">
                         <html:link action="/estadisticaForm">
                             Nueva Estadistica
@@ -331,6 +338,9 @@
                         <br><br><br>
                         <div id="TortaPeriodos" style="width: 400px; height: 300px;"></div>                        
                     </div>
+                    <html:form action="/reporte" method="POST" enctype="multipart/form-data"> 
+                        <input type="submit" value="Gen. Reporte" class="botonEstadistica"/>
+                    </html:form>
                     <div id="nuevo" class="botonBusqueda" style="float:left; ">
                         <html:link action="/estadisticaForm">
                             Nueva Estadistica
@@ -393,7 +403,12 @@
 
                 <br>
 
-
+                
+            <html:form action="/reporte" method="POST" enctype="multipart/form-data"> 
+                <input type="submit" value="Gen. Reporte" class="botonEstadistica"/>
+            </html:form>
+                
+                
                 <div id="botonesTodo">
                     <th  style="float: center;" >
                         <button id="botonArea" class="botonBusqueda">Area</button>
@@ -402,8 +417,7 @@
                         <button id="botonBarra" class="botonBusqueda">Barra</button>
                     </th>
                     <th style="float: right;" >
-                        <button id="botonTorta" class="botonBusqueda">Torta</button>
-                        <!-- <button class ="botonBusqueda" onclick="saveAsImg(document.getElementById('Barra'));">PNG Image</button> -->
+                        <button id="botonTorta" class="botonBusqueda" onclick="saveAsImg(document.getElementById('Torta'))">Torta</button>                        
                     </th>
                     <div class="botonBusqueda" style="float:left; ">
                         <html:link action="/estadisticaForm">
