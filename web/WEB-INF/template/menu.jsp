@@ -53,11 +53,11 @@
         </html:link>
       </logic:equal>
        
-       <logic:equal name="login" property="administrador" value="true" scope="session">    
+       
             <html:link action="/tratado/crearForm">
                 <div class="opcionUsuario">Incorporar Tratado</div>
             </html:link>  
-       </logic:equal>      
+           
        <logic:equal name="login" property="administrador" value="true" scope="session">  
             <html:link action="/ListarLog">
                 <div class="opcionUsuario">Historial</div>
