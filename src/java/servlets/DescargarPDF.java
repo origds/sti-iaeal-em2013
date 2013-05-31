@@ -264,13 +264,22 @@ public class DescargarPDF extends DownloadAction {
       document.add(cuadro1);
 
         if (t.getContenido() != null) {
-            s = "Contenido: \n\nx" +t.getContenido() + "\n\n";
-            p = new Paragraph(s, fuenteText);
-            p.setSpacingBefore(50);
-            p.setSpacingAfter(50);
-            p.setIndentationLeft(50);
-            p.setAlignment(Element.ALIGN_JUSTIFIED);
-            document.add(p);
+            if (t.getContenido() == ""){
+                s = "Este tratado no posee contenido.\n";
+                p = new Paragraph(s, fuenteText);
+                p.setSpacingBefore(50);
+                p.setSpacingAfter(50);
+                p.setIndentationLeft(50);
+                document.add(p);
+            } else {
+                s = "Contenido: \n\n" +t.getContenido() + "\n\n";
+                p = new Paragraph(s, fuenteText);
+                p.setSpacingBefore(50);
+                p.setSpacingAfter(50);
+                p.setIndentationLeft(50);
+                p.setAlignment(Element.ALIGN_JUSTIFIED);
+                document.add(p);
+            }
         } else {
             s = "Este tratado no posee contenido.\n";
             p = new Paragraph(s, fuenteText);
