@@ -264,7 +264,7 @@ public class DescargarPDF extends DownloadAction {
       document.add(cuadro1);
 
         if (t.getContenido() != null) {
-            s = "Contenido: \n\nx" +t.getContenido() + "\n\n";
+            s = "Contenido: \n\n" +t.getContenido() + "\n\n";
             p = new Paragraph(s, fuenteText);
             p.setSpacingBefore(50);
             p.setSpacingAfter(50);
