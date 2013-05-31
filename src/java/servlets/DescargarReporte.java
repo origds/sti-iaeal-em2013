@@ -133,13 +133,7 @@ public class DescargarReporte extends DownloadAction {
             p.setSpacingAfter(10);
             p.setIndentationLeft(50);
             document.add(p);
-            
-            System.out.println(s);
-            p = new Paragraph(s, fuenteText);
-            p.setSpacingBefore(20);
-            p.setSpacingAfter(10);
-            p.setIndentationLeft(50);
-            document.add(p);
+
   
             boolean paises1 = estad.getCodigo1() != null && estad.getCodigo2() != null && estad.getCodigo3() != null
                 && !estad.getCodigo1().equals("Paises...") && !estad.getCodigo2().equals("Paises...")
@@ -151,14 +145,105 @@ public class DescargarReporte extends DownloadAction {
             boolean periodos = estCompleta.getAno1() != 0 && estCompleta.getAno2() != 0 && estCompleta.getAno3() != 0
                 && estCompleta.getAno4() != 0;
     
+            
+                        
+            
+            s = "Usted ha realizado una estadistica con los paises: ";
+            
+            if (estad.getCodigo1() != "Paises...")
+                s += estad.getCodigo1() + " ";
+            
+            if (estad.getCodigo2() != "Paises...")
+                s += estad.getCodigo2() + " ";
+            
+            if (estad.getCodigo3() != "Paises...")
+                s += estad.getCodigo3() + " ";
+            
+            Paragraph p1 = new Paragraph(s, fuenteText);
+            p1.setAlignment(Element.ALIGN_JUSTIFIED);
+            p1.setSpacingBefore(10);
+            p1.setSpacingAfter(5);
+            p1.setIndentationLeft(50);
+            
+            
+            s = "A continuación se tiene un cuadro resumen en el cual se ";
+            s += "muestran los resultados obtenidos al realizar la estadística.\n";
+            Paragraph p2 = new Paragraph(s, fuenteText);
+            p2.setSpacingBefore(10);
+            p2.setSpacingAfter(20);
+            p2.setIndentationLeft(50);      
+            
+            
+                      
+            
             //si tengo al menos un pais y todos los periodos
             if (paises2 && periodos){
+                document.add(p1);
+                s = "Para cada país se tiene la cantidad de tratados totales ";
+                s += "firmados por Venezuela con dicho país. Seguidamente se tiene ";
+                s += "la cantidad de tratados firmados por un país para el primer período ";
+                s += "y analogamente para el segundo período escogido.\n";
+                p = new Paragraph(s, fuenteText);
+                p.setAlignment(Element.ALIGN_JUSTIFIED);
+                p.setSpacingBefore(20);
+                p.setSpacingAfter(5);
+                p.setIndentationLeft(50);
+                document.add(p);
+                document.add(p2);                
+                
                 document = reportePaisPeriodo(estad, estCompleta, document);
+                s = "Gracias al cuadro se puede inferir que ";
+                s += "para el periodo que va desde " + estad.getPeriodoIni1();
+                s += " hasta " + estad.getPeriodoFin1() + " se tienen un total ";
+                s += "de " + estCompleta.gettotalPP1() + " tratados firmados por Venezuela";
+                s += ", mientras que para el periodo " + estad.getPeriodoIni2();
+                s += " - " + estad.getPeriodoFin2() + " se tienen un total de ";
+                s += estCompleta.gettotalPP2();
+                p = new Paragraph(s, fuenteText);
+                p.setAlignment(Element.ALIGN_JUSTIFIED_ALL);
+                p.setSpacingBefore(20);
+                p.setSpacingAfter(5);
+                p.setIndentationLeft(50);
+                document.add(p);
+                
             //si tengo todos los paises
             } else if (paises1){
+                document.add(p1);
+                s = "Para cada país se tiene la cantidad de tratados totales ";
+                s += "firmados por Venezuela con dicho país.";
+                p = new Paragraph(s, fuenteText);
+                p.setAlignment(Element.ALIGN_JUSTIFIED);
+                p.setSpacingBefore(20);
+                p.setSpacingAfter(5);
+                p.setIndentationLeft(50);
+                document.add(p);
+                document.add(p2);
                 document = reportePais(estad, estCompleta, document);            
             } else if (periodos){
+                s = "Para cada periodo se tiene la cantidad de tratados totales ";
+                s += "firmados por Venezuela en ese intervalo de tiempo\n";
+                p = new Paragraph(s, fuenteText);
+                p.setAlignment(Element.ALIGN_JUSTIFIED);
+                p.setSpacingBefore(20);
+                p.setSpacingAfter(5);
+                p.setIndentationLeft(50);
+                document.add(p);
+                document.add(p2);
                 document = reportePeriodo(estad, estCompleta, document);            
+                
+                s = "Gracias al cuadro se puede inferir que ";
+                s += "para el periodo que va desde " + estad.getPeriodoIni1();
+                s += " hasta " + estad.getPeriodoFin1() + " se tienen un total ";
+                s += "de " + estCompleta.gettotalP1() + " tratados firmados por Venezuela";
+                s += ", mientras que para el periodo " + estad.getPeriodoIni2();
+                s += " - " + estad.getPeriodoFin2() + " se tienen un total de ";
+                s += estCompleta.gettotalP2();
+                p = new Paragraph(s, fuenteText);
+                p.setAlignment(Element.ALIGN_JUSTIFIED_ALL);
+                p.setSpacingBefore(20);
+                p.setSpacingAfter(5);
+                p.setIndentationLeft(50);
+                document.add(p);
             }
             
             document.close();
@@ -187,6 +272,7 @@ public class DescargarReporte extends DownloadAction {
 
             String s = "Paises: \n\n";
             Paragraph p = new Paragraph(s, fuenteText);
+            p.setAlignment(Element.ALIGN_CENTER);
             PdfPCell cell1 = new PdfPCell(p);
             cuadro.addCell(cell1);
 
@@ -197,6 +283,7 @@ public class DescargarReporte extends DownloadAction {
             s = "Cantidad de Tratados en el periodo: \n\n";
             s += String.valueOf(estad.getPeriodoIni1()) + " - " + String.valueOf(estad.getPeriodoFin1()) + "\n\n";
             p = new Paragraph(s, fuenteText);
+            p.setAlignment(Element.ALIGN_CENTER);
             cuadro.addCell(p); 
 
             s = "Cantidad de Tratados en el periodo: \n\n";
