@@ -88,6 +88,8 @@ public class PreProcesamiento extends TilesRequestProcessor {
       return true;
     } else if(servletPath.equals("/buscarForm.do")) {
       return true;
+    } else if(servletPath.equals("/recordar.do")) {
+      return true;
     } else {
       return true;
     }
