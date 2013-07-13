@@ -60,6 +60,8 @@ public class PreProcesamiento extends TilesRequestProcessor {
       return login;
     } else if(servletPath.equals("/usuario/eliminar.do")) {
       return login && administrador;
+    } else if(servletPath.equals("/ListarLog.do")) {
+      return login && administrador;
     } else if(servletPath.equals("/tratado/gestionar.do")) {
       return true;
     } else if(servletPath.equals("/tratado/gestionarPendientes.do")) {
