@@ -80,15 +80,13 @@ public class DescargarPlantilla extends DownloadAction {
       Date date = new Date();
       //Logos
       //http://upload.wikimedia.org/wikipedia/commons/2/21/USB_logo.svg USB
-//      String imageUrl = "http://www.iaeal.usb.ve/Logo%20para%20web.png";
-      String imageUrl = "http://img248.imageshack.us/img248/4109/stickeriaeal2.png";
-      Image usblogo = Image.getInstance(new URL(imageUrl));
+ 
+      Image usblogo = Image.getInstance(request.getRealPath("/interfaz/imagenes/StickerIAEAL2.png"));
       usblogo.scaleAbsolute(100f, 50f);
       usblogo.setAbsolutePosition(430f, 740f);
       document.add(usblogo);
       
-      imageUrl = "http://www.usb.ve/conocer/corporativa/archivos/logos/logo/logo.png";
-      usblogo = Image.getInstance(new URL(imageUrl));
+      usblogo = Image.getInstance(request.getRealPath("/interfaz/imagenes/logoUSB.png"));
       usblogo.scaleAbsolute(80f, 45f);
       usblogo.setAbsolutePosition(90f, 740f);
       document.add(usblogo);

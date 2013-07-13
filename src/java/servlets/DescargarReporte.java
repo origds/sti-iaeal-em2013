@@ -99,19 +99,15 @@ public class DescargarReporte extends DownloadAction {
             DateFormat dates = new SimpleDateFormat("dd/MM/yyyy");
             Date date = new Date();
             
-            //Sticker del IAEAL
-            String imageUrl = "http://img248.imageshack.us/img248/4109/stickeriaeal2.png";
-            Image usblogo = Image.getInstance(new URL(imageUrl));
-            usblogo.scaleAbsolute(100f, 50f);
-            usblogo.setAbsolutePosition(430f, 740f);
-            document.add(usblogo);
-
-            //Logo de la USB
-            imageUrl = "http://www.usb.ve/conocer/corporativa/archivos/logos/logo/logo.png";
-            usblogo = Image.getInstance(new URL(imageUrl));
-            usblogo.scaleAbsolute(80f, 45f);
-            usblogo.setAbsolutePosition(90f, 740f);
-            document.add(usblogo);
+      Image usblogo = Image.getInstance(request.getRealPath("/interfaz/imagenes/StickerIAEAL2.png"));
+      usblogo.scaleAbsolute(100f, 50f);
+      usblogo.setAbsolutePosition(430f, 740f);
+      document.add(usblogo);
+      
+      usblogo = Image.getInstance(request.getRealPath("/interfaz/imagenes/logoUSB.png"));
+      usblogo.scaleAbsolute(80f, 45f);
+      usblogo.setAbsolutePosition(90f, 740f);
+      document.add(usblogo);
             
             String encabezado = "\nSartenejas " + dates.format(date) + "\n"
               + "República Bolivariana de Venezuela \n"
