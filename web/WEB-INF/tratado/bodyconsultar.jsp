@@ -226,7 +226,7 @@
                     <td colspan="2">
                         <div class="botonBusqueda" style="float:left; ">
                             <html:link action="/buscarForm">
-                                Ir a la lista de tratados
+                                Ir a la Búsqueda Principal
                             </html:link>
                         </div>
                     </td>
