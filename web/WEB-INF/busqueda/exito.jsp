@@ -46,6 +46,11 @@
         .paginateTable({ rowsPerPage: 10 });
     } 
 );
+
+function verTratado(div){
+    forms = div.getElementsByTagName("form");
+    $(forms[0]).submit()
+}
 </script>
 
 <logic:notPresent name="tratados">  <%--Si no hay tratados que mostrar--%>
@@ -80,7 +85,7 @@
                     <td colspan="2">
                         <div class="botonBusqueda" style="float:left; ">
                             <html:link action="/buscarForm">
-                                Ir a Busqueda Principal
+                                Ir a Búsqueda Principal
                             </html:link>
                         </div>
                     </td>
@@ -93,7 +98,7 @@
         <div id="listarTratados" style="padding: 50px 7px 0px 7px">
             <div id="resultbusq" class="inbox" style="width: 800px;">
                 <br>
-                <div class="titulo" style="width: 100%; text-align: left;"> Resultados de la Busqueda</div>
+                <div class="titulo" style="width: 100%; text-align: left;"> Resultados de la Búsqueda</div>
                 <br><br><br>
                 <div class="botonBusqueda" style="float:left; ">
                     <html:link action="/buscarForm">
@@ -113,7 +118,7 @@
                         <logic:iterate name="tratados" id="tratado">
                             <tr>
                                 <td valign="top">
-                                    <div class="cajaTitulo">
+                                    <div class="cajaTitulo" onclick="verTratado(this)">
                                         <html:form action="/tratado/consultar">
                                             <html:hidden name="tratado" property="id"/>
                                             <bean:write name="tratado" property="titulo"></bean:write><!--styling es consultaTratado-->
