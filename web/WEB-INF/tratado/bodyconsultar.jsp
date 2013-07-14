@@ -216,7 +216,7 @@
                 <tr>
                     <td colspan="4">
                         <fieldset class="contenido">
-                            <legend>Nota: Para ver el contenido debe descargar el tratado.</legend>
+                            Nota: Para ver el contenido debe descargar el tratado. El formato de las fechas es MM/DD/AA
                         </fieldset>
                     </td>
                 </tr>
