@@ -3,7 +3,7 @@
     Created on : Oct 28, 2012, 6:32:05 PM
     Author     : carla
 --%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="ISO-8859-1"%>
 
 <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
@@ -111,7 +111,7 @@
         "<option value=\"Ecuador\">Ecuador</option>"+
         "<option value=\"Egipto\">Egipto</option>"+
         "<option value=\"El Salvador\">El Salvador</option>"+
-        "<option value=\"Emiratos 脕rabes Unidos\">Emiratos 脕rabes Unidos</option>"+
+        "<option value=\"Emiratos 羠abes Unidos\">Emiratos 羠abes Unidos</option>"+
         "<option value=\"Eritrea\">Eritrea</option>"+
         "<option value=\"Eslovaquia\">Eslovaquia</option>"+
         "<option value=\"Eslovenia\">Eslovenia</option>"+
@@ -329,7 +329,7 @@
   <div class="box">
     <div class="inbox">
       <div class="titulo">Actualizar Tratado</div>
-      <html:form action="/tratado/actualizar">
+      <html:form action="/tratado/actualizar" acceptCharset="ISO-8859-1">
         <html:hidden name="Tratado" property="id"/>
         <html:hidden name="Tratado" property="status"/>
         <fieldset style="border:none"></fieldset>
@@ -340,7 +340,7 @@
               <br>
               <fieldset id="campoTitulo">
                 <br>
-                <legend>T铆tulo (*)</legend>
+                <legend>T韙ulo (*)</legend>
                 <div class="error">
                   <html:errors property="titulo"/>
                 </div>
@@ -351,7 +351,7 @@
           <tr>
             <td>
               <fieldset id="divisionPais">
-                <legend>Pa铆s</legend>
+                <legend>Pa韘</legend>
                 <!-- <input type="text" name="paises" /> -->
                 <!-- Dropdown con los paises-->
                 <logic:iterate id="element" name="Tratado" property="paises" indexId="index">
@@ -543,7 +543,7 @@
                     <option value="Ruanda">Ruanda</option>
                     <option value="Rumania">Rumania</option>
                     <option value="Rusia">Rusia</option>
-                    <option value="Republica 脕rabe Saharaui Democratica">Republica 脕rabe Saharaui Democratica</option>
+                    <option value="Republica 羠abe Saharaui Democratica">Republica 羠abe Saharaui Democratica</option>
                     <option value="Islas Salomon">Islas Salomon</option>
                     <option value="Samoa">Samoa</option>
                     <option value="Samoa Americana">Samoa Americana</option>
@@ -576,7 +576,7 @@
                     <option value="Taiwan">Taiwan</option>
                     <option value="Tanzania">Tanzania</option>
                     <option value="Tayikistan">Tayikistan</option>
-                    <option value="Territorio Britanico del Oceano 脥ndico">Territorio Britanico del Oceano 脥ndico</option>
+                    <option value="Territorio Britanico del Oceano 蚽dico">Territorio Britanico del Oceano 蚽dico</option>
                     <option value="Territorios Australes Franceses">Territorios Australes Franceses</option>
                     <option value="Timor Oriental">Timor Oriental</option>
                     <option value="Togo">Togo</option>
@@ -657,7 +657,7 @@
                 <div class="error">
                   <html:errors property="numGaceta"/>
                 </div>
-                <legend>N煤mero Gaceta</legend>
+                <legend>N鷐ero Gaceta</legend>
                 <html:text name="Tratado" property="numGaceta"/>
               </fieldset>
             </td>
@@ -675,7 +675,7 @@
                 <div class="error">
                   <html:errors property="canjeNotificacion"/>
                 </div>                                
-                <legend>Canje Notificaci贸n</legend>
+                <legend>Canje Notificaci髇</legend>
                 <span class="fecha"><html:text name="Tratado" property="canjeNotificacion"/></span>
               </fieldset>
             </td>
@@ -686,7 +686,7 @@
                 <div class="error">
                   <html:errors property="fechaDeposito"/>
                 </div>                                
-                <legend>Fecha Dep贸sito</legend>
+                <legend>Fecha Dep髎ito</legend>
                 <span class="fecha"><html:text name="Tratado" property="fechaDeposito"/></span>
               </fieldset>
             </td>
@@ -704,7 +704,7 @@
                 <div class="error">
                   <html:errors property="duracion"/>
                 </div>                                
-                <legend>Duraci贸n</legend>
+                <legend>Duraci髇</legend>
                 <html:text name="Tratado" property="duracion"/>
               </fieldset>
             </td>
@@ -715,7 +715,7 @@
                 <div class="error">
                   <html:errors property="periodo"/>
                 </div>
-                <legend>Per铆odo</legend>
+                <legend>Per韔do</legend>
                 <html:text name="Tratado" property="periodo"/>
               </fieldset>
             </td>
@@ -733,7 +733,7 @@
                 <div class="error">
                   <html:errors property="pagina"/>
                 </div>
-                <legend>P谩gina</legend>
+                <legend>P醙ina</legend>
                 <html:text name="Tratado" property="pagina"/>
               </fieldset>
             </td>
@@ -741,7 +741,7 @@
           <tr>
             <td colspan="4">
               <fieldset class="contenido">
-                <legend>Tratado disponible en: (Debe colocar una direcci贸n URL. Ej: https://www.google.com)</legend>
+                <legend>Tratado disponible en: (Debe colocar una direcci髇 URL. Ej: https://www.google.com)</legend>
                 <div class="error">
                   <html:errors property="observacion"/>
                 </div>                                
