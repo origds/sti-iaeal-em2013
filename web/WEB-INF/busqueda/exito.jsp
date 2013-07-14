@@ -102,7 +102,7 @@ function verTratado(div){
                 <br><br><br>
                 <div class="botonBusqueda" style="float:left; ">
                     <html:link action="/buscarForm">
-                        Ir a Busqueda Principal
+                        Ir a Búsqueda Principal
                     </html:link>
                 </div>
                 <br><br><br><br>
@@ -160,7 +160,7 @@ function verTratado(div){
             <td colspan="2">
                 <div class="botonBusqueda" style="float:left; ">
                     <html:link action="/buscarForm">
-                        Ir a Busqueda Principal
+                        Ir a Búsqueda Principal
                     </html:link>
                 </div>
             </td>
