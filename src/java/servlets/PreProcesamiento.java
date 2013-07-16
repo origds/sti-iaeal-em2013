@@ -4,6 +4,9 @@
  */
 package servlets;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javabeans.Usuario;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,6 +21,22 @@ public class PreProcesamiento extends TilesRequestProcessor {
   
   @Override
   public boolean processPreprocess(HttpServletRequest request, 
+          HttpServletResponse response) {
+    
+    boolean accesar;
+    accesar = procesamiento (request,response);
+    if (!accesar) {
+      try {
+        response.sendError(HttpServletResponse.SC_FORBIDDEN);
+      } catch (IOException ex) {
+        Logger.getLogger(PreProcesamiento.class.getName()).log(Level.SEVERE, null, ex);
+      }
+    }
+    return accesar;
+    
+  }
+  
+  private boolean procesamiento(HttpServletRequest request, 
           HttpServletResponse response) {
     
     HttpSession sesion = request.getSession();
@@ -94,5 +113,7 @@ public class PreProcesamiento extends TilesRequestProcessor {
       return true;
     }
   }
-           
 }
+
+  
+  
