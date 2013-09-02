@@ -47,6 +47,13 @@
         alert("Usuario modificado exitosamente");
       });
     </script>
+  </logic:equal>   
+  <logic:equal name="exito" value="olvidoContrasena">
+    <script>
+      $(document).ready(function(){
+        alert("Contrasena reestablecida exitosamente");
+      });
+    </script>
   </logic:equal>     
     
 </logic:present>

@@ -131,6 +131,7 @@
      <definition name="faq" extends="base">
       <put name="body" value="/WEB-INF/faq/FAQ.jsp"/>
     </definition>
+   
       
     
     <!-- sample tiles definitions

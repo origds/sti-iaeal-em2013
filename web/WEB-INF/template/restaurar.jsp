@@ -12,6 +12,16 @@
 
 <!DOCTYPE html>
 
+<logic:present name="failure">
+  <logic:equal name="failure" value="olvidoCon">
+    <script>
+      $(document).ready(function(){
+        alert("Este correo no pertenece a ningun usuario registrado");
+      });
+    </script>
+  </logic:equal>  
+</logic:present>
+
 <script>
     $(document).ready(function() {
         $("#periodos1").hide();

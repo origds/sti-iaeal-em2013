@@ -45,7 +45,7 @@
       <action path="/enviar" name="Usuario" scope="request"
               type="servlets.enviar" validate="false">
         <forward name="success" path="principal"/>
-        <forward name="failure" path="estadistica.exito"/>
+        <forward name="failure" path="restaurar"/>
       </action>
      
      <action path="/recordar" type="servlets.recordar" scope="request">

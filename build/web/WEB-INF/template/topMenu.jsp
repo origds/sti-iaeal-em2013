@@ -4,7 +4,7 @@
     Author     : vicente
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="ISO-8859-1"%>
 
 <%@ taglib uri="http://struts.apache.org/tags-tiles" prefix="tiles" %>
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
@@ -15,7 +15,7 @@
   <html:link action="/buscarForm">
     <div class="opcionesIzq">
       <div class="texto">
-        BÃºsqueda
+        Búsqueda
       </div>						
     </div>
   </html:link>
@@ -31,7 +31,7 @@
   <html:link action="/estadisticaForm">
     <div class="opcionesIzq">
       <div class="texto">
-        EstadÃ­stica
+        Estadística
       </div>						
     </div>
   </html:link>  

@@ -75,6 +75,12 @@
                     </logic:notEmpty>
                     <tbody>
                     <% ArrayList<Usuario> au = (ArrayList<Usuario>)request.getAttribute("usuarios");
+                        int i =0;
+                     for(i=0; i<au.size();i++){
+                            if (au.get(i).getUsuario().equals("admin")){
+                                au.remove(i);                            
+                            }                        
+                        }                  
                       int index = 0;%>  
                     <logic:iterate name="usuarios" id="usuario">
                       <% Usuario u = au.get(index);
@@ -97,6 +103,7 @@
                             <td>
                                 <html:form action="/usuario/actualizarForm" method="POST" enctype="multipart/form-data" >
                                     <html:hidden name="usuario" property="usuario"/>  
+
                                     <html:submit> Actualizar </html:submit>
                                 </html:form>
                             </td>

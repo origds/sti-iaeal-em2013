@@ -137,26 +137,6 @@
                                         <legend>Año de Firma</legend>
                                         <html:select property="anio">
                                             <option>  </option>
-                                            <option> 1800 </option>
-                                            <option> 1801 </option>
-                                            <option> 1802 </option>
-                                            <option> 1803 </option>
-                                            <option> 1804 </option>
-                                            <option> 1805 </option>
-                                            <option> 1806 </option>
-                                            <option> 1807 </option>
-                                            <option> 1808 </option>
-                                            <option> 1809 </option>
-                                            <option> 1810 </option>
-                                            <option> 1811 </option>
-                                            <option> 1812 </option>
-                                            <option> 1813 </option>
-                                            <option> 1814 </option>
-                                            <option> 1815 </option>
-                                            <option> 1816 </option>
-                                            <option> 1817 </option>
-                                            <option> 1818 </option>
-                                            <option> 1819 </option>
                                             <option> 1820 </option>
                                             <option> 1821 </option>
                                             <option> 1822 </option>
@@ -367,26 +347,6 @@
                                             <!-- <input type ="text" class="anioBusqueda" name="fechaini" id="ini"/> -->
                                             <html:select property="fechaini">
                                                 <option>  </option>
-                                                <option> 1800 </option>
-                                                <option> 1801 </option>
-                                                <option> 1802 </option>
-                                                <option> 1803 </option>
-                                                <option> 1804 </option>
-                                                <option> 1805 </option>
-                                                <option> 1806 </option>
-                                                <option> 1807 </option>
-                                                <option> 1808 </option>
-                                                <option> 1809 </option>
-                                                <option> 1810 </option>
-                                                <option> 1811 </option>
-                                                <option> 1812 </option>
-                                                <option> 1813 </option>
-                                                <option> 1814 </option>
-                                                <option> 1815 </option>
-                                                <option> 1816 </option>
-                                                <option> 1817 </option>
-                                                <option> 1818 </option>
-                                                <option> 1819 </option>
                                                 <option> 1820 </option>
                                                 <option> 1821 </option>
                                                 <option> 1822 </option>
@@ -594,26 +554,6 @@
                                             <!--  <input type ="text" class="anioBusqueda" name="fechafin" id="fin"/>-->
                                             <html:select property="fechafin">
                                                 <option>  </option>
-                                                <option> 1800 </option>
-                                                <option> 1801 </option>
-                                                <option> 1802 </option>
-                                                <option> 1803 </option>
-                                                <option> 1804 </option>
-                                                <option> 1805 </option>
-                                                <option> 1806 </option>
-                                                <option> 1807 </option>
-                                                <option> 1808 </option>
-                                                <option> 1809 </option>
-                                                <option> 1810 </option>
-                                                <option> 1811 </option>
-                                                <option> 1812 </option>
-                                                <option> 1813 </option>
-                                                <option> 1814 </option>
-                                                <option> 1815 </option>
-                                                <option> 1816 </option>
-                                                <option> 1817 </option>
-                                                <option> 1818 </option>
-                                                <option> 1819 </option>
                                                 <option> 1820 </option>
                                                 <option> 1821 </option>
                                                 <option> 1822 </option>
