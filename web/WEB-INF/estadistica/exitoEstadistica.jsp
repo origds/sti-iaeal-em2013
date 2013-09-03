@@ -37,8 +37,8 @@
 
 
         canvas.setAttribute(
-            'style',
-            'position: absolute; ' +
+        'style',
+        'position: absolute; ' +
             'top: ' + (-chartArea.offsetHeight * 2) + 'px;' +
             'left: ' + (-chartArea.offsetWidth * 2) + 'px;');
         doc.body.appendChild(canvas);
@@ -267,7 +267,8 @@
 
                     <div>
                         <%
-                            if ((ano1 == 0) && (ano2 == 0) && (ano3 == 0) && (ano4 == 0)) {%>
+                            if ((ano1 == 0) && (ano2 == 0) && (ano3 == 0) && (ano4 == 0) && (!(pais1.equals("Paises..."))
+                                    || !(pais2.equals("Paises...")) || !(pais3.equals("Paises...")))) {%>
                         <table style="float:left ;width:500px;margin:12px -11px 0 0">
                             <caption></caption>
                             <thead>
@@ -297,12 +298,12 @@
                         <br><br><br>
                         <div id="Torta" style="width: 400px; height: 300px;"></div>                        
                     </div>
-                    
-                    
+
+
                     <html:form action="/reporte" method="POST" enctype="multipart/form-data"> 
                         <input type="submit" value="Gen. Reporte" class="botonEstadistica"/>
                     </html:form>
-                 
+
                     <div id="nuevo" class="botonBusqueda" style="float:left; ">
                         <html:link action="/estadisticaForm">
                             Nueva Estadistica
@@ -312,7 +313,8 @@
                     <%}%>
 
                     <%
-                        if ((pais1.equals("Paises...")) && (pais2.equals("Paises...")) && (pais3.equals("Paises..."))) {%>
+                        if (pais1.equals("Paises...") && pais2.equals("Paises...") && pais3.equals("Paises...")
+                                && (!(ano1 == 0) || !(ano2 == 0) || !(ano3 == 0) || !(ano4 == 0))) {%>
 
                     <table style="float:left ;width:500px;margin:12px -11px 0 0">
                         <caption></caption>
@@ -403,12 +405,12 @@
 
                 <br>
 
-                
-            <html:form action="/reporte" method="POST" enctype="multipart/form-data"> 
-                <input type="submit" value="Gen. Reporte" class="botonEstadistica"/>
-            </html:form>
-                
-                
+
+                <html:form action="/reporte" method="POST" enctype="multipart/form-data"> 
+                    <input type="submit" value="Gen. Reporte" class="botonEstadistica"/>
+                </html:form>
+
+
                 <div id="botonesTodo">
                     <th  style="float: center;" >
                         <button id="botonArea" class="botonBusqueda">Area</button>
@@ -426,8 +428,7 @@
                     </div>
                 </div>
 
-                <%}%>
-
+                <%}%> 
             </logic:present>
         </div>
     </div>

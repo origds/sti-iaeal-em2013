@@ -37,19 +37,14 @@ public class GestionEstadistica extends MappingDispatchAction {
             ClaseEstadistica b = (ClaseEstadistica) form;
             est Estad;
             Estad = DatabaseEstadistica.getInstance().BuscarEstadistica(b);
-            System.out.println("PERIODOOOS");
-            System.out.println(b.getPeriodoIni2());
-            System.out.println(b.getPeriodoFin2());
-            System.out.println(b.getPeriodoIni2());
-            System.out.println(b.getPeriodoFin2());
-            
-            request.setAttribute("est", Estad);
-            System.out.println("ESTADISTICAAAAAAAAAAAAAAAAAA " + Estad.getPrimero());
-            System.out.println("ESTADISTICAAAAAAAAAAAAAAAAAA " + Estad.getSegundo());
-            System.out.println("ESTADISTICAAAAAAAAAAAAAAAAAA " + Estad.getTercero());
-            System.out.println(Estad.getAno1());
-            System.out.println(Estad.getAno2());
-            return mapping.findForward(SUCCESS);
-
+            if ((b.getPeriodoIni1()== 0) & (b.getPeriodoFin1() == 0) & (b.getPeriodoIni2()== 0) & (b.getPeriodoFin2() == 0)
+                    & ("Paises...".equals(b.getCodigo1())) & ("Paises...".equals(b.getCodigo2())) & ("Paises...".equals(b.getCodigo3()))){
+                request.setAttribute("failure", "gestionEstadistica");
+                return mapping.findForward(FAILURE);
+            } else {
+                request.setAttribute("est", Estad);
+                request.setAttribute("exito", "gestionEst");
+                return mapping.findForward(SUCCESS);
+            }
     }
 }

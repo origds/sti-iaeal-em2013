@@ -13,6 +13,16 @@
 
 <!DOCTYPE html>
 
+<logic:present name="failure">
+  <logic:equal name="failure" value="gestionEstadistica">
+    <script>
+      $(document).ready(function(){
+        alert("Debe introducir algun dato para generar su estadistica");
+      });
+    </script>
+  </logic:equal>  
+</logic:present>
+    
 <script>
     $(document).ready(function() {
         $("#periodos1").hide();
@@ -89,7 +99,7 @@
                 </div>
                 
                 <html:form method="POST" action="/BuscarEstadistica" onsubmit="return vacio()">                        
-                    <p>           
+                    <p>       
                     <div id="barraPaises">
                         <br> <br> <br>
                         1er Pais &nbsp;
@@ -848,7 +858,8 @@
                             <option>Otros</option>
                         </html:select>
 
-                    </div>      
+                    </div>  
+                    <br><br>
                     <fieldset id="raya" style="border:none; border-top: 2px solid #00627A; width: 520px;">
                     </fieldset>
                     <br>

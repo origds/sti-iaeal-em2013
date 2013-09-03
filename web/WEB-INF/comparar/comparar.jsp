@@ -13,6 +13,16 @@
 
 <!DOCTYPE html>
 
+<logic:present name="failure">
+  <logic:equal name="failure" value="compararTra">
+    <script>
+      $(document).ready(function(){
+        alert("Debe introducir algun dato para comparar");
+      });
+    </script>
+  </logic:equal>  
+</logic:present>
+    
 <style>
     .error{font-size: 10px;color: #cc0000; float:left; padding:0}
     .error ul{list-style: none;}
@@ -24,7 +34,7 @@
             <div class="inbox" id="cajaBusqueda">
                 <div class="titulo">Comparar Tratados</div>
                 <br> <br> <br>       
-                <html:form method="POST" action="/comparar">                        
+                <html:form method="POST" action="/compararTratados">                        
                     <p>  
                     
                         <legend align="left" style="color: #0099CC; font-size: 20px"><b> Período 1 </b></legend>

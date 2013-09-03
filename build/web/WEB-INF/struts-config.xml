@@ -110,8 +110,8 @@
       </action>
      
    <!-- COMPARAR -->
-      <action path="/comparar" name="Comparar" scope="request"
-              type="servlets.GestionComparar" validate="false">
+      <action path="/compararTratados" name="Comparar" scope="session"
+              type="servlets.GestionComparar" validate="true">
         <forward name="success" path="comparar.exito"/>
         <forward name="failure" path="comparar.form"/>
       </action>

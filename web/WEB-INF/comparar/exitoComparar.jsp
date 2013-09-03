@@ -1,7 +1,7 @@
 <%-- 
     Document   : exitoComparar
     Created on : 09-mar-2013, 15:04:10
-    Author     : isaj
+    Author     : mary
 --%>
 
 <%@page contentType="text/html" pageEncoding="ISO-8859-1"%>
