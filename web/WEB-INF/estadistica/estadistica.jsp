@@ -14,21 +14,27 @@
 <!DOCTYPE html>
 
 <logic:present name="failure">
-  <logic:equal name="failure" value="gestionEstadistica">
-    <script>
-      $(document).ready(function(){
-        alert("Debe introducir algun dato para generar su estadistica");
-      });
-    </script>
-  </logic:equal>  
+    <logic:equal name="failure" value="gestionEstadistica">
+        <script>
+            $(document).ready(function(){
+                alert("Debe introducir algun dato para generar su estadistica");
+            });
+        </script>
+    </logic:equal>  
 </logic:present>
-    
+        
+<logic:present name="failure">
+    <logic:equal name="failure" value="gestionEst">
+        <script>
+            $(document).ready(function(){
+                alert("El periodo final debe ser mayor al periodo inicial");
+            });
+        </script>
+    </logic:equal>  
+</logic:present>        
+
 <script>
     $(document).ready(function() {
-        $("#periodos1").hide();
-        $("#periodos2").hide();
-        $("#periodos3").hide();
-        $("#raya").hide();
     
         $("#botonPeriodo").click(function(){
       
@@ -69,15 +75,6 @@
     });
 </script>
 
-<script>
-    function vacio(){
-        if ((periodoIni1 == 0) && (periodoFin1 == 0) && (periodoIni2 == 0) && (periodoFin2 == 0) &&
-            (codigo1.equals("Paises...")) && (codigo2.equals("Paises...")) && (codigo3.equals("Paises...")))  {
-            alert("No se ha introducido ningun valor");
-        }
-        return true;
-    } 
-</script>
 
 <style>
     .error{font-size: 10px;color: #cc0000; float:left; padding:0}
@@ -97,8 +94,8 @@
                     <button id="botonPaises" class="botonBusqueda">Solo Paises</button>
                     <button id="botonAmbos" class="botonBusqueda">Paises y Periodos</button>
                 </div>
-                
-                <html:form method="POST" action="/BuscarEstadistica" onsubmit="return vacio()">                        
+
+                <html:form method="POST" action="/BuscarEstadistica" >                        
                     <p>       
                     <div id="barraPaises">
                         <br> <br> <br>
@@ -1699,8 +1696,8 @@
                     <br><br>
                     <div id="Generar" style="float: center;">
                         <html:submit> Generar </html:submit>
-                    </div>
-                    <br><br>
+                        </div>
+                        <br><br>
 
                 </html:form> 
             </div>

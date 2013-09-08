@@ -23,6 +23,16 @@
   </logic:equal>  
 </logic:present>
     
+<logic:present name="failure">
+  <logic:equal name="failure" value="comTra">
+    <script>
+      $(document).ready(function(){
+        alert("El periodo final no puede ser mayor al periodo inicial");
+      });
+    </script>
+  </logic:equal>  
+</logic:present>    
+    
 <style>
     .error{font-size: 10px;color: #cc0000; float:left; padding:0}
     .error ul{list-style: none;}
