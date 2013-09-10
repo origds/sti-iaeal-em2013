@@ -17,7 +17,7 @@
     <logic:equal name="failure" value="gestionEstadistica">
         <script>
             $(document).ready(function(){
-                alert("Debe introducir algun dato para generar su estadistica");
+                alert("Debe introducir algun dato valido para generar su estadistica");
             });
         </script>
     </logic:equal>  

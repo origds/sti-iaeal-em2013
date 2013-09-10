@@ -17,7 +17,7 @@
   <logic:equal name="failure" value="compararTra">
     <script>
       $(document).ready(function(){
-        alert("Debe introducir algun dato para comparar");
+        alert("Debe introducir datos validos para generar la comparacion");
       });
     </script>
   </logic:equal>  
