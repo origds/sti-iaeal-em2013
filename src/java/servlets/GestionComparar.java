@@ -5,14 +5,7 @@
  */
 package servlets;
 
-import java.text.Normalizer;
-import java.text.Normalizer.Form;
-import java.util.ArrayList;
-import java.util.Calendar;
-import javabeans.Buscable;
-import javabeans.est;
 import javabeans.Comparar;
-import javabeans.Tratado;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import models.DatabaseComparar;
@@ -20,34 +13,83 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.actions.MappingDispatchAction;
-import java.util.Date;
 
 /**
  *
  * @author mary
  */
 public class GestionComparar extends MappingDispatchAction {
+
     private static final String SUCCESS = "success";
     private static final String FAILURE = "failure";
 
-    @Override
-    public ActionForward execute(ActionMapping mapping, ActionForm form,
+    public ActionForward comparar(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         Comparar c = (Comparar) form;
-        c = DatabaseComparar.getInstance().compararTratados(c);
+
+        /** Validacion de campos vacios **/    
         if ((c.getDiaIni1() == 0) && (c.getMesIni1() == 0) && (c.getAnoIni1() == 0)
                 && (c.getDiaFin1() == 0) && (c.getMesFin1() == 0) && (c.getAnoFin1() == 0)) {
             if ((c.getDiaIni2() == 0) && (c.getMesIni2() == 0) & (c.getAnoIni2() == 0)
                     && (c.getDiaFin2() == 0) && (c.getMesFin2() == 0) && (c.getAnoFin2() == 0)) {
-                request.setAttribute("failure", "compararTra");                             
-                return mapping.findForward(SUCCESS);
+
+                request.setAttribute("failure", "compararTra");
+                return mapping.findForward(FAILURE);
+
             }
         }
-        System.out.println("Soy distinto de cero");
         
-        request.setAttribute("Comparar", c);
-        return mapping.findForward(FAILURE);
+        /** Validacion de fechas completas (Primer periodo) **/
+        if ((c.getDiaIni1() == 0) || (c.getMesIni1() == 0) || (c.getAnoIni1() == 0)) {
+            request.setAttribute("failure", "compararTra");
+            return mapping.findForward(FAILURE);
+        }
+         if ((c.getDiaFin1() == 0) || (c.getMesFin1() == 0) || (c.getAnoFin1() == 0)) {
+            request.setAttribute("failure", "compararTra");
+            return mapping.findForward(FAILURE);
+         }
+         
+        /** Validacion de fechas completas (Segundo periodo) **/
+        if ((c.getDiaIni2() == 0) || (c.getMesIni2() == 0) || (c.getAnoIni2() == 0)) {
+            request.setAttribute("failure", "compararTra");
+            return mapping.findForward(FAILURE);
+        } 
+                
+        if ((c.getDiaFin2() == 0) || (c.getMesFin2() == 0) || (c.getAnoFin2() == 0)) {
+            request.setAttribute("failure", "compararTra");
+            return mapping.findForward(FAILURE);
+        } 
+        
+        
+        
+        /** Validacion de fechas iniciales mayores a las finales **/      
+        if (c.getAnoIni1() > c.getAnoFin1()) {
+            request.setAttribute("failure", "comTra");
+            return mapping.findForward(FAILURE);
+        } else if (c.getAnoIni1() == c.getAnoFin1()) {
+            if (c.getMesIni1() > c.getMesFin1()) {
+                request.setAttribute("failure", "comTra");
+                return mapping.findForward(FAILURE);
+            } else if (c.getMesIni1() == c.getMesFin1()) {
+                if (c.getDiaIni1() > c.getDiaFin1()) {
+                    request.setAttribute("failure", "comTra");
+                    return mapping.findForward(FAILURE);
+                }
+            }
+        }
+    
+        
+        c = DatabaseComparar.getInstance().compararTratados(c);
 
+        request.setAttribute("Comparar", c);
+        return mapping.findForward(SUCCESS);
+    }
+
+    
+    public ActionForward compararForm(ActionMapping mapping, ActionForm form,
+            HttpServletRequest request, HttpServletResponse response)
+            throws Exception {
+        return mapping.findForward(SUCCESS);
     }
 }
