@@ -60,10 +60,9 @@ public class GestionComparar extends MappingDispatchAction {
             request.setAttribute("failure", "compararTra");
             return mapping.findForward(FAILURE);
         } 
+       
         
-        
-        
-        /** Validacion de fechas iniciales mayores a las finales **/      
+        /** Validacion de fechas iniciales mayores a las finales (primer periodo) **/      
         if (c.getAnoIni1() > c.getAnoFin1()) {
             request.setAttribute("failure", "comTra");
             return mapping.findForward(FAILURE);
@@ -79,6 +78,21 @@ public class GestionComparar extends MappingDispatchAction {
             }
         }
     
+        /** Validacion de fechas iniciales mayores a las finales (segundo periodo) **/      
+        if (c.getAnoIni2() > c.getAnoFin2()) {
+            request.setAttribute("failure", "comTra");
+            return mapping.findForward(FAILURE);
+        } else if (c.getAnoIni2() == c.getAnoFin2()) {
+            if (c.getMesIni2() > c.getMesFin2()) {
+                request.setAttribute("failure", "comTra");
+                return mapping.findForward(FAILURE);
+            } else if (c.getMesIni2() == c.getMesFin2()) {
+                if (c.getDiaIni2() > c.getDiaFin2()) {
+                    request.setAttribute("failure", "comTra");
+                    return mapping.findForward(FAILURE);
+                }
+            }
+        }
         
         c = DatabaseComparar.getInstance().compararTratados(c);
 
