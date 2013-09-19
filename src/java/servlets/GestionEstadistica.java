@@ -36,10 +36,10 @@ public class GestionEstadistica extends MappingDispatchAction {
             request.setAttribute("failure", "gestionEstadistica");
             return mapping.findForward(FAILURE);
         }
-        if (((b.getPeriodoIni1() == 0) || (b.getPeriodoFin1() == 0)) && (b.getPeriodoIni2() == 0) && (b.getPeriodoFin2() == 0)) {
+        if (((b.getPeriodoIni1() == 0) && (b.getPeriodoFin1() != 0)) || ((b.getPeriodoIni2() == 0) && (b.getPeriodoFin2() != 0))) {
             request.setAttribute("failure", "gestionEstadistica");
             return mapping.findForward(FAILURE);
-        } else if (((b.getPeriodoIni2() == 0) || (b.getPeriodoFin2() == 0)) && (b.getPeriodoIni1() == 0) && (b.getPeriodoFin1() == 0)) {
+        } else if (((b.getPeriodoFin1() == 0) && (b.getPeriodoIni1() != 0)) || ((b.getPeriodoFin2() == 0) && (b.getPeriodoIni2() != 0))) {
             request.setAttribute("failure", "gestionEstadistica");
             return mapping.findForward(FAILURE);
         }
