@@ -329,7 +329,7 @@
   <div class="box">
     <div class="inbox">
       <div class="titulo">Actualizar Tratado</div>
-      <html:form action="/tratado/actualizar" acceptCharset="ISO-8859-1">
+      <html:form action="/tratado/actualizar" acceptCharset="ISO-8859-1" onsubmit= "if(!confirm('Seguro desea actualizar este tratado?')) return false">
         <html:hidden name="Tratado" property="id"/>
         <html:hidden name="Tratado" property="status"/>
         <fieldset style="border:none"></fieldset>

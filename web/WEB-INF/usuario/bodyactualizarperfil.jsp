@@ -23,7 +23,7 @@
     <div class="box">
         <div class="inbox">
             <div class="titulo">Actualizar Perfil</div>
-            <html:form action="/usuario/actualizarPerfil" styleId="styleUsuario" onsubmit= "if(!confirm('Seguro desea actualizar su Perfil?')) return false">
+            <html:form action="/usuario/actualizarPerfil" styleId="styleUsuario" onsubmit= "if(!confirm('Seguro desea actualizar sus datos?')) return false">
                 <html:hidden name="Usuario" property="usuario"/>
                 <html:hidden name="Usuario" property="administrador"/>
                 </br></br>
