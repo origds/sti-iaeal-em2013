@@ -70,7 +70,11 @@
                                     <th id="anio2" scope="col" style="color:red"><bean:write name="Comparar" property="anoIni2"/> - <bean:write name="Comparar" property="anoFin2"/></th> 
                             </thead>
                             <tbody>
-                                <tr>                                    
+                                <tr>        
+                                    <th id ="nom1" ><bean:write name="Comparar" property="nombre1"/></th>
+                                    <th id ="nom2" ><bean:write name="Comparar" property="nombre2"/></th>
+                                </tr>
+                                <tr>
                                     <th id ="num1" ><bean:write name="Comparar" property="cantidad1"/></th>
                                     <th id ="num2" ><bean:write name="Comparar" property="cantidad2"/></th>
                                 </tr>
