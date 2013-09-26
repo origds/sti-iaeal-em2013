@@ -218,6 +218,6 @@ public class DatabaseBusqueda {
       return "01/01/1970";
     }
 
-    return items[2] + "/" + items[1] + "/" + items[0];
+    return items[1] + "/" + items[2] + "/" + items[0];
   }
 }
