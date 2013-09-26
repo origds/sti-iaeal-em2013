@@ -25,13 +25,15 @@ public class Comparar extends ActionForm {
    private int diaFin2;
    private int mesFin2;
    private int anoFin2;
+   private String nombre1;
+   private String nombre2;
 
    public Comparar() {
    }
 
    public Comparar(int cantidad1, int cantidad2, int diaIni1, int mesIni1, int anoIni1,
           int diaFin1,  int mesFin1, int anoFin1, int diaIni2, int mesIni2, int anoIni2,
-          int diaFin2, int mesFin2, int anoFin2) {
+          int diaFin2, int mesFin2, int anoFin2, String nombre1,String nombre2) {
        this.cantidad1 = cantidad1;
        this.cantidad2 = cantidad2;
        this.diaIni1 = diaIni1;
@@ -46,8 +48,26 @@ public class Comparar extends ActionForm {
        this.diaFin2 = diaFin2;
        this.mesFin2 = mesFin2;
        this.anoFin2 = anoFin2;
+       this.nombre1 = nombre1;
+       this.nombre2 = nombre2;
    }
 
+  public String getNombre1() {
+      return nombre1;
+  } 
+  
+  public void setNombre1(String nombre1) {
+      this.nombre1 = nombre1;
+  } 
+  
+  public String getNombre2() {
+      return nombre2;
+  } 
+  
+  public void setNombre2(String nombre2) {
+      this.nombre2 = nombre2;
+  } 
+  
   public int getDiaIni1() {
     return diaIni1;
   }

@@ -22,11 +22,15 @@ public class GestionComparar extends MappingDispatchAction {
 
     private static final String SUCCESS = "success";
     private static final String FAILURE = "failure";
-
+    
+    
     public ActionForward comparar(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         Comparar c = (Comparar) form;
+       
+        System.out.println("HOlaaaaaaaaaaaaaaaaaaaaaaaaaa "+ c.getNombre1());
+        System.out.println("Chaoooooooooooooooooooooooooo "+ c.getNombre2());
 
         /** Validacion de campos vacios **/    
         if ((c.getDiaIni1() == 0) && (c.getMesIni1() == 0) && (c.getAnoIni1() == 0)
