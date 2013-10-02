@@ -115,9 +115,25 @@
     <p>Desde que Venezuela se formó como República se han firmado una gran cantidad de tratados que pueden ser de gran interés para muchas personas en el país y el mundo, es por ello que surge la necesidad de crear un sistema automatizado que permitiera tener los tratados en línea para volverlos accesibles a cualquier usuario. Es entonces que nace el presente proyecto, una aplicación destinada a incorporar los tratados a la web y administrarlos de manera rápida y sencilla.</p>
   </div>
   <div id="twitters">
-    <a class="twitter-timeline" href="https://twitter.com/vencancilleria" data-widget-id="269327514583826433">
-      Tweets por @vencancilleria
+      <a class="twitter-timeline" href="https://twitter.com/campusb" data-widget-id="385503387808055296">
+          Tweets de @campusb
+      </a>
+    <script>!
+        function(d,s,id){
+            var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
+            if(!d.getElementById(id)){
+                js=d.createElement(s);
+                  js.id=id;js.src=p+"://platform.twitter.com/widgets.js";
+                  fjs.parentNode.insertBefore(js,fjs);
+              }
+          }
+            (document,"script","twitter-wjs");</script>
+<!--
+      
+    <a class="twitter-timeline" href="https://twitter.com/vecancilleria" data-widget-id="269327514583826433">
+      Tweets por @vecancilleria   
     </a>
+     
     <script>!
         function(d,s,id){
         var js,fjs=d.getElementsByTagName(s)[0];
@@ -128,7 +144,7 @@
         }
       }
       (document,"script","twitter-wjs");
-    </script>
+    </script>-->
   </div>
 
   <div id="stickers">
