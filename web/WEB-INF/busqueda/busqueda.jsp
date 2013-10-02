@@ -16,31 +16,31 @@
     $(document).ready(function() {
         $("#periodo1").hide();
         $("#periodo2").hide();
-    
-        $("#botonAnio").click(function(){
-      
+
+        $("#botonAnio").click(function() {
+
             if ($("#anioFirma").is(":visible"))
                 return true;
-      
+
             $("#anio").val("");
             $("#ini").val("");
             $("#fin").val("");
-      
+
             $("#anioFirma").show();
             $("#periodo1").hide();
             $("#periodo2").hide();
         });
-    
-        $("#botonPeriodo").click(function(){
-      
-      
+
+        $("#botonPeriodo").click(function() {
+
+
             if ($("#periodo1").is(":visible"))
                 return true;
-      
+
             $("#anio").val("");
             $("#ini").val("");
             $("#fin").val("");
-      
+
             $("#anioFirma").hide();
             $("#periodo1").show();
             $("#periodo2").show();
@@ -56,7 +56,7 @@
 <logic:present name="fecha">
     <logic:equal name="fecha" value="fechaErrada">
         <script>
-            $(document).ready(function(){
+            $(document).ready(function() {
                 alert("La fecha de inicio debe ser menor a la fecha de finalizacion");
             });
         </script>
@@ -66,7 +66,7 @@
 <div id="body">
     <div id="barraBusqueda">
         <div class="box"> 
-            <div class="inbox" style="height:640px;" id="cajaBusqueda">
+            <div class="inbox" style="height:550px;" id="cajaBusqueda">
                 <br>
                 <div class="titulo">Búsqueda</div>
                 <html:form action="/buscar" acceptCharset="ISO-8859-1">
@@ -93,30 +93,44 @@
                     </table>
                     <br><br>
                     <fieldset style="border:none; border-top: 2px solid #00627A; width: 520px;">
-                        <div class="titulo" style="margin-top: 20px;">Avanzada</div>
-                        <table style="width: 400px; padding-top: 20px;">
+                        <table style="width: 420px; padding-top: 20px;">
                             <tr>
-                                <td colspan="2">
-                            <center>
-                                Tipo de Usuario:
-                                <html:select property="tipoUsuario"> <!--hola oriana-->
-                                    <option>Estudiante</option>
-                                    <option>Profesor</option>
-                                    <option>Otro</option>
-                                </html:select>
-                            </center>
-                            <br>
-                            <br>
-                            <fieldset style="border:none;">
 
-                                <legend>País (Se deben separar los paises por comas. Ejemplo: Venezuela, Colombia)</legend>
-                                <div class="error">
-                                    <html:errors property="pais"/>
-                                </div>
-                                <html:text property="pais"/>
-                            </fieldset>
+                                <td>
+                                    <div class="titulo" style="margin-top: 5px;">Avanzada</div>
+                                </td>
+                                <td>
+                                    Tipo de Usuario:
+                                    <html:select property="tipoUsuario"> <!--hola oriana-->
+                                <option>Estudiante</option>
+                                <option>Profesor</option>
+                                <option>Otro</option>
+                            </html:select> 
+                            </right>
                             </td>
+
                             </tr>
+                            <right>
+
+                                <td colspan="2">  
+
+                                    <br>
+                                    <br>
+                                    <fieldset style="border:none;">
+
+                                        <legend>
+                                            <center>
+                                            País (Se deben separar los paises por comas. Ejemplo: Venezuela, Colombia)
+                                            </center>
+                                        </legend>
+                                        
+                                        <div class="error">
+                                            <html:errors property="pais"/>
+                                        </div>
+                                        <html:text property="pais"/>
+                                    </fieldset>
+                                </td>
+                                </tr>
                         </table>
                         <table>
                             <tr>
