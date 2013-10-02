@@ -338,7 +338,9 @@
                 <html:form action="/tratado/crear" acceptCharset="ISO-8859-1">
                     <fieldset style="border:none"></fieldset>
                     <table class="camposRegistro">	
-                        <div style="color:red; float:left; margin-left: 5%"> Todos los campos con (*) son requeridos</div>  
+                        <div style="color:red; float:left; margin-left: 5%">
+                            El Título del Tratado es un campo obligatorio.
+                        </div>  
 
                         <td colspan="4">
                             <fieldset id="campoTitulo">
