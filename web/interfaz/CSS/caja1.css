@@ -25,7 +25,8 @@ a{
 }
 
 #topMenu{
-  height: 30px;	
+  height: 30px;
+  margin-top: -19px;
 }
 
 #footer{
@@ -254,6 +255,7 @@ div.inbox{
   border-bottom-left-radius: 0px;
   -moz-border-radius: 4px;
   -moz-border-radius-bottomleft: 0px;
+  
 }
 div.box a{
   float: left;
