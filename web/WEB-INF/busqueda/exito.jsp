@@ -110,7 +110,7 @@ function verTratado(div){
                     <thead>
                         <tr>
                             <th> Título </th>
-                            <th> Pais ID </th>
+                            <th> Pais </th>
                             <th> Fecha Firma (MM/DD/AAAA) </th>
                         </tr>
                     </thead>
