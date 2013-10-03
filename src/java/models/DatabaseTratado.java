@@ -465,10 +465,14 @@ public class DatabaseTratado {
           paisesArreglo[i] = paises.get(i);
         }
         
+        t.setPaises(paisesArreglo);
+        
         String [] gruposArreglo = new String [grupos.size()];
         for(int i = 0 ; i < grupos.size(); ++i) {
           gruposArreglo[i] = grupos.get(i);
         }
+        
+        t.setGrupos(gruposArreglo);
 
         l.add(t);
       }
