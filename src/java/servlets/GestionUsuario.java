@@ -38,6 +38,7 @@ public class GestionUsuario extends MappingDispatchAction {
       dt = new DatabaseUsuario(driver, databaseUrl);
   }
   
+
   private void createDatabaseLog() {
       String driver = this.getServlet().getServletContext().getInitParameter("driver");
       String databaseUrl = this.getServlet().getServletContext().getInitParameter("databaseUrl");

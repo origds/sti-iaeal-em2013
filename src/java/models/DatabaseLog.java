@@ -45,7 +45,7 @@ public class DatabaseLog {
         try {
             Class.forName("org.postgresql.Driver");
             conexion = DriverManager.getConnection(
-                    "jdbc:postgresql://localhost:5432/postgres",
+                    "jdbc:postgresql://localhost:5432/stidb",
                     "postgres",
                     "postgres");
             return true;

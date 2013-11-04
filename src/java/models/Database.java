@@ -40,7 +40,7 @@ public class Database {
 
         try {
             Class.forName(driver).newInstance();
-            connection = DriverManager.getConnection(databaseUrl, "postgres", "postgres");
+            connection = DriverManager.getConnection(databaseUrl, "stiuser", "postgres");
         } catch (Exception ex) {
             //Logger.getLogger(Database.class.getName()).log(Level.SEVERE, null, ex);
             ex.printStackTrace();
