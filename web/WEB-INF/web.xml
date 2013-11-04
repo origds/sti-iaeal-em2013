@@ -7,7 +7,7 @@
     </context-param>
     <context-param>
         <param-name>databaseUrl</param-name>
-        <param-value>jdbc:postgresql://localhost:5432/postgres</param-value>
+        <param-value>jdbc:postgresql://localhost:5432/stidb</param-value>
     </context-param>
 
     <servlet>
