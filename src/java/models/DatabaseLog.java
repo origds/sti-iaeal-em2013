@@ -14,9 +14,7 @@ import java.util.Date;
 import javabeans.Log;
 import javabeans.Tratado;
 import javabeans.Usuario;
-/*import java.util.Calendar;
- import java.util.GregorianCalendar;
- import javabeans.Fecha;*/
+
 
 /**
  *
@@ -46,7 +44,7 @@ public class DatabaseLog {
             Class.forName("org.postgresql.Driver");
             conexion = DriverManager.getConnection(
                     "jdbc:postgresql://localhost:5432/stidb",
-                    "postgres",
+                    "stiuser",
                     "postgres");
             return true;
         } catch (Exception e) {
