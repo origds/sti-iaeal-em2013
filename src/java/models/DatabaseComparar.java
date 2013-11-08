@@ -37,8 +37,8 @@ public class DatabaseComparar {
         try {
             Class.forName("org.postgresql.Driver");
             conexion = DriverManager.getConnection(
-                    "jdbc:postgresql://localhost:5432/postgres",
-                    "postgres",
+                    "jdbc:postgresql://localhost:5432/stidb",
+                    "stiuser",
                     "postgres");
             return true;
         } catch (Exception e) {
