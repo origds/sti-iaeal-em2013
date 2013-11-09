@@ -97,7 +97,7 @@ div.opcionesIzq{
   width: 130px;
   height: 30px;
   color: #FFFFFF;
-  font-family: symbol;
+  font-family: helvetica;
   font-size: 12px;
 }
 
@@ -110,7 +110,7 @@ div.opcionesDer{
   width: 130px;
   height: 30px;
   color: #FFFFFF;
-  font-family: symbol;
+  font-family: helvetica;
   font-size: 12px;
 }
 
@@ -122,7 +122,7 @@ div.opcionesVer{
   width: 130px;
   height: 30px;
   color: #FFFFFF;
-  font-family: symbol;
+  font-family: helvetica;
   font-size: 12px;
 }
 
